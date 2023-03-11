@@ -32,7 +32,7 @@ function get_art_json_data()
     xmlhttp.send() // executed in onreadystatechange section on request completion
 }
 
-// this function appends the json data to the table 'classTable'
+// this function appends the json data to the table
 function append_art_json(art_data)
 {
     var table = document.getElementById('artTable');
@@ -46,7 +46,7 @@ function append_art_json(art_data)
         // update table with new row
         var tr = document.createElement('tr');
         var art_name = art_data[key]["Name"];
-        // for the class, we add a modal dialogue to show more details on the class that opens the markdown-to-html file with appropriate css
+        // open modal dialogue for Art info
         tr.innerHTML = '<td>' + '<a href="#" onclick="showArtInfo(\'' + key + '\')">' + art_data[key]["Name"] + '</a>' + '</td>' +
         '<td>' + art_data[key]["Level"] + '</td>' +
         '<td>' + art_data[key]["Type"] + '</td>' +
@@ -57,7 +57,7 @@ function append_art_json(art_data)
     });
 }
 
-// search on class table by name, role, tradition, etc
+// search on art table by name, role, tradition, etc
 function searchArtTable(searchInput, column)
 {    
     // revised for multiple search
@@ -67,6 +67,7 @@ function searchArtTable(searchInput, column)
     var input_category = document.getElementById("searchArtCategory");
     var input_skill = document.getElementById("searchArtSkill");
     var input_time = document.getElementById("searchArtTime");
+    
     var table = document.getElementById("artTable");
     
     let filter_name = input_name.value.toUpperCase();

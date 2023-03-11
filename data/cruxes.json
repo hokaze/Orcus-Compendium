@@ -1,0 +1,122 @@
+{
+    "0": {
+        "Name": "Betrayer",
+        "Flavor": "You betrayed someone or something you once held dear, and it forever left its mark on you.",
+        "Skill Bonus": "+2 Bluff",
+        "Feature 1 Name": "Resistance to Poison",
+        "Feature 1 Description": "Resistance to poison damage 5 + half your level.",
+        "Feature 2 Name": "Hold Breath",
+        "Feature 2 Description": "+5 ancestry bonus to Endure checks to hold your breath",
+        "Power": "Poisonous Nip"
+    },
+    "1": {
+        "Name": "Cut Off",
+        "Flavor": "Someone destroyed everyone and everything you loved.",
+        "Skill Bonus": "+2 Heal",
+        "Feature 1 Name": "Go for the Jugular",
+        "Feature 1 Description": "+1 ancestry bonus on attacks against staggered enemies.",
+        "Feature 2 Name": "",
+        "Feature 2 Description": "",
+        "Power": "Vengeance of the Pits"
+    },
+    "2": {
+        "Name": "Destined",
+        "Flavor": "Some great event or portent at your birth set your heroism in motion, through no choice of your own.",
+        "Skill Bonus": "+2 History",
+        "Feature 1 Name": "Face the Elements",
+        "Feature 1 Description": "Resistance to fire and cold damage 5 + half your level.",
+        "Feature 2 Name": "Dabbler",
+        "Feature 2 Description": "Choose a level 1 at-will attack power from any class. It is an encounter power for you.",
+        "Power": ""
+    },
+    "3": {
+        "Name": "Escaped",
+        "Flavor": "You were imprisoned, trapped, in check or otherwise in a situation that seemed to spell certain doom \u2013 but you somehow slipped away.",
+        "Skill Bonus": "+2 Acrobatics",
+        "Feature 1 Name": "Hide in a Flash",
+        "Feature 1 Description": "When you make an initiative check, if you are in cover or concealment, you can make a Stealth check to hide (takes no action).",
+        "Feature 2 Name": "Web Stride",
+        "Feature 2 Description": "Webs, like those from a spider, are not difficult terrain for you.",
+        "Power": "Disappearing Act"
+    },
+    "4": {
+        "Name": "Heir",
+        "Flavor": "You discovered that perched in your family tree is a dragon, and its greatness courses in your veins.",
+        "Skill Bonus": "+2 Insight",
+        "Feature 1 Name": "Minor Magics",
+        "Feature 1 Description": "You know one power from the Cantrips discipline.",
+        "Feature 2 Name": "",
+        "Feature 2 Description": "",
+        "Power": "Breath Weapon"
+    },
+    "5": {
+        "Name": "Hero",
+        "Flavor": "You risked your own life to defend something precious: perhaps a loved one, a vital military position or a secret.",
+        "Skill Bonus": "+2 Athletics",
+        "Feature 1 Name": "Unmoved",
+        "Feature 1 Description": "Reduce any unwilling movement you are subject to by 1 square. When you would fall prone as the result of an attack, make a saving throw-on a success, you do not fall.",
+        "Feature 2 Name": "",
+        "Feature 2 Description": "",
+        "Power": "Violent Rush"
+    },
+    "6": {
+        "Name": "Ninth Life",
+        "Flavor": "Through sheer chutzpah and unbelievable luck, you have survived ordeals that would have left anyone else dead eight times over.",
+        "Skill Bonus": "+2 Sleight of Hand",
+        "Feature 1 Name": "Eager Charge",
+        "Feature 1 Description": "Your speed increases by +2 when you charge",
+        "Feature 2 Name": "",
+        "Feature 2 Description": "",
+        "Power": "Lucky"
+    },
+    "7": {
+        "Name": "Otherworldly",
+        "Flavor": "You come from another place or time, or are destined to leave this one in time.",
+        "Skill Bonus": "+2 Stealth",
+        "Feature 1 Name": "Nimbleness",
+        "Feature 1 Description": "+2 ancestry bonus to AC against attacks of opportunity.",
+        "Feature 2 Name": "",
+        "Feature 2 Description": "",
+        "Power": "Highblood Teleport"
+    },
+    "8": {
+        "Name": "Returned",
+        "Flavor": "You survived impossible peril, physical harm or terror, and came back of your own volition.",
+        "Skill Bonus": "+2 Endure",
+        "Feature 1 Name": "Injured Rage",
+        "Feature 1 Description": "+1 ancestry bonus on attack rolls while staggered.",
+        "Feature 2 Name": "Shake Off Fear",
+        "Feature 2 Description": "+5 ancestry bonus on saving throws against powers and effects with the Fear tag.",
+        "Power": "Tough as Nails"
+    },
+    "9": {
+        "Name": "Sage",
+        "Flavor": "Through knowledge, practice and experience, you provided sage advice that prevented the unthinkable.",
+        "Skill Bonus": "+2 Perception",
+        "Feature 1 Name": "Skill Training",
+        "Feature 1 Description": "You are trained in an extra skill of your choice.",
+        "Feature 2 Name": "",
+        "Feature 2 Description": "",
+        "Power": "Ingenuity"
+    },
+    "10": {
+        "Name": "Third Eyed",
+        "Flavor": "You experienced something that opened your mind to something beyond this physical world.",
+        "Skill Bonus": "+2 Arcana",
+        "Feature 1 Name": "Shared Mind",
+        "Feature 1 Description": "You gain telepathy 5, which means you can communicate mentally with creatures you can see that are within 5 squares of you. The creature must be able to speak at least one language; once you have begun the communication they can \u201cspeak\u201d back to you.",
+        "Feature 2 Name": "Shake Off Fear",
+        "Feature 2 Description": "+5 ancestry bonus on saving throws against powers and effects with the Illusion tag.",
+        "Power": "Careful Focus"
+    },
+    "11": {
+        "Name": "Wild Child",
+        "Flavor": "You were abandoned to the wilderness.",
+        "Skill Bonus": "+2 Nature",
+        "Feature 1 Name": "Versatile Stride",
+        "Feature 1 Description": "You ignore difficult terrain.",
+        "Feature 2 Name": "Low-Light Vision",
+        "Feature 2 Description": "You can see in dim light as if it were bright light",
+        "Power": "Barrel Along"
+    }
+}

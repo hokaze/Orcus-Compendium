@@ -111,7 +111,38 @@
     <!-- TODO - Ancestries (Cruxes) -->
     <div id="Cruxes" class="tabcontent">
       <p>Cruxes and Heritages are the Core option for Ancestries. For games where Species matters more than upbringing, use Ancestries (Species) instead.</p>
-      <p>TODO - table (cruxes have no data files yet, need manual entry)</p>
+      <p>
+        You are human, or otherwise defined more by upbringing than genetics:<br/>
+        <strong>Size:</strong> Your size is Medium.<br/>
+        <strong>Ability Scores:</strong> +2 to two ability scores of your choice.<br/>
+        <strong>Speed:</strong> Your base walking speed is 6 squares.<br/>
+        <strong>Languages:</strong> You can speak, read, and write Common and one extra language of your choice.<br/>
+      </p>
+      <table id="cruxTable" class="filterTable">
+        <!-- searchable headers, note that you can't currently filter by multiple inputs, only the last search applies -->
+        <tr class="header">
+          <th>
+            <input type="text" id="searchCruxName" onkeyup="searchCruxTable('searchCruxName',0)" placeholder="Name" title="Search by Crux Name">
+            <button onclick="sortTableByColumn('cruxTable','0')">Sort</button>
+          </th>
+          <th>
+            <input type="text" id="searchCruxSkill" onkeyup="searchCruxTable('searchCruxSkill',1)" placeholder="Skill" title="Search by Level">
+            <button onclick="sortTableByColumn('cruxTable','1')">Sort</button>
+          </th>
+          <th>
+            <input type="text" id="searchCruxFeat1" onkeyup="searchCruxTable('searchCruxFeat1',2)" placeholder="Feature 1 Name" title="Search by Feature 1">
+            <button onclick="sortTableByColumn('cruxTable','2')">Sort</button>
+          </th>
+          <th>
+            <input type="text" id="searchCruxFeat2" onkeyup="searchCruxTable('searchCruxFeat2',3)" placeholder="Feature 2 Name" title="Search by Feature 2">
+            <button onclick="sortTableByColumn('cruxTable','3')">Sort</button>
+          </th>
+          <th>
+            <input type="text" id="searchCruxPower" onkeyup="searchCruxTable('searchCruxPower',4)" placeholder="Power" title="Search by Power">
+            <button onclick="sortTableByColumn('cruxTable','4')">Sort</button>
+          </th>
+        </tr>
+      </table>
     </div>
     
     <!-- TODO - Ancestries (Heritages) -->
@@ -210,6 +241,7 @@
     <script src="js/misc.js"></script>
     <script src="js/classes.js"></script>
     <script src="js/powers.js"></script>
+    <script src="js/cruxes.js"></script>
     <script src="js/ancestries.js"></script>
     <script src="js/arts.js"></script>
 

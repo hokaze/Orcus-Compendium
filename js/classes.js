@@ -72,6 +72,7 @@ function searchClassTable(searchInput, column)
     var input_role = document.getElementById("searchClassRole");
     var input_key_ability = document.getElementById("searchClassKeyAbility");
     var input_class_disciplines = document.getElementById("searchClassDisciplines");
+    
     var table = document.getElementById("classTable");
     
     let filter_name = input_name.value.toUpperCase();
