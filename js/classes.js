@@ -3,6 +3,8 @@
 // first add an event listener for page load
 document.addEventListener( "DOMContentLoaded", get_class_json_data, false ); // fires the get method on page load
 
+var class_data = {};
+
 // this function is in the event listener and will execute on page load
 function get_class_json_data()
 {
@@ -18,7 +20,7 @@ function get_class_json_data()
         {
             // convert the response to a json object
             // pass the json object to the append_json function
-            var class_data = JSON.parse(this.responseText);
+            class_data = JSON.parse(this.responseText);
             append_class_json(class_data);
         }
     }
