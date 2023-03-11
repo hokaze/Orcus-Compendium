@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Orcus Compendium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="data/markdown-to-html/github-markdown-light.css">
+    
+    <style>
+      /* markdown css for modal dialogue on markdown-to-html files */
+
+      .markdown-body {
+          box-sizing: border-box;
+          min-width: 200px;
+          max-width: 980px;
+          margin: 0 auto;
+          padding: 45px;
+      }
+
+      @media (max-width: 767px) {
+          .markdown-body {
+              padding: 15px;
+          }
+      }
+    </style>
+  </head>
+  
+  <body>
+    <h2>Orcus Compendium</h2>
+    <p>Proof of Concept - searchable filters/tables of class, ancestry, power</p>
+    <p>Options marked with a "*" are Advanced Options that do not appear in the Core Orcus Heroes' Handbook yet</p>
+
+    <div class="tab">
+      <button id ="classTab" class="tablinks" onclick="selectTab(event, 'Classes')">Classes</button>
+      <button id ="powerTab" class="tablinks" onclick="selectTab(event, 'Powers')">Powers</button>
+      <button id ="cruxTab" class="tablinks" onclick="selectTab(event, 'Cruxes')">Ancestries (Cruxes)</button>
+      <button id ="heritageTab" class="tablinks" onclick="selectTab(event, 'Cruxes')">Ancestries (Heritages)</button>
+      <button id ="speciesTab" class="tablinks" onclick="selectTab(event, 'Species')">Ancestries (Species) *</button>
+      <button class="tablinks" onclick="selectTab(event, 'Kits')">Kits</button>
+    </div>
+
+    <!-- WIP Proof of Concept - Class table search -->
+    <div id="Classes" class="tabcontent">
+      <table id="classTable" class="filterTable">
+        <!-- searchable headers, note that you can't currently filter by multiple inputs, only the last search applies -->
+        <tr class="header">
+          <th>
+            <input type="text" id="searchClassName" onkeyup="searchClassTable('searchClassName',0)" placeholder="Name" title="Search by Class Name">
+            <button onclick="sortTableByColumn('classTable','0')">Sort</button>
+          </th>
+          <th>
+            <input type="text" id="searchClassTradition" onkeyup="searchClassTable('searchClassTradition',1)" placeholder="Tradition" title="Search by Tradition">
+            <button onclick="sortTableByColumn('classTable','1')">Sort</button>
+          </th>
+          <th>
+            <input type="text" id="searchClassRole" onkeyup="searchClassTable('searchClassRole',2)" placeholder="Role" title="Search by Role">
+            <button onclick="sortTableByColumn('classTable','2')">Sort</button>
+          </th>
+          <th>
+            <input type="text" id="searchClassKeyAbility" onkeyup="searchClassTable('searchClassKeyAbility',3)" placeholder="Key Ability" title="Search by Key Ability">
+            <button onclick="sortTableByColumn('classTable','3')">Sort</button>
+          </th>
+          <th>
+            <input type="text" id="searchClassDisciplines" onkeyup="searchClassTable('searchClassDisciplines',4)" placeholder="Class Disciplines" title="Search by Class Disciplines">
+            <button onclick="sortTableByColumn('classTable','4')">Sort</button>
+          </th>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- TODO: Powers -->
+    <div id="Powers" class="tabcontent">
+      <table id="powerTable" class="filterTable">
+        <!-- searchable headers, note that you can't currently filter by multiple inputs, only the last search applies -->
+        <tr class="header">
+          <th>
+            <input type="text" id="searchPowerName" onkeyup="searchPowerTable('searchPowerName',0)" placeholder="Name" title="Search by Power Name">
+            
+            <!-- Disabled sorting as sorting when showing ALL results causes page to hang -->
+            <!--<button onclick="sortTableByColumn('powerTable','0')">Sort</button>-->
+          </th>
+          <th>
+            <input type="text" id="searchPowerSource" onkeyup="searchPowerTable('searchPowerSource',1)" placeholder="Source" title="Search by Source">
+            <!--<button onclick="sortTableByColumn('powerTable','1')">Sort</button>-->
+          </th>
+          <th>
+            <input type="text" id="searchPowerList" onkeyup="searchPowerTable('searchPowerList',2)" placeholder="List" title="Search by List">
+            <!-- <button onclick="sortTableByColumn('powerTable','2')">Sort</button> -->
+          </th>
+          <th>
+            <input type="text" id="searchPowerCategory" onkeyup="searchPowerTable('searchPowerCategory',3)" placeholder="Category" title="Search by Category">
+            <!-- <button onclick="sortTableByColumn('powerTable','3')">Sort</button> -->
+          </th>
+          <th>
+            <input type="text" id="searchPowerFrequency" onkeyup="searchPowerTable('searchPowerFrequency',4)" placeholder="Frequency" title="Search by Frequency">
+            <!-- <button onclick="sortTableByColumn('powerTable','4')">Sort</button> -->
+          </th>
+          <th>
+            <input type="text" id="searchPowerTier" onkeyup="searchPowerTable('searchPowerTier',5)" placeholder="Tier" title="Search by Tier">
+            <!-- <button onclick="sortTableByColumn('powerTable','5')">Sort</button> -->
+          </th>
+          <th>
+            <input type="text" id="searchPowerTags" onkeyup="searchPowerTable('searchPowerTags',6)" placeholder="Tags" title="Search by Tags">
+            <!-- <button onclick="sortTableByColumn('powerTable','6')">Sort</button> -->
+          </th>
+        </tr>
+      </table>
+    </div>
+
+    <!-- TODO - Ancestries (Cruxes) -->
+    <div id="Cruxes" class="tabcontent">
+      <p>Cruxes and Heritages are the Core option for Ancestries. For games where Species matters more than upbringing, use Ancestries (Species) instead.</p>
+      <p>TODO - table (cruxes have no data files yet, need manual entry)</p>
+    </div>
+    
+    <!-- TODO - Ancestries (Heritages) -->
+    <div id="Heritages" class="tabcontent">
+      <p>Cruxes and Heritages are the Core option for Ancestries. For games where Species matters more than upbringing, use Ancestries (Species) instead.</p>
+      <p>TODO - table (heritages have no data files yet, need manual entry)</p>
+    </div>
+
+    <!-- Advanced Ancestries Option: Species -->
+    <div id="Species" class="tabcontent">
+      <p>* If using this Advanced Option, you pick a Species as your Ancestory instead of your normal Crux and Heritage.</p>
+      
+      <table id="speciesTable" class="filterTable">
+        <!-- searchable headers, note that you can't currently filter by multiple inputs, only the last search applies -->
+        <tr class="header">
+          <th>
+            <input type="text" id="searchSpeciesName" onkeyup="searchSpeciesTable('searchSpeciesName',0)" placeholder="Name" title="Search by Species Name">
+            <button onclick="sortTableByColumn('speciesTable','0')">Sort</button>
+          </th>
+          <th>
+            <input type="text" id="searchSpeciesDescription" onkeyup="searchSpeciesTable('searchSpeciesDescription',1)" placeholder="Description" title="Search by Description/Orgin">
+            <button onclick="sortTableByColumn('speciesTable','1')">Sort</button>
+          </th>
+          <th>
+            <input type="text" id="searchSpeciesAbility1" onkeyup="searchSpeciesTable('searchSpeciesAbility1',2)" placeholder="Ability 1" title="Search by Ability 1">
+            <button onclick="sortTableByColumn('speciesTable','2')">Sort</button>
+          </th>
+          <th>
+            <input type="text" id="searchSpeciesAbility2" onkeyup="searchSpeciesTable('searchSpeciesAbility2',3)" placeholder="Ability 2" title="Search by Ability 2">
+            <button onclick="sortTableByColumn('speciesTable','3')">Sort</button>
+          </th>
+          <th>
+            <input type="text" id="searchSpeciesSpeed" onkeyup="searchSpeciesTable('searchSpeciesSpeed',4)" placeholder="Speed" title="Search by Speed">
+            <button onclick="sortTableByColumn('speciesTable','4')">Sort</button>
+          </th>
+          <th>
+            <input type="text" id="searchSpeciesDarkvision" onkeyup="searchSpeciesTable('searchSpeciesDarkvision',5)" placeholder="Darkvision" title="Search by Darkvision">
+            <button onclick="sortTableByColumn('speciesTable','5')">Sort</button>
+          </th>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- TODO: Kits -->
+    <div id="Kits" class="tabcontent">
+      <p>Kits can be taken as further customisation option by giving up your Tier 1 feats (levels 1, 2, 4, 6, 8 and 10).</p>
+      <p>"Dabbles in [X]" kits are a way to multiclass, while "Worships the [X]" represent divine domains and others represent additional options like familiars, shapeshifting, animal companions, poisons, etc.</p>
+      <p>Some classes may grant access to kits automatically (such as Priests choosing a "Worships the [X]" style kit. These kits do not require the sacrifice of your feats.</p>
+      <p>TODO</p>
+    </div>
+    
+    <!-- WIP: Modal popup for displaying more info on classes, powers, etc -->
+    <div id="modalShowInfo" class="modal">
+      <div class="modal-content markdown-body">
+        <span class="close" onclick="hideModal()">&times;</span>
+        <div id="showInfoContent" class="markdown-body"></div>
+      </div>
+    </div>
+    
+    <script src="js/misc.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="js/powers.js"></script>
+    <script src="js/ancestries.js"></script>
+
+    <br/><br/>
+    <footer>
+      <p><i>Version 0.01 - early alpha, 2023-03-11, aiming for compatibility with Orcus Heroes' Handbook v1.0</i></p>
+      <br/><br/>
+      <p>
+        <strong>Known Issues </strong>
+        <br/>
+        - searching by multiple columns only works on Classes tab for now
+        <br/>
+        - ancestries incomplete: no Cruxes or Heritages yet (no existing spreadsheets on the Orcus github, needs manual entry)
+        <br/>
+        - no option to filter by non-core options (with exception of Species we ignore non-core classes and powers currently)
+        <br/>
+        - sorting can only toggle between alphabetical ascending and descending, it cannot revert to initial ordering
+        <br/>
+        - power display is barebones, no special formatting / colours, doesn't even conditionally show Hit/Defense/Effect/Miss lines depending on if the power actually has them, just displays all at once
+        <br/>
+        - sorting is disabled on powers tab to avoid horrible performance hit
+        <br/>
+        - nearly non-existent error handling
+        <br/>
+        - formatting is awful (footer doesn't go to bottom of page properly, columns can become squished, species darkvision should display Yes/No, not empty/1)
+        <br/>
+        - pretty much everything is still very messy despite some
+        refactoring before committing to repo (I don't really write html, js or css; this is all being made up as I go)
+        <br/>
+        - cannot run locally like 4e Offline Compendium due to browser security protections avoiding the loading of json files from local filesystem
+        <br/>
+        - kits, arts, animal companions, etc not started yet
+        <br/>
+        - currently depends on user grabbing the xslx from the Orcus github, saving as csv, then converting that csv to json via the csv_to_json.py script to update data.
+        <br/>
+        - currently the html pages for the class summaries are not yet automated and involves grabbing the "Class and Powers" markdown from the Orcus project, copying just the Class portion, converting to html, applying the github markdown css and loading that html file in the background. needs automation or some way of parsing the markdown?
+        <br/>
+        - no way to easily jump from disciplines listed on class tab to searching for just that discipline on power (the Class Disciplines should act as a link that autofills a search)
+        <br/>
+        - table header search fields lack a quick clear option
+        <br/>
+        - many more...but it's a start?
+      </p>
+    </footer>
+  </body>
+</html>
