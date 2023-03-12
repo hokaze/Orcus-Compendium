@@ -189,6 +189,10 @@ function showPowerInfo (powerID)
     {
         alt_bg = powerCardLines (contentDiv, alt_bg, colour_highlight, "Attack", power_data[powerID]["Attack"] + " vs " + power_data[powerID]["Defense"]);
     }
+    if (power_data[powerID]["Hit"])
+    {
+        alt_bg = powerCardLines (contentDiv, alt_bg, colour_highlight, "Hit", power_data[powerID]["Hit"]);
+    }
     if (power_data[powerID]["Miss"])
     {
         alt_bg = powerCardLines (contentDiv, alt_bg, colour_highlight, "Miss", power_data[powerID]["Miss"]);
