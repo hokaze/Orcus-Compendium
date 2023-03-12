@@ -50,7 +50,7 @@ function append_heritage_json(heritage_data)
     });
 }
 
-// search on heritage table by name, role, tradition, etc
+// search on heritage table
 function searchHeritageTable(searchInput, column)
 {    
     // revised for multiple search

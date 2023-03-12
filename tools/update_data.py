@@ -46,37 +46,55 @@ def update_html():
 
     print ("Updating HTML files from MARKDOWN...")
     
-    # TODO - rather than manually updating the list of known classes, cruxes, etc, couldn't we load from the relevant json files? mostly thinking this might be useful if we ended up generating html files from markdown from an especially large list like powers or disciplines or items where that might make more sense than copy-pasting this over and over?
+    # TODO - rather than manually updating the list of known classes, cruxes, etc, couldn't we load from the relevant json files? mostly thinking this might be useful if we ended up generating html files from markdown from an especially large list like powers or disciplines or items where that might make more sense than copy-pasting this over and over? --> currently implemented for Kits alone
+    
+    # set markdown filepaths so if these change names / location can just change them here rather than every markdown_to_html call
+    md_class_and_powers_path = "../data/markdown-to-html/markdown/Orcus Classes and Powers - current.md"
+    md_player_options_path = "../data/markdown-to-html/markdown/Orcus Player Options - current.md"
     
     # Classes
-    markdown_to_html.markdown_to_html("# Commander", "../data/markdown-to-html/markdown/Orcus Classes and Powers - current.md", "../data/markdown-to-html/class/Commander.html")
-    markdown_to_html.markdown_to_html("# Exemplar", "../data/markdown-to-html/markdown/Orcus Classes and Powers - current.md", "../data/markdown-to-html/class/Exemplar.html")
-    markdown_to_html.markdown_to_html("# Guardian", "../data/markdown-to-html/markdown/Orcus Classes and Powers - current.md", "../data/markdown-to-html/class/Guardian.html")
-    markdown_to_html.markdown_to_html("# Harlequin", "../data/markdown-to-html/markdown/Orcus Classes and Powers - current.md", "../data/markdown-to-html/class/Harlequin.html")
-    markdown_to_html.markdown_to_html("# Mageblade", "../data/markdown-to-html/markdown/Orcus Classes and Powers - current.md", "../data/markdown-to-html/class/Mageblade.html")
-    markdown_to_html.markdown_to_html("# Magician", "../data/markdown-to-html/markdown/Orcus Classes and Powers - current.md", "../data/markdown-to-html/class/Magician.html")
-    markdown_to_html.markdown_to_html("# Priest", "../data/markdown-to-html/markdown/Orcus Classes and Powers - current.md", "../data/markdown-to-html/class/Priest.html")
-    markdown_to_html.markdown_to_html("# Reaper", "../data/markdown-to-html/markdown/Orcus Classes and Powers - current.md", "../data/markdown-to-html/class/Reaper.html")
-    markdown_to_html.markdown_to_html("# Sylvan", "../data/markdown-to-html/markdown/Orcus Classes and Powers - current.md", "../data/markdown-to-html/class/Sylvan.html")
+    markdown_to_html.markdown_to_html("# Commander", md_class_and_powers_path, "../data/markdown-to-html/class/Commander.html")
+    markdown_to_html.markdown_to_html("# Exemplar", md_class_and_powers_path, "../data/markdown-to-html/class/Exemplar.html")
+    markdown_to_html.markdown_to_html("# Guardian", md_class_and_powers_path, "../data/markdown-to-html/class/Guardian.html")
+    markdown_to_html.markdown_to_html("# Harlequin", md_class_and_powers_path, "../data/markdown-to-html/class/Harlequin.html")
+    markdown_to_html.markdown_to_html("# Mageblade", md_class_and_powers_path, "../data/markdown-to-html/class/Mageblade.html")
+    markdown_to_html.markdown_to_html("# Magician", md_class_and_powers_path, "../data/markdown-to-html/class/Magician.html")
+    markdown_to_html.markdown_to_html("# Priest", md_class_and_powers_path, "../data/markdown-to-html/class/Priest.html")
+    markdown_to_html.markdown_to_html("# Reaper", md_class_and_powers_path, "../data/markdown-to-html/class/Reaper.html")
+    markdown_to_html.markdown_to_html("# Sylvan", md_class_and_powers_path, "../data/markdown-to-html/class/Sylvan.html")
     
     # Traditions and Roles are also stored in the class folder, under misc
     # need to use the tables extension, otherwise the table on roles showing all the classes against roles and traditions doesn't get converted to a html table
-    markdown_to_html.markdown_to_html("### Tradition", "../data/markdown-to-html/markdown/Orcus Classes and Powers - current.md", "../data/markdown-to-html/class/misc/Tradition.html")
-    markdown_to_html.markdown_to_html("### Role", "../data/markdown-to-html/markdown/Orcus Classes and Powers - current.md", "../data/markdown-to-html/class/misc/Role.html")
+    markdown_to_html.markdown_to_html("### Tradition", md_class_and_powers_path, "../data/markdown-to-html/class/misc/Tradition.html")
+    markdown_to_html.markdown_to_html("### Role", md_class_and_powers_path, "../data/markdown-to-html/class/misc/Role.html")
     
     # Cruxes
-    markdown_to_html.markdown_to_html("### Betrayer", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Betrayer.html")
-    markdown_to_html.markdown_to_html("### Cut Off", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Cut Off.html")
-    markdown_to_html.markdown_to_html("### Destined", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Destined.html")
-    markdown_to_html.markdown_to_html("### Escaped", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Escaped.html")
-    markdown_to_html.markdown_to_html("### Heir", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Heir.html")
-    markdown_to_html.markdown_to_html("### Hero", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Hero.html")
-    markdown_to_html.markdown_to_html("### Ninth Life", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Ninth Life.html")
-    markdown_to_html.markdown_to_html("### Otherworldly", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Otherworldly.html")
-    markdown_to_html.markdown_to_html("### Returned", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Returned.html")
-    markdown_to_html.markdown_to_html("### Sage", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Sage.html")
-    markdown_to_html.markdown_to_html("### Third Eyed", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Third Eyed.html")
-    markdown_to_html.markdown_to_html("### Wild Child", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Wild Child.html")
+    markdown_to_html.markdown_to_html("### Betrayer", md_player_options_path, "../data/markdown-to-html/crux/Betrayer.html")
+    markdown_to_html.markdown_to_html("### Cut Off", md_player_options_path, "../data/markdown-to-html/crux/Cut Off.html")
+    markdown_to_html.markdown_to_html("### Destined", md_player_options_path, "../data/markdown-to-html/crux/Destined.html")
+    markdown_to_html.markdown_to_html("### Escaped", md_player_options_path, "../data/markdown-to-html/crux/Escaped.html")
+    markdown_to_html.markdown_to_html("### Heir", md_player_options_path, "../data/markdown-to-html/crux/Heir.html")
+    markdown_to_html.markdown_to_html("### Hero", md_player_options_path, "../data/markdown-to-html/crux/Hero.html")
+    markdown_to_html.markdown_to_html("### Ninth Life", md_player_options_path, "../data/markdown-to-html/crux/Ninth Life.html")
+    markdown_to_html.markdown_to_html("### Otherworldly", md_player_options_path, "../data/markdown-to-html/crux/Otherworldly.html")
+    markdown_to_html.markdown_to_html("### Returned", md_player_options_path, "../data/markdown-to-html/crux/Returned.html")
+    markdown_to_html.markdown_to_html("### Sage", md_player_options_path, "../data/markdown-to-html/crux/Sage.html")
+    markdown_to_html.markdown_to_html("### Third Eyed", md_player_options_path, "../data/markdown-to-html/crux/Third Eyed.html")
+    markdown_to_html.markdown_to_html("### Wild Child", md_player_options_path, "../data/markdown-to-html/crux/Wild Child.html")
+    
+    # Kits
+    # grabbing these from kits.csv rather than manually entering all the markdown_to_html calls required
+    kits_list = []
+    kits_file = open("../data/csv/kits.csv", "r")
+    for line in kits_file:
+        kits_list.append(line.split(",")[0])
+    kits_file.close()
+    
+    for kit_name in kits_list:
+        kit_header = "## " + kit_name
+        kit_html_path = "../data/markdown-to-html/kit/" + kit_name + ".html"
+        markdown_to_html.markdown_to_html(kit_header, md_class_and_powers_path, kit_html_path)
+    
     
     print ("All HTML files updated")
 

@@ -77,7 +77,7 @@ function append_ancestry_json(species_data)
     });
 }
 
-// search on species table by name, role, tradition, etc
+// search on species table
 function searchSpeciesTable(searchInput, column)
 {    
     // revised for multiple search

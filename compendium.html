@@ -28,7 +28,7 @@
   
   <body>
     <h2>Orcus Compendium</h2>
-    <p>Proof of Concept - searchable filters/tables of class, ancestry, power</p>
+    <p>Proof of Concept - searchable filters/tables of class, ancestry, power, kit, arts</p>
     <p>Options marked with a "*" are Advanced Options that do not appear in the Core Orcus Heroes' Handbook yet</p>
 
     <div class="tab">
@@ -119,7 +119,9 @@
 
     <!-- Ancestries (Cruxes) -->
     <div id="Cruxes" class="tabcontent">
-      <p>Cruxes and Heritages are the Core option for Ancestries. For games where Species matters more than upbringing, use Ancestries (Species) instead.</p>
+      <p>
+        Cruxes and Heritages are the Core option for Ancestries. For games where Species matters more than upbringing, use Ancestries (Species) instead.
+      </p>
       <p>
         You are human, or otherwise defined more by upbringing than genetics:<br/>
         <strong>Size:</strong> Your size is Medium.<br/>
@@ -127,7 +129,9 @@
         <strong>Speed:</strong> Your base walking speed is 6 squares.<br/>
         <strong>Languages:</strong> You can speak, read, and write Common and one extra language of your choice.<br/>
       </p>
-      <p>In addition to the above statistics, pick a <strong>Crux</strong> (below) and a Heritage</p>
+      <p>
+        In addition to the above statistics, pick a <strong>Crux</strong> (below) and a Heritage
+      </p>
       
       <table id="cruxTable" class="filterTable">
         <tr class="header">
@@ -157,7 +161,9 @@
     
     <!-- Ancestries (Heritages) -->
     <div id="Heritages" class="tabcontent">
-      <p>Cruxes and Heritages are the Core option for Ancestries. For games where Species matters more than upbringing, use Ancestries (Species) instead.</p>
+      <p>
+        Cruxes and Heritages are the Core option for Ancestries. For games where Species matters more than upbringing, use Ancestries (Species) instead.
+      </p>
       <p>
         You are human, or otherwise defined more by upbringing than genetics:<br/>
         <strong>Size:</strong> Your size is Medium.<br/>
@@ -165,7 +171,9 @@
         <strong>Speed:</strong> Your base walking speed is 6 squares.<br/>
         <strong>Languages:</strong> You can speak, read, and write Common and one extra language of your choice.<br/>
       </p>
-      <p>In addition to the above statistics, pick a Crux and a <strong>Heritage</strong> (below)</p>
+      <p>
+        In addition to the above statistics, pick a Crux and a <strong>Heritage</strong> (below)
+      </p>
       
       <table id="heritageTable" class="filterTable">
         <tr class="header">
@@ -191,7 +199,9 @@
 
     <!-- Advanced Ancestries Option: Species -->
     <div id="Species" class="tabcontent">
-      <p>* If using this Advanced Option, you pick a Species as your Ancestory instead of your normal Crux and Heritage.</p>
+      <p>
+        * If using this Advanced Option, you pick a Species as your Ancestory instead of your normal Crux and Heritage.
+      </p>
       
       <table id="speciesTable" class="filterTable">
         <!-- searchable headers, note that you can't currently filter by multiple inputs, only the last search applies -->
@@ -224,12 +234,52 @@
       </table>
     </div>
     
-    <!-- TODO: Kits -->
+    <!-- Kits -->
     <div id="Kits" class="tabcontent">
-      <p>Kits can be taken as further customisation option by giving up your Tier 1 feats (levels 1, 2, 4, 6, 8 and 10). Some GMs may grant players a kit for free without the feat cost, or not allow kits at all.</p>
-      <p>"Dabbles in [X]" kits are a way to multiclass, while "Worships the [X]" represent divine domains and others represent additional options like familiars, shapeshifting, animal companions, poisons, etc.</p>
-      <p>Some classes may grant access to kits automatically (such as Priests choosing a "Worships the [X]" style kit. These kits do not require the sacrifice of your feats.</p>
-      <p>TODO - no spreadsheet existed for these, had to write one by hand, still need to write up the code to handle displaying them (will use html display for kits as the current csv lacks specific details on what each feature does)</p>
+      <p>
+        Kits can be taken as further customisation option by giving up your Tier 1 feats (levels 1, 2, 4, 6, 8 and 10).
+        <br/>
+        Some GMs may grant players a kit for free without the feat cost, or not allow kits at all.
+      </p>
+      <p>
+        "Dabbles in [X]" kits are a way to multiclass, while "Worships the [X]" represent divine domains and others represent additional options like familiars, shapeshifting, animal companions, poisons, etc.
+      </p>
+      <p>
+        Some classes may grant access to kits automatically (such as Priests choosing a "Worships the [X]" style kit. These kits do not require the sacrifice of your feats.
+      </p>
+      
+      <table id="kitTable" class="filterTable">
+        <tr class="header">
+          <th>
+            <input type="search" id="searchKitName" oninput="searchKitTable('searchKitName',0)" placeholder="Name" title="Search by Kit Name">
+            <button onclick="sortTableByColumn('kitTable','0')">Sort</button>
+          </th>
+          <th>
+            <input type="search" id="searchKitDescription" oninput="searchKitTable('searchKitDescription',1)" placeholder="Description" title="Search by Description">
+            <button onclick="sortTableByColumn('kitTable','1')">Sort</button>
+          </th>
+          <th>
+            <input type="search" id="searchKitRequirements" oninput="searchKitTable('searchKitFeat1',2)" placeholder="Requirements" title="Search by Requirements">
+            <button onclick="sortTableByColumn('kitTable','2')">Sort</button>
+          </th>
+          <th>
+            <input type="search" id="searchKitFeat1" oninput="searchKitTable('searchKitFeat1',3)" placeholder="Lv 1 Feature" title="Search by Lv 1 Feature">
+            <button onclick="sortTableByColumn('kitTable','3')">Sort</button>
+          </th>
+          <th>
+            <input type="search" id="searchKitFeat5" oninput="searchKitTable('searchKitFeat5',4)" placeholder="Lv 5 Feature" title="Search by Lv 5 Feature">
+            <button onclick="sortTableByColumn('kitTable','4')">Sort</button>
+          </th>
+          <th>
+            <input type="search" id="searchKitFeat10" oninput="searchKitTable('searchKitFeat10',5)" placeholder="Lv 10 Feature" title="Search by Lv 10 Feature">
+            <button onclick="sortTableByColumn('kitTable','5')">Sort</button>
+          </th>
+          <th>
+            <input type="search" id="searchKitDiscipline" oninput="searchKitTable('searchKitDiscipline',6)" placeholder="Associated Discipline" title="Search by Associated Discipline">
+            <button onclick="sortTableByColumn('kitTable','6')">Sort</button>
+          </th>
+        </tr>
+      </table>
     </div>
     
     <!-- Advanced Option: Arts - Incantations and Practices -->
@@ -276,6 +326,7 @@
       </div>
     </div>
     
+    <!-- scripts needed to load table data, modal showinfo functionality, searching, sorting, etc - currently all basic js, no library dependencies -->
     <script src="js/misc.js"></script>
     <script src="js/classes.js"></script>
     <script src="js/powers.js"></script>
@@ -283,6 +334,7 @@
     <script src="js/heritages.js"></script>
     <script src="js/ancestries.js"></script>
     <script src="js/arts.js"></script>
+    <script src="js/kits.js"></script>
 
     <br/><br/>
     <footer>
@@ -294,8 +346,6 @@
         - no option to filter by non-core options (with exception of Species and Arts we ignore non-core material currently)
         <br/>
         - sorting can only toggle between alphabetical ascending and descending, it cannot revert to initial ordering (or sort numerically, resulting in things like levels going 1, 10, 13, 15, 17, 2, 20, 3, 4, etc)
-        <br/>
-        - power display is barebones, no special formatting / colours, doesn't even conditionally show Hit/Defense/Effect/Miss lines depending on if the power actually has them, just displays all at once
         <br/>
         - Species has no option to show more details (and should probably show html converted from the Advanced Options markdown) in the same way we show cruxes and classes
         <br/>
@@ -312,11 +362,7 @@
         <br/>
         - cannot run locally like 4e Offline Compendium due to browser security protections avoiding the loading of json files from local filesystem
         <br/>
-        - kits, animal companions, etc not started yet
-        <br/>
-        - currently depends on user grabbing the xslx from the Orcus github, saving as csv, then converting that csv to json via the csv_to_json.py script to update data.
-        <br/>
-        - currently the html pages for the class summaries are not yet automated and involves grabbing the "Class and Powers" markdown from the Orcus project, copying just the Class portion, converting to html, applying the github markdown css and loading that html file in the background. needs automation or some way of parsing the markdown?
+        - some elements of Orcus still need manual intervention to update (e.g. no automation of xslx to csv, some data like cruxes and kits had to be hand-entered due to lack of xslx, need to check diffs on Orcus markdown to see when they've changed)
         <br/>
         - no way to easily jump from disciplines listed on class tab to searching for just that discipline on power (the Class Disciplines should act as a link that autofills a search)
         <br/>

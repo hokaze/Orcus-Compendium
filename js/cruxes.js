@@ -3,7 +3,7 @@
 // first add an event listener for page load
 document.addEventListener( "DOMContentLoaded", get_crux_json_data, false ); // fires the get method on page load
 
-var artData = {};
+var cruxData = {};
 
 // this function is in the event listener and will execute on page load
 function get_crux_json_data()
@@ -51,7 +51,7 @@ function append_crux_json(crux_data)
     });
 }
 
-// search on crux table by name, role, tradition, etc
+// search on crux table
 function searchCruxTable(searchInput, column)
 {    
     // revised for multiple search

@@ -76,7 +76,7 @@ function append_power_json(power_data)
     });
 }
 
-// search on Power table by name, role, tradition, etc
+// search on Power table
 function searchPowerTable(searchInput, column)
 {    
     // revised for multiple search
