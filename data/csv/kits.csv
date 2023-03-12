@@ -1,0 +1,26 @@
+Name,Description,Requirements,Lv 1 Feature,Lv 5 Feature,Lv 10 Feature,Associated Discipline
+Binds Familiar,"A small, intelligent creature is your companion.",,Spirit Friend,Combat Assistant,Speedy Summons,Strong Bidding
+Brews Poisons,You can prepare poisons each day to use with your attacks.,,Poison Kit,Rapid Poison,Vicious Poison,Blades in the Dark
+Channels Godmind,"Through force of will and a connection to a higher intelligence, you gain power.",,Psi Focus,Mantle,Focused,Third Mind
+Charms Animal,"A large, powerful animal is your companion.",,Animal Companion,Combat Ally,Call of the Wild,Strong Bidding
+Conjures Fiends,You can summon and control infernal beings.,,Enduring Summons,Far Call,Careful Contract,Cup of Brimstone
+Dabbles in Commanding,Commander multiclass.,"You cannot take this kit if you belong to the Commander class, or if you already have a secondary class.",Called to Service,Commander Skills,Stratagem Research,Angel’s Trumpet OR Golden Lion
+Dabbles in Exemplary Combat,Exemplar multiclass.,"You cannot take this kit if you belong to the Exemplar class, or if you already have a secondary class.",Buckle Your Swashes,Exemplary Skills,Bide Your Time,Rapier’s Point OR Blades in the Dark
+Dabbles in Guarding,Guardian multiclass.,"You cannot take this kit if you belong to the Guardian class, or if you already have a secondary class.",Protective,Guardian Skills,Blocker,Art of War OR Juggernautical
+Dabbles in Harlequinry,Harlequin multiclass.,"You cannot take this kit if you belong to the Harlequin class, or if you already have a secondary class.",The Comedian,Harlequin Skills,All About the Timing,Last Laugh
+Dabbles in Mageblading,Mageblade multiclass.,"You cannot take this kit if you belong to the Mageblade class, or if you already have a secondary class.",Ensorcelled Weapon,Mageblade Skills,Brief Shield,Elemental Flux OR Veiled Moon
+Dabbles in Priesthood,Priest multiclass.,"You cannot take this kit if you belong to the Priest class, or if you already have a secondary class.",Part-Time Medic,Priest Skills,Divine Blessing,Angel’s Trumpet
+Dabbles in Reaping,Reaper multiclass.,"You cannot take this kit if you belong to the Reaper class, or if you already have a secondary class.",Spirit’s Mantle,Reaper Skills,Cultivator,Starfall
+Dabbles in Sylvanry,Sylvan multiclass.,"You cannot take this kit if you belong to the Sylvan class, or if you already have a secondary class.",Spirit’s Mantle,Sylvan Skills,Favored Terrain,Red in Tooth and Claw OR Strong Bidding OR Frontline Fighting
+Dabbles in Wizardy,Magician multiclass.,"You cannot take this kit if you belong to the Magician class, or if you already have a secondary class.",Magician’s Apprentice,Magician Skills,Magical Tricks,Spells of Ice and Fire OR Cup of Brimstone OR Puppeteer’s String
+Eats Monster Hearts,You can replace your powers with those of monsters you defeat.,None,Consume Strength,(Unnamed Lv 5 Feature),(Unnamed Lv 10 Feature),Red in Tooth and Claw
+Embodies Charisma,You are a natural leader.,None,Commanding Presence,People’s Hero,Presence of Leadership,Angel’s Trumpet
+Embodies Intelligence,"You are instinctively clever, able to appraise a situation quickly.",None,Priority Target,Focused Expertise,Surgical Precision,High Cunning
+Embodies Speed,"You are quick and agile, mobile whatever the terrain.",None,Power to Weight Ratio,Speed Vault,Split-Slide,Born to Run
+Embodies Strength,"You are a pillar of strength, tough and powerful.",None,Full Torque,No Time for Pain,Comical Reaction,Juggernautical
+Sculpts Their Body,"You can manipulate your own form – stretching, shaping and warping it as you need.",None,Malleable Form,Adaptable Body,Reflexive Shaper,"Deep, Dark, Truthful Mirror"
+Takes Bestial Form,"You can turn into a fearsome animal, and fight in that form.",None,Wild Shape,Stubborn Beast,Writhing Transformation,Red in Tooth and Claw
+Worships the God of Life,"You worship a god devoted to life and healing, and gain their blessings.",None,Channel Divinity – Guidance,Disciple of Life,Towards the Light,Radiant Dawn
+Worships the God of Peace,"You worship a god devoted to peace and protection, and gain their blessings.",None,Channel Divinity – Light Ward,Disciple of Peace,Calming Presence,Angel’s Trumpet OR High Cunning
+Worships the God of Tyranny,"You worship a god devoted to domination and pain, and gain their blessings.",None,Channel Divinity – Spur On,Disciple of Tyranny,Dig Deeper,Puppeteer’s Strings
+Worships the God of War,"You worship a god devoted to conflict and combat, and gain their blessings.",None,Channel Divinity – Shielded Soul,Disciple of War,Brothers in Arms,Art of War

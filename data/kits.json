@@ -1,0 +1,227 @@
+{
+    "0": {
+        "Name": "Binds Familiar",
+        "Description": "A small, intelligent creature is your companion.",
+        "Requirements": "",
+        "Lv 1 Feature": "Spirit Friend",
+        "Lv 5 Feature": "Combat Assistant",
+        "Lv 10 Feature": "Speedy Summons",
+        "Associated Discipline": "Strong Bidding"
+    },
+    "1": {
+        "Name": "Brews Poisons",
+        "Description": "You can prepare poisons each day to use with your attacks.",
+        "Requirements": "",
+        "Lv 1 Feature": "Poison Kit",
+        "Lv 5 Feature": "Rapid Poison",
+        "Lv 10 Feature": "Vicious Poison",
+        "Associated Discipline": "Blades in the Dark"
+    },
+    "2": {
+        "Name": "Channels Godmind",
+        "Description": "Through force of will and a connection to a higher intelligence, you gain power.",
+        "Requirements": "",
+        "Lv 1 Feature": "Psi Focus",
+        "Lv 5 Feature": "Mantle",
+        "Lv 10 Feature": "Focused",
+        "Associated Discipline": "Third Mind"
+    },
+    "3": {
+        "Name": "Charms Animal",
+        "Description": "A large, powerful animal is your companion.",
+        "Requirements": "",
+        "Lv 1 Feature": "Animal Companion",
+        "Lv 5 Feature": "Combat Ally",
+        "Lv 10 Feature": "Call of the Wild",
+        "Associated Discipline": "Strong Bidding"
+    },
+    "4": {
+        "Name": "Conjures Fiends",
+        "Description": "You can summon and control infernal beings.",
+        "Requirements": "",
+        "Lv 1 Feature": "Enduring Summons",
+        "Lv 5 Feature": "Far Call",
+        "Lv 10 Feature": "Careful Contract",
+        "Associated Discipline": "Cup of Brimstone"
+    },
+    "5": {
+        "Name": "Dabbles in Commanding",
+        "Description": "Commander multiclass.",
+        "Requirements": "You cannot take this kit if you belong to the Commander class, or if you already have a secondary class.",
+        "Lv 1 Feature": "Called to Service",
+        "Lv 5 Feature": "Commander Skills",
+        "Lv 10 Feature": "Stratagem Research",
+        "Associated Discipline": "Angel\u2019s Trumpet OR Golden Lion"
+    },
+    "6": {
+        "Name": "Dabbles in Exemplary Combat",
+        "Description": "Exemplar multiclass.",
+        "Requirements": "You cannot take this kit if you belong to the Exemplar class, or if you already have a secondary class.",
+        "Lv 1 Feature": "Buckle Your Swashes",
+        "Lv 5 Feature": "Exemplary Skills",
+        "Lv 10 Feature": "Bide Your Time",
+        "Associated Discipline": "Rapier\u2019s Point OR Blades in the Dark"
+    },
+    "7": {
+        "Name": "Dabbles in Guarding",
+        "Description": "Guardian multiclass.",
+        "Requirements": "You cannot take this kit if you belong to the Guardian class, or if you already have a secondary class.",
+        "Lv 1 Feature": "Protective",
+        "Lv 5 Feature": "Guardian Skills",
+        "Lv 10 Feature": "Blocker",
+        "Associated Discipline": "Art of War OR Juggernautical"
+    },
+    "8": {
+        "Name": "Dabbles in Harlequinry",
+        "Description": "Harlequin multiclass.",
+        "Requirements": "You cannot take this kit if you belong to the Harlequin class, or if you already have a secondary class.",
+        "Lv 1 Feature": "The Comedian",
+        "Lv 5 Feature": "Harlequin Skills",
+        "Lv 10 Feature": "All About the Timing",
+        "Associated Discipline": "Last Laugh"
+    },
+    "9": {
+        "Name": "Dabbles in Mageblading",
+        "Description": "Mageblade multiclass.",
+        "Requirements": "You cannot take this kit if you belong to the Mageblade class, or if you already have a secondary class.",
+        "Lv 1 Feature": "Ensorcelled Weapon",
+        "Lv 5 Feature": "Mageblade Skills",
+        "Lv 10 Feature": "Brief Shield",
+        "Associated Discipline": "Elemental Flux OR Veiled Moon"
+    },
+    "10": {
+        "Name": "Dabbles in Priesthood",
+        "Description": "Priest multiclass.",
+        "Requirements": "You cannot take this kit if you belong to the Priest class, or if you already have a secondary class.",
+        "Lv 1 Feature": "Part-Time Medic",
+        "Lv 5 Feature": "Priest Skills",
+        "Lv 10 Feature": "Divine Blessing",
+        "Associated Discipline": "Angel\u2019s Trumpet"
+    },
+    "11": {
+        "Name": "Dabbles in Reaping",
+        "Description": "Reaper multiclass.",
+        "Requirements": "You cannot take this kit if you belong to the Reaper class, or if you already have a secondary class.",
+        "Lv 1 Feature": "Spirit\u2019s Mantle",
+        "Lv 5 Feature": "Reaper Skills",
+        "Lv 10 Feature": "Cultivator",
+        "Associated Discipline": "Starfall"
+    },
+    "12": {
+        "Name": "Dabbles in Sylvanry",
+        "Description": "Sylvan multiclass.",
+        "Requirements": "You cannot take this kit if you belong to the Sylvan class, or if you already have a secondary class.",
+        "Lv 1 Feature": "Spirit\u2019s Mantle",
+        "Lv 5 Feature": "Sylvan Skills",
+        "Lv 10 Feature": "Favored Terrain",
+        "Associated Discipline": "Red in Tooth and Claw OR Strong Bidding OR Frontline Fighting"
+    },
+    "13": {
+        "Name": "Dabbles in Wizardy",
+        "Description": "Magician multiclass.",
+        "Requirements": "You cannot take this kit if you belong to the Magician class, or if you already have a secondary class.",
+        "Lv 1 Feature": "Magician\u2019s Apprentice",
+        "Lv 5 Feature": "Magician Skills",
+        "Lv 10 Feature": "Magical Tricks",
+        "Associated Discipline": "Spells of Ice and Fire OR Cup of Brimstone OR Puppeteer\u2019s String"
+    },
+    "14": {
+        "Name": "Eats Monster Hearts",
+        "Description": "You can replace your powers with those of monsters you defeat.",
+        "Requirements": "None",
+        "Lv 1 Feature": "Consume Strength",
+        "Lv 5 Feature": "(Unnamed Lv 5 Feature)",
+        "Lv 10 Feature": "(Unnamed Lv 10 Feature)",
+        "Associated Discipline": "Red in Tooth and Claw"
+    },
+    "15": {
+        "Name": "Embodies Charisma",
+        "Description": "You are a natural leader.",
+        "Requirements": "None",
+        "Lv 1 Feature": "Commanding Presence",
+        "Lv 5 Feature": "People\u2019s Hero",
+        "Lv 10 Feature": "Presence of Leadership",
+        "Associated Discipline": "Angel\u2019s Trumpet"
+    },
+    "16": {
+        "Name": "Embodies Intelligence",
+        "Description": "You are instinctively clever, able to appraise a situation quickly.",
+        "Requirements": "None",
+        "Lv 1 Feature": "Priority Target",
+        "Lv 5 Feature": "Focused Expertise",
+        "Lv 10 Feature": "Surgical Precision",
+        "Associated Discipline": "High Cunning"
+    },
+    "17": {
+        "Name": "Embodies Speed",
+        "Description": "You are quick and agile, mobile whatever the terrain.",
+        "Requirements": "None",
+        "Lv 1 Feature": "Power to Weight Ratio",
+        "Lv 5 Feature": "Speed Vault",
+        "Lv 10 Feature": "Split-Slide",
+        "Associated Discipline": "Born to Run"
+    },
+    "18": {
+        "Name": "Embodies Strength",
+        "Description": "You are a pillar of strength, tough and powerful.",
+        "Requirements": "None",
+        "Lv 1 Feature": "Full Torque",
+        "Lv 5 Feature": "No Time for Pain",
+        "Lv 10 Feature": "Comical Reaction",
+        "Associated Discipline": "Juggernautical"
+    },
+    "19": {
+        "Name": "Sculpts Their Body",
+        "Description": "You can manipulate your own form \u2013 stretching, shaping and warping it as you need.",
+        "Requirements": "None",
+        "Lv 1 Feature": "Malleable Form",
+        "Lv 5 Feature": "Adaptable Body",
+        "Lv 10 Feature": "Reflexive Shaper",
+        "Associated Discipline": "Deep, Dark, Truthful Mirror"
+    },
+    "20": {
+        "Name": "Takes Bestial Form",
+        "Description": "You can turn into a fearsome animal, and fight in that form.",
+        "Requirements": "None",
+        "Lv 1 Feature": "Wild Shape",
+        "Lv 5 Feature": "Stubborn Beast",
+        "Lv 10 Feature": "Writhing Transformation",
+        "Associated Discipline": "Red in Tooth and Claw"
+    },
+    "21": {
+        "Name": "Worships the God of Life",
+        "Description": "You worship a god devoted to life and healing, and gain their blessings.",
+        "Requirements": "None",
+        "Lv 1 Feature": "Channel Divinity \u2013 Guidance",
+        "Lv 5 Feature": "Disciple of Life",
+        "Lv 10 Feature": "Towards the Light",
+        "Associated Discipline": "Radiant Dawn"
+    },
+    "22": {
+        "Name": "Worships the God of Peace",
+        "Description": "You worship a god devoted to peace and protection, and gain their blessings.",
+        "Requirements": "None",
+        "Lv 1 Feature": "Channel Divinity \u2013 Light Ward",
+        "Lv 5 Feature": "Disciple of Peace",
+        "Lv 10 Feature": "Calming Presence",
+        "Associated Discipline": "Angel\u2019s Trumpet OR High Cunning"
+    },
+    "23": {
+        "Name": "Worships the God of Tyranny",
+        "Description": "You worship a god devoted to domination and pain, and gain their blessings.",
+        "Requirements": "None",
+        "Lv 1 Feature": "Channel Divinity \u2013 Spur On",
+        "Lv 5 Feature": "Disciple of Tyranny",
+        "Lv 10 Feature": "Dig Deeper",
+        "Associated Discipline": "Puppeteer\u2019s Strings"
+    },
+    "24": {
+        "Name": "Worships the God of War",
+        "Description": "You worship a god devoted to conflict and combat, and gain their blessings.",
+        "Requirements": "None",
+        "Lv 1 Feature": "Channel Divinity \u2013 Shielded Soul",
+        "Lv 5 Feature": "Disciple of War",
+        "Lv 10 Feature": "Brothers in Arms",
+        "Associated Discipline": "Art of War"
+    }
+}

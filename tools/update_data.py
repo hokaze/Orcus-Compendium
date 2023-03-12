@@ -35,6 +35,7 @@ def update_json():
     csv_to_json.csv_to_json("../data/csv/cruxes.csv", "../data/cruxes.json")
     csv_to_json.csv_to_json("../data/csv/heritages.csv", "../data/heritages.json")
     csv_to_json.csv_to_json("../data/csv/powers.csv", "../data/powers.json")
+    csv_to_json.csv_to_json("../data/csv/kits.csv", "../data/kits.json")
     
     print ("All JSON files updated")
 
