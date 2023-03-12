@@ -50,6 +50,12 @@ function append_power_json(power_data)
             return;
         }
         
+        // ignore Warrior class powers as we're not including Warrior as a class yet
+        if ( power_data[key]["Source"] == "Class" && power_data[key]["List"] == "Warrior")
+        {
+            return;
+        }
+        
         // ignore Advanced Combat, Bond and Ancestry power options for now
         if ( power_data[key]["List"] == "Advanced Combat" || power_data[key]["Source"] == "Bonds" || power_data[key]["List"] == "Ancestries")
         {
@@ -70,30 +76,49 @@ function append_power_json(power_data)
     });
 }
 
-// search on power table by name, role, tradition, etc
+// search on Power table by name, role, tradition, etc
 function searchPowerTable(searchInput, column)
-{
-    var input, filter, table, tr, td, i, txtValue;
+{    
+    // revised for multiple search
+    var input_name = document.getElementById("searchPowerName");
+    var input_source = document.getElementById("searchPowerSource");
+    var input_list = document.getElementById("searchPowerList");
+    var input_category = document.getElementById("searchPowerCategory");
+    var input_frequency = document.getElementById("searchPowerFrequency");
+    var input_tier = document.getElementById("searchPowerTier");
+    var input_tags = document.getElementById("searchPowerTags");
     
-    input = document.getElementById(searchInput);
-    filter = input.value.toUpperCase();
-    table = document.getElementById("powerTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++)
+    var table = document.getElementById("powerTable");
+    
+    let filter_name = input_name.value.toUpperCase();
+    let filter_source = input_source.value.toUpperCase();
+    let filter_list = input_list.value.toUpperCase();
+    let filter_category = input_category.value.toUpperCase();
+    let filter_frequency = input_frequency.value.toUpperCase();
+    let filter_tier = input_tier.value.toUpperCase();
+    let filter_tags = input_tags.value.toUpperCase();
+    let tr = table.rows;
+    
+    // start at row 1, not row 0, as otherwise we can filter out the search headers, not just the actual data rows!
+    for (let i = 1; i < tr.length; i++)
     {
-        td = tr[i].getElementsByTagName("td")[column];
-        if (td)
+        td = tr[i].cells;
+        td_name = td[0].innerText;
+        td_source = td[1].innerText;
+        td_list = td[2].innerText;
+        td_category = td[3].innerText;
+        td_frequency = td[4].innerText;
+        td_tier = td[5].innerText;
+        td_tags = td[6].innerText;
+        
+        if (td_name.toUpperCase().indexOf(filter_name) > -1 && td_source.toUpperCase().indexOf(filter_source) > -1 && td_list.toUpperCase().indexOf(filter_list) > -1 && td_category.toUpperCase().indexOf(filter_category) > -1 && td_frequency.toUpperCase().indexOf(filter_frequency) > -1 && td_tier.toUpperCase().indexOf(filter_tier) > -1 && td_tags.toUpperCase().indexOf(filter_tags) > -1)
         {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1)
-            {
-                tr[i].style.display = "";
-            }
-            else
-            {
-                tr[i].style.display = "none";
-            }
-        }       
+            tr[i].style.display = "";
+        }
+        else
+        {
+            tr[i].style.display = "none";
+        }
     }
 }
 

@@ -32,7 +32,7 @@ function get_ancestry_json_data()
     xmlhttp.send() // executed in onreadystatechange section on request completion
 }
 
-// this function appends the json data to the table 'classTable'
+// this function appends the json data to the table 'speciesTable'
 function append_ancestry_json(species_data)
 {
     // note that Humanity isn't actually included in the xlsx or csv files, so we need to add a placeholder entry onto the json data for it here, as Humanity is supposed to use Cruxes and Heritages (which annoyingly aren't in any spreadsheets) instead as the two halves of their Ancestry
@@ -77,28 +77,45 @@ function append_ancestry_json(species_data)
     });
 }
 
-// search on species table by name, description (origin), ability scores, speed, dark vision
+// search on species table by name, role, tradition, etc
 function searchSpeciesTable(searchInput, column)
-{
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById(searchInput);
-    filter = input.value.toUpperCase();
-    table = document.getElementById("speciesTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++)
+{    
+    // revised for multiple search
+    var input_name = document.getElementById("searchSpeciesName");
+    var input_description = document.getElementById("searchSpeciesDescription");
+    var input_ability1 = document.getElementById("searchSpeciesAbility1");
+    var input_ability2 = document.getElementById("searchSpeciesAbility2");
+    var input_speed = document.getElementById("searchSpeciesSpeed");
+    var input_darkvision = document.getElementById("searchSpeciesDarkvision");
+    
+    var table = document.getElementById("speciesTable");
+    
+    let filter_name = input_name.value.toUpperCase();
+    let filter_description = input_description.value.toUpperCase();
+    let filter_ability1 = input_ability1.value.toUpperCase();
+    let filter_ability2 = input_ability2.value.toUpperCase();
+    let filter_speed = input_speed.value.toUpperCase();
+    let filter_darkvision = input_darkvision.value.toUpperCase();
+    let tr = table.rows;
+    
+    // start at row 1, not row 0, as otherwise we can filter out the search headers, not just the actual data rows!
+    for (let i = 1; i < tr.length; i++)
     {
-        td = tr[i].getElementsByTagName("td")[column];
-        if (td)
+        td = tr[i].cells;
+        td_name = td[0].innerText;
+        td_description = td[1].innerText;
+        td_ability1 = td[2].innerText;
+        td_ability2 = td[3].innerText;
+        td_speed = td[4].innerText;
+        td_darkvision = td[5].innerText;
+        
+        if (td_name.toUpperCase().indexOf(filter_name) > -1 && td_description.toUpperCase().indexOf(filter_description) > -1 && td_ability1.toUpperCase().indexOf(filter_ability1) > -1 && td_ability2.toUpperCase().indexOf(filter_ability2) > -1 && td_speed.toUpperCase().indexOf(filter_speed) > -1 && td_darkvision.toUpperCase().indexOf(filter_darkvision) > -1)
         {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1)
-            {
-                tr[i].style.display = "";
-            }
-            else
-            {
-                tr[i].style.display = "none";
-            }
-        }       
+            tr[i].style.display = "";
+        }
+        else
+        {
+            tr[i].style.display = "none";
+        }
     }
 }
