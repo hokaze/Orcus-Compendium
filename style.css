@@ -94,7 +94,7 @@ a
     padding-top: 50px; /* Location of the box */
     left: 0;
     top: 0;
-    min-height: 100%;
+    min-height: 120%;
     width: 100%; /* Full width */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.5); /* Black w/ opacity */

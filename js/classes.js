@@ -61,8 +61,8 @@ function append_class_json(class_data)
         var class_name = class_data[key]["Name"];
         // for the class, we add a modal dialogue to show more details on the class that opens the markdown-to-html file with appropriate css
         tr.innerHTML = '<td>' + '<a href="#" onclick="showClassInfo(\'' + class_name + '\')">' + class_name + '</a>' + '</td>' +
-        '<td>' + class_data[key]["Tradition"] + '</td>' +
-        '<td>' + class_data[key]["Role"] + '</td>' +
+        '<td>' + '<a href="#" onclick="showClassInfo(\'misc/Tradition\')">' + class_data[key]["Tradition"] + '</a>' + '</td>' +
+        '<td>' + '<a href="#" onclick="showClassInfo(\'misc/Role\')">' + class_data[key]["Role"] + '</a>' + '</td>' +
         '<td>' + class_data[key]["Key Ability"] + '</td>' +
         '<td>' + class_data[key]["Class Disciplines - List"] + '</td>';
         table.appendChild(tr);

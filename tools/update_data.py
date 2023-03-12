@@ -58,19 +58,24 @@ def update_html():
     markdown_to_html.markdown_to_html("# Reaper", "../data/markdown-to-html/markdown/Orcus Classes and Powers - current.md", "../data/markdown-to-html/class/Reaper.html")
     markdown_to_html.markdown_to_html("# Sylvan", "../data/markdown-to-html/markdown/Orcus Classes and Powers - current.md", "../data/markdown-to-html/class/Sylvan.html")
     
+    # Traditions and Roles are also stored in the class folder, under misc
+    # need to use the tables extension, otherwise the table on roles showing all the classes against roles and traditions doesn't get converted to a html table
+    markdown_to_html.markdown_to_html("### Tradition", "../data/markdown-to-html/markdown/Orcus Classes and Powers - current.md", "../data/markdown-to-html/class/misc/Tradition.html")
+    markdown_to_html.markdown_to_html("### Role", "../data/markdown-to-html/markdown/Orcus Classes and Powers - current.md", "../data/markdown-to-html/class/misc/Role.html")
+    
     # Cruxes
-    markdown_to_html.markdown_to_html("### Betrayer", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/class/Betrayer.html")
-    markdown_to_html.markdown_to_html("### Cut Off", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/class/Cut Off.html")
-    markdown_to_html.markdown_to_html("### Destined", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/class/Destined.html")
-    markdown_to_html.markdown_to_html("### Escaped", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/class/Escaped.html")
-    markdown_to_html.markdown_to_html("### Heir", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/class/Heir.html")
-    markdown_to_html.markdown_to_html("### Hero", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/class/Hero.html")
-    markdown_to_html.markdown_to_html("### Ninth Life", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/class/Ninth Life.html")
-    markdown_to_html.markdown_to_html("### Otherworldly", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/class/Otherworldly.html")
-    markdown_to_html.markdown_to_html("### Returned", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/class/Returned.html")
-    markdown_to_html.markdown_to_html("### Sage", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/class/Sage.html")
-    markdown_to_html.markdown_to_html("### Third Eyed", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/class/Third Eyed.html")
-    markdown_to_html.markdown_to_html("### Wild Child", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/class/Wild Child.html")
+    markdown_to_html.markdown_to_html("### Betrayer", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Betrayer.html")
+    markdown_to_html.markdown_to_html("### Cut Off", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Cut Off.html")
+    markdown_to_html.markdown_to_html("### Destined", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Destined.html")
+    markdown_to_html.markdown_to_html("### Escaped", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Escaped.html")
+    markdown_to_html.markdown_to_html("### Heir", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Heir.html")
+    markdown_to_html.markdown_to_html("### Hero", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Hero.html")
+    markdown_to_html.markdown_to_html("### Ninth Life", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Ninth Life.html")
+    markdown_to_html.markdown_to_html("### Otherworldly", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Otherworldly.html")
+    markdown_to_html.markdown_to_html("### Returned", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Returned.html")
+    markdown_to_html.markdown_to_html("### Sage", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Sage.html")
+    markdown_to_html.markdown_to_html("### Third Eyed", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Third Eyed.html")
+    markdown_to_html.markdown_to_html("### Wild Child", "../data/markdown-to-html/markdown/Orcus Player Options - current.md", "../data/markdown-to-html/crux/Wild Child.html")
     
     print ("All HTML files updated")
 

@@ -48,7 +48,8 @@ def markdown_to_html(header, input_path, output_path):
                 
     input_file.close()
     
-    html = markdown.markdown(input_markdown)
+    # need to use the tables extension, otherwise the table on roles showing all the classes against roles and traditions doesn't get converted to a html table
+    html = markdown.markdown(input_markdown, extensions=['markdown.extensions.tables'])
     
     with open(output_path, "w") as output_file:
         output_file.write(html)
