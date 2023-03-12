@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# csv_to_json.py -i [input csv] -o [output json]
 
 # quick and dirty script to convert csv from orcus project xlsx into json so we can load into the web page directly as running html locally forbids direct filesystem access
 
@@ -7,6 +8,7 @@
 import csv
 import json
 import sys, getopt
+
 
 def csv_to_json(inputCSV, outputJSON):
      
@@ -33,13 +35,15 @@ def csv_to_json(inputCSV, outputJSON):
     with open(outputJSON, 'w', encoding='utf-8') as jsonf:
         jsonf.write(json.dumps(data, indent=4))
  
+ 
 def main(argv):
     
-    usage_string = 'Usage: csv_to_json.py -i <input csv> -o <output json>'
-    inputCSV = ''
-    outputJSON = ''
+    usage_string = "Usage: csv_to_json.py -i [input csv] -o [output json]"
+    
+    inputCSV = ""
+    outputJSON = ""
    
-    opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
+    opts, args = getopt.getopt(argv, "hi:o:", ["ifile=", "ofile="])
    
     for opt, arg in opts:
         if opt == '-h':
@@ -56,6 +60,7 @@ def main(argv):
     else:
         print ("Missing arguments")
         print (usage_string)
+
 
 if __name__ == "__main__":
     main(sys.argv[1:])

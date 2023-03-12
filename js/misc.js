@@ -93,3 +93,20 @@ function sortTableByColumn(table, n)
         }
     }
 }
+
+function hideModal ()
+{
+    var modalDiv = document.getElementById("modalShowInfo");
+    modalDiv.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event)
+{
+    var modalDiv = document.getElementById("modalShowInfo");
+    
+    if (event.target == modalDiv)
+    {
+        modalDiv.style.display = "none";
+    }
+}

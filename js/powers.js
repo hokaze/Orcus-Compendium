@@ -130,7 +130,9 @@ function showPowerInfo (powerID)
     var modalDiv = document.getElementById("modalShowInfo");
     var contentDiv = document.getElementById("showInfoContent");
     
-    contentDiv.innerHTML = "<h3>" + power_data[powerID]["Name"] + "</h3>" +
+    // Old display - keeping this in case I decide to do a toggle between the basic white or 4e style styling?
+    
+    /*contentDiv.innerHTML = "<h3>" + power_data[powerID]["Name"] + "</h3>" +
     "<h4>" + power_data[powerID]["List"] + "</h4>" +
     "<p><i>" + power_data[powerID]["Flavor"] + "</i>" + "<br/>" +
     "<br/><strong>" + power_data[powerID]["Frequency"] + " " + power_data[powerID]["Category"] + " " + power_data[powerID]["Tier"] + " (" + power_data[powerID]["Action"] + ") - " + power_data[powerID]["Tags"] + "</strong>" +
@@ -141,7 +143,84 @@ function showPowerInfo (powerID)
     "<br/><strong>Miss:</strong> " + power_data[powerID]["Miss"] +
     "<br/><strong>Effect:</strong> " + power_data[powerID]["Effect"] +
     "<br/><strong>Special:</strong> " + power_data[powerID]["Special"] +
-    "</p>";
+    "</p>";*/
     
+    // Experimental display, make powers look more like 4e power cards
+    
+    // set power card colours
+    var colour_header = "Gold"; // fallback if power type not recognised, usually used for item powers/cards
+    const colour_atwill = "#619769";
+    const colour_encounter = "#961334";
+    const colour_daily = "#4d4d4f";
+    const colour_highlight = "#dddccc"; // used for flavour text and on alternating lines after the attack line for increased readability
+    
+    if (power_data[powerID]["Frequency"] == "At-Will")
+    {
+        colour_header = colour_atwill;
+    }
+    else if (power_data[powerID]["Frequency"] == "Encounter")
+    {
+        colour_header = colour_encounter;
+    }
+    else if (power_data[powerID]["Frequency"] == "Daily")
+    {
+        colour_header = colour_daily;
+    }
+    
+    // header (power name on left, class and level/tier on right)
+    contentDiv.innerHTML = '<div style="background-color:' + colour_header +';color:#FFFFFF;padding:1px 5px 0px 5px;min-height:40px;">' + '<div style="font-weight:bold;font-size:20px;float:left;">' + power_data[powerID]["Name"] + '</div>' + '<div style="font-size:20px;float:right;">' + power_data[powerID]["List"] + ' ' + power_data[powerID]["Tier"] + '</div></div>';
+    
+    // flavour line - show placeholder if no flavour text yet
+    var flavour_text = power_data[powerID]["Flavor"] || '(no flavour text for this power yet)';
+    contentDiv.innerHTML += '<div style="background-color:' + colour_highlight + ';font-style:italic;padding: 1px 0px 3px 5px;min-height:20px">' + flavour_text + '</div>';
+    
+    // power type/frequency, keywords/tags, action and range lines
+    contentDiv.innerHTML += '<div style="padding-left:5px;"><span style="font-weight:bold;">'
+    + power_data[powerID]["Frequency"] + '</span> - <span style="font-weight:bold;">' + power_data[powerID]["Tags"] +
+    '</span><br><span style="font-weight:bold;">' + power_data[powerID]["Action"] + '</span> - <span style="font-weight:bold;">' + power_data[powerID]["Range"] + ' ' + '</span>' + power_data[powerID]["Range Details"] + '</div>';
+    
+    // conditional lines, only print if power has Trigger, Hit, Miss, Effect, Special lines, and alternate background colour for readability
+    var alt_bg = 1;
+    if (power_data[powerID]["Trigger"])
+    {
+        alt_bg = powerCardLines (contentDiv, alt_bg, colour_highlight, "Trigger", power_data[powerID]["Trigger"]);
+    }
+    if (power_data[powerID]["Attack"])
+    {
+        alt_bg = powerCardLines (contentDiv, alt_bg, colour_highlight, "Attack", power_data[powerID]["Attack"] + " vs " + power_data[powerID]["Defense"]);
+    }
+    if (power_data[powerID]["Miss"])
+    {
+        alt_bg = powerCardLines (contentDiv, alt_bg, colour_highlight, "Miss", power_data[powerID]["Miss"]);
+    }
+    if (power_data[powerID]["Effect"])
+    {
+        alt_bg = powerCardLines (contentDiv, alt_bg, colour_highlight, "Effect", power_data[powerID]["Effect"]);
+    }
+    if (power_data[powerID]["Special"])
+    {
+        alt_bg = powerCardLines (contentDiv, alt_bg, colour_highlight, "Special", power_data[powerID]["Special"]);
+    }
+    
+    // show modal with replaced html
     modalDiv.style.display = "block";
+}
+
+// helper function to print power card lines + alternate background colours for readability
+function powerCardLines (contentDiv, alt_bg, colour_highlight, label, details)
+{
+    if (alt_bg)
+    {
+        contentDiv.innerHTML += '<div style="background-color:' + colour_highlight + ';padding:0px 0px 0px 5px;"><span style="font-weight:bold;">'  + label + ': ' + '</span>' + details + '</div>';
+        
+        alt_bg = 0;
+    }
+    else
+    {
+        contentDiv.innerHTML += '<div style="padding:0px 0px 0px 5px;"><span style="font-weight:bold;">' + label + ': ' + '</span>' + details + '</div>';
+        
+        alt_bg = 1;
+    }
+    
+    return alt_bg;
 }

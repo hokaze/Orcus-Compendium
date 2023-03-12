@@ -43,27 +43,35 @@
 
     <!-- Class table search -->
     <div id="Classes" class="tabcontent">
+    
+      <!-- datalists to allow dropdown options in search, populated at same time table is -->
+      <datalist id="dlClassName"></datalist>
+      <datalist id="dlClassTradition"></datalist>
+      <datalist id="dlClassRole"></datalist>
+      <datalist id="dlClassKeyAbility"></datalist>
+      <datalist id="dlClassDisciplines"></datalist>
+    
       <table id="classTable" class="filterTable">
         <!-- searchable headers, note that you can't currently filter by multiple inputs, only the last search applies -->
         <tr class="header">
           <th>
-            <input type="search" id="searchClassName" oninput="searchClassTable('searchClassName',0)" placeholder="Name" title="Search by Class Name">
+            <input type="search" id="searchClassName" oninput="searchClassTable('searchClassName',0)" placeholder="Name" title="Search by Class Name" list="dlClassName">
             <button onclick="sortTableByColumn('classTable','0')">Sort</button>
           </th>
           <th>
-            <input type="search" id="searchClassTradition" oninput="searchClassTable('searchClassTradition',1)" placeholder="Tradition" title="Search by Tradition">
+            <input type="search" id="searchClassTradition" oninput="searchClassTable('searchClassTradition',1)" placeholder="Tradition" title="Search by Tradition" list="dlClassTradition">
             <button onclick="sortTableByColumn('classTable','1')">Sort</button>
           </th>
           <th>
-            <input type="search" id="searchClassRole" oninput="searchClassTable('searchClassRole',2)" placeholder="Role" title="Search by Role">
+            <input type="search" id="searchClassRole" oninput="searchClassTable('searchClassRole',2)" placeholder="Role" title="Search by Role" list="dlClassRole">
             <button onclick="sortTableByColumn('classTable','2')">Sort</button>
           </th>
           <th>
-            <input type="search" id="searchClassKeyAbility" oninput="searchClassTable('searchClassKeyAbility',3)" placeholder="Key Ability" title="Search by Key Ability">
+            <input type="search" id="searchClassKeyAbility" oninput="searchClassTable('searchClassKeyAbility',3)" placeholder="Key Ability" title="Search by Key Ability"  list="dlClassKeyAbility">
             <button onclick="sortTableByColumn('classTable','3')">Sort</button>
           </th>
           <th>
-            <input type="search" id="searchClassDisciplines" oninput="searchClassTable('searchClassDisciplines',4)" placeholder="Class Disciplines" title="Search by Class Disciplines">
+            <input type="search" id="searchClassDisciplines" oninput="searchClassTable('searchClassDisciplines',4)" placeholder="Class Disciplines" title="Search by Class Disciplines" list="dlClassDisciplines">
             <button onclick="sortTableByColumn('classTable','4')">Sort</button>
           </th>
         </tr>
@@ -312,7 +320,7 @@
         <br/>
         - no way to easily jump from disciplines listed on class tab to searching for just that discipline on power (the Class Disciplines should act as a link that autofills a search)
         <br/>
-        - many more...but it's a start?
+        - dropdown suggestions on what to search only added to Classes for now
       </p>
     </footer>
   </body>

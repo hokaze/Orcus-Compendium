@@ -5,6 +5,12 @@ document.addEventListener( "DOMContentLoaded", get_class_json_data, false ); // 
 
 var class_data = {};
 
+var class_name_list = [];
+var class_tradition_list = [];
+var class_role_list = [];
+var class_key_ability_list = [];
+var class_disciplines_list = [];
+
 // this function is in the event listener and will execute on page load
 function get_class_json_data()
 {
@@ -60,7 +66,26 @@ function append_class_json(class_data)
         '<td>' + class_data[key]["Key Ability"] + '</td>' +
         '<td>' + class_data[key]["Class Disciplines - List"] + '</td>';
         table.appendChild(tr);
+        
+        // arrays used to enable search boxes to have dropdown lists
+        class_name_list.push(class_data[key]["Name"]);
+        class_tradition_list.push(class_data[key]["Tradition"]);
+        class_role_list.push(class_data[key]["Role"]);
+        class_key_ability_list.push(class_data[key]["Key Ability"]);
+        
+        // for class disciplines we want the dropdown suggestions to suggest individual disciplines, not the comma-separated list each class has, so we need to split it so something like Commander's "Angel’s Trumpet, Golden Lion" is instead recorded as "Angel’s Trumpet" and "Golden Lion" as distinct entries
+        class_disciplines_list.push(... class_data[key]["Class Disciplines - List"].split(", "));
     });
+    
+    // turn the lists into unique sets to avoid having the same dropdown option multiple times (e.g. multiple Leader classes normally means multiple Leader entries on class_role_list)
+    class_name_list = [...new Set(class_name_list)];
+    class_tradition_list = [...new Set(class_tradition_list)];
+    class_role_list = [...new Set(class_role_list)];
+    class_key_ability_list = [...new Set(class_key_ability_list)];
+    class_disciplines_list = [...new Set(class_disciplines_list)];
+    
+    // create + attach datalist to enable dropdown on search boxes
+    updateClassDatalist();
 }
 
 // search on class table by name, role, tradition, etc
@@ -115,19 +140,44 @@ async function showClassInfo (className)
     modalDiv.style.display = "block";
 }
 
-function hideModal ()
-{
-    var modalDiv = document.getElementById("modalShowInfo");
-    modalDiv.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event)
-{
-    var modalDiv = document.getElementById("modalShowInfo");
+function updateClassDatalist ()
+{   
+    // grab datalist elements used by search inputs
+    dl_name = document.getElementById("dlClassName");
+    dl_tradition = document.getElementById("dlClassTradition");
+    dl_role = document.getElementById("dlClassRole");
+    dl_key_ability = document.getElementById("dlClassKeyAbility");
+    dl_class_disciplines = document.getElementById("dlClassDisciplines");
     
-    if (event.target == modalDiv)
+    // loop over lists, add to datalist elements
+    for (i = 0; i < class_name_list.length; i += 1)
     {
-        modalDiv.style.display = "none";
+        var option = document.createElement("option");
+        option.value = class_name_list[i];
+        dl_name.appendChild(option);
+    }
+    for (i = 0; i < class_tradition_list.length; i += 1)
+    {
+        var option = document.createElement("option");
+        option.value = class_tradition_list[i];
+        dl_tradition.appendChild(option);
+    }
+    for (i = 0; i < class_role_list.length; i += 1)
+    {
+        var option = document.createElement("option");
+        option.value = class_role_list[i];
+        dl_role.appendChild(option);
+    }
+    for (i = 0; i < class_key_ability_list.length; i += 1)
+    {
+        var option = document.createElement("option");
+        option.value = class_key_ability_list[i];
+        dl_key_ability.appendChild(option);
+    }
+    for (i = 0; i < class_disciplines_list.length; i += 1)
+    {
+        var option = document.createElement("option");
+        option.value = class_disciplines_list[i];
+        dl_class_disciplines.appendChild(option);
     }
 }
