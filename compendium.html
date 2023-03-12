@@ -34,13 +34,13 @@
       <button id ="classTab" class="tablinks" onclick="selectTab(event, 'Classes')">Classes</button>
       <button id ="powerTab" class="tablinks" onclick="selectTab(event, 'Powers')">Powers</button>
       <button id ="cruxTab" class="tablinks" onclick="selectTab(event, 'Cruxes')">Ancestries (Cruxes)</button>
-      <button id ="heritageTab" class="tablinks" onclick="selectTab(event, 'Cruxes')">Ancestries (Heritages)</button>
+      <button id ="heritageTab" class="tablinks" onclick="selectTab(event, 'Heritages')">Ancestries (Heritages)</button>
       <button id ="speciesTab" class="tablinks" onclick="selectTab(event, 'Species')">Ancestries (Species) *</button>
       <button class="tablinks" onclick="selectTab(event, 'Kits')">Kits</button>
       <button class="tablinks" onclick="selectTab(event, 'Arts')">Arts *</button>
     </div>
 
-    <!-- WIP Proof of Concept - Class table search -->
+    <!-- Class table search -->
     <div id="Classes" class="tabcontent">
       <table id="classTable" class="filterTable">
         <!-- searchable headers, note that you can't currently filter by multiple inputs, only the last search applies -->
@@ -69,7 +69,7 @@
       </table>
     </div>
     
-    <!-- TODO: Powers -->
+    <!-- Powers -->
     <div id="Powers" class="tabcontent">
       <table id="powerTable" class="filterTable">
         <!-- searchable headers, note that you can't currently filter by multiple inputs, only the last search applies -->
@@ -108,7 +108,7 @@
       </table>
     </div>
 
-    <!-- TODO - Ancestries (Cruxes) -->
+    <!-- Ancestries (Cruxes) -->
     <div id="Cruxes" class="tabcontent">
       <p>Cruxes and Heritages are the Core option for Ancestries. For games where Species matters more than upbringing, use Ancestries (Species) instead.</p>
       <p>
@@ -118,15 +118,16 @@
         <strong>Speed:</strong> Your base walking speed is 6 squares.<br/>
         <strong>Languages:</strong> You can speak, read, and write Common and one extra language of your choice.<br/>
       </p>
+      <p>In addition to the above statistics, pick a <strong>Crux</strong> (below) and a Heritage</p>
+      
       <table id="cruxTable" class="filterTable">
-        <!-- searchable headers, note that you can't currently filter by multiple inputs, only the last search applies -->
         <tr class="header">
           <th>
             <input type="text" id="searchCruxName" onkeyup="searchCruxTable('searchCruxName',0)" placeholder="Name" title="Search by Crux Name">
             <button onclick="sortTableByColumn('cruxTable','0')">Sort</button>
           </th>
           <th>
-            <input type="text" id="searchCruxSkill" onkeyup="searchCruxTable('searchCruxSkill',1)" placeholder="Skill" title="Search by Level">
+            <input type="text" id="searchCruxSkill" onkeyup="searchCruxTable('searchCruxSkill',1)" placeholder="Skill" title="Search by Skill">
             <button onclick="sortTableByColumn('cruxTable','1')">Sort</button>
           </th>
           <th>
@@ -145,10 +146,38 @@
       </table>
     </div>
     
-    <!-- TODO - Ancestries (Heritages) -->
+    <!-- Ancestries (Heritages) -->
     <div id="Heritages" class="tabcontent">
       <p>Cruxes and Heritages are the Core option for Ancestries. For games where Species matters more than upbringing, use Ancestries (Species) instead.</p>
-      <p>TODO - table (heritages have no data files yet, need manual entry)</p>
+      <p>
+        You are human, or otherwise defined more by upbringing than genetics:<br/>
+        <strong>Size:</strong> Your size is Medium.<br/>
+        <strong>Ability Scores:</strong> +2 to two ability scores of your choice.<br/>
+        <strong>Speed:</strong> Your base walking speed is 6 squares.<br/>
+        <strong>Languages:</strong> You can speak, read, and write Common and one extra language of your choice.<br/>
+      </p>
+      <p>In addition to the above statistics, pick a Crux and a <strong>Heritage</strong> (below)</p>
+      
+      <table id="heritageTable" class="filterTable">
+        <tr class="header">
+          <th>
+            <input type="text" id="searchHeritageName" onkeyup="searchHeritageTable('searchHeritageName',0)" placeholder="Name" title="Search by Heritage Name">
+            <button onclick="sortTableByColumn('HeritageTable','0')">Sort</button>
+          </th>
+          <th>
+            <input type="text" id="searchHeritageSkill" onkeyup="searchHeritageTable('searchHeritageSkill',1)" placeholder="Skill Bonus" title="Search by Skill">
+            <button onclick="sortTableByColumn('HeritageTable','1')">Sort</button>
+          </th>
+          <th>
+            <input type="text" id="searchHeritageFeatName" onkeyup="searchHeritageTable('searchHeritageFeatName',2)" placeholder="Feature Name" title="Search by Feature Name">
+            <button onclick="sortTableByColumn('HeritageTable','2')">Sort</button>
+          </th>
+          <th>
+            <input type="text" id="searchHeritageFeatDesc" onkeyup="searchHeritageTable('searchHeritageFeatDesc',3)" placeholder="Feature Description" title="Search by Feature Description">
+            <button onclick="sortTableByColumn('HeritageTable','3')">Sort</button>
+          </th>
+        </tr>
+      </table>
     </div>
 
     <!-- Advanced Ancestries Option: Species -->
@@ -242,23 +271,22 @@
     <script src="js/classes.js"></script>
     <script src="js/powers.js"></script>
     <script src="js/cruxes.js"></script>
+    <script src="js/heritages.js"></script>
     <script src="js/ancestries.js"></script>
     <script src="js/arts.js"></script>
 
     <br/><br/>
     <footer>
-      <p><i>Version 0.01 - early alpha, 2023-03-11, aiming for compatibility with Orcus Heroes' Handbook v1.0</i></p>
+      <p><i>Version 0.02 (2023-03-12) - early alpha, aiming for compatibility with Orcus Heroes' Handbook v1.0</i></p>
       <br/><br/>
       <p>
         <strong>Known Issues </strong>
         <br/>
-        - searching by multiple columns only works on Classes tab for now
-        <br/>
-        - ancestries incomplete: no Cruxes or Heritages yet (no existing spreadsheets on the Orcus github, needs manual entry)
+        - searching by multiple columns works everywhere except Powers IIRC?
         <br/>
         - no option to filter by non-core options (with exception of Species we ignore non-core classes and powers currently)
         <br/>
-        - sorting can only toggle between alphabetical ascending and descending, it cannot revert to initial ordering
+        - sorting can only toggle between alphabetical ascending and descending, it cannot revert to initial ordering (or sort numerically, resulting in things like levels going 1, 10, 13, 15, 17, 2, 20, 3, 4, etc)
         <br/>
         - power display is barebones, no special formatting / colours, doesn't even conditionally show Hit/Defense/Effect/Miss lines depending on if the power actually has them, just displays all at once
         <br/>
@@ -274,8 +302,6 @@
         - cannot run locally like 4e Offline Compendium due to browser security protections avoiding the loading of json files from local filesystem
         <br/>
         - kits, animal companions, etc not started yet
-        <br/>
-        - numerical columns when sorted are sorted alphabetically (e.g. sorting Arts by level will do 1, 11, 13, 15, 17, 2, 3, 4), need to expand sorting to specify specific columns to do numerically
         <br/>
         - currently depends on user grabbing the xslx from the Orcus github, saving as csv, then converting that csv to json via the csv_to_json.py script to update data.
         <br/>

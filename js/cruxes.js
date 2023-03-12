@@ -32,7 +32,7 @@ function get_crux_json_data()
     xmlhttp.send() // executed in onreadystatechange section on request completion
 }
 
-// this function appends the json data to the table 'classTable'
+// this function appends the json data to the table 'cruxTable'
 function append_crux_json(crux_data)
 {
     var table = document.getElementById('cruxTable');

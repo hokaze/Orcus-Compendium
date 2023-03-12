@@ -1,0 +1,44 @@
+{
+    "0": {
+        "Name": "Aristocrat",
+        "Flavor": "You are a patrician, and believe yourself to be one of a finer class of people.",
+        "Skill Bonus": "+2 Intimidate",
+        "Feature Name": "Will Defense",
+        "Feature Description": "+1 ancestry bonus to Will defense"
+    },
+    "1": {
+        "Name": "Heretic",
+        "Flavor": "Your family belonged to a forbidden religion, which exposed you to the constant threat of persecution.",
+        "Skill Bonus": "+2 Religion",
+        "Feature Name": "Focus Proficiency",
+        "Feature Description": "You have proficiency with orbs, staffs and wands."
+    },
+    "2": {
+        "Name": "Mountainfolk",
+        "Flavor": "You come from an isolated town in the mountains.",
+        "Skill Bonus": "+2 Dungeoneering",
+        "Feature Name": "Relentless Endurance (1/encounter)",
+        "Feature Description": "When you are staggered, gain temporary HP equal to your level."
+    },
+    "3": {
+        "Name": "Seafarer",
+        "Flavor": "You grew up on boats or ships.",
+        "Skill Bonus": "+2 Athletics",
+        "Feature Name": "Reflex Defense",
+        "Feature Description": "+1 ancestry bonus to Reflex defense."
+    },
+    "4": {
+        "Name": "Traveler",
+        "Flavor": "Your family moved about a lot, whether out of wanderlust or necessity.",
+        "Skill Bonus": "+2 Diplomacy",
+        "Feature Name": "Speedy",
+        "Feature Description": "+1 to your base walking speed."
+    },
+    "5": {
+        "Name": "Urchin",
+        "Flavor": "You grew up on the streets, without parents \u2013 or without parents worth speaking of.",
+        "Skill Bonus": "+2 Streetsmarts",
+        "Feature Name": "Light Blade Weapon Proficiency",
+        "Feature Description": "You have proficiency with martial weapons in the light blade weapon group."
+    }
+}
