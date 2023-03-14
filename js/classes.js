@@ -79,8 +79,8 @@ function append_class_json(class_data)
         var class_name = class_data[key]["Name"];
         // for the class, we add a modal dialogue to show more details on the class that opens the markdown-to-html file with appropriate css
         tr.innerHTML = '<td>' + '<a href="#" onclick="showClassInfo(' + key + ', 1' + ')">' + class_name + '</a>' + '</td>' +
-        '<td>' + '<a href="#" onclick="showClassInfo(\'misc/Tradition\')">' + class_data[key]["Tradition"] + '</a>' + '</td>' +
-        '<td>' + '<a href="#" onclick="showClassInfo(\'misc/Role\')">' + class_data[key]["Role"] + '</a>' + '</td>' +
+        '<td>' + '<a href="#" onclick="showClassMiscInfo(\'Tradition\')">' + class_data[key]["Tradition"] + '</a>' + '</td>' +
+        '<td>' + '<a href="#" onclick="showClassMiscInfo(\'Role\')">' + class_data[key]["Role"] + '</a>' + '</td>' +
         '<td>' + class_data[key]["Key Ability"] + '</td>' +
         '<td>' + class_data[key]["Class Disciplines - List"] + '</td>';
         class_table.appendChild(tr);
@@ -154,6 +154,17 @@ async function showClassInfo (key, enable_navigation)
     
     modal_div.style.display = "block";
 }
+
+// handling misc html files in class folder, like Tradition and Role that do NOT use keys or navigation buttons
+async function showClassMiscInfo (misc_name)
+{   
+    // fetch class html file
+    let url = "data/markdown-to-html/class/misc/" + misc_name + ".html";
+    content_div.innerHTML = await (await fetch(url)).text();
+    
+    modal_div.style.display = "block";
+}
+
 
 function updateClassDatalist ()
 {   
