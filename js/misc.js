@@ -99,12 +99,17 @@ function sortTableByColumn(table, n)
     }
 }
 
+function hideModal()
+{
+    modal_div.style.display = "none";
+}
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event)
 {   
     if (event.target == modal_div)
     {
-        modal_div.style.display = "none";
+        hideModal();
     }
 }
 
