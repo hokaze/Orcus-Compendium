@@ -13,6 +13,7 @@ import sys, getopt
 def csv_to_json(inputCSV, outputJSON):
      
     data = {}
+    key = 0;
      
     # Open a csv reader called DictReader
     with open(inputCSV, encoding='utf-8') as csvf:
@@ -28,8 +29,10 @@ def csv_to_json(inputCSV, outputJSON):
             if rows ["Name"] == "Chapter":
                 continue;
             
-            # no primary key in csv, so use line number as key for now
-            data[index] = rows
+            # no primary key in csv, so just use the number of non-junk lines as the key
+            # (previously we used index, but this led to some json files starting at index 0 and others at 1 or higher, and while I've fixed the known issues which assumed one way or the other, want to play it safe and ensure everything is always 0-indexed for now)
+            data[key] = rows
+            key += 1
  
     # Open a json writer, and dump data
     with open(outputJSON, 'w', encoding='utf-8') as jsonf:

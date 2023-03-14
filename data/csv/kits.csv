@@ -1,9 +1,9 @@
 Name,Description,Requirements,Lv 1 Feature,Lv 5 Feature,Lv 10 Feature,Associated Discipline
-Binds Familiar,"A small, intelligent creature is your companion.",,Spirit Friend,Combat Assistant,Speedy Summons,Strong Bidding
-Brews Poisons,You can prepare poisons each day to use with your attacks.,,Poison Kit,Rapid Poison,Vicious Poison,Blades in the Dark
-Channels Godmind,"Through force of will and a connection to a higher intelligence, you gain power.",,Psi Focus,Mantle,Focused,Third Mind
-Charms Animal,"A large, powerful animal is your companion.",,Animal Companion,Combat Ally,Call of the Wild,Strong Bidding
-Conjures Fiends,You can summon and control infernal beings.,,Enduring Summons,Far Call,Careful Contract,Cup of Brimstone
+Binds Familiar,"A small, intelligent creature is your companion.",None,Spirit Friend,Combat Assistant,Speedy Summons,Strong Bidding
+Brews Poisons,You can prepare poisons each day to use with your attacks.,None,Poison Kit,Rapid Poison,Vicious Poison,Blades in the Dark
+Channels Godmind,"Through force of will and a connection to a higher intelligence, you gain power.",None,Psi Focus,Mantle,Focused,Third Mind
+Charms Animal,"A large, powerful animal is your companion.",None,Animal Companion,Combat Ally,Call of the Wild,Strong Bidding
+Conjures Fiends,You can summon and control infernal beings.,None,Enduring Summons,Far Call,Careful Contract,Cup of Brimstone
 Dabbles in Commanding,Commander multiclass.,"You cannot take this kit if you belong to the Commander class, or if you already have a secondary class.",Called to Service,Commander Skills,Stratagem Research,Angel’s Trumpet OR Golden Lion
 Dabbles in Exemplary Combat,Exemplar multiclass.,"You cannot take this kit if you belong to the Exemplar class, or if you already have a secondary class.",Buckle Your Swashes,Exemplary Skills,Bide Your Time,Rapier’s Point OR Blades in the Dark
 Dabbles in Guarding,Guardian multiclass.,"You cannot take this kit if you belong to the Guardian class, or if you already have a secondary class.",Protective,Guardian Skills,Blocker,Art of War OR Juggernautical

@@ -1,5 +1,5 @@
 {
-    "1": {
+    "0": {
         "Name": "Commander",
         "Completed": "1",
         "Tradition": "Martial",
@@ -39,7 +39,7 @@
         "Art Link": "pics\\rook.jpg",
         "Art Zoom": "100"
     },
-    "2": {
+    "1": {
         "Name": "Priest",
         "Completed": "1",
         "Tradition": "Divine",
@@ -79,7 +79,7 @@
         "Art Link": "pics\\Charlene.png",
         "Art Zoom": "25"
     },
-    "3": {
+    "2": {
         "Name": "Exemplar",
         "Completed": "1",
         "Tradition": "Martial",
@@ -119,7 +119,7 @@
         "Art Link": "pics\\Flashing Ray Color.png",
         "Art Zoom": "20"
     },
-    "4": {
+    "3": {
         "Name": "Guardian",
         "Completed": "1",
         "Tradition": "Martial",
@@ -159,7 +159,7 @@
         "Art Link": "",
         "Art Zoom": ""
     },
-    "5": {
+    "4": {
         "Name": "Harlequin",
         "Completed": "1",
         "Tradition": "Martial",
@@ -199,7 +199,7 @@
         "Art Link": "",
         "Art Zoom": ""
     },
-    "6": {
+    "5": {
         "Name": "Mageblade",
         "Completed": "1",
         "Tradition": "Arcane",
@@ -239,7 +239,7 @@
         "Art Link": "pics\\WarriorBIG (1).jpg",
         "Art Zoom": "20"
     },
-    "7": {
+    "6": {
         "Name": "Magician",
         "Completed": "1",
         "Tradition": "Arcane",
@@ -279,7 +279,7 @@
         "Art Link": "pics\\Vera.png",
         "Art Zoom": "25"
     },
-    "8": {
+    "7": {
         "Name": "Reaper",
         "Completed": "1",
         "Tradition": "Spirit",
@@ -319,7 +319,7 @@
         "Art Link": "pics\\Ranger.png",
         "Art Zoom": "25"
     },
-    "9": {
+    "8": {
         "Name": "Sylvan",
         "Completed": "1",
         "Tradition": "Spirit",
@@ -359,7 +359,7 @@
         "Art Link": "pics\\Falling_Cinder.png",
         "Art Zoom": "25"
     },
-    "10": {
+    "9": {
         "Name": "Harbinger",
         "Completed": "",
         "Tradition": "Arcane",
@@ -399,7 +399,7 @@
         "Art Link": "",
         "Art Zoom": ""
     },
-    "11": {
+    "10": {
         "Name": "Myrmidon",
         "Completed": "",
         "Tradition": "Martial",
@@ -439,7 +439,7 @@
         "Art Link": "",
         "Art Zoom": ""
     },
-    "12": {
+    "11": {
         "Name": "Shaper",
         "Completed": "",
         "Tradition": "Phrenic",
@@ -479,7 +479,7 @@
         "Art Link": "",
         "Art Zoom": ""
     },
-    "13": {
+    "12": {
         "Name": "Swordsaint",
         "Completed": "",
         "Tradition": "Martial",
@@ -519,7 +519,7 @@
         "Art Link": "",
         "Art Zoom": ""
     },
-    "14": {
+    "13": {
         "Name": "Vanguard",
         "Completed": "",
         "Tradition": "Martial",
@@ -559,7 +559,7 @@
         "Art Link": "",
         "Art Zoom": ""
     },
-    "15": {
+    "14": {
         "Name": "Wilder",
         "Completed": "",
         "Tradition": "Martial",
@@ -599,7 +599,7 @@
         "Art Link": "",
         "Art Zoom": ""
     },
-    "16": {
+    "15": {
         "Name": "Warrior",
         "Completed": "1",
         "Tradition": "Martial",

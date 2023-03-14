@@ -3,6 +3,7 @@
 // first add an event listener for page load
 document.addEventListener( "DOMContentLoaded", get_ancestry_json_data, false ); // fires the get method on page load
 
+var species_table = document.getElementById("speciesTable");
 var species_data = {};
 
 // this function is in the event listener and will execute on page load
@@ -61,7 +62,6 @@ function append_ancestry_json(species_data)
         "Feat 3 Description" : "+1 ancestry bonus to Fortitude, Reflex and Will defenses",
     };
     
-    var table = document.getElementById('speciesTable');
     Object.keys(species_data).forEach(key => {      
         // unlike class and powers, ALL the ancestries are not included in core and count as advanced options, as in core only humans are playable so we include them, but mark them as advanced
         
@@ -73,12 +73,12 @@ function append_ancestry_json(species_data)
         '<td>' + species_data[key]["Ability 2"] + '</td>' +
         '<td>' + species_data[key]["Speed"] + '</td>' +
         '<td>' + species_data[key]["Darkvision"] + '</td>';
-        table.appendChild(tr);
+        species_table.appendChild(tr);
     });
 }
 
 // search on species table
-function searchSpeciesTable(searchInput, column)
+function searchSpeciesTable(search_input, column)
 {    
     // revised for multiple search
     var input_name = document.getElementById("searchSpeciesName");
@@ -87,8 +87,6 @@ function searchSpeciesTable(searchInput, column)
     var input_ability2 = document.getElementById("searchSpeciesAbility2");
     var input_speed = document.getElementById("searchSpeciesSpeed");
     var input_darkvision = document.getElementById("searchSpeciesDarkvision");
-    
-    var table = document.getElementById("speciesTable");
     
     let filter_name = input_name.value.toUpperCase();
     let filter_description = input_description.value.toUpperCase();

@@ -2,7 +2,7 @@
     "0": {
         "Name": "Binds Familiar",
         "Description": "A small, intelligent creature is your companion.",
-        "Requirements": "",
+        "Requirements": "None",
         "Lv 1 Feature": "Spirit Friend",
         "Lv 5 Feature": "Combat Assistant",
         "Lv 10 Feature": "Speedy Summons",
@@ -11,7 +11,7 @@
     "1": {
         "Name": "Brews Poisons",
         "Description": "You can prepare poisons each day to use with your attacks.",
-        "Requirements": "",
+        "Requirements": "None",
         "Lv 1 Feature": "Poison Kit",
         "Lv 5 Feature": "Rapid Poison",
         "Lv 10 Feature": "Vicious Poison",
@@ -20,7 +20,7 @@
     "2": {
         "Name": "Channels Godmind",
         "Description": "Through force of will and a connection to a higher intelligence, you gain power.",
-        "Requirements": "",
+        "Requirements": "None",
         "Lv 1 Feature": "Psi Focus",
         "Lv 5 Feature": "Mantle",
         "Lv 10 Feature": "Focused",
@@ -29,7 +29,7 @@
     "3": {
         "Name": "Charms Animal",
         "Description": "A large, powerful animal is your companion.",
-        "Requirements": "",
+        "Requirements": "None",
         "Lv 1 Feature": "Animal Companion",
         "Lv 5 Feature": "Combat Ally",
         "Lv 10 Feature": "Call of the Wild",
@@ -38,7 +38,7 @@
     "4": {
         "Name": "Conjures Fiends",
         "Description": "You can summon and control infernal beings.",
-        "Requirements": "",
+        "Requirements": "None",
         "Lv 1 Feature": "Enduring Summons",
         "Lv 5 Feature": "Far Call",
         "Lv 10 Feature": "Careful Contract",

@@ -3,7 +3,15 @@
 // first add an event listener for page load
 document.addEventListener( "DOMContentLoaded", get_art_json_data, false ); // fires the get method on page load
 
-var artData = {};
+var art_table = document.getElementById('artTable');
+var art_data = {};
+
+var art_name_list = [];
+var art_level_list = [];
+var art_type_list = [];
+var art_category_list = [];
+var art_skill_list = [];
+var art_time_list = [];
 
 // this function is in the event listener and will execute on page load
 function get_art_json_data()
@@ -34,31 +42,50 @@ function get_art_json_data()
 
 // this function appends the json data to the table
 function append_art_json(art_data)
-{
-    var table = document.getElementById('artTable');
+{   
+    // loop over data
     Object.keys(art_data).forEach(key => {      
         // ignore the Chapter headers
         if ( art_data[key]["Name"] == "Chapter")
         {
             return;
         }
+        
+        // arrays used to enable search boxes to have dropdown lists
+        art_name_list.push(art_data[key]["Name"]);
+        art_level_list.push(art_data[key]["Level"]);
+        art_type_list.push(art_data[key]["Type"]);
+        art_category_list.push(art_data[key]["Category"]);
+        art_skill_list.push(art_data[key]["Skill"]);
+        art_time_list.push(art_data[key]["Completion Time"]);
 
         // update table with new row
         var tr = document.createElement('tr');
-        var art_name = art_data[key]["Name"];
+        tr.id = "art_" + key;
         // open modal dialogue for Art info
-        tr.innerHTML = '<td>' + '<a href="#" onclick="showArtInfo(\'' + key + '\')">' + art_data[key]["Name"] + '</a>' + '</td>' +
+        tr.innerHTML = '<td>' + '<a href="#" onclick="showArtInfo(' + key + ', 1' + ')">' + art_data[key]["Name"] + '</a>' + '</td>' +
         '<td>' + art_data[key]["Level"] + '</td>' +
         '<td>' + art_data[key]["Type"] + '</td>' +
         '<td>' + art_data[key]["Category"] + '</td>' +
         '<td>' + art_data[key]["Skill"] + '</td>' +
         '<td>' + art_data[key]["Completion Time"] + '</td>';
-        table.appendChild(tr);
+        art_table.appendChild(tr);
     });
+    
+    // lists used to populate datalists so search boxes have dropdown suggestions
+    art_name_list = [...new Set(art_name_list)];
+    art_level_list = [...new Set(art_level_list)];
+    art_type_list = [...new Set(art_type_list)];
+    art_category_list = [...new Set(art_category_list)];
+    art_skill_list = [...new Set(art_skill_list)];
+    art_time_list = [...new Set(art_time_list)];
+    
+    // create + attach datalist to enable dropdown on search boxes
+    updateArtDatalist();
 }
 
 // search on art table by name, role, tradition, etc
-function searchArtTable(searchInput, column)
+function searchArtTable(search_input, column)
 {    
     // revised for multiple search
     var input_name = document.getElementById("searchArtName");
@@ -68,15 +95,13 @@ function searchArtTable(searchInput, column)
     var input_skill = document.getElementById("searchArtSkill");
     var input_time = document.getElementById("searchArtTime");
     
-    var table = document.getElementById("artTable");
-    
     let filter_name = input_name.value.toUpperCase();
     let filter_level = input_level.value.toUpperCase();
     let filter_type = input_type.value.toUpperCase();
     let filter_category = input_category.value.toUpperCase();
     let filter_skill = input_skill.value.toUpperCase();
     let filter_time = input_time.value.toUpperCase();
-    let tr = table.rows;
+    let tr = art_table.rows;
     
     // start at row 1, not row 0, as otherwise we can filter out the search headers, not just the actual data rows!
     for (let i = 1; i < tr.length; i++)
@@ -101,22 +126,43 @@ function searchArtTable(searchInput, column)
 }
 
 
-// WIP - quick and dirty art display, using basic power display as starting point
-function showArtInfo (artID)
-{
-    var modalDiv = document.getElementById("modalShowInfo");
-    var contentDiv = document.getElementById("showInfoContent");
-    
-    contentDiv.innerHTML = "<h3>" + art_data[artID]["Name"] + "</h3>" +
-    "<h4>" + art_data[artID]["Type"] + "</h4>" +
-    "<p><strong>Level:</strong> " + art_data[artID]["Level"] +
-    "<br/><strong>Category:</strong> " + art_data[artID]["Category"] +
-    "<br/><strong>Skill:</strong> " + art_data[artID]["Skill"] +
-    "<br/><strong>Completion Time:</strong> " + art_data[artID]["Completion Time"] +
-    "<br/><strong>Components:</strong> " + art_data[artID]["Components"] +
-    "<br/><strong>Cost to Learn:</strong> " + art_data[artID]["Cost to Learn"] +
-    "<br/><strong>Duration:</strong> " + art_data[artID]["Duration"] +
-    "<br/><br/><i>" + art_data[artID]["Description"] + "</i></p>";
-    
-    modalDiv.style.display = "block";
+// quick and dirty arts display from json data
+function showArtInfo (key, enable_navigation)
+{   
+    content_div.innerHTML = "<h3>" + art_data[key]["Name"] + "</h3>" +
+    "<h4>" + art_data[key]["Type"] + "</h4>" +
+    "<p><strong>Level:</strong> " + art_data[key]["Level"] +
+    "<br/><strong>Category:</strong> " + art_data[key]["Category"] +
+    "<br/><strong>Skill:</strong> " + art_data[key]["Skill"] +
+    "<br/><strong>Completion Time:</strong> " + art_data[key]["Completion Time"] +
+    "<br/><strong>Components:</strong> " + art_data[key]["Components"] +
+    "<br/><strong>Cost to Learn:</strong> " + art_data[key]["Cost to Learn"] +
+    "<br/><strong>Duration:</strong> " + art_data[key]["Duration"] +
+    "<br/><br/><i>" + art_data[key]["Description"] + "</i></p>";
+
+    if (enable_navigation)
+    {
+        showModalNavigation ("art", key, art_name_list, "showArtInfo", art_table, art_data);
+    }
+
+    modal_div.style.display = "block";
+}
+
+function updateArtDatalist ()
+{   
+    // grab datalist elements used by search inputs
+    dl_name = document.getElementById("dlArtName");
+    dl_level = document.getElementById("dlArtLevel");
+    dl_type = document.getElementById("dlArtType");
+    dl_category = document.getElementById("dlArtCategory");
+    dl_skill = document.getElementById("dlArtSkill");
+    dl_time = document.getElementById("dlArtTime");
+
+    // populate datalists
+    updateDataList(dl_name, art_name_list);
+    updateDataList(dl_level, art_level_list);
+    updateDataList(dl_type, art_type_list);
+    updateDataList(dl_category, art_category_list);
+    updateDataList(dl_skill, art_skill_list);
+    updateDataList(dl_time, art_time_list);
 }

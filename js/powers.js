@@ -3,7 +3,10 @@
 // first add an event listener for page load
 document.addEventListener( "DOMContentLoaded", get_power_json_data, false ); // fires the get method on page load
 
-var powerData = {};
+var power_table = document.getElementById('powerTable');
+var power_data = {};
+
+var power_name_list = [];
 
 // this function is in the event listener and will execute on page load
 function get_power_json_data()
@@ -35,7 +38,6 @@ function get_power_json_data()
 // this function appends the json data to the table 'powerTable'
 function append_power_json(power_data)
 {
-    var table = document.getElementById('powerTable');
     Object.keys(power_data).forEach(key => {      
         // ignore the Chapter headers
         if ( power_data[key]["Name"] == "Chapter")
@@ -61,23 +63,26 @@ function append_power_json(power_data)
         {
             return;
         }
+        
+        power_name_list.push(power_data[key]["Name"]);
 
         // update table with new row
         var tr = document.createElement('tr');
+        tr.id = "power_" + key;
         // for the class, we add a modal dialogue to show more details on the class that opens the markdown-to-html file with appropriate css
-        tr.innerHTML =  '<td>' + '<a href="#" onclick="showPowerInfo(\'' + key + '\')">' + power_data[key]["Name"] + '</a>' + '</td>' +
+        tr.innerHTML =  '<td>' + '<a href="#" onclick="showPowerInfo(' + key + ', 1' + ')">' + power_data[key]["Name"] + '</a>' + '</td>' +
         '<td>' + power_data[key]["Source"] + '</td>' +
         '<td>' + power_data[key]["List"] + '</td>' +
         '<td>' + power_data[key]["Category"] + '</td>' +
         '<td>' + power_data[key]["Frequency"] + '</td>' +
         '<td>' + power_data[key]["Tier"] + '</td>' +
         '<td>' + power_data[key]["Tags"] + '</td>';
-        table.appendChild(tr);
+        power_table.appendChild(tr);
     });
 }
 
 // search on Power table
-function searchPowerTable(searchInput, column)
+function searchPowerTable(search_input, column)
 {    
     // revised for multiple search
     var input_name = document.getElementById("searchPowerName");
@@ -88,8 +93,6 @@ function searchPowerTable(searchInput, column)
     var input_tier = document.getElementById("searchPowerTier");
     var input_tags = document.getElementById("searchPowerTags");
     
-    var table = document.getElementById("powerTable");
-    
     let filter_name = input_name.value.toUpperCase();
     let filter_source = input_source.value.toUpperCase();
     let filter_list = input_list.value.toUpperCase();
@@ -97,7 +100,7 @@ function searchPowerTable(searchInput, column)
     let filter_frequency = input_frequency.value.toUpperCase();
     let filter_tier = input_tier.value.toUpperCase();
     let filter_tags = input_tags.value.toUpperCase();
-    let tr = table.rows;
+    let tr = power_table.rows;
     
     // start at row 1, not row 0, as otherwise we can filter out the search headers, not just the actual data rows!
     for (let i = 1; i < tr.length; i++)
@@ -123,27 +126,11 @@ function searchPowerTable(searchInput, column)
 }
 
 
-// WIP - quick and dirty power display, just prints json info, no nice formatting, no html or markdown, reuses modalShowInfo
-// modal popup that loads markdown-to-html class summaries with the github markdown css, appears on top of the page and can be dismissed
-function showPowerInfo (powerID)
+// modal popup that displays powers from the json data and formats them like 4e-style power cards
+function showPowerInfo (key, enable_navigation)
 {
-    var modalDiv = document.getElementById("modalShowInfo");
-    var contentDiv = document.getElementById("showInfoContent");
-    
-    // Old display - keeping this in case I decide to do a toggle between the basic white or 4e style styling?
-    
-    /*contentDiv.innerHTML = "<h3>" + power_data[powerID]["Name"] + "</h3>" +
-    "<h4>" + power_data[powerID]["List"] + "</h4>" +
-    "<p><i>" + power_data[powerID]["Flavor"] + "</i>" + "<br/>" +
-    "<br/><strong>" + power_data[powerID]["Frequency"] + " " + power_data[powerID]["Category"] + " " + power_data[powerID]["Tier"] + " (" + power_data[powerID]["Action"] + ") - " + power_data[powerID]["Tags"] + "</strong>" +
-    "<br/><strong>" + power_data[powerID]["Range"] + "</strong> " + power_data[powerID]["Range Details"] +
-    "<br/><strong>Trigger:</strong> " + power_data[powerID]["Trigger"] +
-    "<br/><strong>Attack:</strong> " + power_data[powerID]["Attack"] + " vs " + power_data[powerID]["Defense"] +
-    "<br/><strong>Hit:</strong> " + power_data[powerID]["Hit"] +
-    "<br/><strong>Miss:</strong> " + power_data[powerID]["Miss"] +
-    "<br/><strong>Effect:</strong> " + power_data[powerID]["Effect"] +
-    "<br/><strong>Special:</strong> " + power_data[powerID]["Special"] +
-    "</p>";*/
+    var modal_div = document.getElementById("modalShowInfo");
+    var content_div = document.getElementById("showInfoContent");
     
     // Experimental display, make powers look more like 4e power cards
     
@@ -154,74 +141,78 @@ function showPowerInfo (powerID)
     const colour_daily = "#4d4d4f";
     const colour_highlight = "#dddccc"; // used for flavour text and on alternating lines after the attack line for increased readability
     
-    if (power_data[powerID]["Frequency"] == "At-Will")
+    if (power_data[key]["Frequency"] == "At-Will")
     {
         colour_header = colour_atwill;
     }
-    else if (power_data[powerID]["Frequency"] == "Encounter")
+    else if (power_data[key]["Frequency"] == "Encounter")
     {
         colour_header = colour_encounter;
     }
-    else if (power_data[powerID]["Frequency"] == "Daily")
+    else if (power_data[key]["Frequency"] == "Daily")
     {
         colour_header = colour_daily;
     }
     
     // header (power name on left, class and level/tier on right)
-    contentDiv.innerHTML = '<div style="background-color:' + colour_header +';color:#FFFFFF;padding:1px 5px 0px 5px;min-height:40px;">' + '<div style="font-weight:bold;font-size:20px;float:left;">' + power_data[powerID]["Name"] + '</div>' + '<div style="font-size:20px;float:right;">' + power_data[powerID]["List"] + ' ' + power_data[powerID]["Tier"] + '</div></div>';
+    content_div.innerHTML = '<div style="background-color:' + colour_header +';color:#FFFFFF;padding:1px 5px 0px 5px;min-height:40px;">' + '<div style="font-weight:bold;font-size:20px;float:left;">' + power_data[key]["Name"] + '</div>' + '<div style="font-size:20px;float:right;">' + power_data[key]["List"] + ' ' + power_data[key]["Tier"] + '</div></div>';
     
     // flavour line - show placeholder if no flavour text yet
-    var flavour_text = power_data[powerID]["Flavor"] || '(no flavour text for this power yet)';
-    contentDiv.innerHTML += '<div style="background-color:' + colour_highlight + ';font-style:italic;padding: 1px 0px 3px 5px;min-height:20px">' + flavour_text + '</div>';
+    var flavour_text = power_data[key]["Flavor"] || '(no flavour text for this power yet)';
+    content_div.innerHTML += '<div style="background-color:' + colour_highlight + ';font-style:italic;padding: 1px 0px 3px 5px;min-height:20px">' + flavour_text + '</div>';
     
     // power type/frequency, keywords/tags, action and range lines
-    contentDiv.innerHTML += '<div style="padding-left:5px;"><span style="font-weight:bold;">'
-    + power_data[powerID]["Frequency"] + '</span> - <span style="font-weight:bold;">' + power_data[powerID]["Tags"] +
-    '</span><br><span style="font-weight:bold;">' + power_data[powerID]["Action"] + '</span> - <span style="font-weight:bold;">' + power_data[powerID]["Range"] + ' ' + '</span>' + power_data[powerID]["Range Details"] + '</div>';
+    content_div.innerHTML += '<div style="padding-left:5px;"><span style="font-weight:bold;">'
+    + power_data[key]["Frequency"] + '</span> - <span style="font-weight:bold;">' + power_data[key]["Tags"] +
+    '</span><br><span style="font-weight:bold;">' + power_data[key]["Action"] + '</span> - <span style="font-weight:bold;">' + power_data[key]["Range"] + ' ' + '</span>' + power_data[key]["Range Details"] + '</div>';
     
     // conditional lines, only print if power has Trigger, Hit, Miss, Effect, Special lines, and alternate background colour for readability
     var alt_bg = 1;
-    if (power_data[powerID]["Trigger"])
+    if (power_data[key]["Trigger"])
     {
-        alt_bg = powerCardLines (contentDiv, alt_bg, colour_highlight, "Trigger", power_data[powerID]["Trigger"]);
+        alt_bg = powerCardLines (content_div, alt_bg, colour_highlight, "Trigger", power_data[key]["Trigger"]);
     }
-    if (power_data[powerID]["Attack"])
+    if (power_data[key]["Attack"])
     {
-        alt_bg = powerCardLines (contentDiv, alt_bg, colour_highlight, "Attack", power_data[powerID]["Attack"] + " vs " + power_data[powerID]["Defense"]);
+        alt_bg = powerCardLines (content_div, alt_bg, colour_highlight, "Attack", power_data[key]["Attack"] + " vs " + power_data[key]["Defense"]);
     }
-    if (power_data[powerID]["Hit"])
+    if (power_data[key]["Hit"])
     {
-        alt_bg = powerCardLines (contentDiv, alt_bg, colour_highlight, "Hit", power_data[powerID]["Hit"]);
+        alt_bg = powerCardLines (content_div, alt_bg, colour_highlight, "Hit", power_data[key]["Hit"]);
     }
-    if (power_data[powerID]["Miss"])
+    if (power_data[key]["Miss"])
     {
-        alt_bg = powerCardLines (contentDiv, alt_bg, colour_highlight, "Miss", power_data[powerID]["Miss"]);
+        alt_bg = powerCardLines (content_div, alt_bg, colour_highlight, "Miss", power_data[key]["Miss"]);
     }
-    if (power_data[powerID]["Effect"])
+    if (power_data[key]["Effect"])
     {
-        alt_bg = powerCardLines (contentDiv, alt_bg, colour_highlight, "Effect", power_data[powerID]["Effect"]);
+        alt_bg = powerCardLines (content_div, alt_bg, colour_highlight, "Effect", power_data[key]["Effect"]);
     }
-    if (power_data[powerID]["Special"])
+    if (power_data[key]["Special"])
     {
-        alt_bg = powerCardLines (contentDiv, alt_bg, colour_highlight, "Special", power_data[powerID]["Special"]);
+        alt_bg = powerCardLines (content_div, alt_bg, colour_highlight, "Special", power_data[key]["Special"]);
     }
-    
-    // show modal with replaced html
-    modalDiv.style.display = "block";
+
+    if (enable_navigation)
+    {
+        showModalNavigation ("power", key, power_name_list, "showPowerInfo", power_table, power_data);
+    }
+
+    modal_div.style.display = "block";
 }
 
 // helper function to print power card lines + alternate background colours for readability
-function powerCardLines (contentDiv, alt_bg, colour_highlight, label, details)
+function powerCardLines (content_div, alt_bg, colour_highlight, label, details)
 {
     if (alt_bg)
     {
-        contentDiv.innerHTML += '<div style="background-color:' + colour_highlight + ';padding:0px 0px 0px 5px;"><span style="font-weight:bold;">'  + label + ': ' + '</span>' + details + '</div>';
+        content_div.innerHTML += '<div style="background-color:' + colour_highlight + ';padding:0px 0px 0px 5px;"><span style="font-weight:bold;">'  + label + ': ' + '</span>' + details + '</div>';
         
         alt_bg = 0;
     }
     else
     {
-        contentDiv.innerHTML += '<div style="padding:0px 0px 0px 5px;"><span style="font-weight:bold;">' + label + ': ' + '</span>' + details + '</div>';
+        content_div.innerHTML += '<div style="padding:0px 0px 0px 5px;"><span style="font-weight:bold;">' + label + ': ' + '</span>' + details + '</div>';
         
         alt_bg = 1;
     }

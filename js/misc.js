@@ -1,8 +1,13 @@
+// some vars that are useful to all the scripts, so I'm not redeclaring them constantly in literally every other .js file
+var content_div = document.getElementById("showInfoContent");
+var modal_div = document.getElementById("modalShowInfo");
+
+
 // open the class tab by default
 document.getElementById("classTab").click();
 
 // Tab Switcher for classes, ancestries, powers, etc
-function selectTab(evt, tabName)
+function selectTab(evt, tab_name)
 {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -15,7 +20,7 @@ function selectTab(evt, tabName)
     {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(tabName).style.display = "block";
+    document.getElementById(tab_name).style.display = "block";
     evt.currentTarget.className += " active";
 }
 
@@ -23,7 +28,7 @@ function selectTab(evt, tabName)
 // TODO: add option to then go back to initial order (from key)
 function sortTableByColumn(table, n)
 {
-    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+    var table, rows, switching, i, x, y, should_switch, dir, switchcount = 0;
     table = document.getElementById(table);
     
     switching = true;
@@ -44,7 +49,7 @@ function sortTableByColumn(table, n)
         for (i = 1; i < (rows.length - 1); i++)
         {
             // Start by saying there should be no switching:
-            shouldSwitch = false;
+            should_switch = false;
             
             /* Get the two elements you want to compare,
             one from current row and one from the next: */
@@ -57,7 +62,7 @@ function sortTableByColumn(table, n)
             {
                 if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
                 // If so, mark as a switch and break the loop:
-                shouldSwitch = true;
+                should_switch = true;
                 break;
                 }
             }
@@ -66,12 +71,12 @@ function sortTableByColumn(table, n)
                 if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase())
                 {
                     // If so, mark as a switch and break the loop:
-                    shouldSwitch = true;
+                    should_switch = true;
                     break;
                 }
             }
         }
-        if (shouldSwitch)
+        if (should_switch)
         {
             /* If a switch has been marked, make the switch
             and mark that a switch has been done: */
@@ -96,29 +101,115 @@ function sortTableByColumn(table, n)
 
 function hideModal()
 {
-    var modalDiv = document.getElementById("modalShowInfo");
-    modalDiv.style.display = "none";
-    
-    // additionally, remove modal navigation buttons to avoid accidentally creating multiple or having them persist
-    var modalLeftDiv = document.getElementById("modal_nav_left");
-    var modalRightDiv = document.getElementById("modal_nav_right");
-    if (modalLeftDiv)
-    {
-        modalLeftDiv.remove();
-    }
-    if (modalRightDiv)
-    {
-        modalRightDiv.remove();
-    }
+    modal_div.style.display = "none";
+    hideModalNavigation();
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event)
-{
-    var modalDiv = document.getElementById("modalShowInfo");
-    
-    if (event.target == modalDiv)
+{   
+    if (event.target == modal_div)
     {
         hideModal();
     }
+}
+
+// Helper function for the various update[X]DataList functions used by classes, arts, etc to populate the searchbox dropdown lists
+function updateDataList(datalist_element, array_list)
+{
+    for (i = 0; i < array_list.length; i += 1)
+    {
+        var option = document.createElement("option");
+        option.value = array_list[i];
+        datalist_element.appendChild(option);
+    }
+}
+
+// helper function remove modal navigation buttons to avoid accidentally creating multiple or having them persist
+function hideModalNavigation()
+{
+    var modal_left_div = document.getElementById("modal_nav_left");
+    var modal_right_div = document.getElementById("modal_nav_right");
+    if (modal_left_div)
+    {
+        modal_left_div.remove();
+    }
+    if (modal_right_div)
+    {
+        modal_right_div.remove();
+    }
+}
+
+// helper function to display prev and next buttons on show info, and link to prev / next VISIBLE record
+function showModalNavigation (tr_id_prefix, key, name_list, show_info_method_name, item_table, item_data)
+{
+        // use key passed in to determine what row we're on so we can grab the next VISIBLE table rows for LEFT and RIGHT navigation arrows, letting us "flip pages" rather than having to close the modal to view the next
+        
+        // grab the current row index - this is not always the same as the key, as some data is 0-index, rows at 1-index due to headers being on 0, etc - best to be absolutely certain of actual row index
+        var row_id = tr_id_prefix + "_" + key;
+        var current_row = document.getElementById(row_id).rowIndex;
+        var prev_row = '';
+        var next_row = '';
+        var looking_for_prev = 1;
+        var button_html = "";
+        
+        // loop over table rows (starting from index 1 NOT 0, so we skip the header row) to try and find the previous and next VISIBLE rows (and if first/last, do NOT generate the prev/next buttons)
+        // TODO - refactor this to be faster, maybe two loops, both starting from the actual row index in the table, backwards and forwards. Slight performance loss if near the start of the table, but should be faster on large tables if near the middle or end?
+        for (var i = 1, row; row = item_table.rows[i]; i++)
+        {
+            if (row.style.display == 'none')
+            {
+                continue;
+            }
+            if (looking_for_prev)
+            {
+                if (row.rowIndex == current_row)
+                {
+                    looking_for_prev = 0;
+                }
+                else
+                {
+                    prev_row = row.id;
+                }
+            }
+            else
+            {
+                next_row = row.id;
+                break;
+            }
+        }
+        
+        // row id takes format of class_key, so anything after the _ is the key and from there we can lookup the class name and setup a new call to showClassInfo to replace this page with the prev/next page
+        var prev_key = prev_row.split("_")[1];
+        var next_key = next_row.split("_")[1];
+        var prev_item = '';
+        var next_item = '';
+        if (prev_key)
+        {
+            prev_item = ' onclick="' + show_info_method_name + '(' + prev_key + ', 1' + ')"';
+        }
+        if (next_key)
+        {
+            next_item = ' onclick="' + show_info_method_name + '(' + next_key + ', 1' + ')"';
+        }
+        
+        // prev button
+        button_html += '<button id="modal_nav_left"' + prev_item + ' style="position:fixed; top: 25%; left:0%;font-size:50px; float:left; background-color:white; border-radius:100px; margin:5%; padding:20px; border-width:0px;'
+        // if we don't create the prev button the next button gets offset, so if there is no prev_row we still make the button, but hide it
+        if (prev_row == '')
+        {
+            button_html += 'display: none;';
+        }
+        button_html += '">&lt;--</button>';
+        
+        // next button
+        button_html += '<button id="modal_nav_right"' + next_item + ' style="position:fixed; top: 25%; right:0%;font-size:50px; float:left; background-color:white; border-radius:100px; margin:5%; padding:20px; border-width:0px;'
+        // next button is also hidden if there's no next_row
+        if (next_row == '')
+        {
+            button_html += 'display: none;';
+        }
+        button_html += '">--&gt;</button></div>';
+        
+        content_div.innerHTML += button_html;
 }

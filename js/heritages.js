@@ -3,7 +3,10 @@
 // first add an event listener for page load
 document.addEventListener( "DOMContentLoaded", get_heritage_json_data, false ); // fires the get method on page load
 
-var heritageData = {};
+var heritage_table = document.getElementById('heritageTable');
+var heritage_data = {};
+
+var heritage_name_list = [];
 
 // this function is in the event listener and will execute on page load
 function get_heritage_json_data()
@@ -35,23 +38,25 @@ function get_heritage_json_data()
 // this function appends the json data to the table 'heritageTable'
 function append_heritage_json(heritage_data)
 {
-    var table = document.getElementById('heritageTable');
     Object.keys(heritage_data).forEach(key => {      
-
+        
+        heritage_name_list.push(heritage_data[key]["Name"]);
+        
         // update table with new row
         var tr = document.createElement('tr');
+        tr.id = "heritage_" + key;
         var heritage_name = heritage_data[key]["Name"];
         // open modal dialogue for Crux info - similar to power display
-        tr.innerHTML =  '<td>' + '<a href="#" onclick="showHeritageInfo(\'' + key + '\')">' + heritage_data[key]["Name"] + '</a>' + '</td>' +
+        tr.innerHTML =  '<td>' + '<a href="#" onclick="showHeritageInfo(' + key + ', 1' + ')">' + heritage_data[key]["Name"] + '</a>' + '</td>' +
         '<td>' + heritage_data[key]["Skill Bonus"] + '</td>' +
         '<td>' + heritage_data[key]["Feature Name"] + '</td>' +
         '<td>' + heritage_data[key]["Feature Description"] + '</td>';
-        table.appendChild(tr)
+        heritage_table.appendChild(tr)
     });
 }
 
 // search on heritage table
-function searchHeritageTable(searchInput, column)
+function searchHeritageTable(search_input, column)
 {    
     // revised for multiple search
     var input_name = document.getElementById("searchHeritageName");
@@ -59,13 +64,11 @@ function searchHeritageTable(searchInput, column)
     var input_feat1 = document.getElementById("searchHeritageFeatName");
     var input_feat2 = document.getElementById("searchHeritageFeatDesc");
     
-    var table = document.getElementById("heritageTable");
-    
     let filter_name = input_name.value.toUpperCase();
     let filter_skill = input_skill.value.toUpperCase();
     let filter_feat_name = input_feat_name.value.toUpperCase();
     let filter_feat_desc = input_feat_desc.value.toUpperCase();
-    let tr = table.rows;
+    let tr = heritage_table.rows;
     
     // start at row 1, not row 0, as otherwise we can filter out the search headers, not just the actual data rows!
     for (let i = 1; i < tr.length; i++)
@@ -89,16 +92,18 @@ function searchHeritageTable(searchInput, column)
 
 
 // like powers, quick and dirty, just print json info in the modal popup
-function showHeritageInfo (heritageID)
-{
-    var modalDiv = document.getElementById("modalShowInfo");
-    var contentDiv = document.getElementById("showInfoContent");
-    
-    contentDiv.innerHTML = "<h3>" + heritage_data[heritageID]["Name"] + "</h3>" +
-    "<p><i>" + heritage_data[heritageID]["Flavor"] + "</i>" + "<br/>" +
-    "<br/><strong>Skill Bonus:</strong> " + heritage_data[heritageID]["Skill Bonus"] +
-    "<br/><strong>" + heritage_data[heritageID]["Feature Name"] + ":</strong> " + heritage_data[heritageID]["Feature Description"] +
+function showHeritageInfo (key, enable_navigation)
+{   
+    content_div.innerHTML = "<h3>" + heritage_data[key]["Name"] + "</h3>" +
+    "<p><i>" + heritage_data[key]["Flavor"] + "</i>" + "<br/>" +
+    "<br/><strong>Skill Bonus:</strong> " + heritage_data[key]["Skill Bonus"] +
+    "<br/><strong>" + heritage_data[key]["Feature Name"] + ":</strong> " + heritage_data[key]["Feature Description"] +
     "</p>";
     
-    modalDiv.style.display = "block";
+    if (enable_navigation)
+    {
+        showModalNavigation ("heritage", key, heritage_name_list, "showHeritageInfo", heritage_table, heritage_data);
+    }
+    
+    modal_div.style.display = "block";
 }

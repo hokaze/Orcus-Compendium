@@ -3,7 +3,10 @@
 // first add an event listener for page load
 document.addEventListener( "DOMContentLoaded", get_kit_json_data, false ); // fires the get method on page load
 
-var kitData = {};
+var kit_table = document.getElementById('kitTable');
+var kit_data = {};
+
+kit_name_list = [];
 
 // this function is in the event listener and will execute on page load
 function get_kit_json_data()
@@ -35,26 +38,29 @@ function get_kit_json_data()
 // this function appends the json data to the table 'kitTable'
 function append_kit_json(kit_data)
 {
-    var table = document.getElementById('kitTable');
-    Object.keys(kit_data).forEach(key => {      
-
+    Object.keys(kit_data).forEach(key => {
+        
+        // used for lookup with showKitInfo prev/next buttons
+        kit_name_list.push(kit_data[key]["Name"]);
+        
         // update table with new row
         var tr = document.createElement('tr');
+        tr.id = "kit_" + key;
         var kit_name = kit_data[key]["Name"];
         // open modal dialogue for kit info - opens html
-        tr.innerHTML = '<td>' + '<a href="#" onclick="showKitInfo(\'' + kit_name + '\')">' + kit_name + '</a>' + '</td>' +
+        tr.innerHTML = '<td>' + '<a href="#" onclick="showKitInfo(' + key + ', 1' + ')">' + kit_name + '</a>' + '</td>' +
         '<td>' + kit_data[key]["Description"] + '</td>' +
         '<td>' + kit_data[key]["Requirements"] + '</td>' +
         '<td>' + kit_data[key]["Lv 1 Feature"] + '</td>' +
         '<td>' + kit_data[key]["Lv 5 Feature"] + '</td>' +
         '<td>' + kit_data[key]["Lv 10 Feature"] + '</td>' +
         '<td>' + kit_data[key]["Associated Discipline"] + '</td>';
-        table.appendChild(tr);
+        kit_table.appendChild(tr);
     });
 }
 
 // search on kit table
-function searchKitTable(searchInput, column)
+function searchKitTable(search_input, column)
 {    
     // revised for multiple search
     var input_name = document.getElementById("searchKitName");
@@ -65,8 +71,6 @@ function searchKitTable(searchInput, column)
     var input_feat10 = document.getElementById("searchKitFeat10");
     var input_discipline = document.getElementById("searchKitDiscipline");
     
-    var table = document.getElementById("kitTable");
-    
     let filter_name = input_name.value.toUpperCase();
     let filter_description = input_description.value.toUpperCase();
     let filter_requirements = input_requirements.value.toUpperCase();
@@ -74,7 +78,7 @@ function searchKitTable(searchInput, column)
     let filter_feat5 = input_feat5.value.toUpperCase();
     let filter_feat10 = input_feat10.value.toUpperCase();
     let filter_discipline = input_discipline.value.toUpperCase();
-    let tr = table.rows;
+    let tr = kit_table.rows;
     
     // start at row 1, not row 0, as otherwise we can filter out the search headers, not just the actual data rows!
     for (let i = 1; i < tr.length; i++)
@@ -101,13 +105,16 @@ function searchKitTable(searchInput, column)
 
 
 // like classes, show some html converted from markdown for the kit (this was the easiest way to show kit ancestry powers, as they're not included in the powers spreadsheet/table)
-async function showKitInfo (kitName)
+async function showKitInfo (key, enable_navigation)
 {
-    let url = "data/markdown-to-html/kit/" + kitName + ".html";
-    var modalDiv = document.getElementById("modalShowInfo");
-    var contentDiv = document.getElementById("showInfoContent");
-    
-    contentDiv.innerHTML = await (await fetch(url)).text();
-    
-    modalDiv.style.display = "block";
+    var kit_name = kit_data[key]["Name"];
+    let url = "data/markdown-to-html/kit/" + kit_name + ".html";
+    content_div.innerHTML = await (await fetch(url)).text();
+
+    if (enable_navigation)
+    {
+        showModalNavigation ("kit", key, kit_name_list, "showKitInfo", kit_table, kit_data);
+    }
+
+    modal_div.style.display = "block";
 }

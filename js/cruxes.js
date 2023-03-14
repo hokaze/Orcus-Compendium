@@ -3,7 +3,10 @@
 // first add an event listener for page load
 document.addEventListener( "DOMContentLoaded", get_crux_json_data, false ); // fires the get method on page load
 
-var cruxData = {};
+var crux_table = document.getElementById('cruxTable');
+var crux_data = {};
+
+var crux_name_list = [];
 
 // this function is in the event listener and will execute on page load
 function get_crux_json_data()
@@ -35,24 +38,26 @@ function get_crux_json_data()
 // this function appends the json data to the table 'cruxTable'
 function append_crux_json(crux_data)
 {
-    var table = document.getElementById('cruxTable');
     Object.keys(crux_data).forEach(key => {      
-
+        
+        crux_name_list.push(crux_data[key]["Name"]);
+        
         // update table with new row
         var tr = document.createElement('tr');
+        tr.id = "crux_" + key;
         var crux_name = crux_data[key]["Name"];
         // open modal dialogue for Crux info - opens html
-        tr.innerHTML = '<td>' + '<a href="#" onclick="showCruxInfo(\'' + crux_name + '\')">' + crux_name + '</a>' + '</td>' +
+        tr.innerHTML = '<td>' + '<a href="#" onclick="showCruxInfo(' + key + ', 1' + ')">' + crux_name + '</a>' + '</td>' +
         '<td>' + crux_data[key]["Skill Bonus"] + '</td>' +
         '<td>' + crux_data[key]["Feature 1 Name"] + '</td>' +
         '<td>' + crux_data[key]["Feature 2 Name"] + '</td>' +
         '<td>' + crux_data[key]["Power"] + '</td>';
-        table.appendChild(tr);
+        crux_table.appendChild(tr);
     });
 }
 
 // search on crux table
-function searchCruxTable(searchInput, column)
+function searchCruxTable(search_input, column)
 {    
     // revised for multiple search
     var input_name = document.getElementById("searchCruxName");
@@ -61,14 +66,12 @@ function searchCruxTable(searchInput, column)
     var input_feat2 = document.getElementById("searchCruxFeat2");
     var input_power = document.getElementById("searchCruxPower");
     
-    var table = document.getElementById("cruxTable");
-    
     let filter_name = input_name.value.toUpperCase();
     let filter_skill = input_skill.value.toUpperCase();
     let filter_feat1 = input_feat1.value.toUpperCase();
     let filter_feat2 = input_feat2.value.toUpperCase();
     let filter_power = input_power.value.toUpperCase();
-    let tr = table.rows;
+    let tr = crux_table.rows;
     
     // start at row 1, not row 0, as otherwise we can filter out the search headers, not just the actual data rows!
     for (let i = 1; i < tr.length; i++)
@@ -93,13 +96,16 @@ function searchCruxTable(searchInput, column)
 
 
 // like classes, show some html converted from markdown for the crux (this was the easiest way to show crux ancestry powers, as they're not included in the powers spreadsheet/table)
-async function showCruxInfo (cruxName)
+async function showCruxInfo (key, enable_navigation)
 {
-    let url = "data/markdown-to-html/crux/" + cruxName + ".html";
-    var modalDiv = document.getElementById("modalShowInfo");
-    var contentDiv = document.getElementById("showInfoContent");
+    var crux_name = crux_data[key]["Name"];
+    let url = "data/markdown-to-html/crux/" + crux_name + ".html";
+    content_div.innerHTML = await (await fetch(url)).text();
     
-    contentDiv.innerHTML = await (await fetch(url)).text();
+    if (enable_navigation)
+    {
+        showModalNavigation ("crux", key, crux_name_list, "showCruxInfo", crux_table, crux_data);
+    }
     
-    modalDiv.style.display = "block";
+    modal_div.style.display = "block";
 }
