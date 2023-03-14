@@ -72,13 +72,14 @@ function append_art_json(art_data)
         art_table.appendChild(tr);
     });
     
-    // lists used to populate datalists so search boxes have dropdown suggestions
-    art_name_list = [...new Set(art_name_list)];
-    art_level_list = [...new Set(art_level_list)];
-    art_type_list = [...new Set(art_type_list)];
-    art_category_list = [...new Set(art_category_list)];
-    art_skill_list = [...new Set(art_skill_list)];
-    art_time_list = [...new Set(art_time_list)];
+    // lists used to populate datalists so search boxes have dropdown suggestions (using set to enforce uniqueness, so no dupe entries)
+    art_name_list = [...new Set(art_name_list)].sort();
+    // additionally, sort alphabetically, except Level, which is sorted numerically in ascending order
+    art_level_list = [...new Set(art_level_list)].sort(function(a,b){return a-b});
+    art_type_list = [...new Set(art_type_list)].sort();
+    art_category_list = [...new Set(art_category_list)].sort();
+    art_skill_list = [...new Set(art_skill_list)].sort();
+    art_time_list = [...new Set(art_time_list)].sort();
     
     // create + attach datalist to enable dropdown on search boxes
     updateArtDatalist();

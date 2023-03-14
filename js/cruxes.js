@@ -7,6 +7,10 @@ var crux_table = document.getElementById('cruxTable');
 var crux_data = {};
 
 var crux_name_list = [];
+var crux_skill_list = [];
+var crux_feat1_list = [];
+var crux_feat2_list = [];
+var crux_power_list = [];
 
 // this function is in the event listener and will execute on page load
 function get_crux_json_data()
@@ -41,6 +45,10 @@ function append_crux_json(crux_data)
     Object.keys(crux_data).forEach(key => {      
         
         crux_name_list.push(crux_data[key]["Name"]);
+        crux_skill_list.push(crux_data[key]["Skill Bonus"]);
+        crux_feat1_list.push(crux_data[key]["Feature 1 Name"]);
+        crux_feat2_list.push(crux_data[key]["Feature 2 Name"]);
+        crux_power_list.push(crux_data[key]["Power"]);
         
         // update table with new row
         var tr = document.createElement('tr');
@@ -54,6 +62,17 @@ function append_crux_json(crux_data)
         '<td>' + crux_data[key]["Power"] + '</td>';
         crux_table.appendChild(tr);
     });
+    
+    // lists used to populate datalists so search boxes have dropdown suggestions (using set to enforce uniqueness, so no dupe entries)
+    // additionally, sort alphabetically
+    crux_name_list = [...new Set(crux_name_list)].sort();
+    crux_skill_list = [...new Set(crux_skill_list)].sort();
+    crux_feat1_list = [...new Set(crux_feat1_list)].sort();
+    crux_feat2_list = [...new Set(crux_feat2_list)].sort();
+    crux_power_list = [...new Set(crux_power_list)].sort();
+    
+    // create + attach datalist to enable dropdown on search boxes
+    updateCruxDatalist();
 }
 
 // search on crux table
@@ -94,7 +113,6 @@ function searchCruxTable(search_input, column)
     }
 }
 
-
 // like classes, show some html converted from markdown for the crux (this was the easiest way to show crux ancestry powers, as they're not included in the powers spreadsheet/table)
 async function showCruxInfo (key, enable_navigation)
 {
@@ -108,4 +126,21 @@ async function showCruxInfo (key, enable_navigation)
     }
     
     modal_div.style.display = "block";
+}
+
+function updateCruxDatalist ()
+{   
+    // grab datalist elements used by search inputs
+    dl_name = document.getElementById("dlCruxName");
+    dl_skill = document.getElementById("dlCruxSkill");
+    dl_feat1 = document.getElementById("dlCruxFeat1");
+    dl_feat2 = document.getElementById("dlCruxFeat2");
+    dl_power = document.getElementById("dlCruxPower");
+
+    // populate datalists
+    updateDataList(dl_name, crux_name_list);
+    updateDataList(dl_skill, crux_skill_list);
+    updateDataList(dl_feat1, crux_feat1_list);
+    updateDataList(dl_feat2, crux_feat2_list);
+    updateDataList(dl_power, crux_power_list);
 }

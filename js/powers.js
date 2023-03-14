@@ -7,6 +7,12 @@ var power_table = document.getElementById('powerTable');
 var power_data = {};
 
 var power_name_list = [];
+var power_source_list = [];
+var power_list_list = [];
+var power_category_list = [];
+var power_frequency_list = [];
+var power_tier_list = [];
+var power_tags_list = [];
 
 // this function is in the event listener and will execute on page load
 function get_power_json_data()
@@ -64,7 +70,16 @@ function append_power_json(power_data)
             return;
         }
         
+        // arrays used to enable search boxes to have dropdown lists
         power_name_list.push(power_data[key]["Name"]);
+        power_source_list.push(power_data[key]["Source"]);
+        power_list_list.push(power_data[key]["List"]);
+        power_category_list.push(power_data[key]["Category"]);
+        power_frequency_list.push(power_data[key]["Frequency"]);
+        power_tier_list.push(power_data[key]["Tier"]);
+        
+        // like handling of class disciplines, split on comma so we can search by individual tags
+        power_tags_list.push(... power_data[key]["Tags"].split(", "));
 
         // update table with new row
         var tr = document.createElement('tr');
@@ -79,6 +94,34 @@ function append_power_json(power_data)
         '<td>' + power_data[key]["Tags"] + '</td>';
         power_table.appendChild(tr);
     });
+    
+    // lists used to populate datalists so search boxes have dropdown suggestions (using set to enforce uniqueness, so no dupe entries)
+    power_name_list = [...new Set(power_name_list)].sort();
+    power_source_list = [...new Set(power_source_list)].sort();
+    power_list_list = [...new Set(power_list_list)].sort();
+    power_category_list = [...new Set(power_category_list)].sort();
+    power_frequency_list = [...new Set(power_frequency_list)].sort();
+    
+    // additionally, sort alphabetically, except Tier, which has a mix of numbered levels and text (e.g. "Feature"), so is sorted by data type then value, so numbers numerically, then letters alphabetically
+    power_tier_list = [...new Set(power_tier_list)].sort(function(a,b){
+        // incoming data from json has both numbered levels and non-numbers as strings, so need to try and convert to numbers while keeping non-numbers intact
+        var a_n = Number(a), b_n = Number(b);
+        if (isNaN(a) == false)
+        {
+            a = a_n;
+        }
+        if (isNaN(b) == false)
+        {
+            b = b_n;
+        }
+        var a1 = typeof a, b1 = typeof b;
+        return a1 < b1 ? -1 : a1 > b1 ? 1 : a < b ? -1 : a > b ? 1 : 0;
+    });
+    
+    power_tags_list = [...new Set(power_tags_list)].sort();
+    
+    // create + attach datalist to enable dropdown on search boxes
+    updatePowerDatalist();
 }
 
 // search on Power table
@@ -125,6 +168,26 @@ function searchPowerTable(search_input, column)
     }
 }
 
+function updatePowerDatalist ()
+{   
+    // grab datalist elements used by search inputs
+    dl_name = document.getElementById("dlPowerName");
+    dl_source = document.getElementById("dlPowerSource");
+    dl_list = document.getElementById("dlPowerList");
+    dl_category = document.getElementById("dlPowerCategory");
+    dl_frequency = document.getElementById("dlPowerFrequency");
+    dl_tier = document.getElementById("dlPowerTier");
+    dl_tags = document.getElementById("dlPowerTags");
+
+    // populate datalists
+    updateDataList(dl_name, power_name_list);
+    updateDataList(dl_source, power_source_list);
+    updateDataList(dl_list, power_list_list);
+    updateDataList(dl_category, power_category_list);
+    updateDataList(dl_frequency, power_frequency_list);
+    updateDataList(dl_tier, power_tier_list);
+    updateDataList(dl_tags, power_tags_list);
+}
 
 // modal popup that displays powers from the json data and formats them like 4e-style power cards
 function showPowerInfo (key, enable_navigation)

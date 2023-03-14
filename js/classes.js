@@ -87,11 +87,12 @@ function append_class_json(class_data)
     });
     
     // turn the lists into unique sets to avoid having the same dropdown option multiple times (e.g. multiple Leader classes normally means multiple Leader entries on class_role_list)
-    class_name_list = [...new Set(class_name_list)];
-    class_tradition_list = [...new Set(class_tradition_list)];
-    class_role_list = [...new Set(class_role_list)];
-    class_key_ability_list = [...new Set(class_key_ability_list)];
-    class_disciplines_list = [...new Set(class_disciplines_list)];
+    // additionally, sort alphabetically
+    class_name_list = [...new Set(class_name_list)].sort();
+    class_tradition_list = [...new Set(class_tradition_list)].sort();
+    class_role_list = [...new Set(class_role_list)].sort();
+    class_key_ability_list = [...new Set(class_key_ability_list)].sort();
+    class_disciplines_list = [...new Set(class_disciplines_list)].sort();
     
     // create + attach datalist to enable dropdown on search boxes
     updateClassDatalist();
