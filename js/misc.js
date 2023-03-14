@@ -99,18 +99,12 @@ function sortTableByColumn(table, n)
     }
 }
 
-function hideModal()
-{
-    modal_div.style.display = "none";
-    hideModalNavigation();
-}
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event)
 {   
     if (event.target == modal_div)
     {
-        hideModal();
+        modal_div.style.display = "none";
     }
 }
 
@@ -122,21 +116,6 @@ function updateDataList(datalist_element, array_list)
         var option = document.createElement("option");
         option.value = array_list[i];
         datalist_element.appendChild(option);
-    }
-}
-
-// helper function remove modal navigation buttons to avoid accidentally creating multiple or having them persist
-function hideModalNavigation()
-{
-    var modal_left_div = document.getElementById("modal_nav_left");
-    var modal_right_div = document.getElementById("modal_nav_right");
-    if (modal_left_div)
-    {
-        modal_left_div.remove();
-    }
-    if (modal_right_div)
-    {
-        modal_right_div.remove();
     }
 }
 

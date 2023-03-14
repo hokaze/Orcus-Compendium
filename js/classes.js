@@ -140,9 +140,6 @@ function searchClassTable(search_input, column)
 // modal popup that loads markdown-to-html class summaries with the github markdown css, appears on top of the page and can be dismissed
 async function showClassInfo (key, enable_navigation)
 {   
-    // remove the navigation buttons, otherwise each call of this method produces additional buttons stacked atop each other
-    hideModalNavigation();
-    
     // fetch class html file
     var class_name = class_data[key]["Name"];
     let url = "data/markdown-to-html/class/" + class_name + ".html";
