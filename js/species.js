@@ -79,12 +79,21 @@ function append_species_json(species_data)
         tr.id = "species_" + key;
         var species_name = species_data[key]["Name"];
         
-        // show both ability scores in a single column, separated by a comma, so we can search both ability scores at once e.g. a search for CON species will list them all regardless of if CON is Ability 1 or Ability 2
+        // show ALL ability scores in a single column, separated by a comma, so we can search all ability scores at once e.g. a search for CON species will list them all regardless of if CON is Ability 1 or Ability 2
+        // note that you can pick any 2 of the 3 abilities, unlike 4e, which usually had 1st ability set in stone, then a choice of 1 of 2 for the 2nd ability
         var ability_scores = species_data[key]["Ability 1"];
+        // push ability scores individually and NOT all of them as a list, so the dropdown suggests the individual Str/Con/Dex/Int/Wis/Cha options
+        species_ability_list.push(species_data[key]["Ability 1"]);
         if (species_data[key]["Ability 2"])
         {
-            // Human has a single ability score, so avoid trailing comma
+            // Human has a single ability score, so avoid trailing comma and undefined entry in dropdown
             ability_scores += ', ' + species_data[key]["Ability 2"];
+            species_ability_list.push(species_data[key]["Ability 2"]);
+        }
+        if (species_data[key]["Ability 3"])
+        {
+            ability_scores += ', ' + species_data[key]["Ability 3"];
+            species_ability_list.push(species_data[key]["Ability 3"]);
         }
         
         // display darkvision better than [blank] or 1, use Yes/No instead
@@ -97,7 +106,7 @@ function append_species_json(species_data)
         // arrays used to enable search boxes to have dropdown lists
         species_name_list.push(species_data[key]["Name"]);
         species_description_list.push(species_data[key]["Description"]);
-        species_ability_list.push(ability_scores);
+        // ability scores handled above, to avoid pushing [undefined] into the list for humans or any other options that don't have ability2 and ability3 options
         species_feat1_list.push(species_data[key]["Feat 1 Name"]);
         species_feat2_list.push(species_data[key]["Feat 2 Name"]);
         species_feat3_list.push(species_data[key]["Feat 3 Name"]);

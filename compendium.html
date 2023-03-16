@@ -225,6 +225,9 @@
       <p>
         * If using this Advanced Option, you pick a Species as your Ancestory instead of your normal Crux and Heritage.
       </p>
+      <p>
+        For Ability Scores, you may pick any 2 of the 3 listed (except Humans, who pick any 1 of any of Str/Con/Dex/Int/Wis/Cha instead)
+      </p>
       
       <!-- datalists to allow dropdown options in search, populated at same time table is -->
       <datalist id="dlSpeciesName"></datalist>
@@ -406,10 +409,6 @@
         <br/>
         - no option to filter by non-core options (with exception of Species and Arts we ignore non-core material currently)
         <br/>
-        - sorting can only toggle between alphabetical ascending and descending, it cannot revert to initial ordering (or sort numerically, resulting in things like levels going 1, 10, 13, 15, 17, 2, 20, 3, 4, etc)
-        <br/>
-        - Species has no option to show more details (and should probably show html converted from the Advanced Options markdown) in the same way we show cruxes and classes
-        <br/>
         - sorting is disabled on Powers tab to avoid horrible performance hit (will rework the sorting later, hopefully)
         <br/>
         - searching on Powers also lags horribly at times, especially on initial search or clearing a search box, probably need to rework Powers tab to NOT load all powers at once and maybe paginate the tables?
@@ -425,6 +424,8 @@
         - no way to easily jump from disciplines listed on class tab to searching for just that discipline on power (the Class Disciplines should act as a link that autofills a search)
         <br/>
         - the "Eats Monster Hearts" kit has no name for the Lv 5 and Lv 10 features (this is a problem with the Orcus core book, I can't provide a name that doesn't exist)
+        <br/>
+        - many powers and species are missing flavour text (everything I've checked so far has missing flavour and description in the Orcus markdown files, so AFAIK this isn't a Compendium issue)
       </p>
     </footer>
   </body>
