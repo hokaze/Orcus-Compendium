@@ -50,6 +50,12 @@ function append_power_json(power_data)
         {
             return;
         }
+        
+        // ignore powers with no name set (one such power exists on the Spellwright Prestige Path and has no other data for category, tags, etc, so seems to be an error in "Orcus - Powers.xlsx")
+        if (power_data[key]["Name"] == "")
+        {
+            return;
+        }
 
         // ignore options explicitly marked as non-core for now
         // TODO - later give an option to toggle this and mark an asterisk by them?
@@ -125,7 +131,7 @@ function append_power_json(power_data)
 }
 
 // search on Power table
-function searchPowerTable(search_input, column)
+function searchPowerTable()
 {    
     // revised for multiple search
     var input_name = document.getElementById("searchPowerName");

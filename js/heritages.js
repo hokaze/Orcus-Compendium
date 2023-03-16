@@ -72,7 +72,7 @@ function append_heritage_json(heritage_data)
 }
 
 // search on heritage table
-function searchHeritageTable(search_input, column)
+function searchHeritageTable()
 {    
     // revised for multiple search
     var input_name = document.getElementById("searchHeritageName");

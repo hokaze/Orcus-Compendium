@@ -99,7 +99,7 @@ function append_class_json(class_data)
 }
 
 // search on class table by name, role, tradition, etc
-function searchClassTable(search_input, column)
+function searchClassTable()
 {    
     // revised for multiple search
     var input_name = document.getElementById("searchClassName");

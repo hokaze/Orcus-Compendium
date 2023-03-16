@@ -7,6 +7,12 @@ var kit_table = document.getElementById('kitTable');
 var kit_data = {};
 
 kit_name_list = [];
+kit_description_list = [];
+kit_requirements_list = [];
+kit_feat1_list = [];
+kit_feat5_list = [];
+kit_feat10_list = [];
+kit_disciplines_list = [];
 
 // this function is in the event listener and will execute on page load
 function get_kit_json_data()
@@ -40,8 +46,16 @@ function append_kit_json(kit_data)
 {
     Object.keys(kit_data).forEach(key => {
         
-        // used for lookup with showKitInfo prev/next buttons
+        // arrays used to enable search boxes to have dropdown lists (and required for prev/next buttons)
         kit_name_list.push(kit_data[key]["Name"]);
+        kit_description_list.push(kit_data[key]["Description"]);
+        kit_requirements_list.push(kit_data[key]["Requirements"]);
+        kit_feat1_list.push(kit_data[key]["Lv 1 Feature"]);
+        kit_feat5_list.push(kit_data[key]["Lv 5 Feature"]);
+        kit_feat10_list.push(kit_data[key]["Lv 10 Feature"]);
+        
+        // special handling for disciplines so we can search on individual ones as some kits have multiple and split them on "x OR y", unlike classes, which us "x, y" format
+        kit_disciplines_list.push(... kit_data[key]["Associated Discipline"].split(" OR "));
         
         // update table with new row
         var tr = document.createElement('tr');
@@ -57,10 +71,23 @@ function append_kit_json(kit_data)
         '<td>' + kit_data[key]["Associated Discipline"] + '</td>';
         kit_table.appendChild(tr);
     });
+    
+    // lists used to populate datalists so search boxes have dropdown suggestions (using set to enforce uniqueness, so no dupe entries)
+    // additionally, sort alphabetically
+    kit_name_list = [...new Set(kit_name_list)].sort();
+    kit_description_list = [...new Set(kit_description_list)].sort();
+    kit_requirements_list = [...new Set(kit_requirements_list)].sort();
+    kit_feat1_list = [...new Set(kit_feat1_list)].sort();
+    kit_feat5_list = [...new Set(kit_feat5_list)].sort();
+    kit_feat10_list = [...new Set(kit_feat10_list)].sort();
+    kit_disciplines_list = [...new Set(kit_disciplines_list)].sort();
+    
+    // create + attach datalist to enable dropdown on search boxes
+    updateKitDatalist();
 }
 
 // search on kit table
-function searchKitTable(search_input, column)
+function searchKitTable()
 {    
     // revised for multiple search
     var input_name = document.getElementById("searchKitName");
@@ -104,7 +131,7 @@ function searchKitTable(search_input, column)
 }
 
 
-// like classes, show some html converted from markdown for the kit (this was the easiest way to show kit ancestry powers, as they're not included in the powers spreadsheet/table)
+// like classes, show some html converted from markdown for the kit (this was the easiest way to show kit details, as they're not included in any of the original spreadsheets)
 async function showKitInfo (key, enable_navigation)
 {
     var kit_name = kit_data[key]["Name"];
@@ -117,4 +144,26 @@ async function showKitInfo (key, enable_navigation)
     }
 
     modal_div.style.display = "block";
+}
+
+
+function updateKitDatalist ()
+{   
+    // grab datalist elements used by search inputs
+    dl_name = document.getElementById("dlKitName");
+    dl_description = document.getElementById("dlKitDescription");
+    dl_requirements = document.getElementById("dlKitRequirements");
+    dl_feat1 = document.getElementById("dlKitFeat1");
+    dl_feat5 = document.getElementById("dlKitFeat5");
+    dl_feat10 = document.getElementById("dlKitFeat10");
+    dl_discipline = document.getElementById("dlKitDiscipline");
+
+    // populate datalists
+    updateDataList(dl_name, kit_name_list);
+    updateDataList(dl_description, kit_description_list);
+    updateDataList(dl_requirements, kit_requirements_list);
+    updateDataList(dl_feat1, kit_feat1_list);
+    updateDataList(dl_feat5, kit_feat5_list);
+    updateDataList(dl_feat10, kit_feat10_list);
+    updateDataList(dl_discipline, kit_disciplines_list);
 }

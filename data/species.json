@@ -105,7 +105,7 @@
         "Feat 1 Name": "Relentless Endurance ",
         "Feat 1 Desc": "The first time in an encounter that you are staggered, you gain temporary HP equal to your level.",
         "Feat 2 Name": "Made of Metal",
-        "Feat 2 Desc": "You do not make death saving throws. You still die if reduced to negative hit points equal to your maximum hit points.  \n\nYou do not sleep, breathe, eat or drink. ",
+        "Feat 2 Desc": "You do not make death saving throws. You still die if reduced to negative hit points equal to your maximum hit points. You do not sleep, breathe, eat or drink. ",
         "Feat 3 Name": "",
         "Feat 3 Desc": ""
     },
@@ -323,7 +323,7 @@
         "Skill Bonus 1": "Diplomacy",
         "Skill Bonus 2": "Endure",
         "Feat 1 Name": "Heart of Stone",
-        "Feat 1 Desc": "You do not make death saving throws. You still die if reduced to negative hit points equal to your maximum hit points.  \nWhile unconscious, you do not need to breathe nor do you get hungrier or thirstier.  ",
+        "Feat 1 Desc": "You do not make death saving throws. You still die if reduced to negative hit points equal to your maximum hit points. While unconscious, you do not need to breathe nor do you get hungrier or thirstier.  ",
         "Feat 2 Name": "Will Defense",
         "Feat 2 Desc": "+1 ancestry bonus to Will defense. ",
         "Feat 3 Name": "Rook Power",

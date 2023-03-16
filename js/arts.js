@@ -86,7 +86,7 @@ function append_art_json(art_data)
 }
 
 // search on art table by name, role, tradition, etc
-function searchArtTable(search_input, column)
+function searchArtTable()
 {    
     // revised for multiple search
     var input_name = document.getElementById("searchArtName");

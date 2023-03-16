@@ -70,7 +70,6 @@ a
     text-align: left;
     padding: 12px;
     border: 1px solid #ddd;
-    max-width: 20ch;
 }
 
 .filterTable tr
@@ -83,18 +82,21 @@ a
     background-color: #f1f1f1;
 }
 
+tr.header
+{
+   white-space: nowrap; /* ensures sort button is on same line as searchbox rather than breaking to new line */
+}
 
 /* The Modal (background) */
 .modal
 {
-    display: none; /* Hidden by default */
     display: none; /* Hidden by default */
     position: absolute;
     z-index: 1; /* Sit on top */
     padding-top: 50px; /* Location of the box */
     left: 0;
     top: 0;
-    min-height: 120%;
+    min-height: 150%;
     width: 100%; /* Full width */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.5); /* Black w/ opacity */

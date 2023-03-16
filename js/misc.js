@@ -1,10 +1,28 @@
+// ---- MISC STUFF TO LOAD FIRST ---- //
+
 // some vars that are useful to all the scripts, so I'm not redeclaring them constantly in literally every other .js file
 var content_div = document.getElementById("showInfoContent");
 var modal_div = document.getElementById("modalShowInfo");
 
+// set width of all inputs (currently search boxes) to be sized based on placeholder text, as this is a rough aproximation of how long each needs to be for longer ones, otherwise use min size of 10 chars
+var all_inputs = document.querySelectorAll('input');
+for (i = 0; i < all_inputs.length; i++)
+{
+    // length + 2 so we have a bit of wiggle space
+    var placeholder_length = all_inputs[i].getAttribute('placeholder').length + 2;
+    var input_length = 10;
+    if (placeholder_length > input_length)
+    {
+        input_length = placeholder_length;
+    }
+    all_inputs[i].setAttribute('size', input_length);
+}
 
 // open the class tab by default
 document.getElementById("classTab").click();
+
+
+// ---- UTILITY FUNCTIONS ---- //
 
 // Tab Switcher for classes, ancestries, powers, etc
 function selectTab(evt, tab_name)

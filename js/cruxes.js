@@ -76,7 +76,7 @@ function append_crux_json(crux_data)
 }
 
 // search on crux table
-function searchCruxTable(search_input, column)
+function searchCruxTable()
 {    
     // revised for multiple search
     var input_name = document.getElementById("searchCruxName");

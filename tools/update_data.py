@@ -29,13 +29,14 @@ def update_json():
 
     print ("Updating JSON files from CSV...")
     
-    csv_to_json.csv_to_json("../data/csv/ancestries.csv", "../data/ancestries.json")
     csv_to_json.csv_to_json("../data/csv/arts.csv", "../data/arts.json")
     csv_to_json.csv_to_json("../data/csv/classes.csv", "../data/classes.json")
     csv_to_json.csv_to_json("../data/csv/cruxes.csv", "../data/cruxes.json")
     csv_to_json.csv_to_json("../data/csv/heritages.csv", "../data/heritages.json")
-    csv_to_json.csv_to_json("../data/csv/powers.csv", "../data/powers.json")
     csv_to_json.csv_to_json("../data/csv/kits.csv", "../data/kits.json")
+    csv_to_json.csv_to_json("../data/csv/powers.csv", "../data/powers.json")
+    # species.csv comes from "Orcus - Ancestries.xlsx", but swapped to calling it species to avoid confusion with standard ancestry option of Crux + Heritage
+    csv_to_json.csv_to_json("../data/csv/species.csv", "../data/species.json")
     
     print ("All JSON files updated")
 
@@ -51,6 +52,7 @@ def update_html():
     # set markdown filepaths so if these change names / location can just change them here rather than every markdown_to_html call
     md_class_and_powers_path = "../data/markdown-to-html/markdown/Orcus Classes and Powers - current.md"
     md_player_options_path = "../data/markdown-to-html/markdown/Orcus Player Options - current.md"
+    md_advanced_options_path = "../data/markdown-to-html/markdown/Orcus Advanced Options - current.md"
     
     # Classes
     markdown_to_html.markdown_to_html("# Commander", md_class_and_powers_path, "../data/markdown-to-html/class/Commander.html")
@@ -95,6 +97,21 @@ def update_html():
         kit_html_path = "../data/markdown-to-html/kit/" + kit_name + ".html"
         markdown_to_html.markdown_to_html(kit_header, md_class_and_powers_path, kit_html_path)
     
+    # Species
+    # lazily grabbing species names from csv
+    species_list = []
+    species_file = open("../data/csv/species.csv", "r")
+    for line in species_file:
+        species_list.append(line.split(",")[0])
+    species_file.close()
+    
+    for species_name in species_list:
+        species_header = "## " + species_name
+        species_html_path = "../data/markdown-to-html/species/" + species_name + ".html"
+        markdown_to_html.markdown_to_html(species_header, md_advanced_options_path, species_html_path)
+    
+    # Humans aren't in spreadsheet so need special case to generate
+    markdown_to_html.markdown_to_html("## Human", md_advanced_options_path, "../data/markdown-to-html/species/Human.html")
     
     print ("All HTML files updated")
 
