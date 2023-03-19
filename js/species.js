@@ -19,7 +19,7 @@ var species_speed_list = [];
 function get_species_json_data()
 {
     // Relative URL of external json file
-    var json_url = 'data/species.json';
+    var json_url = 'data/json/species.json';
 
     // Build the XMLHttpRequest (aka AJAX Request)
     xmlhttp = new XMLHttpRequest();

@@ -16,7 +16,7 @@ var crux_power_list = [];
 function get_crux_json_data()
 {
     // Relative URL of external json file
-    var json_url = 'data/cruxes.json';
+    var json_url = 'data/json/cruxes.json';
 
     // Build the XMLHttpRequest (aka AJAX Request)
     xmlhttp = new XMLHttpRequest();

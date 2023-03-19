@@ -18,7 +18,7 @@ kit_disciplines_list = [];
 function get_kit_json_data()
 {
     // Relative URL of external json file
-    var json_url = 'data/kits.json';
+    var json_url = 'data/json/kits.json';
 
     // Build the XMLHttpRequest (aka AJAX Request)
     xmlhttp = new XMLHttpRequest();

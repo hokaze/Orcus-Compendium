@@ -60,74 +60,74 @@ Way of the Turn,General,None,"When you hit with a melee attack that inflicts at 
 Weapon Focus,General,2nd level,"Choose one weapon group, like “axes” or “spears and lances”. You gain a +1 feat bonus on all attack rolls you make using the selected weapons, provided you are proficient with them. At level 11, this bonus increases to +2. At level 21, this bonus increases to +3.","You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new group of weapons."
 Weapon Proficiency,General,None,"Choose one type of weapon, like “longsword” or “light crossbow”. You are proficient with that type of weapon.","You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new type of weapon."
 Weapon Specialization,General,2nd level,"Choose one weapon group, like “axes” or “spears and lances”. You gain a +1 bonus on all damage rolls you make using the selected weapons. At level 11, this bonus increases to +2. At level 21, this bonus increases to +3.","You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new group of weapons."
-Balance and Direction,Martial Training,Unarmed Combat,TODO,None
-Best on the Mat,Martial Training,"Evolution of Pankration, Unarmed Combat",TODO,None
-Bouncing Combo,Martial Training,"21st level, Unarmed Combat",TODO,None
-Earned the Belt,Martial Training,"11th level, Evolution of Pankration, Unarmed Combat",TODO,None
-Evolution of Pankration,Martial Training,Unarmed Combat,TODO,None
-Ham Hands,Martial Training,"21st level, Unarmed Combat",TODO,None
-Jumping Knee,Martial Training,"Unarmed Combat, Unarmed Expanded Profile",TODO,None
-Kayfabe Maneuver,Martial Training,Superior Position,TODO,None
-Master Degree Martial Artist,Martial Training,"21st level, Unarmed Combat",TODO,None
-Superior Position,Martial Training,None,TODO,None
-The Ritual of Dance and Damage,Martial Training,"Unarmed Combat, Unarmed Expanded Profile",TODO,None
-Unarmed Combat,Martial Training,None,TODO,None
-Unarmed Combat (Improved),Martial Training,Unarmed Combat,TODO,None
-Unarmed Combat (Master),Martial Training,"11th level, Unarmed Combat, Unarmed Combat (Improved)",TODO,None
-Unarmed Expanded Profile,Martial Training,Unarmed Combat,TODO,None
+Balance and Direction,Martial Training,Unarmed Combat,"If you are unarmed or wielding only natural weapons, you gain a +1 feat bonus to all defenses against melee attacks. Critical: If you score a critical hit with an unarmed attack, the target is weakened and grants you combat advantage until the end of your next turn.",None
+Best on the Mat,Martial Training,"Evolution of Pankration, Unarmed Combat",You gain a +1 feat bonus to grapples and attack powers involving grapples while prone. You gain a +2 feat bonus to damage against grappled opponents while you are prone.,None
+Bouncing Combo,Martial Training,"21st level, Unarmed Combat","If you stagger or drop an enemy with an unarmed attack, you can take a move action that must be used before the end of your turn. You can only gain one move action this way per round, and you can only use it to walk, run, or shift.",None
+Earned the Belt,Martial Training,"11th level, Evolution of Pankration, Unarmed Combat",You can sustain two grapples with only a single swift action. You can move a grappled target one square with a move action without requiring a Strength attack.,None
+Evolution of Pankration,Martial Training,Unarmed Combat,"You do not grant combat advantage if prone. If you grapple a prone opponent, they are restrained instead of immobile (you are still capable of forcing movement on the target) and cannot stand until they escape. Critical: If you roll a natural 20 on a grapple attempt or attack power that involves a grapple, the target cannot attempt to escape from the grapple on its next turn.",None
+Ham Hands,Martial Training,"21st level, Unarmed Combat","If you hit a target one size larger than you or smaller with an unarmed attack, you can spend a move action to immobilize that target until the start of your next turn. This takes up a hand.",None
+Jumping Knee,Martial Training,"Unarmed Combat, Unarmed Expanded Profile","When you hit with an unarmed attack as part of a charge, the target also suffers the effects of a bull rush as well the damage from the hit. If the target cannot be pushed because of an obstruction, it takes an additional +2 damage.",None
+Kayfabe Maneuver,Martial Training,Superior Position,You can move a target you have grappled with a move action instead of a standard action.,None
+Master Degree Martial Artist,Martial Training,"21st level, Unarmed Combat","With unarmed attacks, you score a critical hit on a natural roll of 19 or 20.",None
+Superior Position,Martial Training,None,"When an enemy attempts to escape from a grapple you are sustaining, regardless if the target uses Acrobatics or Athletics, it rolls against the higher of your Fortitude or Reflex defenses. In addition, you do not release an opponent from a grapple if you are dazed.",None
+The Ritual of Dance and Damage,Martial Training,"Unarmed Combat, Unarmed Expanded Profile","While you are unarmed or wielding only natural weapons and are in reach of an enemy, you can shift two squares as a move action instead of one as long as you remain in reach of that enemy. Critical: If you score a critical hit with an unarmed attack, you can shift up to your speed as free action and gain combat advantage against all adjacent enemies until the end of your next turn.",None
+Unarmed Combat,Martial Training,None,You are proficient with your fists in combat. Your unarmed strikes gain a +3 proficiency bonus. Your one-handed unarmed strikes do 1d6 damage and have the side weapon property. Your two-handed unarmed strikes do 1d10 damage.,None
+Unarmed Combat (Improved),Martial Training,Unarmed Combat,Your one-handed unarmed strikes do 1d8 damage. Your two-handed unarmed strikes do 1d12 damage.,None
+Unarmed Combat (Master),Martial Training,"11th level, Unarmed Combat, Unarmed Combat (Improved)",Your one-handed unarmed strikes do 1d10 damage. Your two-handed unarmed strikes do 2d8 damage.,None
+Unarmed Expanded Profile,Martial Training,Unarmed Combat,"You can spend a move action before making an unarmed melee attack to gain a +2 bonus to all damage rolls with that attack. At 11th level, this bonus increases to +3 and at 21st level, it increases to +4.",None
 Beyond Ken,Art,None,"Choose one category of practice or incantation (schema, treatment, practical, curative, etc.). Treat your level as 4 higher for the purposes of learning and performing the arts of that category.",None
 Practiced Artisan,Art,None,"You learn one art of each level, up to your current level, without spending the time or money normally required. Each time you increase in level, you learn one additional art of your current level or lower.",None
 Varied Arts,Art,None,You can learn arts that belong to a skill you are not trained in.,None
-Blessing of the God,Channel Divinity,You have the Channel Divinity feature,"Choose one Channel Divinity power from the list below, based on a theme associated with the god(s) you worship. When you Channel Divinity, you can choose that power.  Domain - Outlaw Kingdoms god - Channel Divinity power Destruction - Valkon, Vogg - Explosive Item Family - Yaheine - Wrath of the She-Bear Feasting - Chavalar - Shared Bite Greed - Chavalar, Thoin - I'll Have That Life - Yaheine - Guidance Light - Shehaan - Light Shadow Love - Thalander - Easy Charm Mischief - Vaath - Death Defying Murder - Larhoon, Vogg - Blood Tracer Mystery - Larhoon, Shehaan - Slip Between Worlds Peace - Thalander - Light Ward Protection - Korven, Kain - Negate Critical Revenge - Enoran - Biteback Sky - Vaath, Valkon - Skyfall Spiders - Kurzana - Throw Web Stone - Kurzana, Thoin - Stoneblood Time - Enoran - The Weight of Time Tyranny - Kain - Spur On War - Korven - Shielded Soul","You can take this feat multiple times, choosing a different power each time."
-Adaptation,Psi Focus,Psi Focus power,TODO,None
-Immovable Dominion,Psi Focus,Psi Focus power,TODO,None
-Mind and Body,Psi Focus,"Psi Focus power, Focus Surge power",TODO,None
-Mind-Eye Accuracy,Psi Focus,"Psi Focus power, Careful Focus power",TODO,None
-Phrenic Breath,Psi Focus,"Psi Focus power, Breath Weapon power",TODO,None
-Phrenic Dodge,Psi Focus,"Psi Focus power, Lucky power",TODO,None
-Phrenic Meditation,Psi Focus,"Psi Focus power, you can perform the Meditate action",TODO,None
-Phrenic Reservoir,Psi Focus,"Psi Focus power, Dabbler ancestry feature",TODO,None
-Phrenic Talent,Psi Focus,Psi Focus power,TODO,None
-Phrenic Teleport,Psi Focus,"Psi Focus power, Highblood Teleport power",TODO,None
-Phrenic Wrath,Psi Focus,"Psi Focus power, Vengeance of the Pits power",TODO,None
-Surging Mind,Psi Focus,Psi Focus power,TODO,None
-Wild Talent,Psi Focus,None,TODO,None
-Aura Shard,Shard,Cha 13,TODO,None
-Blast Shard,Shard,None,TODO,None
-Shield Shard,Shard,None,TODO,None
-Weapon Shard,Shard,None,TODO,None
-Blasting Aura,Aura Shard,"Aura Shard, Cha 13",TODO,None
-Empowering Aura,Aura Shard,"Aura Shard, Thieving Aura, Cha 13, 26th level",TODO,None
-Extended Aura,Aura Shard,"Aura Shard, Cha 13",TODO,None
-Forceful Aura,Aura Shard,"Aura Shard, Cha 13",TODO,None
-Healing Aura,Aura Shard,"Aura Shard, Cha 13",TODO,None
-Restorative Aura,Aura Shard,"Aura Shard, Healing Aura, Cha 13",TODO,None
-Shifting Aura,Aura Shard,"Aura Shard, Cha 13",TODO,None
-Surging Aura,Aura Shard,"Aura Shard, Cha 13",TODO,None
-Thieving Aura,Aura Shard,"Aura Shard, Cha 13",TODO,None
-Acid Blast,Blast Shard,Blast Shard,TODO,None
-Cold Blast,Blast Shard,Blast Shard,TODO,None
-Empowered Blast Shard,Blast Shard,Blast Shard,TODO,None
-Far Blast,Blast Shard,Blast Shard,TODO,None
-Fire Blast,Blast Shard,Blast Shard,TODO,None
-Improved Blast Shard,Blast Shard,"Empowered Blast Shard, 11th level",TODO,None
-Lightning Blast,Blast Shard,Blast Shard,TODO,None
-Mind Blast,Blast Shard,Blast Shard,TODO,None
-Force Shield,Shield Shard,"Shield Shard, 11th level",TODO,"If you have any feats that would be usable when you are attacked, you can use them when any protected ally is attacked"
-Greater Shield,Shield Shard,Shield Shard,TODO,You suffer an armor check penalty as if you were wielding a heavy shield
-Grounding Shard,Shield Shard,Shield Shard,TODO,None
-Immovable Shield,Shield Shard,"Grounding Shield, Shield Shard",TODO,None
-Offensive Shield,Shield Shard,Shield Shard,TODO,None
-Refreshing Shard,Shield Shard,Shield Shard,TODO,None
-As One,Weapon Shard,"Weapon Shard, at least one power from the martial power source",TODO,None
-Assassin’s Weapon,Weapon Shard,"Slayer’s Weapon, Weapon Shard",TODO,None
-Extended Weapon,Weapon Shard,Weapon Shard,TODO,None
-Greater Weapon Shard,Weapon Shard,"Improved Weapon Shard, Weapon Shard, 11th level",TODO,None
-Improved Weapon Shard,Weapon Shard,Weapon Shard,TODO,None
-Malleable Weapon,Weapon Shard,Weapon Shard,TODO,None
-Slayer’s Weapon,Weapon Shard,Weapon Shard,TODO,None
-Stormshard,Weapon Shard,Weapon Shard,TODO,None
-Twin Weapon,Weapon Shard,Weapon Shard,TODO,None
+Blessing of the God,Channel Divinity,You have the Channel Divinity feature,"Choose one Channel Divinity power from the list below, based on a theme associated with the god(s) you worship. When you Channel Divinity, you can choose that power. ","You can take this feat multiple times, choosing a different power each time."
+Adaptation,Psi Focus,Psi Focus power,"When you make a save, you may expend your psi focus to gain a bonus to that save equal to your Charisma modifier. This counts as using the psi focus for an encounter power.",None
+Immovable Dominion,Psi Focus,Psi Focus power,"Expend your psi focus as a free action when being pushed, pulled or shunted. Reduce the distanced moved by your Charisma modifier. This counts as using the psi focus for an encounter power.",None
+Mind and Body,Psi Focus,"Psi Focus power, Focus Surge power","When you spend a focus surge, regain hit points equal to your Charisma modifier.",None
+Mind-Eye Accuracy,Psi Focus,"Psi Focus power, Careful Focus power","When using your careful focus ancestry power, you may expend your psi focus to gain a bonus on the attack roll equal to your Charisma bonus. This counts as using the psi focus for an encounter power.",None
+Phrenic Breath,Psi Focus,"Psi Focus power, Breath Weapon power",Expend your psi focus to make your breath weapon a Near arc 3 + your Charisma modifier instead of Near arc 3. This counts as using the psi focus for an encounter power.,None
+Phrenic Dodge,Psi Focus,"Psi Focus power, Lucky power","When using your lucky ancestry power, and the enemy misses you on their re-roll, you may expend your psi focus instead of your ancestry power. This counts as using the psi focus for an encounter power.",None
+Phrenic Meditation,Psi Focus,"Psi Focus power, you can perform the Meditate action",You can perform the Meditate action as a swift action once per encounter.,None
+Phrenic Reservoir,Psi Focus,"Psi Focus power, Dabbler ancestry feature","When using the power from your Dabbler ancestry feature, you may expend your psi focus and retain the use of the power gained from your Dabbler. This counts as using the psi focus for an encounter power.",None
+Phrenic Talent,Psi Focus,Psi Focus power,You gain the focus surge power.,None
+Phrenic Teleport,Psi Focus,"Psi Focus power, Highblood Teleport power","When using your highblood teleport ancestry power, you can expend your psi focus to teleport a number of additional squares equal to your Charisma modifier. This counts as using the psi focus for an encounter power.",None
+Phrenic Wrath,Psi Focus,"Psi Focus power, Vengeance of the Pits power",You may expend your psi focus as a free action to use your vengeance of the pits ancestry power even against an enemy which hasn’t just hit you. This counts as using the psi focus for an encounter power.,None
+Surging Mind,Psi Focus,Psi Focus power,"When you use your psi focus, you immediately gain temporary hit points equal to your level.",None
+Wild Talent,Psi Focus,None,"You have access to the psi focus power, a heightened state of mental and emotional clarity, that you can utilize to augment powers with the Augmentable keyword. Psi focus, once used, must refresh, much like how certain monsters have powers that refresh at the beginning of their turn on a successful roll. Psi focus works in the exact same way, but the roll needed to refresh it depends on what kind of power it was last used to augment.",None
+Aura Shard,Shard,Cha 13,"As a move action, you manifest an aura which allows you to help your allies. This aura has a range of 10. When you or an ally in your aura spend an action point, that individual gains temporary hit points equal to your Charisma modifier. Level 11: Temporary HP equal to double your Cha modifier. Level 21: Temporary HP equal to triple your Cha modifier.",None
+Blast Shard,Shard,None,"As a standard action, you can fire a phrenic blast of energy (see stats below). Blast shards are supernatural weapons, and thus do not belong to any weapon group, and can take almost any form, color and shape, all according to the wishes of the user. The user is always proficient with his blast shard. For all intents and purposes, the blast shard can be used to make all forms of ranged attacks, as well as in conjunction with powers, or for the purpose of opportunity attacks. Your blast shard has a +1 enhancement bonus to attack and damage rolls. This increases by +1 for every 5th level after the 1st (6th, 11th, 16th, 21st, 26th). Blast Shard (Simple Ranged Weapon), Proficiency: +2, Damage: 1d6, Range: 10/20",None
+Shield Shard,Shard,None,"As a move action, you can manifest a shield of force which attaches to one of your hands, as a regular shield. You gain a +1 shield bonus to AC and Reflex defenses and your shield hand counts as if it was holding a light shield. You can dismiss the shield of force as a swift action. You count as having proficiency in light shields for the purpose of meeting feat prerequisites.",None
+Weapon Shard,Shard,None,"As a move action, you can manifest a weapon shard (see stats below). Weapon shards are supernatural weapons (and thus do not belong to any weapon group), and can take almost any form, color and shape, all according to the wishes of the user. The user is always proficient with his weapon shard, and it is a one-handed weapon. For all intents and purposes, the weapon shard can be used to make all forms of melee attacks, as well as in conjunction with powers, or for the purpose of opportunity attacks. Your weapon shard has a +1 enhancement bonus to attack and damage rolls. This increases by +1 for every 5th level after 1st (+2 at 6th, +3 at 11th, etc.). On a critical hit, you do an additional 1d6 points of damage for every point of enhancement bonus.",None
+Blasting Aura,Aura Shard,"Aura Shard, Cha 13","When you manifest your aura, or by taking a move action when your aura is active, you may make an attack (Charisma vs Will) against one enemy within range, who takes 5 points of psychic damage. Additionally, when you or an ally spend an action point while inside your aura, you (and only you) may make an additional attack against one enemy within range (Cha vs Will, 5 psychic damage). Level 11: Damage increases to 10. Level 21: Damage increases to 15.",None
+Empowering Aura,Aura Shard,"Aura Shard, Thieving Aura, Cha 13, 26th level","When an ally within range of your aura spends an action point, you immediately gain an additional standard action.",None
+Extended Aura,Aura Shard,"Aura Shard, Cha 13",The range of your aura extends by 10 squares.,None
+Forceful Aura,Aura Shard,"Aura Shard, Cha 13","When you manifest your aura, or at any other time by spending a move action while your aura is active, every enemy adjacent to you is pushed 1 square directly away from you. Additionally, when you or an ally spends an action point while inside your aura, you may choose to make a Charisma vs Fortitude attack against one enemy within range of your aura. If successful, that enemy is pushed 1 square directly away from you.",None
+Healing Aura,Aura Shard,"Aura Shard, Cha 13","When you spend an action point, one ally within range of your aura can spend a recovery as an immediate (react) action.",None
+Restorative Aura,Aura Shard,"Aura Shard, Healing Aura, Cha 13","Whenever you or an ally within range of your aura would regain hit points, that individual gains an additional number of hit points equal to your Charisma modifier.",None
+Shifting Aura,Aura Shard,"Aura Shard, Cha 13","When you manifest your aura, or by taking a move action when your aura is active, one ally within range may immediately shift 1 square. Additionally, when you or an ally spends an action point while inside your aura, that person may choose to forego the temporary hit points and instead shift 1 square.",None
+Surging Aura,Aura Shard,"Aura Shard, Cha 13","When you manifest your aura, or by taking a move action when your aura is active, every ally within range gains a +1 bonus on attack rolls for one round. Additionally, when you or an ally spends an action point while inside your aura, that person may choose to gain either the temporary hit points for a +1 bonus on attack rolls for one round.",None
+Thieving Aura,Aura Shard,"Aura Shard, Cha 13","Whenever an enemy within range of your aura spends an action point or a recovery, you regain one action point or recovery (your choice).",None
+Acid Blast,Blast Shard,Blast Shard,"When using your blast shard, at your option, it gains the Acid tag and does acid damage. You gain the acid shard at-will power.",None
+Cold Blast,Blast Shard,Blast Shard,"When using your blast shard, at your option, it gains the Cold tag and deals cold damage. You gain the cold shard at-will power.",None
+Empowered Blast Shard,Blast Shard,Blast Shard,"Your blast shard damage increases by one die size (for example, from 1d6 to 1d8).",None
+Far Blast,Blast Shard,Blast Shard,Increase both the normal and long range of your blast shard by 5.,None
+Fire Blast,Blast Shard,Blast Shard,"When using your blast shard, at your option, it gains the Fire tag and deals fire damage. You gain the fire shard at-will power.",None
+Improved Blast Shard,Blast Shard,"Empowered Blast Shard, 11th level","Your blast shard damage increases by one die (for example, from 1d6 to 2d6).",None
+Lightning Blast,Blast Shard,Blast Shard,"When using your blast shard, at your option, it gains the Lightning tag and deals lightning damage. You gain the lightning shard at-will power.",None
+Mind Blast,Blast Shard,Blast Shard,"When using your blast shard, at your option, it gains the Psychic tag and deals psychic damage. You gain the mind shard at-will power.",None
+Force Shield,Shield Shard,"Shield Shard, 11th level","Once per encounter as a swift action, you can extend the protection of your shield of force to yourself and all allies within 5 squares until the end of your next round.","If you have any feats that would be usable when you are attacked, you can use them when any protected ally is attacked"
+Greater Shield,Shield Shard,Shield Shard,"You may choose to manifest a heavy shield instead of a light shield, when manifesting your shield of force. If you do, you gain a +2 shield bonus to AC and Reflex defenses and your shield hand counts as if it was holding a heavy shield. You count as having proficiency in heavy shields for the purpose of meeting feat prerequisites.",You suffer an armor check penalty as if you were wielding a heavy shield
+Grounding Shard,Shield Shard,Shield Shard,"Any time you would be pushed, pulled or shunted, reduce the number of squares you are moved by 1 (minimum 0). Level 11: Reduce the number of squares by 2 (minimum 0).",None
+Immovable Shield,Shield Shard,"Grounding Shield, Shield Shard","If you do not move at all during your round, you gain resistance 5 until the beginning of your next turn. This stacks with any other forms of resistance you might have. Level 11: Resistance 10. Level 21: Resistance 15.",None
+Offensive Shield,Shield Shard,Shield Shard,Your shield of force has all the properties of a weapon shard (as described in the Weapon Shard feat). You count as having the Weapon Shard feat for the purpose of meeting feat prerequisites.,None
+Refreshing Shard,Shield Shard,Shield Shard,"Once per encounter, when you are damaged, as an immediate (counter) action, you may spend a recovery.",None
+As One,Weapon Shard,"Weapon Shard, at least one power from the martial power source","When using a power with the martial tag with your weapon shard, you gain a +2 feat bonus to damage rolls. This increases to +3 at 11th level and to +4 at 21st level.",None
+Assassin’s Weapon,Weapon Shard,"Slayer’s Weapon, Weapon Shard","If you have combat advantage against an opponent and score a critical hit, you deal +2d8 damage. This increases to +3d8 at 11th level and to +4d8 at 21st level.",None
+Extended Weapon,Weapon Shard,Weapon Shard,Your weapon shard becomes a reach weapon.,None
+Greater Weapon Shard,Weapon Shard,"Improved Weapon Shard, Weapon Shard, 11th level",Your weapon shard damage increases to 2d6.,None
+Improved Weapon Shard,Weapon Shard,Weapon Shard,Your weapon shard damage increases to 1d10.,None
+Malleable Weapon,Weapon Shard,Weapon Shard,"By taking a standard action instead of a move action when you manifest your weapon shard, you can choose to have it belong to any weapon group of your choice until the end of the encounter. You also increase the proficiency bonus to +3.",None
+Slayer’s Weapon,Weapon Shard,Weapon Shard,Your weapon shard becomes an improved critical weapon and deals +1d8 damage when you score a critical hit. This increases to +2d8 at 11th level and to +3d8 at 21st level.,None
+Stormshard,Weapon Shard,Weapon Shard,"Once per encounter, when attacking with your weapon shard, your attack gains Near arc 1. Only enemies are affected while inside the arc.",None
+Twin Weapon,Weapon Shard,Weapon Shard,"When you manifest your weapon shard, you can choose to manifest one for each hand instead. When making an attack that requires two melee weapons, you gain a +1 feat bonus to your attack rolls.",None
 Hardy Shift,Wild Shape,You know a Form power,"When you use a Form power, you may spend a recovery to heal damage up to your recovery value.",None
 Hybrid Form,Wild Shape,You know at least one power with the Form keyword,"When you use a Form power, you can choose to take a hybrid, humanoid form instead of a pure animal form. In this case, you can keep your current size, and your current speeds wherever they are better than your new form’s speeds. Because your hybrid form is humanoid, you can talk, use weapon powers and otherwise make use of having arms and hands.",None
 Versatile Shifting,Wild Shape,You know at least one Shape of the X power,"Once per day, you can expend a shape of the X power to use any other shape of the X power of the same level or lower.",None

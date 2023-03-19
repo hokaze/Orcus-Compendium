@@ -4,8 +4,12 @@
 var content_div = document.getElementById("showInfoContent");
 var modal_div = document.getElementById("modalShowInfo");
 
-// set width of all inputs (currently search boxes) to be sized based on placeholder text, as this is a rough aproximation of how long each needs to be for longer ones, otherwise use min size of 10 chars
-var all_inputs = document.querySelectorAll('input');
+// if loading a showInfo from a different table, this var can be set so that on closeModal returns to the original showInfo instead of hiding
+// e.g. the Channel Divinity power on the Blessing of the God feat links to the showPowerInfo for that power, closing it then returns you to the feat instead of closing
+var modal_div_showinfo_on_close = "";
+
+// set width of all SEARCH inputs (to avoid grabbing radiobuttons) to be sized based on placeholder text, as this is a rough aproximation of how long each needs to be for longer ones, otherwise use min size of 10 chars
+var all_inputs = document.querySelectorAll('input[type=search]');
 for (i = 0; i < all_inputs.length; i++)
 {
     // length + 2 so we have a bit of wiggle space
@@ -198,8 +202,18 @@ function sortTableByColumn(evt, sort_type, table, column)
     }
 }
 
-function hideModal()
+function closeModal()
 {
+    // return to previous showInfo modal if nested (e.g. viewing powers from a different showInfo)
+    if (modal_div_showinfo_on_close)
+    {
+        // eval is bad, but easiest way to run string as function
+        eval(modal_div_showinfo_on_close);
+        modal_div_showinfo_on_close = "";
+        return;
+    }
+    
+    // hide modal
     modal_div.style.display = "none";
 }
 
@@ -208,7 +222,7 @@ window.onclick = function(event)
 {   
     if (event.target == modal_div)
     {
-        hideModal();
+        closeModal();
     }
 }
 

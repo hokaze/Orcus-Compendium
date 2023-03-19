@@ -16,7 +16,7 @@ var class_disciplines_list = [];
 function get_class_json_data()
 {
     // Relative URL of external json file
-    var json_url = 'data/classes.json';
+    var json_url = 'data/json/classes.json';
 
     // Build the XMLHttpRequest (aka AJAX Request)
     xmlhttp = new XMLHttpRequest();

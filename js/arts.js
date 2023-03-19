@@ -17,7 +17,7 @@ var art_time_list = [];
 function get_art_json_data()
 {
     // Relative URL of external json file
-    var json_url = 'data/arts.json';
+    var json_url = 'data/json/arts.json';
 
     // Build the XMLHttpRequest (aka AJAX Request)
     xmlhttp = new XMLHttpRequest();

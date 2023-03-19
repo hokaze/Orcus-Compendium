@@ -14,11 +14,13 @@ var power_frequency_list = [];
 var power_tier_list = [];
 var power_tags_list = [];
 
+const power_name_to_key = new Map();
+
 // this function is in the event listener and will execute on page load
 function get_power_json_data()
 {
     // Relative URL of external json file
-    var json_url = 'data/powers.json';
+    var json_url = 'data/json/powers.json';
 
     // Build the XMLHttpRequest (aka AJAX Request)
     xmlhttp = new XMLHttpRequest();
@@ -44,7 +46,9 @@ function get_power_json_data()
 // this function appends the json data to the table 'powerTable'
 function append_power_json(power_data)
 {
-    Object.keys(power_data).forEach(key => {      
+    Object.keys(power_data).forEach(key => {
+        var power_name = power_data[key]["Name"];
+        
         // ignore the Chapter headers
         if ( power_data[key]["Name"] == "Chapter")
         {
@@ -52,7 +56,7 @@ function append_power_json(power_data)
         }
         
         // ignore powers with no name set (one such power exists on the Spellwright Prestige Path and has no other data for category, tags, etc, so seems to be an error in "Orcus - Powers.xlsx")
-        if (power_data[key]["Name"] == "")
+        if (power_name == "")
         {
             return;
         }
@@ -77,7 +81,7 @@ function append_power_json(power_data)
         }
         
         // arrays used to enable search boxes to have dropdown lists
-        power_name_list.push(power_data[key]["Name"]);
+        power_name_list.push(power_name);
         power_source_list.push(power_data[key]["Source"]);
         power_list_list.push(power_data[key]["List"]);
         power_category_list.push(power_data[key]["Category"]);
@@ -86,12 +90,15 @@ function append_power_json(power_data)
         
         // like handling of class disciplines, split on comma so we can search by individual tags
         power_tags_list.push(... power_data[key]["Tags"].split(", "));
+        
+        // hashmap for looking up key from power name, useful for running showPowerCardInfo from other tabs/tables where we only have a power name, not a key, and don't use navigation
+        power_name_to_key.set(power_name, key);
 
         // update table with new row
         var tr = document.createElement('tr');
         tr.id = "power_" + key;
         // for the class, we add a modal dialogue to show more details on the class that opens the markdown-to-html file with appropriate css
-        tr.innerHTML =  '<td>' + '<a href="#" onclick="showPowerInfo(' + key + ', 1' + ')">' + power_data[key]["Name"] + '</a>' + '</td>' +
+        tr.innerHTML =  '<td>' + '<a href="#" onclick="showPowerInfo(' + key + ', 1' + ')">' + power_name + '</a>' + '</td>' +
         '<td>' + power_data[key]["Source"] + '</td>' +
         '<td>' + power_data[key]["List"] + '</td>' +
         '<td>' + power_data[key]["Category"] + '</td>' +
@@ -196,19 +203,36 @@ function updatePowerDatalist ()
 }
 
 // modal popup that displays powers from the json data and formats them like 4e-style power cards
-function showPowerInfo (key, enable_navigation)
-{
-    var modal_div = document.getElementById("modalShowInfo");
-    var content_div = document.getElementById("showInfoContent");
+// = arguments =
+// key (required): power key
+// enable_navigation (optional): whether to show prev/next buttons
+// close_showinfo (optional): on closing the showInfo modal, run this showInfo function instead - used when displaying a Power from another table to return to whatever dialogue prompted it (e.g. clicking a Domain Power on the Blessing of the God feat will showPowerInfo, then return to that feat)
+function showPowerInfo (key, enable_navigation, close_showinfo)
+{   
+    // Experimental display, makes powers look more like 4e power cards
     
-    // Experimental display, make powers look more like 4e power cards
+    // use Orcus or 4e power card colours?
+    var power_style = document.querySelector('input[name="power_style"]:checked').value;
+    var colour_header, colour_atwill, colour_encounter, colour_daily, colour_highlight;
     
-    // set power card colours
-    var colour_header = "Gold"; // fallback if power type not recognised, usually used for item powers/cards
-    const colour_atwill = "#619769";
-    const colour_encounter = "#961334";
-    const colour_daily = "#4d4d4f";
-    const colour_highlight = "#dddccc"; // used for flavour text and on alternating lines after the attack line for increased readability
+    // mimic the Orcus Heroes' Handbook power cards by default
+    if (power_style == "Orcus")
+    {
+        colour_header = "#7030a0"; // fallback colour, currently just using the colour shown in the Orcus Game Master's Guide for Poisons, as the only example of item powers with the "Consumable" frequency, as permanent magic items do not have power cards
+        colour_atwill = "#9bbb59";
+        colour_encounter = "#e36c0a";
+        colour_daily = "#4d4d4f";
+        colour_highlight = "#dddccc"; // used for flavour text and on alternating lines after the attack line for increased readability
+    }
+    // 4e-style power card colours
+    else
+    {
+        colour_header = "#dba513"; // fallback if power type not recognised (so probably an item power), using the colour of magic item cards
+        colour_atwill = "#619769";
+        colour_encounter = "#961334";
+        colour_daily = "#17365d";
+        colour_highlight = "#dddccc"; // used for flavour text and on alternating lines after the attack line for increased readability
+    }
     
     if (power_data[key]["Frequency"] == "At-Will")
     {
@@ -266,6 +290,9 @@ function showPowerInfo (key, enable_navigation)
     {
         showModalNavigation ("power", key, power_name_list, "showPowerInfo", power_table, power_data);
     }
+    
+    // if we're displaying the power from a source besides the powers table, the user probably wants to return to the previous showInfo on closing the power, rather than just close the modal entirely
+    this.modal_div_showinfo_on_close = close_showinfo;
 
     modal_div.style.display = "block";
 }

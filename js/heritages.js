@@ -15,7 +15,7 @@ var heritage_feat_desc_list = [];
 function get_heritage_json_data()
 {
     // Relative URL of external json file
-    var json_url = 'data/heritages.json';
+    var json_url = 'data/json/heritages.json';
 
     // Build the XMLHttpRequest (aka AJAX Request)
     xmlhttp = new XMLHttpRequest();

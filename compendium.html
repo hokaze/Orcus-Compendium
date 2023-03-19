@@ -29,17 +29,18 @@
   
   <body>
     <h2>Orcus Compendium</h2>
-    <p>Proof of Concept - searchable filters/tables of class, ancestry, power, kit, arts</p>
+    <p>Functional Proof of Concept - searchable filters/tables of classes, powers, feats, ancestries, kits and arts</p>
     <p>Options marked with a "*" are Advanced Options that do not appear in the Core Orcus Heroes' Handbook yet</p>
 
     <div class="tab">
       <button id ="classTab" class="tablinks" onclick="selectTab(event, 'Classes')">Classes</button>
       <button id ="powerTab" class="tablinks" onclick="selectTab(event, 'Powers')">Powers</button>
+      <button id ="featTab" class="tablinks" onclick="selectTab(event, 'Feats')">Feats</button>
       <button id ="cruxTab" class="tablinks" onclick="selectTab(event, 'Cruxes')">Ancestries (Cruxes)</button>
       <button id ="heritageTab" class="tablinks" onclick="selectTab(event, 'Heritages')">Ancestries (Heritages)</button>
-      <button id ="speciesTab" class="tablinks" onclick="selectTab(event, 'Species')">Ancestries (Species) *</button>
       <button class="tablinks" onclick="selectTab(event, 'Kits')">Kits</button>
       <button class="tablinks" onclick="selectTab(event, 'Arts')">Arts *</button>
+      <button id ="speciesTab" class="tablinks" onclick="selectTab(event, 'Species')">Ancestries (Species) *</button>
     </div>
 
     <!-- Class table search -->
@@ -81,7 +82,14 @@
     
     <!-- Powers -->
     <div id="Powers" class="tabcontent">
-    
+      <p>
+        Power Card style: 
+        <input type="radio" id="power_style_orcus" name="power_style" value="Orcus" checked="checked">
+        <label for="power_style_orcus">Orcus</label>
+        <input type="radio" id="power_style_4e" name="power_style" value="4e">
+        <label for="power_style_4e">4e</label>
+      </p>
+      
       <!-- datalists to allow dropdown options in search, populated at same time table is -->
       <datalist id="dlPowerName"></datalist>
       <datalist id="dlPowerSource"></datalist>
@@ -122,6 +130,42 @@
           <th>
             <input type="search" id="searchPowerTags" oninput="searchPowerTable()" placeholder="Tags" title="Search by Tags" list="dlPowerTags">
             <!-- <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'powerTable','6')">Sort ⇅</button> -->
+          </th>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Feats -->
+    <div id="Feats" class="tabcontent">
+
+      <!-- datalists to allow dropdown options in search, populated at same time table is -->
+      <datalist id="dlFeatName"></datalist>
+      <datalist id="dlFeatType"></datalist>
+      <datalist id="dlFeatPrerequisite"></datalist>
+      <datalist id="dlFeatBenefit"></datalist>
+      <datalist id="dlFeatSpecial"></datalist>
+
+      <table id="featTable" class="filterTable">
+        <tr class="header">
+          <th>
+            <input type="search" id="searchFeatName" oninput="searchFeatTable()" placeholder="Name" title="Search by Feat Name" list="dlFeatName">
+            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'featTable','0')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchFeatType" oninput="searchFeatTable()" placeholder="Feat Type" title="Search by Feat Type" list="dlFeatType">
+            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'featTable','1')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchFeatPrerequisite" oninput="searchFeatTable()" placeholder="Prerequisite" title="Search by Prerequisite" list="dlFeatPrerequisite">
+            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'featTable','2')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchFeatBenefit" oninput="searchFeatTable()" placeholder="Benefit" title="Search by Benefit" list="dlFeatBenefit">
+            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'featTable','3')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchFeatSpecial" oninput="searchFeatTable()" placeholder="Special" title="Search by Special" list="dlFeatSpecial">
+            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'featTable','4')">Sort ⇅</button>
           </th>
         </tr>
       </table>
@@ -215,65 +259,6 @@
           <th>
             <input type="search" id="searchHeritageFeatDesc" oninput="searchHeritageTable()" placeholder="Feature Description" title="Search by Feature Description" list="dlHeritageFeatDesc">
             <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'heritageTable','3')">Sort ⇅</button>
-          </th>
-        </tr>
-      </table>
-    </div>
-
-    <!-- Advanced Ancestries Option: Species -->
-    <div id="Species" class="tabcontent">
-      <p>
-        * If using this Advanced Option, you pick a Species as your Ancestory instead of your normal Crux and Heritage.
-      </p>
-      <p>
-        For Ability Scores, you may pick any 2 of the 3 listed (except Humans, who pick any 1 of any of Str/Con/Dex/Int/Wis/Cha instead)
-      </p>
-      
-      <!-- datalists to allow dropdown options in search, populated at same time table is -->
-      <datalist id="dlSpeciesName"></datalist>
-      <datalist id="dlSpeciesDescription"></datalist>
-      <datalist id="dlSpeciesAbility"></datalist>
-      <datalist id="dlSpeciesFeat1"></datalist>
-      <datalist id="dlSpeciesFeat2"></datalist>
-      <datalist id="dlSpeciesFeat3"></datalist>
-      <datalist id="dlSpeciesDarkvision"></datalist>
-      <datalist id="dlSpeciesSpeed"></datalist>
-      
-      <table id="speciesTable" class="filterTable">
-        <!-- searchable headers, note that you can't currently filter by multiple inputs, only the last search applies -->
-        <tr class="header">
-          <th>
-            <input type="search" id="searchSpeciesName" oninput="searchSpeciesTable()" placeholder="Name" title="Search by Species Name" list="dlSpeciesName">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','0')">Sort ⇅</button>
-          </th>
-          <th>
-            <input type="search" id="searchSpeciesDescription" oninput="searchSpeciesTable()" placeholder="Description" title="Search by Description" list="dlSpeciesDescription">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','1')">Sort ⇅</button>
-          </th>
-          <th>
-            <input type="search" id="searchSpeciesAbility" oninput="searchSpeciesTable()" placeholder="Ability Score" title="Search by Ability Score" list="dlSpeciesAbility">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','2')">Sort ⇅</button>
-          </th>
-          <th>
-            <input type="search" id="searchSpeciesFeat1" oninput="searchSpeciesTable('searchSpeciesFeat1',3)" placeholder="Feature 1 Name" title="Search by Feature 1 Name" list="dlSpeciesFeat1">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','3')">Sort ⇅</button>
-          </th>
-          <th>
-            <input type="search" id="searchSpeciesFeat2" oninput="searchSpeciesTable('searchSpeciesFeat2',4)" placeholder="Feature 2 Name" title="Search by Feature 2 Name" list="dlSpeciesFeat2">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','4')">Sort ⇅</button>
-          </th>
-          <th>
-            <input type="search" id="searchSpeciesFeat3" oninput="searchSpeciesTable('searchSpeciesFeat3',5)" placeholder="Feature 3 Name" title="Search by Feature 3 Name" list="dlSpeciesFeat3">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','5')">Sort ⇅</button>
-          </th>
-          <!-- in the csv, it goes speed then darkvision, but due to speed having longer text on some entries or no speed penalty in heavy armour, looks better to display speed as last/longest column -->
-          <th>
-            <input type="search" id="searchSpeciesDarkvision" oninput="searchSpeciesTable()" placeholder="Darkvision" title="Search by Darkvision" list="dlSpeciesDarkvision">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','6')">Sort ⇅</button>
-          </th>
-          <th>
-            <input type="search" id="searchSpeciesSpeed" oninput="searchSpeciesTable()" placeholder="Speed" title="Search by Speed" list="dlSpeciesSpeed">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','7')">Sort ⇅</button>
           </th>
         </tr>
       </table>
@@ -380,10 +365,69 @@
       </table>
     </div>
     
+    <!-- Advanced Ancestries Option: Species -->
+    <div id="Species" class="tabcontent">
+      <p>
+        * If using this Advanced Option, you pick a Species as your Ancestory instead of your normal Crux and Heritage.
+      </p>
+      <p>
+        For Ability Scores, you may pick any 2 of the 3 listed (except Humans, who pick any 1 of any of Str/Con/Dex/Int/Wis/Cha instead)
+      </p>
+      
+      <!-- datalists to allow dropdown options in search, populated at same time table is -->
+      <datalist id="dlSpeciesName"></datalist>
+      <datalist id="dlSpeciesDescription"></datalist>
+      <datalist id="dlSpeciesAbility"></datalist>
+      <datalist id="dlSpeciesFeat1"></datalist>
+      <datalist id="dlSpeciesFeat2"></datalist>
+      <datalist id="dlSpeciesFeat3"></datalist>
+      <datalist id="dlSpeciesDarkvision"></datalist>
+      <datalist id="dlSpeciesSpeed"></datalist>
+      
+      <table id="speciesTable" class="filterTable">
+        <!-- searchable headers, note that you can't currently filter by multiple inputs, only the last search applies -->
+        <tr class="header">
+          <th>
+            <input type="search" id="searchSpeciesName" oninput="searchSpeciesTable()" placeholder="Name" title="Search by Species Name" list="dlSpeciesName">
+            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','0')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchSpeciesDescription" oninput="searchSpeciesTable()" placeholder="Description" title="Search by Description" list="dlSpeciesDescription">
+            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','1')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchSpeciesAbility" oninput="searchSpeciesTable()" placeholder="Ability Score" title="Search by Ability Score" list="dlSpeciesAbility">
+            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','2')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchSpeciesFeat1" oninput="searchSpeciesTable('searchSpeciesFeat1',3)" placeholder="Feature 1 Name" title="Search by Feature 1 Name" list="dlSpeciesFeat1">
+            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','3')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchSpeciesFeat2" oninput="searchSpeciesTable('searchSpeciesFeat2',4)" placeholder="Feature 2 Name" title="Search by Feature 2 Name" list="dlSpeciesFeat2">
+            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','4')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchSpeciesFeat3" oninput="searchSpeciesTable('searchSpeciesFeat3',5)" placeholder="Feature 3 Name" title="Search by Feature 3 Name" list="dlSpeciesFeat3">
+            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','5')">Sort ⇅</button>
+          </th>
+          <!-- in the csv, it goes speed then darkvision, but due to speed having longer text on some entries or no speed penalty in heavy armour, looks better to display speed as last/longest column -->
+          <th>
+            <input type="search" id="searchSpeciesDarkvision" oninput="searchSpeciesTable()" placeholder="Darkvision" title="Search by Darkvision" list="dlSpeciesDarkvision">
+            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','6')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchSpeciesSpeed" oninput="searchSpeciesTable()" placeholder="Speed" title="Search by Speed" list="dlSpeciesSpeed">
+            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','7')">Sort ⇅</button>
+          </th>
+        </tr>
+      </table>
+    </div>
+    
     <!-- Modal popup for displaying more info on classes, powers, etc -->
     <div id="modalShowInfo" class="modal">
       <div class="modal-content markdown-body">
-        <span class="close" onclick="hideModal()">&times;</span>
+        <span class="close" onclick="closeModal()">&times;</span>
         <div id="showInfoContent" class="markdown-body"></div>
       </div>
     </div>
@@ -392,22 +436,23 @@
     <script src="js/misc.js"></script>
     <script src="js/classes.js"></script>
     <script src="js/powers.js"></script>
+    <script src="js/feats.js"></script>
     <script src="js/cruxes.js"></script>
     <script src="js/heritages.js"></script>
-    <script src="js/species.js"></script>
-    <script src="js/arts.js"></script>
     <script src="js/kits.js"></script>
+    <script src="js/arts.js"></script>
+    <script src="js/species.js"></script>
 
     <br/><br/>
     <footer>
-      <p><i>Version 0.07 (2023-03-16) - <s>early alpha</s>, aiming for compatibility with Orcus Heroes' Handbook v1.0 (as it appeared on 2023-02-27)</i></p>
+      <p><i>Version 0.08 (2023-03-19) - <s>early alpha?</s>, aiming for compatibility with Orcus Heroes' Handbook v1.0 (as it appeared on 2023-02-27)</i></p>
       <br/><br/>
       <p>
         <strong>Known Issues </strong>
         <br/>
         - doesn't work well on mobile (not sure I'll ever fix this tbh)
         <br/>
-        - no option to filter by non-core options (with exception of Species and Arts we ignore non-core material currently)
+        - no option to filter by non-core options (with exception of Species and Arts we ignore non-core material like the Warrior for the moment)
         <br/>
         - sorting is disabled on Powers tab to avoid horrible performance hit (will rework the sorting later, hopefully)
         <br/>
