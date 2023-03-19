@@ -11,6 +11,7 @@ var feat_type_list = [];
 var feat_prerequisite_list = [];
 var feat_benefit_list = [];
 var feat_special_list = [];
+var feat_power_list = [];
 
 // this function is in the event listener and will execute on page load
 function get_feat_json_data()
@@ -49,6 +50,7 @@ function append_feat_json(feat_data)
         feat_prerequisite_list.push(feat_data[key]["Prerequisite"]);
         feat_benefit_list.push(feat_data[key]["Benefit"]);
         feat_special_list.push(feat_data[key]["Special"]);
+        feat_power_list.push(feat_data[key]["Power"]);
         
         // update table with new row
         var tr = document.createElement('tr');
@@ -59,7 +61,8 @@ function append_feat_json(feat_data)
         '<td>' + feat_data[key]["Feat Type"] + '</td>' +
         '<td>' + feat_data[key]["Prerequisite"] + '</td>' +
         '<td>' + feat_data[key]["Benefit"] + '</td>' +
-        '<td>' + feat_data[key]["Special"] + '</td>';
+        '<td>' + feat_data[key]["Special"] + '</td>' +
+        '<td>' + feat_data[key]["Power"] + '</td>';
         feat_table.appendChild(tr)
     });
     
@@ -70,6 +73,7 @@ function append_feat_json(feat_data)
     feat_prerequisite_list = [...new Set(feat_prerequisite_list)].sort();
     feat_benefit_list = [...new Set(feat_benefit_list)].sort();
     feat_special_list = [...new Set(feat_special_list)].sort();
+    feat_power_list = [...new Set(feat_power_list)].sort();
     
     // create + attach datalist to enable dropdown on search boxes
     updateFeatDatalist();
@@ -84,12 +88,14 @@ function searchFeatTable()
     var input_prerequisite = document.getElementById("searchFeatPrerequisite");
     var input_benefit = document.getElementById("searchFeatBenefit");
     var input_special = document.getElementById("searchFeatSpecial");
+    var input_power = document.getElementById("searchFeatPower");
     
     let filter_name = input_name.value.toUpperCase();
     let filter_type = input_type.value.toUpperCase();
     let filter_prerequisite = input_prerequisite.value.toUpperCase();
     let filter_benefit = input_benefit.value.toUpperCase();
     let filter_special = input_special.value.toUpperCase();
+    let filter_power = input_power.value.toUpperCase();
     
     let tr = feat_table.rows;
     
@@ -102,8 +108,9 @@ function searchFeatTable()
         td_prerequisite = td[2].innerText;
         td_benefit = td[3].innerText;
         td_special = td[4].innerText;
+        td_power = td[5].innerText;
         
-        if (td_name.toUpperCase().indexOf(filter_name) > -1 && td_type.toUpperCase().indexOf(filter_type) > -1 && td_prerequisite.toUpperCase().indexOf(filter_prerequisite) > -1 && td_benefit.toUpperCase().indexOf(filter_benefit) > -1 && td_special.toUpperCase().indexOf(filter_special) > -1)
+        if (td_name.toUpperCase().indexOf(filter_name) > -1 && td_type.toUpperCase().indexOf(filter_type) > -1 && td_prerequisite.toUpperCase().indexOf(filter_prerequisite) > -1 && td_benefit.toUpperCase().indexOf(filter_benefit) > -1 && td_special.toUpperCase().indexOf(filter_special) > -1 && td_power.toUpperCase().indexOf(filter_power) > -1)
         {
             tr[i].style.display = "";
         }
@@ -122,6 +129,13 @@ function showFeatInfo (key, enable_navigation)
     "<p><strong>Prerequisite:</strong> " + feat_data[key]["Prerequisite"] + "</p>" +
     "<p><strong>Benefit:</strong> " + feat_data[key]["Benefit"] + "</p>" +
     "<p><strong>Special:</strong> " + feat_data[key]["Special"] + "</p>";
+    
+    // add link to showPowerInfo if feat grants a power
+    var feat_power = feat_data[key]["Power"];
+    if (feat_power != "None")
+    {
+        html += '<p><strong>Granted Power:</strong> <a href="#" onclick="showPowerInfo(' + power_name_to_key.get(feat_power) +', 0, \'showFeatInfo(' + key + ', 1' + ')\')\">' + feat_power + '</a></p>';
+    }
     
     // special case for Blessing of the God - show the table of Domain, God, Power here, as we don't store it in the csv (tried storing it in csv earlier, but resulted in an unreadable mess formatting-wise)
     if (feat_data[key]["Name"] == "Blessing of the God")
@@ -159,7 +173,7 @@ function showFeatInfo (key, enable_navigation)
         {
             html += "<tr><td>" + domain_power_rows[i][0] + 
             "<td>" + domain_power_rows[i][1] + "</td>" +
-            "<td>" + '<a href="#" onclick="showPowerInfo(' + power_name_to_key.get(domain_power_rows[i][2]) +', 0, \'showFeatInfo(' + key + ', 1' + ')\')\">' + domain_power_rows[i][2] + "</a</td></tr>";
+            "<td>" + '<a href="#" onclick="showPowerInfo(' + power_name_to_key.get(domain_power_rows[i][2]) +', 0, \'showFeatInfo(' + key + ', 1' + ')\')\">' + domain_power_rows[i][2] + "</a></td></tr>";
         }
         
         html += "</tbody></table>";
@@ -183,6 +197,7 @@ function updateFeatDatalist ()
     dl_prerequisite = document.getElementById("dlFeatPrerequisite");
     dl_benefit = document.getElementById("dlFeatBenefit");
     dl_special = document.getElementById("dlFeatSpecial");
+    dl_power = document.getElementById("dlFeatPower");
 
     // populate datalists
     updateDataList(dl_name, feat_name_list);
@@ -190,4 +205,5 @@ function updateFeatDatalist ()
     updateDataList(dl_prerequisite, feat_prerequisite_list);
     updateDataList(dl_benefit, feat_benefit_list);
     updateDataList(dl_special, feat_benefit_list);
+    updateDataList(dl_power, feat_power_list);
 }

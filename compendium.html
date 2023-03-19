@@ -144,6 +144,7 @@
       <datalist id="dlFeatPrerequisite"></datalist>
       <datalist id="dlFeatBenefit"></datalist>
       <datalist id="dlFeatSpecial"></datalist>
+      <datalist id="dlFeatPower"></datalist>
 
       <table id="featTable" class="filterTable">
         <tr class="header">
@@ -166,6 +167,10 @@
           <th>
             <input type="search" id="searchFeatSpecial" oninput="searchFeatTable()" placeholder="Special" title="Search by Special" list="dlFeatSpecial">
             <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'featTable','4')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchFeatPower" oninput="searchFeatTable()" placeholder="Power" title="Search by Power" list="dlFeatPower">
+            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'featTable','5')">Sort ⇅</button>
           </th>
         </tr>
       </table>
