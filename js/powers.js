@@ -156,7 +156,13 @@ function searchPowerTable()
     let filter_frequency = input_frequency.value.toUpperCase();
     let filter_tier = input_tier.value.toUpperCase();
     let filter_tags = input_tags.value.toUpperCase();
-    let tr = power_table.rows;
+    
+    // updating the table row elements is painfully slow and makes the browser have to re-render the whole table at an absurd performance hit, so we instead clone the DOM element of the table that has NOT been attached to the document (and thus isn't rendered), update THAT, then replace the old table with the new one
+    power_table = document.getElementById('powerTable'); // required, as otherwise the power_table global var still points to the old version of the element and everything breaks after the first search
+    let power_table_copy = power_table.cloneNode(true);
+    let tr = power_table_copy.rows;
+    
+    // all tables are theoretically vulnerable to this rendering performance hit, but in practice the Powers table is the most obvious and hit hard enough to make cloning aprox 10-20x faster, while other tables, end up around the same on timings, or slightly slower - as such only implementing on Powers and Feats (which has a very tiny speed boost) as the two biggest tables, and not elsewhere
     
     // start at row 1, not row 0, as otherwise we can filter out the search headers, not just the actual data rows!
     for (let i = 1; i < tr.length; i++)
@@ -178,6 +184,23 @@ function searchPowerTable()
         {
             tr[i].style.display = "none";
         }
+    }
+    
+    // we lose focus when we replace the table DOM with the clone, need to refocus on the right input (this avoids the bug where you type a single letter then lose focus, if typing a search instead of using dropdowns)
+    let focused_id = document.activeElement.id;
+    
+    // replace the table with the clone/copy, forcing it to re-render the table only once
+    power_table.replaceWith(power_table_copy);
+    
+    // re-apply focus to the new version of the active element
+    if (focused_id)
+    {
+        let focused_element = document.getElementById(focused_id);
+        focused_element.focus();
+        
+        // annoyingly, focusing on an input puts the cursor at the start, not the end, so we need to move to the end to allow further typing
+        const length = focused_element.value.length;
+        focused_element.setSelectionRange(length, length);
     }
 }
 
@@ -221,7 +244,7 @@ function showPowerInfo (key, enable_navigation, close_showinfo)
         colour_header = "#7030a0"; // fallback colour, currently just using the colour shown in the Orcus Game Master's Guide for Poisons, as the only example of item powers with the "Consumable" frequency, as permanent magic items do not have power cards
         colour_atwill = "#9bbb59";
         colour_encounter = "#e36c0a";
-        colour_daily = "#4d4d4f";
+        colour_daily = "#17365d";
         colour_highlight = "#dddccc"; // used for flavour text and on alternating lines after the attack line for increased readability
     }
     // 4e-style power card colours
@@ -230,7 +253,7 @@ function showPowerInfo (key, enable_navigation, close_showinfo)
         colour_header = "#dba513"; // fallback if power type not recognised (so probably an item power), using the colour of magic item cards
         colour_atwill = "#619769";
         colour_encounter = "#961334";
-        colour_daily = "#17365d";
+        colour_daily = "#4d4d4f";
         colour_highlight = "#dddccc"; // used for flavour text and on alternating lines after the attack line for increased readability
     }
     

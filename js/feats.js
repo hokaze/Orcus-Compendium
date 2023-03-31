@@ -97,7 +97,10 @@ function searchFeatTable()
     let filter_special = input_special.value.toUpperCase();
     let filter_power = input_power.value.toUpperCase();
     
-    let tr = feat_table.rows;
+    // cloning the table to update table row display is *slightly* faster than editing the original due to it reducing browser render time - this nets 10-20x performance on Powers table, a negligible ~10ms on Feats table as the next largest and a small performance hit on the smaller tables (where it's not done)
+    feat_table = document.getElementById('featTable');
+    let feat_table_copy = feat_table.cloneNode(true);
+    let tr = feat_table_copy.rows;
     
     // start at row 1, not row 0, as otherwise we can filter out the search headers, not just the actual data rows!
     for (let i = 1; i < tr.length; i++)
@@ -118,6 +121,23 @@ function searchFeatTable()
         {
             tr[i].style.display = "none";
         }
+    }
+
+    // we lose focus when we replace the table DOM with the clone, need to refocus on the right input (this avoids the bug where you type a single letter then lose focus, if typing a search instead of using dropdowns)
+    let focused_id = document.activeElement.id;
+    
+    // replace the table with the clone/copy, forcing it to re-render the table only once
+    feat_table.replaceWith(feat_table_copy);
+    
+    // re-apply focus to the new version of the active element
+    if (focused_id)
+    {
+        let focused_element = document.getElementById(focused_id);
+        focused_element.focus();
+        
+        // annoyingly, focusing on an input puts the cursor at the start, not the end, so we need to move to the end to allow further typing
+        const length = focused_element.value.length;
+        focused_element.setSelectionRange(length, length);
     }
 }
 

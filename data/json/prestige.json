@@ -1,0 +1,202 @@
+{
+    "0": {
+        "Name": "Assassin",
+        "Requirements": "Proficiency with simple melee and ranged weapons",
+        "Lv 11 Feature 1": "Twice in the Chest",
+        "Lv 11 Feature 2": "Once in the Head",
+        "Lv 16 Feature": "Getaway",
+        "Lv 11 Power": "Make Sure They\u2019re Dead",
+        "Lv 12 Power": "The Professional",
+        "Lv 20 Power": "Like a Ghost"
+    },
+    "1": {
+        "Name": "Battlefield Healer",
+        "Requirements": "Trained in Heal",
+        "Lv 11 Feature 1": "A True Healer",
+        "Lv 11 Feature 2": "Heal Thy Self",
+        "Lv 16 Feature": "Profound Medical Advice",
+        "Lv 11 Power": "Race to the Fallen",
+        "Lv 12 Power": "Impromptu Surgery",
+        "Lv 20 Power": "No Longer Civilized"
+    },
+    "2": {
+        "Name": "Bounty Hunter",
+        "Requirements": "None",
+        "Lv 11 Feature 1": "Target Focus",
+        "Lv 11 Feature 2": "All In",
+        "Lv 16 Feature": "Threat Compensation",
+        "Lv 11 Power": "Thought Process",
+        "Lv 12 Power": "Mental Prediction",
+        "Lv 20 Power": "This One Especially"
+    },
+    "3": {
+        "Name": "Breathstealer",
+        "Requirements": "Proficiency with garrote",
+        "Lv 11 Feature 1": "Out of Nowhere",
+        "Lv 11 Feature 2": "Complete Control",
+        "Lv 16 Feature": "Special Technique",
+        "Lv 11 Power": "Torque Twist",
+        "Lv 12 Power": "Compliant Target",
+        "Lv 20 Power": "Go to Sleep"
+    },
+    "4": {
+        "Name": "Darkwood Archer",
+        "Requirements": "Proficiency with military ranged weapons",
+        "Lv 11 Feature 1": "Automatic Reflexes",
+        "Lv 11 Feature 2": "Waste of Skill",
+        "Lv 16 Feature": "They Thought You Missed",
+        "Lv 11 Power": "Splintering Shot",
+        "Lv 12 Power": "Stalking Horse",
+        "Lv 20 Power": "Perfect Shot Placement"
+    },
+    "5": {
+        "Name": "Deadeye Arbalester",
+        "Requirements": "Proficiency with light and heavy crossbows",
+        "Lv 11 Feature 1": "Precise Shot",
+        "Lv 11 Feature 2": "Improved Reaction Time",
+        "Lv 16 Feature": "12 O\u2019Clock",
+        "Lv 11 Power": "Strafing Attack",
+        "Lv 12 Power": "Through the Hat",
+        "Lv 20 Power": "Bolt Waltz"
+    },
+    "6": {
+        "Name": "Devotee",
+        "Requirements": "None",
+        "Lv 11 Feature 1": "New At-Will Power",
+        "Lv 11 Feature 2": "Devoted Action",
+        "Lv 16 Feature": "None",
+        "Lv 11 Power": "New Encounter Power",
+        "Lv 12 Power": "New Utility Power",
+        "Lv 20 Power": "New Daily Power"
+    },
+    "7": {
+        "Name": "Elocater",
+        "Requirements": "Psi focus",
+        "Lv 11 Feature 1": "Accelerated Echo",
+        "Lv 11 Feature 2": "Turn Sidereal",
+        "Lv 16 Feature": "Flight",
+        "Lv 11 Power": "Sidestep Charge",
+        "Lv 12 Power": "Flanking Echo",
+        "Lv 20 Power": "Accelerated Action"
+    },
+    "8": {
+        "Name": "Invested",
+        "Requirements": "Channel Divinity",
+        "Lv 11 Feature 1": "Divine Reach",
+        "Lv 11 Feature 2": "Gift of the Divine",
+        "Lv 16 Feature": "In God\u2019s Hands",
+        "Lv 11 Power": "Blast Infidels",
+        "Lv 12 Power": "Faith Healing",
+        "Lv 20 Power": "Proselytize"
+    },
+    "9": {
+        "Name": "Ironsides",
+        "Requirements": "None",
+        "Lv 11 Feature 1": "Pick Your Foe",
+        "Lv 11 Feature 2": "Unexpected Response",
+        "Lv 16 Feature": "The War Shout",
+        "Lv 11 Power": "Remember Me?",
+        "Lv 12 Power": "Encouraging Stance",
+        "Lv 20 Power": "Onslaught"
+    },
+    "10": {
+        "Name": "Martial Arts Champion",
+        "Requirements": "Unarmed Combat feat",
+        "Lv 11 Feature 1": "Carry Through",
+        "Lv 11 Feature 2": "Bad Idea",
+        "Lv 16 Feature": "Unstoppable Momentum",
+        "Lv 11 Power": "Pressure Point",
+        "Lv 12 Power": "Battlefield Dance",
+        "Lv 20 Power": "Technical Attack"
+    },
+    "11": {
+        "Name": "Pyromancer",
+        "Requirements": "A power with the Fire tag",
+        "Lv 11 Feature 1": "Sirocco",
+        "Lv 11 Feature 2": "Faerie Fire",
+        "Lv 16 Feature": "Burnt Over",
+        "Lv 11 Power": "Fire Lash",
+        "Lv 12 Power": "Fast Burn",
+        "Lv 20 Power": "Heat Death"
+    },
+    "12": {
+        "Name": "Ring Fighter",
+        "Requirements": "Unarmed combat feat",
+        "Lv 11 Feature 1": "Guard Control",
+        "Lv 11 Feature 2": "Change Your Guard",
+        "Lv 16 Feature": "Choke/Lock",
+        "Lv 11 Power": "Side Control",
+        "Lv 12 Power": "Tolerance Threshold",
+        "Lv 20 Power": "Mounted Attack"
+    },
+    "13": {
+        "Name": "Ruler of Shadows",
+        "Requirements": "Your class or secondary class has the Striker role",
+        "Lv 11 Feature 1": "Trusty Action",
+        "Lv 11 Feature 2": "Do As I Do",
+        "Lv 16 Feature": "The Cloak is My Shadow",
+        "Lv 11 Power": "Just Desserts",
+        "Lv 12 Power": "Out of Mind",
+        "Lv 20 Power": "Cloak Abduction"
+    },
+    "14": {
+        "Name": "Selfless Protector",
+        "Requirements": "None",
+        "Lv 11 Feature 1": "Take a Hit",
+        "Lv 11 Feature 2": "Total Cover",
+        "Lv 16 Feature": "Keep it Together",
+        "Lv 11 Power": "Protective Instincts",
+        "Lv 12 Power": "Evasive Techniques",
+        "Lv 20 Power": "Aggressive Response"
+    },
+    "15": {
+        "Name": "Shadowsneak",
+        "Requirements": "Trained in Stealth",
+        "Lv 11 Feature 1": "Impossible Maneuver",
+        "Lv 11 Feature 2": "Under any Shadow",
+        "Lv 16 Feature": "Attack from Ambush",
+        "Lv 11 Power": "Complete Covertness",
+        "Lv 12 Power": "Back of Your Head",
+        "Lv 20 Power": "Looking Nonchalant"
+    },
+    "16": {
+        "Name": "Silver Tongue",
+        "Requirements": "Trained in Diplomacy",
+        "Lv 11 Feature 1": "The Art of Compromise",
+        "Lv 11 Feature 2": "I Think We Got Off On The Wrong Foot",
+        "Lv 16 Feature": "Confidence Comes with the Position",
+        "Lv 11 Power": "Volume and Presence",
+        "Lv 12 Power": "Making It Up",
+        "Lv 20 Power": "Everything You Got"
+    },
+    "17": {
+        "Name": "Spellwright",
+        "Requirements": "Arcane class",
+        "Lv 11 Feature 1": "Dark Academia",
+        "Lv 11 Feature 2": "Practised Casting",
+        "Lv 16 Feature": "Instinctive Counterspell",
+        "Lv 11 Power": "Metamagical Violence",
+        "Lv 12 Power": "Metamagical Theorems",
+        "Lv 20 Power": "Arcane Expulsion"
+    },
+    "18": {
+        "Name": "Tactician",
+        "Requirements": "None",
+        "Lv 11 Feature 1": "Coordination",
+        "Lv 11 Feature 2": "Tide of War",
+        "Lv 16 Feature": "Take the Opportunity",
+        "Lv 11 Power": "Eyes All Around",
+        "Lv 12 Power": "Reevaluate Strategy",
+        "Lv 20 Power": "Superior Strategic Endeavor"
+    },
+    "19": {
+        "Name": "Weapon Master",
+        "Requirements": "At least one Martial power",
+        "Lv 11 Feature 1": "Quick Change Artist",
+        "Lv 11 Feature 2": "Pincer Attack",
+        "Lv 16 Feature": "Careful Opportunist",
+        "Lv 11 Power": "One-Two Strike",
+        "Lv 12 Power": "Fast Learner",
+        "Lv 20 Power": "First Blood"
+    }
+}

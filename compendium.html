@@ -39,6 +39,7 @@
       <button id ="cruxTab" class="tablinks" onclick="selectTab(event, 'Cruxes')">Ancestries (Cruxes)</button>
       <button id ="heritageTab" class="tablinks" onclick="selectTab(event, 'Heritages')">Ancestries (Heritages)</button>
       <button class="tablinks" onclick="selectTab(event, 'Kits')">Kits</button>
+      <button class="tablinks" onclick="selectTab(event, 'Prestige')">Prestige Paths</button>
       <button class="tablinks" onclick="selectTab(event, 'Arts')">Arts *</button>
       <button id ="speciesTab" class="tablinks" onclick="selectTab(event, 'Species')">Ancestries (Species) *</button>
     </div>
@@ -58,23 +59,23 @@
         <tr class="header">
           <th>
             <input type="search" id="searchClassName" oninput="searchClassTable()" placeholder="Name" title="Search by Class Name" list="dlClassName">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'classTable','0')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'classTable','0')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchClassTradition" oninput="searchClassTable()" placeholder="Tradition" title="Search by Tradition" list="dlClassTradition">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'classTable','1')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'classTable','1')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchClassRole" oninput="searchClassTable()" placeholder="Role" title="Search by Role" list="dlClassRole">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'classTable','2')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'classTable','2')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchClassKeyAbility" oninput="searchClassTable()" placeholder="Key Ability" title="Search by Key Ability"  list="dlClassKeyAbility">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'classTable','3')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'classTable','3')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchClassDisciplines" oninput="searchClassTable()" placeholder="Class Disciplines" title="Search by Class Disciplines" list="dlClassDisciplines">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'classTable','4')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'classTable','4')">Sort ⇅</button>
           </th>
         </tr>
       </table>
@@ -104,32 +105,31 @@
         <tr class="header">
           <th>
             <input type="search" id="searchPowerName" oninput="searchPowerTable()" placeholder="Name" title="Search by Power Name" list="dlPowerName">
-            <!-- Disabled sorting as sorting when showing ALL results causes page to hang -->
-            <!--<button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'powerTable','0')">Sort ⇅</button>-->
+            <button class="sortbutton" onclick="sortTable(event,'powerTable','0')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchPowerSource" oninput="searchPowerTable()" placeholder="Source" title="Search by Source" list="dlPowerSource">
-            <!--<button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'powerTable','1')">Sort ⇅</button>-->
+            <button class="sortbutton" onclick="sortTable(event,'powerTable','1')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchPowerList" oninput="searchPowerTable()" placeholder="List" title="Search by List" list="dlPowerList">
-            <!-- <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'powerTable','2')">Sort ⇅</button> -->
+            <button class="sortbutton" onclick="sortTable(event,'powerTable','2')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchPowerCategory" oninput="searchPowerTable()" placeholder="Category" title="Search by Category" list="dlPowerCategory">
-            <!-- <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'powerTable','3')">Sort ⇅</button> -->
+            <button class="sortbutton" onclick="sortTable(event,'powerTable','3')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchPowerFrequency" oninput="searchPowerTable()" placeholder="Frequency" title="Search by Frequency" list="dlPowerFrequency">
-            <!-- <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'powerTable','4')">Sort ⇅</button> -->
+            <button class="sortbutton" onclick="sortTable(event,'powerTable','4')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchPowerTier" oninput="searchPowerTable()" placeholder="Tier" title="Search by Tier" list="dlPowerTier">
-            <!--<button class="sortbutton" onclick="sortTableByColumn(event, 'mixed', 'powerTable','5')">Sort ⇅</button>-->
+            <button class="sortbutton" onclick="sortTable(event,'powerTable','5')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchPowerTags" oninput="searchPowerTable()" placeholder="Tags" title="Search by Tags" list="dlPowerTags">
-            <!-- <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'powerTable','6')">Sort ⇅</button> -->
+            <button class="sortbutton" onclick="sortTable(event,'powerTable','6')">Sort ⇅</button>
           </th>
         </tr>
       </table>
@@ -150,27 +150,27 @@
         <tr class="header">
           <th>
             <input type="search" id="searchFeatName" oninput="searchFeatTable()" placeholder="Name" title="Search by Feat Name" list="dlFeatName">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'featTable','0')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'featTable','0')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchFeatType" oninput="searchFeatTable()" placeholder="Feat Type" title="Search by Feat Type" list="dlFeatType">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'featTable','1')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'featTable','1')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchFeatPrerequisite" oninput="searchFeatTable()" placeholder="Prerequisite" title="Search by Prerequisite" list="dlFeatPrerequisite">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'featTable','2')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'featTable','2')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchFeatBenefit" oninput="searchFeatTable()" placeholder="Benefit" title="Search by Benefit" list="dlFeatBenefit">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'featTable','3')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'featTable','3')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchFeatSpecial" oninput="searchFeatTable()" placeholder="Special" title="Search by Special" list="dlFeatSpecial">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'featTable','4')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'featTable','4')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchFeatPower" oninput="searchFeatTable()" placeholder="Power" title="Search by Power" list="dlFeatPower">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'featTable','5')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'featTable','5')">Sort ⇅</button>
           </th>
         </tr>
       </table>
@@ -203,23 +203,23 @@
         <tr class="header">
           <th>
             <input type="search" id="searchCruxName" oninput="searchCruxTable()" placeholder="Name" title="Search by Crux Name" list="dlCruxName">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'cruxTable','0')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'cruxTable','0')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchCruxSkill" oninput="searchCruxTable()" placeholder="Skill" title="Search by Skill" list="dlCruxSkill">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'cruxTable','1')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'cruxTable','1')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchCruxFeat1" oninput="searchCruxTable('searchCruxFeat1',2)" placeholder="Feature 1 Name" title="Search by Feature 1" list="dlCruxFeat1">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'cruxTable','2')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'cruxTable','2')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchCruxFeat2" oninput="searchCruxTable('searchCruxFeat2',3)" placeholder="Feature 2 Name" title="Search by Feature 2" list="dlCruxFeat2">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'cruxTable','3')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'cruxTable','3')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchCruxPower" oninput="searchCruxTable()" placeholder="Power" title="Search by Power" list="dlCruxPower">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'cruxTable','4')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'cruxTable','4')">Sort ⇅</button>
           </th>
         </tr>
       </table>
@@ -251,19 +251,19 @@
         <tr class="header">
           <th>
             <input type="search" id="searchHeritageName" oninput="searchHeritageTable()" placeholder="Name" title="Search by Heritage Name" list="dlHeritageName">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'heritageTable','0')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'heritageTable','0')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchHeritageSkill" oninput="searchHeritageTable()" placeholder="Skill Bonus" title="Search by Skill" list="dlHeritageSkill">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'heritageTable','1')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'heritageTable','1')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchHeritageFeatName" oninput="searchHeritageTable()" placeholder="Feature Name" title="Search by Feature Name" list="dlHeritageFeatName">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'heritageTable','2')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'heritageTable','2')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchHeritageFeatDesc" oninput="searchHeritageTable()" placeholder="Feature Description" title="Search by Feature Description" list="dlHeritageFeatDesc">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'heritageTable','3')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'heritageTable','3')">Sort ⇅</button>
           </th>
         </tr>
       </table>
@@ -296,31 +296,89 @@
         <tr class="header">
           <th>
             <input type="search" id="searchKitName" oninput="searchKitTable()" placeholder="Name" title="Search by Kit Name" list="dlKitName">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'kitTable','0')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'kitTable','0')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchKitDescription" oninput="searchKitTable()" placeholder="Description" title="Search by Description" list="dlKitDescription">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'kitTable','1')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'kitTable','1')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchKitRequirements" oninput="searchKitTable('searchKitFeat1',2)" placeholder="Requirements" title="Search by Requirements" list="dlKitRequirements">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'kitTable','2')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'kitTable','2')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchKitFeat1" oninput="searchKitTable('searchKitFeat1',3)" placeholder="Lv 1 Feature" title="Search by Lv 1 Feature" list="dlKitFeat1">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'kitTable','3')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'kitTable','3')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchKitFeat5" oninput="searchKitTable('searchKitFeat5',4)" placeholder="Lv 5 Feature" title="Search by Lv 5 Feature" list="dlKitFeat5">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'kitTable','4')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'kitTable','4')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchKitFeat10" oninput="searchKitTable('searchKitFeat10',5)" placeholder="Lv 10 Feature" title="Search by Lv 10 Feature" list="dlKitFeat10">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'kitTable','5')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'kitTable','5')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchKitDiscipline" oninput="searchKitTable()" placeholder="Associated Discipline" title="Search by Associated Discipline" list="dlKitDiscipline" >
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'kitTable','6')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'kitTable','6')">Sort ⇅</button>
+          </th>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- Prestige paths -->
+    <div id="Prestige" class="tabcontent">
+      <p>
+        At level 11, each player character gets a prestige path.
+        <br/>
+        This path is in addition to their main class, which still gives them some powers.
+        <br/>
+        Prestige path powers do not count towards total class powers available.
+      </p>
+      
+      <!-- datalists to allow dropdown options in search, populated at same time table is -->
+      <datalist id="dlPrestigeName"></datalist>
+      <datalist id="dlPrestigeRequirements"></datalist>
+      <datalist id="dlPrestigeFeat11-1"></datalist>
+      <datalist id="dlPrestigeFeat11-2"></datalist>
+      <datalist id="dlPrestigeFeat16"></datalist>
+      <datalist id="dlPrestigePower11"></datalist>
+      <datalist id="dlPrestigePower12"></datalist>
+      <datalist id="dlPrestigePower20"></datalist>
+      
+      <table id="prestigeTable" class="filterTable">
+        <tr class="header">
+          <th>
+            <input type="search" id="searchPrestigeName" oninput="searchPrestigeTable()" placeholder="Name" title="Search by Prestige Path Name" list="dlPrestigeName">
+            <button class="sortbutton" onclick="sortTable(event,'prestigeTable','0')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchPrestigeRequirements" oninput="searchPrestigeTable('searchPrestigeFeat1',1)" placeholder="Requirements" title="Search by Requirements" list="dlPrestigeRequirements">
+            <button class="sortbutton" onclick="sortTable(event,'prestigeTable','1')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchPrestigeFeat11-1" oninput="searchPrestigeTable('searchPrestigeFeat11-1',2)" placeholder="Lv 11 Feature 1" title="Search by Lv 11 Feature 1" list="dlPrestigeFeat11-1">
+            <button class="sortbutton" onclick="sortTable(event,'prestigeTable','2')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchPrestigeFeat11-2" oninput="searchPrestigeTable('searchPrestigeFeat11-2',3)" placeholder="Lv 11 Feature 2" title="Search by Lv 11 Feature 2" list="dlPrestigeFeat11-2">
+            <button class="sortbutton" onclick="sortTable(event,'prestigeTable','3')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchPrestigeFeat16" oninput="searchPrestigeTable('searchPrestigeFeat16',4)" placeholder="Lv 16 Feature" title="Search by Lv 16 Feature" list="dlPrestigeFeat16">
+            <button class="sortbutton" onclick="sortTable(event,'prestigeTable','4')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchPrestigePower11" oninput="searchPrestigeTable('searchPrestigePower11',5)" placeholder="Lv 11 Power" title="Search by Lv 11 Power" list="dlPrestigePower11">
+            <button class="sortbutton" onclick="sortTable(event,'prestigeTable','5')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchPrestigePower12" oninput="searchPrestigeTable('searchPrestigePower12',6)" placeholder="Lv 12 Power" title="Search by Lv 12 Power" list="dlPrestigePower12">
+            <button class="sortbutton" onclick="sortTable(event,'prestigeTable','6')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchPrestigePower20" oninput="searchPrestigeTable('searchPrestigePower20',7)" placeholder="Lv 20 Power" title="Search by Lv 20 Power" list="dlPrestigePower20">
+            <button class="sortbutton" onclick="sortTable(event,'prestigeTable','7')">Sort ⇅</button>
           </th>
         </tr>
       </table>
@@ -344,27 +402,27 @@
         <tr class="header">
           <th>
             <input type="search" id="searchArtName" oninput="searchArtTable()" placeholder="Name" title="Search by Art Name" list="dlArtName">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'artTable','0')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'artTable','0')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchArtLevel" oninput="searchArtTable()" placeholder="Level" title="Search by Level" list="dlArtLevel">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'num', 'artTable','1')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'artTable','1')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchArtType" oninput="searchArtTable()" placeholder="Type" title="Search by Type" list="dlArtType">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'artTable','2')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'artTable','2')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchArtCategory" oninput="searchArtTable()" placeholder="Category" title="Search by Category" list="dlArtCategory">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'artTable','3')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'artTable','3')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchArtSkill" oninput="searchArtTable()" placeholder="Skill" title="Search by Skill" list="dlArtSkill">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'artTable','4')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'artTable','4')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchArtTime" oninput="searchArtTable()" placeholder="Completion Time" title="Search by Skill" list="dlArtTime">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'artTable','5')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'artTable','5')">Sort ⇅</button>
           </th>
         </tr>
       </table>
@@ -394,36 +452,36 @@
         <tr class="header">
           <th>
             <input type="search" id="searchSpeciesName" oninput="searchSpeciesTable()" placeholder="Name" title="Search by Species Name" list="dlSpeciesName">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','0')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'speciesTable','0')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchSpeciesDescription" oninput="searchSpeciesTable()" placeholder="Description" title="Search by Description" list="dlSpeciesDescription">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','1')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'speciesTable','1')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchSpeciesAbility" oninput="searchSpeciesTable()" placeholder="Ability Score" title="Search by Ability Score" list="dlSpeciesAbility">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','2')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'speciesTable','2')">Sort ⇅</button>
           </th>
           <th>
-            <input type="search" id="searchSpeciesFeat1" oninput="searchSpeciesTable('searchSpeciesFeat1',3)" placeholder="Feature 1 Name" title="Search by Feature 1 Name" list="dlSpeciesFeat1">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','3')">Sort ⇅</button>
+            <input type="search" id="searchSpeciesFeat1" oninput="searchSpeciesTable()" placeholder="Feature 1 Name" title="Search by Feature 1 Name" list="dlSpeciesFeat1">
+            <button class="sortbutton" onclick="sortTable(event,'speciesTable','3')">Sort ⇅</button>
           </th>
           <th>
-            <input type="search" id="searchSpeciesFeat2" oninput="searchSpeciesTable('searchSpeciesFeat2',4)" placeholder="Feature 2 Name" title="Search by Feature 2 Name" list="dlSpeciesFeat2">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','4')">Sort ⇅</button>
+            <input type="search" id="searchSpeciesFeat2" oninput="searchSpeciesTable()" placeholder="Feature 2 Name" title="Search by Feature 2 Name" list="dlSpeciesFeat2">
+            <button class="sortbutton" onclick="sortTable(event,'speciesTable','4')">Sort ⇅</button>
           </th>
           <th>
-            <input type="search" id="searchSpeciesFeat3" oninput="searchSpeciesTable('searchSpeciesFeat3',5)" placeholder="Feature 3 Name" title="Search by Feature 3 Name" list="dlSpeciesFeat3">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','5')">Sort ⇅</button>
+            <input type="search" id="searchSpeciesFeat3" oninput="searchSpeciesTable()" placeholder="Feature 3 Name" title="Search by Feature 3 Name" list="dlSpeciesFeat3">
+            <button class="sortbutton" onclick="sortTable(event,'speciesTable','5')">Sort ⇅</button>
           </th>
           <!-- in the csv, it goes speed then darkvision, but due to speed having longer text on some entries or no speed penalty in heavy armour, looks better to display speed as last/longest column -->
           <th>
             <input type="search" id="searchSpeciesDarkvision" oninput="searchSpeciesTable()" placeholder="Darkvision" title="Search by Darkvision" list="dlSpeciesDarkvision">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','6')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'speciesTable','6')">Sort ⇅</button>
           </th>
           <th>
             <input type="search" id="searchSpeciesSpeed" oninput="searchSpeciesTable()" placeholder="Speed" title="Search by Speed" list="dlSpeciesSpeed">
-            <button class="sortbutton" onclick="sortTableByColumn(event, 'alpha', 'speciesTable','7')">Sort ⇅</button>
+            <button class="sortbutton" onclick="sortTable(event,'speciesTable','7')">Sort ⇅</button>
           </th>
         </tr>
       </table>
@@ -445,23 +503,32 @@
     <script src="js/cruxes.js"></script>
     <script src="js/heritages.js"></script>
     <script src="js/kits.js"></script>
+    <script src="js/prestige.js"></script>
     <script src="js/arts.js"></script>
     <script src="js/species.js"></script>
 
     <br/><br/>
     <footer>
-      <p><i>Version 0.08 (2023-03-19) - <s>early alpha?</s>, aiming for compatibility with Orcus Heroes' Handbook v1.0 (as it appeared on 2023-02-27)</i></p>
+      <p><i>Version 0.09 (2023-03-31) - <s>early alpha?</s>, aiming for compatibility with Orcus Heroes' Handbook v1.0 (as it appeared on 2023-02-27)</i></p>
       <br/><br/>
+      <p>
+        <strong>Recent Changes (v0.09 - THE GOTTA GO FAST UPDATE)</strong>
+        <br/>
+        - FAST: major improvements to speed of sorting and searching on tables
+        <br/>
+        - PRESTIGE: basic support for Prestige Paths
+        <br/>
+        - POWERS UNCHAINED: can finally sort on the Powers table thanks to speed improvements, and searching no longer visibly takes a second or two to resolve itself
+        <br/>
+        - MISTAKEN IDENTITY FIXED: Daily Power cards no longer use 4e colours if Orcus style is selected and vice versa (oops)
+      </p>
+      <br/>
       <p>
         <strong>Known Issues </strong>
         <br/>
         - doesn't work well on mobile (not sure I'll ever fix this tbh)
         <br/>
         - no option to filter by non-core options (with exception of Species and Arts we ignore non-core material like the Warrior for the moment)
-        <br/>
-        - sorting is disabled on Powers tab to avoid horrible performance hit (will rework the sorting later, hopefully)
-        <br/>
-        - searching on Powers also lags horribly at times, especially on initial search or clearing a search box, probably need to rework Powers tab to NOT load all powers at once and maybe paginate the tables?
         <br/>
         - minimal error handling
         <br/>
@@ -476,6 +543,8 @@
         - the "Eats Monster Hearts" kit has no name for the Lv 5 and Lv 10 features (this is a problem with the Orcus core book, I can't provide a name that doesn't exist)
         <br/>
         - many powers and species are missing flavour text (everything I've checked so far has missing flavour and description in the Orcus markdown files, so AFAIK this isn't a Compendium issue)
+        <br/>
+        - on Powers and Feats table, if you type into the search boxes instead of copy-pasting or selecting a dropdown value, it loses focus on entering the first letter and auto-scrolls down so the searchbox is at the top of the page - seems to be a side-effect of the clone trick used to improve search performance on those tables
       </p>
     </footer>
   </body>

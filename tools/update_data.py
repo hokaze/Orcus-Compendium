@@ -43,6 +43,7 @@ def update_json():
     csv_to_json.csv_to_json(csv_path + "heritages.csv", json_path + "heritages.json")
     csv_to_json.csv_to_json(csv_path + "kits.csv", json_path + "kits.json")
     csv_to_json.csv_to_json(csv_path + "powers.csv", json_path + "powers.json")
+    csv_to_json.csv_to_json(csv_path + "prestige.csv", json_path + "prestige.json")
     
     # species.csv comes from "Orcus - Ancestries.xlsx, but swapped to calling it species to avoid confusion with standard ancestry option of Crux + Heritage
     csv_to_json.csv_to_json(csv_path + "species.csv", json_path + "species.json")
@@ -116,6 +117,19 @@ def update_html():
     
     # Humans aren't in spreadsheet so need special case to generate
     markdown_to_html.markdown_to_html("## Human", md_advanced_options_path, md_path + "species/Human.html")
+    
+    # Prestige paths
+    # grabbing from prestige.csv
+    prestige_list = []
+    prestige_file = open(csv_path + "prestige.csv", "r")
+    for line in prestige_file:
+        prestige_list.append(line.split(",")[0])
+    prestige_file.close()
+    
+    for prestige_name in prestige_list:
+        prestige_header = "## " + prestige_name
+        prestige_html_path = md_path + "prestige/" + prestige_name + ".html"
+        markdown_to_html.markdown_to_html(prestige_header, md_class_and_powers_path, prestige_html_path)
     
     print ("All HTML files updated")
 

@@ -46,162 +46,59 @@ function selectTab(evt, tab_name)
     evt.currentTarget.className += " active";
 }
 
-// Sort SINGLE COLUMN alphabetically ascending, then toggle descending
-// TODO: add option to then go back to initial order (i.e. key, not alphabetical)?
-function sortTableByColumn(evt, sort_type, table, column)
-{
-    var table, rows, switching, i, x, y, should_switch, dir, switchcount = 0;
-    table = document.getElementById(table);
-    
-    switching = true;
 
-    // Set the sorting direction to ascending:
-    dir = "asc";
-    
-    /* Make a loop that will continue until
-    no switching has been done: */
-    while (switching)
-    {
-        // Start by saying: no switching is done:
-        switching = false;
-        rows = table.rows;
-        
-        /* Loop through all table rows (except the
-        first, which contains table headers): */
-        for (i = 1; i < (rows.length - 1); i++)
+// helper functions for sortTable: sortTableGetCellValue, sortTableComparer
+// https://stackoverflow.com/a/49041392
+const sortTableGetCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+
+// Returns a function responsible for sorting a specific column index 
+// (idx = columnIndex, asc = ascending order)
+const sortTableComparer = function(idx, asc)
+{ 
+    // This is used by the array.sort() function...
+    return function(a, b)
+    { 
+        // This is a transient function that is called straight away. 
+        // It allows passing in different order of args, based on 
+        // the ascending/descending order
+        return function(v1, v2)
         {
-            // Start by saying there should be no switching:
-            should_switch = false;
-            
-            /* Get the two elements you want to compare,
-            one from current row and one from the next: */
-            x = rows[i].getElementsByTagName("TD")[column];
-            y = rows[i + 1].getElementsByTagName("TD")[column];
-            
-            /* Check if the two rows should switch place,
-            based on the direction, asc or desc: */
-            if (dir == "asc")
-            {
-                // alphabetical, numerical or mixed sort?
-                if (sort_type == "alpha")
-                {
-                    if (x.textContent.toLowerCase() > y.textContent.toLowerCase())
-                    {
-                        // If so, mark as a switch and break the loop:
-                        should_switch = true;
-                        break;
-                    }
-                }
-                else if (sort_type == "num")
-                {
-                    if (Number(x.textContent) > Number(y.textContent.toLowerCase()))
-                    {
-                        should_switch = true;
-                        break;
-                    }
-                }
-                // mixed does numbers numerically, then strings alphabetically
-                else if (sort_type == "mixed")
-                {
-                    var x1 = x.textContent.toLowerCase(), y1 = y.textContent.toLowerCase();
-                    var x_n = Number(x1), y_n = Number(y1);
-                    if (isNaN(x_n) == false)
-                    {
-                        x1 = x_n;
-                    }
-                    if (isNaN(y.textContent) == false)
-                    {
-                        y1 = y_n;
-                    }
-                    var x2 = typeof x1, y2 = typeof y1;
-                    if (x2 > y2 || x1 > y1)
-                    {
-                        should_switch = true;
-                        break;
-                    }
-                }
-            }
-            else if (dir == "desc")
-            {
-                // alphabetical, numerical or mixed sort?
-                if (sort_type == "alpha")
-                {
-                    if (x.textContent.toLowerCase() < y.textContent.toLowerCase())
-                    {
-                        // If so, mark as a switch and break the loop:
-                        should_switch = true;
-                        break;
-                    }
-                }
-                else if (sort_type == "num")
-                {
-                    if (Number(x.textContent) < Number(y.textContent.toLowerCase()))
-                    {
-                        should_switch = true;
-                        break;
-                    }
-                }
-                // mixed does numbers numerically, then strings alphabetically
-                else if (sort_type == "mixed")
-                {
-                    var x1 = x.textContent.toLowerCase(), y1 = y.textContent.toLowerCase();
-                    var x_n = Number(x1), y_n = Number(y1);
-                    if (isNaN(x_n) == false)
-                    {
-                        x1 = x_n;
-                    }
-                    if (isNaN(y.textContent) == false)
-                    {
-                        y1 = y_n;
-                    }
-                    var x2 = typeof x1, y2 = typeof y1;
-                    if (x2 < y2 || x1 < y1)
-                    {
-                        should_switch = true;
-                        break;
-                    }
-                }
-            }
+            // sort based on a numeric or localeCompare, based on type...
+            return (v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2)) 
+                ? v1 - v2 
+                : v1.toString().localeCompare(v2);
         }
-        if (should_switch)
-        {
-            /* If a switch has been marked, make the switch
-            and mark that a switch has been done: */
-            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-            switching = true;
-            
-            // Each time a switch is done, increase this count by 1:
-            switchcount ++;
-        }
-        else
-        {
-            /* If no switching has been done AND the direction is "asc",
-            set the direction to "desc" and run the while loop again. */
-            if (switchcount == 0 && dir == "asc")
-            {
-                dir = "desc";
-                switching = true;
-            }
-        }
+        (sortTableGetCellValue(asc ? a : b, idx), sortTableGetCellValue(asc ? b : a, idx));
     }
+};
+
+// much faster sort by single column, per https://stackoverflow.com/a/49041392
+function sortTable(evt, table_name, column)
+{
+    let table = document.getElementById(table_name);
+    Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
+        .sort(sortTableComparer(column, this.asc = !this.asc))
+        .forEach(tr => table.appendChild(tr) );
     
-    // reset the arrow on the other sort buttons on this table, as we can only sort by one column and need to make it visually clear which column is currently being sorted
-    var sort_buttons = table.getElementsByClassName("sortbutton");
-    for (i = 0; i < sort_buttons.length; i++) {
-        sort_buttons[i].textContent = "Sort ⇅"
-    } 
+    // if we've hit a sort button, we're no longer sorting by the other columns, so we should reset them to the default unsorted icon - this selects all the sortbuttons on the current table, so sort icon state on other tables is preserved
+    let sortButtons = event.currentTarget.parentElement.parentElement.querySelectorAll("button.sortbutton");
+    sortButtons.forEach((sortButton) => {
+        sortButton.textContent = "Sort ⇅";
+    });
     
     // update the sort button with up/down arrow to indicate current order is asc (abc) or desc (zxy)
-    if (dir == "asc")
+    if (this.asc)
     {
         event.currentTarget.textContent = "Sort ↑";
     }
-    else if (dir == "desc")
+    else
     {
         event.currentTarget.textContent = "Sort ↓";
     }
 }
 
+
+// for closing the modal dialogue, or returning to previous, if nested
 function closeModal()
 {
     // return to previous showInfo modal if nested (e.g. viewing powers from a different showInfo)

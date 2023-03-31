@@ -108,14 +108,18 @@ function searchClassTable()
     var input_key_ability = document.getElementById("searchClassKeyAbility");
     var input_class_disciplines = document.getElementById("searchClassDisciplines");
     
-    var table = document.getElementById("classTable");
-    
     let filter_name = input_name.value.toUpperCase();
     let filter_tradition = input_tradition.value.toUpperCase();
     let filter_role = input_role.value.toUpperCase();
     let filter_key_ability = input_key_ability.value.toUpperCase();
     let filter_class_disciplines = input_class_disciplines.value.toUpperCase();
-    let tr = table.rows;
+    
+    // disabled cloning - it's slightly slower than just editing the table directly for smaller tables, only really sees benefit on Powers and Feats
+    //class_table = document.getElementById('classTable');
+    //let class_table_copy = class_table.cloneNode(true);
+    //let tr = class_table_copy.rows;
+    
+    let tr = class_table.rows;
     
     // start at row 1, not row 0, as otherwise we can filter out the search headers, not just the actual data rows!
     for (let i = 1; i < tr.length; i++)
@@ -136,6 +140,9 @@ function searchClassTable()
             tr[i].style.display = "none";
         }
     }
+    
+    // clone + replace disabled as it's slightly slower for this table
+    //class_table.replaceWith(class_table_copy);
 }
 
 // modal popup that loads markdown-to-html class summaries with the github markdown css, appears on top of the page and can be dismissed
