@@ -311,6 +311,9 @@ function showPowerInfo (key, enable_navigation, close_showinfo)
 
     if (enable_navigation)
     {
+        // need to regrab if power_table has been replaced by clone so we get current table, not initial table
+        var power_table = document.getElementById('powerTable');
+        
         showModalNavigation ("power", key, power_name_list, "showPowerInfo", power_table, power_data);
     }
     

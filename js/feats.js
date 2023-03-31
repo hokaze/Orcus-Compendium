@@ -203,6 +203,9 @@ function showFeatInfo (key, enable_navigation)
     
     if (enable_navigation)
     {
+        // need to regrab if feat_table has been replaced by clone so we get current table, not initial table
+        var feat_table = document.getElementById('featTable');
+        
         showModalNavigation ("feat", key, feat_name_list, "showFeatInfo", feat_table, feat_data);
     }
     
