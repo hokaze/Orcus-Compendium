@@ -44,6 +44,7 @@ def update_json():
     csv_to_json.csv_to_json(csv_path + "kits.csv", json_path + "kits.json")
     csv_to_json.csv_to_json(csv_path + "powers.csv", json_path + "powers.json")
     csv_to_json.csv_to_json(csv_path + "prestige.csv", json_path + "prestige.json")
+    csv_to_json.csv_to_json(csv_path + "companions.csv", json_path + "companions.json")
     
     # species.csv comes from "Orcus - Ancestries.xlsx, but swapped to calling it species to avoid confusion with standard ancestry option of Crux + Heritage
     csv_to_json.csv_to_json(csv_path + "species.csv", json_path + "species.json")
@@ -57,7 +58,7 @@ def update_html():
 
     print ("Updating HTML files from MARKDOWN...")
     
-    # TODO - rather than manually updating the list of known classes, cruxes, etc, couldn't we load from the relevant json files? mostly thinking this might be useful if we ended up generating html files from markdown from an especially large list like powers or disciplines or items where that might make more sense than copy-pasting this over and over? --> currently implemented for Kits alone
+    # TODO - rather than manually updating the list of known classes, cruxes, etc, couldn't we load from the relevant json/csv files? mostly thinking this might be useful if we ended up generating html files from markdown from an especially large list like powers or disciplines or items where that might make more sense than copy-pasting this over and over? --> currently implemented for Kits alone
     
     # Classes
     markdown_to_html.markdown_to_html("# Commander", md_class_and_powers_path, md_path + "class/Commander.html")
@@ -130,6 +131,26 @@ def update_html():
         prestige_header = "## " + prestige_name
         prestige_html_path = md_path + "prestige/" + prestige_name + ".html"
         markdown_to_html.markdown_to_html(prestige_header, md_class_and_powers_path, prestige_html_path)
+    
+    # Companions
+    companion_list = []
+    companion_file = open(csv_path + "companions.csv", "r")
+    for line in companion_file:
+        # skip "name, ""a" and "chapter" lines
+        name = line.split(",")[1]
+        if name == "a" or name == "Chapter" or name == "Name":
+            continue
+        # skip Minor Dream Figment and Man-at-Arms as they're not included in the markdown or the core PDF
+        if name == "Minor Dream Figment" or name == "Man-at-Arms":
+            continue
+        # name is on 1st column, not 0th column like other csvs
+        companion_list.append(name)
+    companion_file.close()
+    
+    for companion_name in companion_list:
+        companion_header = "### " + companion_name
+        companion_html_path = md_path + "companions/" + companion_name + ".html"
+        markdown_to_html.markdown_to_html(companion_header, md_class_and_powers_path, companion_html_path)
     
     print ("All HTML files updated")
 

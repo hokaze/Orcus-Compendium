@@ -15,6 +15,7 @@ Done Recently:
 - Performance optimisation
 
 Planned Soon(™):
+- Companions
 - Epic Paths
 - misc quality of life improvements (e.g. more cross-linking between sections - currently certain Feats can take you to the specific Power they reference without you having to go to the Powers tab to search for it, hoping this can be expanded to other areas)
 
