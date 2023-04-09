@@ -1,6 +1,97 @@
 {
     "0": {
         "Chapter": "Cup of Brimstone",
+        "Name": "Chapter",
+        "Alignment": "",
+        "Size": "",
+        "Ancestry": "",
+        "Type": "",
+        "Tag": "",
+        "Level": "",
+        "Role": "",
+        "Senses": "",
+        "Aura": "",
+        "HP": "",
+        "Staggered": "",
+        "HP Extras": "",
+        "AC": "",
+        "Fort": "",
+        "Ref": "",
+        "Will": "",
+        "Immunity to": "",
+        "Resistance to": "",
+        "Vulnerability to": "",
+        "Saving Throws": "",
+        "Spd": "",
+        "Action Points": "",
+        "Power 1 - Type": "",
+        "Power 1 - Name": "",
+        "Power 1 - Action": "",
+        "Power 1 - Frequency": "",
+        "Power 1 - Tags": "",
+        "Power 1 - Range": "",
+        "Power 1 - Attack Bonus": "",
+        "Power 1 - Defense": "",
+        "Power 1 - Rider": "",
+        "Power 1 - Effect": "",
+        "Power 1 - Secondary Attack": "",
+        "Power 2 - Type": "",
+        "Power 2 - Name": "",
+        "Power 2 - Action": "",
+        "Power 2 - Frequency": "",
+        "Power 2 - Tags": "",
+        "Power 2 - Range": "",
+        "Power 2 - Attack Bonus": "",
+        "Power 2 - Defense": "",
+        "Power 2 - Rider": "",
+        "Power 2 - Effect": "",
+        "Power 2 - Secondary Attack": "",
+        "Power 3 - Type": "",
+        "Power 3 - Name": "",
+        "Power 3 - Action": "",
+        "Power 3 - Frequency": "",
+        "Power 3 - Tags": "",
+        "Power 3 - Range": "",
+        "Power 3 - Attack Bonus": "",
+        "Power 3 - Defense": "",
+        "Power 3 - Rider": "",
+        "Power 3 - Effect": "",
+        "Power 3 - Secondary Attack": "",
+        "Power 4 - Type": "",
+        "Power 4 - Name": "",
+        "Power 4 - Action": "",
+        "Power 4 - Frequency": "",
+        "Power 4 - Tags": "",
+        "Power 4 - Range": "",
+        "Power 4 - Attack Bonus": "",
+        "Power 4 - Defense": "",
+        "Power 4 - Rider": "",
+        "Power 4 - Effect": "",
+        "Power 4 - Secondary Attack": "",
+        "Power 5 - Type": "",
+        "Power 5 - Name": "",
+        "Power 5 - Action": "",
+        "Power 5 - Frequency": "",
+        "Power 5 - Tags": "",
+        "Power 5 - Range": "",
+        "Power 5 - Attack Bonus": "",
+        "Power 5 - Defense": "",
+        "Power 5 - Rider": "",
+        "Power 5 - Effect": "",
+        "Power 5 - Secondary Attack": "",
+        "Language": "",
+        "Skills": "",
+        "Str": "",
+        "Con": "",
+        "Dex": "",
+        "Int": "",
+        "Wis": "",
+        "Cha": "",
+        "Equipment": "",
+        "Description": "Summons are described according to the monster rules. See the Game Master\u2019s Guide for rules on reading monster stat blocks. "
+    },
+    "1": {
+        "Chapter": "Cup of Brimstone",
         "Name": "Demon Toad",
         "Alignment": "Chaotic Evil",
         "Size": "Small",
@@ -90,7 +181,7 @@
         "Equipment": "",
         "Description": ""
     },
-    "1": {
+    "2": {
         "Chapter": "Cup of Brimstone",
         "Name": "Hopping Imp",
         "Alignment": "Evil",
@@ -181,7 +272,7 @@
         "Equipment": "",
         "Description": ""
     },
-    "2": {
+    "3": {
         "Chapter": "Cup of Brimstone",
         "Name": "Burner Demon",
         "Alignment": "Chaotic Evil",
@@ -272,7 +363,7 @@
         "Equipment": "",
         "Description": ""
     },
-    "3": {
+    "4": {
         "Chapter": "Cup of Brimstone",
         "Name": "Hellhound",
         "Alignment": "Evil",
@@ -363,7 +454,7 @@
         "Equipment": "",
         "Description": ""
     },
-    "4": {
+    "5": {
         "Chapter": "Cup of Brimstone",
         "Name": "Hezrou",
         "Alignment": "Chaotic Evil",
@@ -454,7 +545,7 @@
         "Equipment": "",
         "Description": ""
     },
-    "5": {
+    "6": {
         "Chapter": "Cup of Brimstone",
         "Name": "Hungry Maw",
         "Alignment": "Chaotic Evil",
@@ -545,7 +636,7 @@
         "Equipment": "",
         "Description": ""
     },
-    "6": {
+    "7": {
         "Chapter": "Cup of Brimstone",
         "Name": "Vulture Demon",
         "Alignment": "Chaotic Evil",
@@ -636,7 +727,7 @@
         "Equipment": "",
         "Description": ""
     },
-    "7": {
+    "8": {
         "Chapter": "Cup of Brimstone",
         "Name": "Big Burner",
         "Alignment": "Chaotic Evil",
@@ -727,7 +818,7 @@
         "Equipment": "",
         "Description": ""
     },
-    "8": {
+    "9": {
         "Chapter": "Cup of Brimstone",
         "Name": "Boar Demon (Nalfeshnee)",
         "Alignment": "Chaotic Evil",
@@ -818,7 +909,7 @@
         "Equipment": "",
         "Description": ""
     },
-    "9": {
+    "10": {
         "Chapter": "Cup of Brimstone",
         "Name": "Frenzy Demon",
         "Alignment": "Chaotic Evil",
@@ -909,7 +1000,7 @@
         "Equipment": "",
         "Description": ""
     },
-    "10": {
+    "11": {
         "Chapter": "Cup of Brimstone",
         "Name": "Pincer Demon (Glabrezu)",
         "Alignment": "Chaotic Evil",
@@ -1000,7 +1091,7 @@
         "Equipment": "",
         "Description": ""
     },
-    "11": {
+    "12": {
         "Chapter": "Cup of Brimstone",
         "Name": "Laughing Demon",
         "Alignment": "Chaotic Evil",
@@ -1091,7 +1182,7 @@
         "Equipment": "",
         "Description": ""
     },
-    "12": {
+    "13": {
         "Chapter": "Cup of Brimstone",
         "Name": "Balor",
         "Alignment": "Chaotic Evil",
@@ -1182,7 +1273,7 @@
         "Equipment": "",
         "Description": ""
     },
-    "13": {
+    "14": {
         "Chapter": "Cup of Brimstone",
         "Name": "Marilith",
         "Alignment": "Chaotic Evil",
@@ -1273,7 +1364,98 @@
         "Equipment": "",
         "Description": ""
     },
-    "14": {
+    "15": {
+        "Chapter": "Animal Companions",
+        "Name": "Chapter",
+        "Alignment": "",
+        "Size": "",
+        "Ancestry": "",
+        "Type": "",
+        "Tag": "",
+        "Level": "",
+        "Role": "",
+        "Senses": "",
+        "Aura": "",
+        "HP": "",
+        "Staggered": "",
+        "HP Extras": "",
+        "AC": "",
+        "Fort": "",
+        "Ref": "",
+        "Will": "",
+        "Immunity to": "",
+        "Resistance to": "",
+        "Vulnerability to": "",
+        "Saving Throws": "",
+        "Spd": "",
+        "Action Points": "",
+        "Power 1 - Type": "",
+        "Power 1 - Name": "",
+        "Power 1 - Action": "",
+        "Power 1 - Frequency": "",
+        "Power 1 - Tags": "",
+        "Power 1 - Range": "",
+        "Power 1 - Attack Bonus": "",
+        "Power 1 - Defense": "",
+        "Power 1 - Rider": "",
+        "Power 1 - Effect": "",
+        "Power 1 - Secondary Attack": "",
+        "Power 2 - Type": "",
+        "Power 2 - Name": "",
+        "Power 2 - Action": "",
+        "Power 2 - Frequency": "",
+        "Power 2 - Tags": "",
+        "Power 2 - Range": "",
+        "Power 2 - Attack Bonus": "",
+        "Power 2 - Defense": "",
+        "Power 2 - Rider": "",
+        "Power 2 - Effect": "",
+        "Power 2 - Secondary Attack": "",
+        "Power 3 - Type": "",
+        "Power 3 - Name": "",
+        "Power 3 - Action": "",
+        "Power 3 - Frequency": "",
+        "Power 3 - Tags": "",
+        "Power 3 - Range": "",
+        "Power 3 - Attack Bonus": "",
+        "Power 3 - Defense": "",
+        "Power 3 - Rider": "",
+        "Power 3 - Effect": "",
+        "Power 3 - Secondary Attack": "",
+        "Power 4 - Type": "",
+        "Power 4 - Name": "",
+        "Power 4 - Action": "",
+        "Power 4 - Frequency": "",
+        "Power 4 - Tags": "",
+        "Power 4 - Range": "",
+        "Power 4 - Attack Bonus": "",
+        "Power 4 - Defense": "",
+        "Power 4 - Rider": "",
+        "Power 4 - Effect": "",
+        "Power 4 - Secondary Attack": "",
+        "Power 5 - Type": "",
+        "Power 5 - Name": "",
+        "Power 5 - Action": "",
+        "Power 5 - Frequency": "",
+        "Power 5 - Tags": "",
+        "Power 5 - Range": "",
+        "Power 5 - Attack Bonus": "",
+        "Power 5 - Defense": "",
+        "Power 5 - Rider": "",
+        "Power 5 - Effect": "",
+        "Power 5 - Secondary Attack": "",
+        "Language": "",
+        "Skills": "",
+        "Str": "",
+        "Con": "",
+        "Dex": "",
+        "Int": "",
+        "Wis": "",
+        "Cha": "",
+        "Equipment": "",
+        "Description": "Animal companions are described according to the monster rules. See the Game Master\u2019s Guide for rules on reading monster stat blocks. "
+    },
+    "16": {
         "Chapter": "Animal Companions",
         "Name": "Ape",
         "Alignment": "Unaligned",
@@ -1364,7 +1546,7 @@
         "Equipment": "",
         "Description": "Could also be used for a yeti."
     },
-    "15": {
+    "17": {
         "Chapter": "Animal Companions",
         "Name": "Arboreal Sapling",
         "Alignment": "Unaligned",
@@ -1455,7 +1637,7 @@
         "Equipment": "",
         "Description": "Could also be used for a wood golem."
     },
-    "16": {
+    "18": {
         "Chapter": "Animal Companions",
         "Name": "Bear",
         "Alignment": "Unaligned",
@@ -1546,7 +1728,7 @@
         "Equipment": "",
         "Description": "Could also be used for a giant badger, wolverine or owlbear. "
     },
-    "17": {
+    "19": {
         "Chapter": "Animal Companions",
         "Name": "Big Cat",
         "Alignment": "Unaligned",
@@ -1637,7 +1819,7 @@
         "Equipment": "",
         "Description": "A lion, tiger, jaguar, leopard, cougar or other big cat."
     },
-    "18": {
+    "20": {
         "Chapter": "Animal Companions",
         "Name": "Blink Dog",
         "Alignment": "Unaligned",
@@ -1728,7 +1910,7 @@
         "Equipment": "",
         "Description": ""
     },
-    "19": {
+    "21": {
         "Chapter": "Animal Companions",
         "Name": "Bull",
         "Alignment": "Unaligned",
@@ -1819,7 +2001,7 @@
         "Equipment": "",
         "Description": "A bull, buffalo, cow or yak. Could also be used for a boar. "
     },
-    "20": {
+    "22": {
         "Chapter": "Animal Companions",
         "Name": "Giant Bat",
         "Alignment": "Unaligned",
@@ -1910,7 +2092,7 @@
         "Equipment": "",
         "Description": ""
     },
-    "21": {
+    "23": {
         "Chapter": "Animal Companions",
         "Name": "Giant Lizard",
         "Alignment": "Unaligned",
@@ -2001,7 +2183,7 @@
         "Equipment": "",
         "Description": "A cave gecko, giant anole, giant iguana or other large climbing lizard."
     },
-    "22": {
+    "24": {
         "Chapter": "Animal Companions",
         "Name": "Giant Raptor",
         "Alignment": "Unaligned",
@@ -2092,7 +2274,7 @@
         "Equipment": "",
         "Description": "A hawk, eagle, owl, vulture, falcon, or other bird of prey. "
     },
-    "23": {
+    "25": {
         "Chapter": "Animal Companions",
         "Name": "Giant Snake",
         "Alignment": "Unaligned",
@@ -2183,7 +2365,7 @@
         "Equipment": "",
         "Description": "A venomous snake. Could also be a poisonous spider, toad or Gila monster."
     },
-    "24": {
+    "26": {
         "Chapter": "Animal Companions",
         "Name": "Horse",
         "Alignment": "Unaligned",
@@ -2274,7 +2456,7 @@
         "Equipment": "",
         "Description": "A horse, camel or llama. "
     },
-    "25": {
+    "27": {
         "Chapter": "Animal Companions",
         "Name": "Hound",
         "Alignment": "Unaligned",
@@ -2365,7 +2547,7 @@
         "Equipment": "",
         "Description": "A dog, wolf, coyote, jackal or hyena."
     },
-    "26": {
+    "28": {
         "Chapter": "Animal Companions",
         "Name": "Hunting Spider",
         "Alignment": "Unaligned",
@@ -2456,7 +2638,98 @@
         "Equipment": "",
         "Description": "A web-throwing spider. Could also be used for a chameleon or a giant frog. "
     },
-    "27": {
+    "29": {
+        "Chapter": "Other",
+        "Name": "Chapter",
+        "Alignment": "",
+        "Size": "",
+        "Ancestry": "",
+        "Type": "",
+        "Tag": "",
+        "Level": "",
+        "Role": "",
+        "Senses": "",
+        "Aura": "",
+        "HP": "",
+        "Staggered": "",
+        "HP Extras": "",
+        "AC": "",
+        "Fort": "",
+        "Ref": "",
+        "Will": "",
+        "Immunity to": "",
+        "Resistance to": "",
+        "Vulnerability to": "",
+        "Saving Throws": "",
+        "Spd": "",
+        "Action Points": "",
+        "Power 1 - Type": "",
+        "Power 1 - Name": "",
+        "Power 1 - Action": "",
+        "Power 1 - Frequency": "",
+        "Power 1 - Tags": "",
+        "Power 1 - Range": "",
+        "Power 1 - Attack Bonus": "",
+        "Power 1 - Defense": "",
+        "Power 1 - Rider": "",
+        "Power 1 - Effect": "",
+        "Power 1 - Secondary Attack": "",
+        "Power 2 - Type": "",
+        "Power 2 - Name": "",
+        "Power 2 - Action": "",
+        "Power 2 - Frequency": "",
+        "Power 2 - Tags": "",
+        "Power 2 - Range": "",
+        "Power 2 - Attack Bonus": "",
+        "Power 2 - Defense": "",
+        "Power 2 - Rider": "",
+        "Power 2 - Effect": "",
+        "Power 2 - Secondary Attack": "",
+        "Power 3 - Type": "",
+        "Power 3 - Name": "",
+        "Power 3 - Action": "",
+        "Power 3 - Frequency": "",
+        "Power 3 - Tags": "",
+        "Power 3 - Range": "",
+        "Power 3 - Attack Bonus": "",
+        "Power 3 - Defense": "",
+        "Power 3 - Rider": "",
+        "Power 3 - Effect": "",
+        "Power 3 - Secondary Attack": "",
+        "Power 4 - Type": "",
+        "Power 4 - Name": "",
+        "Power 4 - Action": "",
+        "Power 4 - Frequency": "",
+        "Power 4 - Tags": "",
+        "Power 4 - Range": "",
+        "Power 4 - Attack Bonus": "",
+        "Power 4 - Defense": "",
+        "Power 4 - Rider": "",
+        "Power 4 - Effect": "",
+        "Power 4 - Secondary Attack": "",
+        "Power 5 - Type": "",
+        "Power 5 - Name": "",
+        "Power 5 - Action": "",
+        "Power 5 - Frequency": "",
+        "Power 5 - Tags": "",
+        "Power 5 - Range": "",
+        "Power 5 - Attack Bonus": "",
+        "Power 5 - Defense": "",
+        "Power 5 - Rider": "",
+        "Power 5 - Effect": "",
+        "Power 5 - Secondary Attack": "",
+        "Language": "",
+        "Skills": "",
+        "Str": "",
+        "Con": "",
+        "Dex": "",
+        "Int": "",
+        "Wis": "",
+        "Cha": "",
+        "Equipment": "",
+        "Description": ""
+    },
+    "30": {
         "Chapter": "Other",
         "Name": "Minor Dream Figment",
         "Alignment": "",
@@ -2547,7 +2820,7 @@
         "Equipment": "",
         "Description": ""
     },
-    "28": {
+    "31": {
         "Chapter": "Other",
         "Name": "Man-at-Arms",
         "Alignment": "",

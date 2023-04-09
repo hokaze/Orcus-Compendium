@@ -1,5 +1,17 @@
 {
     "0": {
+        "Name": "Chapter",
+        "Level": "0",
+        "Type": "",
+        "Category": "",
+        "Skill": "Arcana",
+        "Completion Time": "",
+        "Components": "",
+        "Cost to Learn": "",
+        "Duration": "",
+        "Description": ""
+    },
+    "1": {
         "Name": "Alarm",
         "Level": "1",
         "Type": "Abjuration",
@@ -11,7 +23,7 @@
         "Duration": "8 hours",
         "Description": "You ward an area in a two-square burst to alert you when creatures enter without your permission. When you cast *alarm*, select a password. Whenever a Small or larger corporeal creature enters the incantation\u2019s area without speaking the password, alarm sends your choice of a mental alert or an audible alarm with the sound and volume of a hand bell. Either option automatically awakens you, and the bell allows each creature in the area to attempt a DC 15 Perception check to wake up. A creature aware of the alarm must succeed at a Stealth check against your Arcana modifier +10 or trigger the incantation when moving into the area.\n\n**Arcana check:** With a successful Arcana check (DC 12) at the time of casting, you can specify criteria for which creatures sound the *alarm* - for instance, orcs or masked people."
     },
-    "1": {
+    "2": {
         "Name": "Floating Disk",
         "Level": "1",
         "Type": "Crafting",
@@ -23,7 +35,7 @@
         "Duration": "1 hour",
         "Description": "This incantation creates a circular, horizontal plane of force, 3 feet in diameter and 1 inch thick, that floats 3 feet above the ground in an unoccupied square of your choice that you can see. The disk remains for the duration, and can hold up to 500 pounds. If more weight is placed on it, the incantation ends, and everything on the disk falls to the ground.  \n\nThe disk is immobile while you are within 4 squares of it. If you move more than 4 squares away from it, the disk follows you so that it remains within 4 squares of you. It can move across uneven terrain, up or down stairs, slopes and the like, but it can\u2019t cross an elevation change of 2 squares or more. For example, the disk can\u2019t move across a 2-square deep pit, nor could it leave such a pit if it was created at the bottom.  \n\nIf you move more than 20 squares from the disk (typically because it can\u2019t move around an obstacle to follow you), the incantation ends.  \n\n**Arcana check:** With a successful Arcana check (DC 12) at the time of casting, you can give the floating disk a simple instruction. It can be further than 20 squares away from you while fulfilling the instruction. "
     },
-    "2": {
+    "3": {
         "Name": "Identify",
         "Level": "1",
         "Type": "Divination",
@@ -35,7 +47,7 @@
         "Duration": "Instantaneous",
         "Description": "You choose one object that you must touch throughout the casting of the incantation. If it is a magic item or some other magic-imbued object, you learn its properties and how to use them, whether it requires attunement to use, and how many charges it has, if any. You learn whether any magical effects are affecting the item and what they are. If the item was created by an art or power, you learn which art or power created it.  \n\nIf you instead touch a creature throughout the casting, you learn what magical effects, if any, are currently affecting it. \n\n**Arcana check:** With a successful Arcana check (DC 12) at the time of casting, you have one additional question about the item or creature answered - like its age, provenance or creator."
     },
-    "3": {
+    "4": {
         "Name": "Illusory Script",
         "Level": "1",
         "Type": "Illusion",
@@ -47,7 +59,7 @@
         "Duration": "10 days",
         "Description": "You hide a message on parchment, paper, or some other suitable writing material.  \n\nTo you and any creatures familiar with your technique, the writing appears normal, written in your hand, and conveys whatever meaning you intended when you wrote the text. To all others, the writing appears as if it were written in an unknown script that is unintelligible. \n\nA creature with truesight can read the hidden message.  \n\n**Arcana check:** With a successful Arcana check (DC 12) at the time of casting, you can instead can cause the writing to appear to be an entirely different message, written in a different hand and language, though the language must be one you know.  "
     },
-    "4": {
+    "5": {
         "Name": "Mage\u2019s Mark",
         "Level": "1",
         "Type": "Transmutation",
@@ -59,7 +71,7 @@
         "Duration": "Permanent",
         "Description": "Every mage has their own mark, usually an elaborate and unique rune. This ritual allows a mage to inscribe their mark on any non-magical substance, including stone and metal. The rune remains permanently upon the surface, only disappearing if the item or surface itself is destroyed. The mage may choose to make this mark visible to all, or only to those with the sight (meaning that most folk will not be able to see it at all, but anyone with Arcana training will see it)."
     },
-    "5": {
+    "6": {
         "Name": "Understand Languages",
         "Level": "1",
         "Type": "Divination",
@@ -71,7 +83,7 @@
         "Duration": "1 hour",
         "Description": "For the duration, you understand the literal meaning of any spoken language that you hear. You also understand any written language that you see, but you must be touching the surface on which the words are written. It takes about 1 minute to read one page of text.  \n\nThis incantation doesn\u2019t decode secret messages in a text or a glyph, such as an arcane sigil, that isn\u2019t part of a written language.  \n\n**Arcana check:** With a successful Arcana check (DC 12) at the time of casting, you can also speak any spoken language you have heard during the duration. "
     },
-    "6": {
+    "7": {
         "Name": "Unseen Servant",
         "Level": "1",
         "Type": "Conjuration",
@@ -83,7 +95,7 @@
         "Duration": "8 hours",
         "Description": "This incantation creates an invisible, mindless, shapeless, Medium force that performs simple tasks at your command until the incantation ends. The servant springs into existence in an unoccupied space on the ground within range. It has AC 10, 1 hit point, and a Strength of 2, and it can\u2019t attack. If it drops to 0 hit points, the incantation ends.  \n\nOnce on each of your turns as a swift action, you can mentally command the servant to move up to 3 squares and interact with an object. The servant can perform simple tasks that a human servant could do, such as fetching things, cleaning, mending, folding clothes, lighting fires, serving food, and pouring wine. Once you give the command, the servant performs the task to the best of its ability until it completes the task, then waits for your next command.  \n\nIf you command the servant to perform a task that would move it more than 12 squares away from you, the incantation ends.  \n\n**Arcana check:** With a successful Arcana check (DC 12) at the time of casting, the duration extends to 24 hours and the incantation does not end if the servant moves more than 12 squares away from you. "
     },
-    "7": {
+    "8": {
         "Name": "Perpetual Message",
         "Level": "3",
         "Type": "Illusion",
@@ -95,7 +107,7 @@
         "Duration": "Permanent",
         "Description": "You implant a message within an object within 6 squares, a message that is uttered when a trigger condition is met. Choose an object that you can see and that isn\u2019t being worn or carried by another creature. Then speak the message, which must be 25 words or less, though it can be delivered over as long as 10 minutes. Finally, determine the circumstance that will trigger the incantation to deliver your message.  \n\nWhen that circumstance occurs, a magical mouth appears on the object and recites the message in your voice and at the same volume you spoke. If the object you chose has a mouth or something that looks like a mouth (for example, the mouth of a statue), the magical mouth appears there so that the words appear to come from the object\u2019s mouth. After it delivers the message, the *magic mouth* incantation ends.  \n\nThe triggering circumstance can be as general or as detailed as you like, though it must be based on visual or audible conditions that occur within 6 squares of the object. For example, you could instruct the mouth to speak when any creature moves within 6 squares of the object or when a silver bell rings within 6 squares of it.  \n\n**Arcana check:** With a successful Arcana check (DC 14) at the time of casting, you can choose for the incantation to not end after it delivers its message, but instead for it to remain and repeat its message whenever the trigger occurs. "
     },
-    "8": {
+    "9": {
         "Name": "Sphere of Silence",
         "Level": "3",
         "Type": "Illusion",
@@ -107,7 +119,7 @@
         "Duration": "8 hours",
         "Description": "For the duration, no sound can be created within or pass through a 4-square burst centered on a point you choose within range. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are deafened while entirely inside it. Casting a incantation is impossible there.  \n\n**Arcana check:** With a successful Arcana check (DC 14) at the time of casting, the target can be an object or creature instead of a point. The burst of silence moves with the object or creature."
     },
-    "9": {
+    "10": {
         "Name": "Continual Flame",
         "Level": "5",
         "Type": "Crafting",
@@ -119,7 +131,7 @@
         "Duration": "Instantaneous",
         "Description": "A flame, equivalent in brightness to a torch, springs forth from an object that you touch. The effect looks like a regular flame, but it creates no heat and doesn\u2019t use oxygen. A *continual flame* can be covered and hidden but not smothered or quenched.  "
     },
-    "10": {
+    "11": {
         "Name": "Dismiss Magic",
         "Level": "5",
         "Type": "Practical",
@@ -131,7 +143,7 @@
         "Duration": "Instantaneous",
         "Description": "Choose one creature, object, or magical effect within 24 squares. Any incantation or non-martial power of 5th level or lower on the target ends. For each incantation or non-martial power of 6th level or higher (or no level) on the target, make an Arcana check. The DC equals 10 + the incantation or power\u2019s level. On a successful check, the effect ends.\n\nAlternatively, a magic item you touch becomes non-magical for the next 10 minutes.\n\n**Arcana check:** You can instead choose a magic item within 24 squares to become non-magical for 10 minutes, but you must succeed on an Arcana check vs the wielder\u2019s Will (if it has a wielder). "
     },
-    "11": {
+    "12": {
         "Name": "Liquid Tread",
         "Level": "5",
         "Type": "Transportation",
@@ -143,7 +155,7 @@
         "Duration": "8 hours",
         "Description": "This incantation grants one target the ability to move across any liquid surface - such as water, acid, mud, snow, quicksand, or lava - as if it were harmless solid ground (creatures crossing molten lava can still take damage from the heat). \n\nIf you target a creature submerged in a liquid, the incantation carries the target to the surface of the liquid at a rate of 12 squares per round.  \n\n**Arcana check:** With a DC 15 Arcana check, you can choose up to 10 targets for this incantation."
     },
-    "12": {
+    "13": {
         "Name": "Meld into Stone",
         "Level": "5",
         "Type": "Practical",
@@ -155,7 +167,7 @@
         "Duration": "8 hours",
         "Description": "You step into a stone object or surface large enough to fully contain your body, melding yourself and all the equipment you carry with the stone for the duration. Using your movement, you step into the stone at a point you can touch. Nothing of your presence remains visible or otherwise detectable by nonmagical senses.  \n\nState a trigger. When that trigger is satisfied you are expelled from the stone and the incantation ends. Otherwise, you must wait for the 8 hour duration to end. \n\nWhile merged with the stone, you can hear but not see what occurs outside it. You remain aware of the passage of time while merged in the stone. \n\nMinor physical damage to the stone doesn\u2019t harm you, but its partial destruction or a change in its shape (to the extent that you no longer fit within it) expels you and deals 6d6 bludgeoning damage to you. If expelled, you fall prone in an unoccupied space closest to where you first entered.  \n\n**Arcana check:** If you succeed on a DC 15 Arcana check at the time of casting, while melded in stone you can use your movement to leave the stone whenever you want, instead of waiting for the trigger. You leave the stone from where you entered it, and doing so ends the incantation. "
     },
-    "13": {
+    "14": {
         "Name": "Sorcerous Gills",
         "Level": "5",
         "Type": "Practical",
@@ -167,7 +179,7 @@
         "Duration": "24 hours",
         "Description": "This incantation grants a willing creature the ability to breathe underwater until the incantation ends. Affected creatures also retain their normal mode of respiration.   \n\n**Arcana check:** With a DC 15 Arcana check, you can choose up to 10 targets for this incantation."
     },
-    "14": {
+    "15": {
         "Name": "Spectral Steed",
         "Level": "5",
         "Type": "Crafting",
@@ -179,7 +191,7 @@
         "Duration": "8 hours",
         "Description": "A Large quasi-real, horselike creature appears on the ground in an unoccupied space of your choice within range. You decide the creature\u2019s appearance, but it is equipped with a saddle, bit, and bridle. Any of the equipment created by the incantation vanishes in a puff of smoke if it is carried more than 2 squares away from the steed.  \n\nFor the duration, you or a creature you choose can ride the steed. The creature uses the statistics for a riding horse, except it has a speed of 20 squares and can travel 10 miles in an hour, or 13 miles at a fast pace. When the incantation ends, the steed gradually fades, giving the rider 1 minute to dismount. The incantation ends if you use a swift action to dismiss it or if the steed takes any damage. \n\n**Arcana check:** With a DC 15 Arcana check, the steed can also walk on water as if the *liquid tread* incantation had been used on it. With higher Arcana check DCs, the steed may have other movement abilities like the ability to phase through objects or to fly (with a maximum altitude, or without a maximum altitude with an even higher DC). "
     },
-    "15": {
+    "16": {
         "Name": "Tiny Hut",
         "Level": "5",
         "Type": "Crafting",
@@ -191,7 +203,7 @@
         "Duration": "8 hours",
         "Description": "An immobile dome of force springs into existence in a 2-square burst around and above you and remains stationary for the duration. The incantation ends if you leave its area.  \n\nThe incantation fails if its edge intersects a creature. Creatures and objects within the dome when you cast this incantation can move through it freely. All other creatures and objects are barred from passing through it. The atmosphere inside the space is comfortable and dry, regardless of the weather outside.  \n\nUntil the incantation ends, you can command the interior to become dimly lit or dark. The dome is opaque from the outside, of any color you choose, but it is transparent from the inside.  \n\n**Arcana check:** With a DC 15 Arcana check, the dome\u2019s burst radius is 4 squares instead of 2. "
     },
-    "16": {
+    "17": {
         "Name": "Contact Other Plane",
         "Level": "9",
         "Type": "Divination",
@@ -203,7 +215,7 @@
         "Duration": "1 minute",
         "Description": "You mentally contact a demigod, the spirit of a long-dead sage, or some other mysterious entity from another plane. Contacting this extraplanar intelligence can strain or even break your mind. When you cast this incantation, make a DC 19 Arcana check. On a failure, you take 6d6 psychic damage and are overawed until you finish a long rest. While overawed, you can\u2019t understand what other creatures say, can\u2019t read, and speak only in gibberish. A *restoration* art used on you ends this effect.  \n\nOn a successful check, you can ask the entity up to five questions. You must ask your questions before the incantation ends. The GM answers each question with one word, such as \u201cyes,\u201d \u201cno,\u201d \u201cmaybe,\u201d \u201cnever,\u201d \u201cirrelevant,\u201d or \u201cunclear\u201d (if the entity doesn\u2019t know the answer to the question). If a one-word answer would be misleading, the GM might instead offer a short phrase as an answer. "
     },
-    "17": {
+    "18": {
         "Name": "Call Forth the Dweller",
         "Level": "11",
         "Type": "Divination",
@@ -215,7 +227,7 @@
         "Duration": "8 hours",
         "Description": "This incantation contacts the enigmatic, extradimensional being known as the Dweller on the Threshold, an entity that imparts knowledge about its specific obsession: doors and other entrances.  \n\nTo cast *call forth the Dweller*, the caster must inscribe forty-two mystic symbols around an open doorway, then begin the chants and supplications required for the incantation.  \n\nIf the incantation succeeds, an image of the Dweller\u2014an inky mass of tentacles and mouths\u2014appears on the other side of the doorway. The Dweller on the Threshold truthfully answers any questions it is asked about a particular door. For example, the Dweller can provide a magical password that unlocks a door, indicate how to disarm a trap on a door, reveal the weaknesses of a door\u2019s guardian, or describe the room that lies beyond the door. Its answers are clear and fairly specific, if somewhat terse. The caster may well appreciate such concise answers, because one of the forty-two symbols inscribed around the doorway during the casting of the incantation fades away with each word the Dweller on the Threshold speaks\u2014and when all the symbols are gone, the Dweller disappears.  \n\nIf the caster asks the Dweller on the Threshold a question that doesn\u2019t involve doors, the Dweller responds with a cutting insult, often about something the caster thought was secret. Each word of the insult likewise makes a symbol disappear from the perimeter of the doorway.  \n\nThe exact nature of the Dweller on the Threshold is shrouded in mystery."
     },
-    "18": {
+    "19": {
         "Name": "Hrothgar\u2019s Journey",
         "Level": "11",
         "Type": "Transportation",
@@ -227,7 +239,7 @@
         "Duration": "Instantaneous",
         "Description": "*Hrothgar\u2019s journey* is an incantation based on the tale of Hrothgar, a powerful barbarian hero from ages past. When the poetic epic of Hrothgar is recited in the stifling heat of a sweat lodge during the winter solstice, the orator and his listeners receive the same final reward that Hrothgar did: a one-way trip to Asgard\u2019s Valhalla, where they can drink and make merry with the greatest warriors of myth.  \n\nTo cast the incantation, the caster must construct a small, windowless hut in the middle of the forest, then build a bonfire in the hut\u2019s center. At least four and up to twelve others accompany the caster into the hut. Other participants must provide the dialogue for other characters in the epic of Hrothgar. Then the flames are lit and the telling of the tale of Hrothgar begins.  \n\nBecause the bonfire is large and the hut is small, the atmosphere inside quickly gets stiflingly hot. Any creature inside the hut must make an Endure check (DC 20) every 10 minutes or suffer the effects of severe heat (lose a recovery).  \n\nJust as the tale of Hrothgar approaches its conclusion (near the end of the casting time), the bonfire\u2019s flames light the hut on fire, which creates a great deal of smoke but no additional heat or damage. The flames consume the hut\u2019s roof and walls, revealing Valhalla. If the caster succeeds on a DC 19 Arcana check, they can choose the exact location in Valhalla that the party appears.  \n\n<figure><img src=\"pics\\LuigiCastellani_LOKOSSAPALACE.png\" alt=\"Palace by Luigi Castellani\" style=\"zoom: 100%;\" /><figcaption>Palace by Luigi Castellani</figcaption></figure>"
     },
-    "19": {
+    "20": {
         "Name": "Summon Item",
         "Level": "11",
         "Type": "Conjuration",
@@ -239,7 +251,7 @@
         "Duration": "Permanent",
         "Description": "You touch an object weighing 10 pounds or less whose longest dimension is 6 feet or less. The incantation leaves an invisible mark on its surface and invisibly inscribes the name of the item on the sapphire you use as the material component. Each time you cast this incantation, you must use a different sapphire.  \n\nAt any time thereafter, you can use your standard action to speak the item\u2019s name and crush the sapphire. The item instantly appears in your hand regardless of physical or planar distances, and the incantation ends.  \n\nIf another creature is holding or carrying the item, crushing the sapphire doesn\u2019t transport the item to you, but instead you learn who the creature possessing the object is and roughly where that creature is located at that moment.  \n\n*Dismiss magic* or a similar effect successfully applied to the sapphire ends this incantation\u2019s effect. \n\n**Arcana check:** With an Arcana check, the object can weigh more than 10 pounds (the number of pounds is the DC of the Arcana check). "
     },
-    "20": {
+    "21": {
         "Name": "Telepathic Bond",
         "Level": "11",
         "Type": "Divination",
@@ -251,7 +263,7 @@
         "Duration": "8 hours",
         "Description": "You forge a telepathic link among up to eight willing creatures of your choice in the area, psychically linking each creature to all the others for the duration. Creatures with Intelligence scores of 2 or less aren\u2019t affected by this incantation.  \n\nUntil the incantation ends, the targets can communicate telepathically through the bond whether or not they have a common language. The communication is possible over any distance, though it can\u2019t extend to other planes of existence.  \n\n**Arcana check:** With a DC 19 Arcana check, the duration is 1 week. "
     },
-    "21": {
+    "22": {
         "Name": "Plane Walk",
         "Level": "13",
         "Type": "Transportation",
@@ -263,7 +275,7 @@
         "Duration": "Instantaneous",
         "Description": "You and up to eight willing creatures who link hands in a circle are transported to a different plane of existence. You can specify a target destination in general terms, such as the City of Brass on the Elemental Plane of Fire, and you appear in or near that destination.   \n\nAlternatively, if you know the sigil sequence of a teleportation circle on another plane of existence, this incantation can take you to that circle. If the teleportation circle is too small to hold all the creatures you transported, they appear in the closest unoccupied spaces next to the circle.  \n\n**Arcana check:** With a DC 28 Arcana check, you appear in the exact place you specify on the plane. "
     },
-    "22": {
+    "23": {
         "Name": "Moving Castle",
         "Level": "21",
         "Type": "Practical",
@@ -275,7 +287,19 @@
         "Duration": "Permanent",
         "Description": "Select a dwelling somewhere between a hut and a small castle in size. The dwelling lifts itself off the ground and grows one of the following means of transport:   \n\n* **Levitation:** The dwelling floats over the ground and over water, giving it fly 6 (hover, maximum altitude 2).  \n* **Chicken Legs:** The dwelling runs along the ground, giving it speed 12.    \n* **Rollers:** The dwelling moves on treads on the ground, giving it speed 8 - but it ignores difficult, obstructing and other terrain.   \n\nThe dwelling follows your spoken instructions if they are given from within or just outside the dwelling, about as faithfully as a dim but well-meaning dog might.   "
     },
-    "23": {
+    "24": {
+        "Name": "Chapter",
+        "Level": "0",
+        "Type": "",
+        "Category": "",
+        "Skill": "Athletics",
+        "Completion Time": "",
+        "Components": "",
+        "Cost to Learn": "",
+        "Duration": "",
+        "Description": ""
+    },
+    "25": {
         "Name": "Weight Distribution",
         "Level": "2",
         "Type": "Trick",
@@ -287,7 +311,19 @@
         "Duration": "One day",
         "Description": "Count your load as if it were one step lighter than it actually is (light load instead of a medium load, etc)."
     },
-    "24": {
+    "26": {
+        "Name": "Chapter",
+        "Level": "0",
+        "Type": "",
+        "Category": "",
+        "Skill": "Bluff",
+        "Completion Time": "",
+        "Components": "",
+        "Cost to Learn": "",
+        "Duration": "",
+        "Description": ""
+    },
+    "27": {
         "Name": "Teach Cant",
         "Level": "1",
         "Type": "Lesson",
@@ -299,7 +335,7 @@
         "Duration": "Instantaneous",
         "Description": "The subject of a *teach cant* lesson learns the cant used by thieves, urchins and demi-mondaines. A character who learns this art learns cant along with it, if they did not already know it."
     },
-    "25": {
+    "28": {
         "Name": "Backup Disguise",
         "Level": "2",
         "Type": "Trick",
@@ -311,7 +347,7 @@
         "Duration": "Until your next long rest",
         "Description": "You prepare a specific disguise that you keep at the ready, worn underneath your outer garment. You can change into this disguise as a standard action. Having a backup disguise doesn\u2019t allow you to remove your armor or any other complex piece of clothing any more quickly, but once you have those off, the disguise is readily available. Because you have the backup disguise at the ready, it\u2019s possible that a thorough search might reveal some elements of the disguise."
     },
-    "26": {
+    "29": {
         "Name": "Use Magic Device",
         "Level": "2",
         "Type": "Trick",
@@ -323,7 +359,7 @@
         "Duration": "Instantaneous",
         "Description": "You use a magic item or other magical device even if you do not meet the prerequisites to do so. You must succeed on a Bluff check (easy DC based on the level of the magic item or device) in order to do so. If you fail, there may be negative consequences depending on the item or device. The completion time is double the normal time it takes to activate the item. "
     },
-    "27": {
+    "30": {
         "Name": "Hidden Magic",
         "Level": "6",
         "Type": "Trick",
@@ -335,7 +371,7 @@
         "Duration": "1 year",
         "Description": "You carefully tweak a magic item to appear non-magical according to incantations, powers and skills that observe magical auras."
     },
-    "28": {
+    "31": {
         "Name": "Social Identity",
         "Level": "6",
         "Type": "Trick",
@@ -347,7 +383,7 @@
         "Duration": "Instantaneous",
         "Description": "You create a social identity, with its own name, alignment, and abilities. This identity is not a false front; you really are your social identity as well as your original identity, and as such, your two identities can be at most one alignment step from each other. \n\nChanging from one identity to the other takes 1 minute and must be done out of sight from other creatures. As this process involves both physical changes such as clothing and makeup along with an altered state of mind, other effects that change your appearance don\u2019t reduce the time required to change identities.\n\nYour two identities are completely distinct. You have your current identity\u2019s alignment for effects that rely on alignment, though you are eligible for abilities that require a certain alignment (such as an artifact that only respects good characters) only if both of your identities qualify. Researching one of your identities don\u2019t reveal information about the other unless the person attempting the research knows both identities are the same person. Effects that detect you based on your identity work only if you are currently in the identity the effect is trying to detect; otherwise, the effect fails as if the target didn\u2019t exist."
     },
-    "29": {
+    "32": {
         "Name": "Nameless One",
         "Level": "15",
         "Type": "Trick",
@@ -359,7 +395,19 @@
         "Duration": "Instantaneous",
         "Description": "You eschew all of your former identities, going as far as to render your former name completely inaccessible to discover by mortal means. After this practice, you forever lose all names and identities previously associated with you. You adopt a brief descriptive title in place of a new name. \n\nAt the art\u2019s conclusion, you must don the mask created for the art, the appearance of which is evocative of your title. While you\u2019re wearing this mask, any attempts to scry or otherwise locate any of your eschewed identities or connect you to those identities do not work, revealing nothing but darkness, as if you were an invalid target or did not exist."
     },
-    "30": {
+    "33": {
+        "Name": "Chapter",
+        "Level": "0",
+        "Type": "",
+        "Category": "",
+        "Skill": "Diplomacy",
+        "Completion Time": "",
+        "Components": "",
+        "Cost to Learn": "",
+        "Duration": "",
+        "Description": ""
+    },
+    "34": {
         "Name": "Teach Signs",
         "Level": "1",
         "Type": "Lesson",
@@ -371,7 +419,7 @@
         "Duration": "Instantaneous",
         "Description": "The subject of a *teach signs* lesson learns a basic sign language. A character who learns this art learns a basic sign language along with it, if they did not already know it."
     },
-    "31": {
+    "35": {
         "Name": "Dealmaker",
         "Level": "5",
         "Type": "Interaction",
@@ -383,7 +431,7 @@
         "Duration": "Instantaneous",
         "Description": "You have the air of a person with money, allowing you to buy and sell valuables that otherwise are too rich for the local community. When looking to buy or sell an item that would normally be outside that available for sale or purchase in the local community, make a Diplomacy check (DC depends on the level of the item and the size of the community). On a success, you\u2019re able to sell or purchase that item. "
     },
-    "32": {
+    "36": {
         "Name": "Entourage",
         "Level": "7",
         "Type": "Interaction",
@@ -395,7 +443,19 @@
         "Duration": "Instantaneous",
         "Description": "You have a small group of admirers who tend to follow you around while you\u2019re in civilized settlements. Your admirers are helpful to you, allowing you to make simple requests of them such as purchasing basic equipment with your funds or finding a room at an inn. These admirers do not travel with you to places that are obviously dangerous, including most adventure locations, but they\u2019ll wait for you at the nearest settlement."
     },
-    "33": {
+    "37": {
+        "Name": "Chapter",
+        "Level": "0",
+        "Type": "",
+        "Category": "",
+        "Skill": "Endure",
+        "Completion Time": "",
+        "Components": "",
+        "Cost to Learn": "",
+        "Duration": "",
+        "Description": ""
+    },
+    "38": {
         "Name": "Eschew Food",
         "Level": "2",
         "Type": "Trick",
@@ -407,7 +467,7 @@
         "Duration": "Instantaneous",
         "Description": "You no longer need to eat to survive. You can end this craft at any time. Until you do so, you cannot regain the recovery you spent on this craft. "
     },
-    "34": {
+    "39": {
         "Name": "Eschew Water",
         "Level": "8",
         "Type": "Trick",
@@ -419,7 +479,7 @@
         "Duration": "Instantaneous",
         "Description": "You no longer need to drink water to survive. You can end this craft at any time. Until you do so, you cannot regain the recovery you spent on this craft. "
     },
-    "35": {
+    "40": {
         "Name": "Eschew Air",
         "Level": "12",
         "Type": "Trick",
@@ -431,7 +491,7 @@
         "Duration": "Instantaneous",
         "Description": "You no longer need to breathe air to survive. You can end this craft at any time. Until you do so, you cannot regain the recovery you spent on this craft. "
     },
-    "36": {
+    "41": {
         "Name": "Eschew Sleep",
         "Level": "14",
         "Type": "Trick",
@@ -443,7 +503,7 @@
         "Duration": "Instantaneous",
         "Description": "You no longer need to sleep. You can stay awake at all times without penalties, and can have the benefits of a long rest once a day by spending an hour in quiet meditation. You can end this craft at any time. Until you do so, you cannot regain the recovery you spent on this craft. "
     },
-    "37": {
+    "42": {
         "Name": "Eschew Aging",
         "Level": "17",
         "Type": "Trick",
@@ -455,7 +515,19 @@
         "Duration": "Instantaneous",
         "Description": "You no longer age through the passing of time. You can end this craft at any time. Until you do so, you cannot regain the recovery you spent on this craft. "
     },
-    "38": {
+    "43": {
+        "Name": "Chapter",
+        "Level": "0",
+        "Type": "",
+        "Category": "",
+        "Skill": "Heal",
+        "Completion Time": "",
+        "Components": "",
+        "Cost to Learn": "",
+        "Duration": "",
+        "Description": ""
+    },
+    "44": {
         "Name": "Embalm Corpse",
         "Level": "1",
         "Type": "Treatment",
@@ -467,7 +539,7 @@
         "Duration": "10 days",
         "Description": "You treat a corpse or other remains. For the duration, the target is protected from decay and can\u2019t become undead.\n\nThe craft also effectively extends the time limit on raising the target from the dead, since days spent under the influence of this incantation don\u2019t count against the time limit of crafts and incantations such as *raise dead*.\n\n**Religion check:** With a successful DC 12 Religion check, the duration is 100 days. "
     },
-    "39": {
+    "45": {
         "Name": "Forensic Examination",
         "Level": "1",
         "Type": "Treatment",
@@ -479,7 +551,7 @@
         "Duration": "Instantaneous",
         "Description": "You check for evidence such as wound patterns, learning how a body was injured or killed. \n\n**Heal check:** With a successful Heal check (variable DC), you learn important clues about events surrounding the death."
     },
-    "40": {
+    "46": {
         "Name": "Restoration",
         "Level": "7",
         "Type": "Treatment",
@@ -491,7 +563,7 @@
         "Duration": "Instantaneous",
         "Description": "The target of the restoration treatment is cured of poison, disease, fatigue, petrification or similar maladies of your level or lower (or no level). Scars begin to fade and stubborn wounds close. This craft cannot restore missing limbs. \n\n**Heal check:** With a successful Heal check (moderate DC based on the malady\u2019s level), you can treat maladies of a level higher than your own. "
     },
-    "41": {
+    "47": {
         "Name": "Experimental Resurrection",
         "Level": "15",
         "Type": "Treatment",
@@ -503,7 +575,19 @@
         "Duration": "Instantaneous",
         "Description": "The target of the experimental resurrection is brought back to life. The subject must have died within the last 24 hours, and their body must be intact. \n\n<figure><img src=\"pics\\JoyceMaureira_MAGSPELL1.png\" alt=\"Magic Spell 1 by Joyce Maureira\" style=\"zoom: 33%;\" /><figcaption>Magic Spell 1 by Joyce Maureira</figcaption></figure>"
     },
-    "42": {
+    "48": {
+        "Name": "Chapter",
+        "Level": "0",
+        "Type": "",
+        "Category": "",
+        "Skill": "History",
+        "Completion Time": "",
+        "Components": "",
+        "Cost to Learn": "",
+        "Duration": "",
+        "Description": ""
+    },
+    "49": {
         "Name": "Delve into Collective Memory",
         "Level": "3",
         "Type": "Divination",
@@ -515,7 +599,19 @@
         "Duration": "Instantaneous",
         "Description": "You can learn information from the memories of others, even those long dead. This practice allows you to find out information that you could not possibly know yourself. Make the relevant knowledge skill check, adjusted as follows:  \n*A substantial minority of people know this information:* +0 DC.  \n*Only a few people know this information:* +5 DC. \n*Only very few people know this information, and possibly those who once knew it have forgotten it or those who know it don\u2019t understand the significance of what they know:* +10 DC. \n*No one alive knows this information:* +15 DC. "
     },
-    "43": {
+    "50": {
+        "Name": "Chapter",
+        "Level": "0",
+        "Type": "",
+        "Category": "",
+        "Skill": "Insight",
+        "Completion Time": "",
+        "Components": "",
+        "Cost to Learn": "",
+        "Duration": "",
+        "Description": ""
+    },
+    "51": {
         "Name": "Biographical Eye",
         "Level": "5",
         "Type": "Information",
@@ -527,7 +623,19 @@
         "Duration": "Instantaneous",
         "Description": "In even a brief conversation or social interaction, you pick up on subtle social and visual cues to learn a great deal about a person\u2019s origin and history. You might notice bits of green under the person\u2019s fingernails and determine they\u2019re an herbalist, a pin indicating their membership in a secret society, or something similar. You pick up on only details that have to do with their societal role, so you might learn the city district where a vampire lives, but wouldn\u2019t learn any of their weaknesses, nor necessarily even that they are a vampire.\n\nSpend 1 minute, then attempt an Insight check. You gain a +2 circumstance bonus to the check if you engaged the person in conversation during this time. If the person is deliberately trying to conceal their nature or present a false identity, you learn about their false biography rather than their true one unless the result of your Insight check exceeds their Bluff check. \n\n*Success (DC 10):* You learn the creature\u2019s profession and the region of the world they hail from, but no more.  \nIf you beat the DC by 10 or more, you learn the creature\u2019s profession and specialty within that profession. You learn the nation or settlement where they normally live.  \nIf you beat the DC by 20 or more, you learn learn the creature\u2019s profession, their specialty within that profession, and a major accomplishment or controversy from their career. You also learn the nation and settlement where they live, as well as the district in a city large enough to have districts. In addition, you learn the nation or settlement where they spent their formative years.\n\n*Failure:* You learn a piece of erroneous information about the creature."
     },
-    "44": {
+    "52": {
+        "Name": "Chapter",
+        "Level": "0",
+        "Type": "",
+        "Category": "",
+        "Skill": "Nature",
+        "Completion Time": "",
+        "Components": "",
+        "Cost to Learn": "",
+        "Duration": "",
+        "Description": ""
+    },
+    "53": {
         "Name": "Detect Poison and Disease",
         "Level": "1",
         "Type": "Divination",
@@ -539,7 +647,7 @@
         "Duration": "10 minutes",
         "Description": "For the duration, you can sense the presence and location of poisons, poisonous creatures, and diseases within 6 squares of you. You also identify the kind of poison, poisonous creature, or disease in each case.  \n\nThe incantation can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.  "
     },
-    "45": {
+    "54": {
         "Name": "Intuit Direction",
         "Level": "1",
         "Type": "Information",
@@ -551,7 +659,7 @@
         "Duration": "Instantaneous",
         "Description": "You learn which way is north.\n\n**Nature check:** On a DC 12 Nature check, you also learn how many miles you are from your destination. "
     },
-    "46": {
+    "55": {
         "Name": "Purify Food and Drink",
         "Level": "1",
         "Type": "Practical",
@@ -563,7 +671,7 @@
         "Duration": "Instantaneous",
         "Description": "Select a square within 12 squares of you. All nonmagical food and drink within the square is purified and rendered free of poison and disease.  "
     },
-    "47": {
+    "56": {
         "Name": "Speak with Animals",
         "Level": "1",
         "Type": "Divination",
@@ -575,7 +683,7 @@
         "Duration": "1 hour",
         "Description": "You gain the ability to comprehend and verbally communicate with beasts for the duration. The knowledge and awareness of many beasts is limited by their intelligence, but at minimum, beasts can give you information about nearby locations and monsters, including whatever they can perceive or have perceived within the past day. You might be able to persuade a beast to perform a small favor for you, at the GM\u2019s discretion.  "
     },
-    "48": {
+    "57": {
         "Name": "Teach Trick",
         "Level": "1",
         "Type": "Lesson",
@@ -587,7 +695,7 @@
         "Duration": "Instantaneous",
         "Description": "Animals and other unintelligent creatures can be taught a trick using this method. The component cost equals the cost of a consumable item of the creature\u2019s level. An animal can be taught multiple tricks over the week, but multiply the component cost by the number of tricks taught. \n\n* Attack: The animal attacks apparent enemies. You may point to a particular creature that you wish the animal to attack, and it will comply if able. Normally, an animal will attack only humanoids, monstrous humanoids, giants, or other animals. Teaching an animal to attack all creatures (including such unnatural creatures as undead and aberrations) takes twice as long.\n* Come: The animal comes to you, even if it normally would not do so.\n* Defend: The animal defends you (or is ready to defend you if no threat is present), even without any command being given. Alternatively, you can command the animal to defend a specific other character.\n* Down: The animal breaks off from combat or otherwise backs down. An animal that doesn\u2019t know this trick continues to fight until it must flee (due to injury, a fear effect, or the like) or its opponent is defeated.\n* Fetch: The animal goes and gets something. If you do not point out a specific item, the animal fetches some random object.\n* Guard: The animal stays in place and prevents others from approaching.\n* Heel: The animal follows you closely, even to places where it normally wouldn\u2019t go.\n* Perform: The animal performs a variety of simple tricks, such as sitting up, rolling over, roaring or barking, and so on.\n* Seek: The animal moves into an area and looks around for anything that is obviously alive or animate.\n* Stay: The animal stays in place, waiting for you to return. It does not challenge other creatures that come by, though it still defends itself if it needs to.\n* Track: The animal tracks the scent presented to it. \n* Work: The animal pulls or pushes a medium or heavy load."
     },
-    "49": {
+    "58": {
         "Name": "Spirit Speaker",
         "Level": "2",
         "Type": "Divination",
@@ -599,7 +707,7 @@
         "Duration": "1 minute",
         "Description": "When an animal dies, its spirit lingers briefly before moving on. Using low chants, body language that shows respect, and special movements that demonstrate to the spirit that you are an ally, you glean information from a spirit before it departs. You ask one simple question of the spirit. Attempt a Nature check at a DC determined by the GM (normally, this is the appropriate DC for the level of the animal or beast when it was alive). Regardless of the result of your check, the spirit immediately departs and can\u2019t be used for Spirit Speaker again. \n\nIf you succeed, the spirit answers you truthfully. The spirit\u2019s answer is likely to be terse or cryptic compared to normal communication with an animal, and it can pertain only to things the creature directly experienced or considered important. The spirit doesn\u2019t remember anything that happened more than 1 day ago.\n\nIf you fail, the spirit doesn\u2019t answer you. If you fail by 10 or more, the spirit is wracked with misery or bewilderment and gives you an erroneous answer."
     },
-    "50": {
+    "59": {
         "Name": "Animal Message",
         "Level": "3",
         "Type": "Conjuration",
@@ -611,7 +719,7 @@
         "Duration": "Special",
         "Description": "By means of this incantation, you use an animal to deliver a message. Choose a Tiny beast you can see within range, such as a squirrel, a blue jay, or a bat. You specify a location, which you must have visited, and a recipient who matches a general description, such as \u201ca man or woman dressed in the uniform of the town guard\u201d or \u201ca red-haired gnome wearing a pointed hat.\u201d You also speak a message of up to twenty-five words. The target beast travels for the duration of the incantation toward the specified location, covering about 50 miles per 24 hours for a flying messenger, or 25 miles for other animals.  \n\nWhen the messenger arrives, it delivers your message to the creature that you described, replicating the sound of your voice. The messenger speaks only to a creature matching the description you gave. If the messenger doesn\u2019t reach its destination before the incantation ends, the message is lost, and the beast makes its way back to where you cast this incantation.  \n\n**Nature check:** The duration of the incantation is your Nature check result in hours.   "
     },
-    "51": {
+    "60": {
         "Name": "Locate Animals or Plants",
         "Level": "3",
         "Type": "Scrying",
@@ -623,7 +731,7 @@
         "Duration": "Instantaneous",
         "Description": "Describe or name a specific kind of beast or plant. Concentrating on the voice of nature in your surroundings, you learn the direction and distance to the closest creature or plant of that kind within 5 miles, if any are present.  \n\n**Nature check:** With a DC 14 Nature check, you learn a further detail about the beast or plant you described, or the range extends to 10 miles. "
     },
-    "52": {
+    "61": {
         "Name": "Bonded Companion",
         "Level": "5",
         "Type": "Practical",
@@ -635,7 +743,7 @@
         "Duration": "Instantaneous",
         "Description": "You perform this incantation over two participants: the master and the bonded companion. You may include yourself in the incancation as the master, if desired.   \n\nThe bonded companion follows the Companion rules, as well as the following special rules: \n\n* If the master takes a move action, the companion can take a move action as well.  \n* If the master is incapacitated or not present, the companion gets its full complement of actions without needing to be \u201ccommanded\u201d.    \n* The companion\u2019s level is equal to the master\u2019s, unless it was already higher.  \n* The companion\u2019s maximum HP are equal to the master\u2019s staggered value, unless it was already higher.   \n* The companion uses the master\u2019s defenses, except where the companion\u2019s defense is higher.\n* The companion has no recoveries of its own, but can use its master\u2019s.   \n* Either participant in the incantation can end its effects as a swift action. "
     },
-    "53": {
+    "62": {
         "Name": "Speak with Plants",
         "Level": "5",
         "Type": "Divination",
@@ -647,7 +755,7 @@
         "Duration": "8 hours",
         "Description": "You imbue plants within 6 squares of you with limited sentience and animation, giving them the ability to communicate with you and follow your simple commands. You can question plants about events within 6 squares within the past day, gaining information about creatures that have passed, weather, and other circumstances.  \n\nYou can also turn difficult terrain caused by plant growth (such as thickets and undergrowth) into ordinary terrain that lasts for the duration. Or you can turn ordinary terrain where plants are present into difficult terrain that lasts for the duration, causing vines and branches to hinder pursuers, for example.  \n\nPlants might be able to perform other tasks on your behalf, at the GM\u2019s discretion. The incantation doesn\u2019t enable plants to uproot themselves and move about, but they can freely move branches, tendrils, and stalks.  \n\nIf a plant creature is in the area, you can communicate with it as if you shared a common language, but you gain no magical ability to influence it.  "
     },
-    "54": {
+    "63": {
         "Name": "Express Rider",
         "Level": "6",
         "Type": "Interaction",
@@ -659,7 +767,7 @@
         "Duration": "One day",
         "Description": "You know how to encourage your mount to cover ground quickly. When calculating your travel speed for the day while mounted, you can attempt a Nature check increase your mount\u2019s travel speed. The DC is determined by the GM, but is typically based on the mount\u2019s level or the difficulty of the environment, whichever is harder. On a success, increase your mount\u2019s travel speed by half. This has no effect on your mount\u2019s movement in encounters."
     },
-    "55": {
+    "64": {
         "Name": "Consult Nature",
         "Level": "9",
         "Type": "Divination",
@@ -671,7 +779,19 @@
         "Duration": "Instantaneous",
         "Description": "You briefly become one with nature and gain knowledge of the surrounding territory. In the outdoors, the incantation gives you knowledge of the land within 3 miles of you. In caves and other natural underground settings, the radius is limited to 60 squares. The incantation doesn\u2019t function where nature has been replaced by construction, such as in dungeons and towns.  \n\nYou instantly gain knowledge of one fact of your choice about any of the following subjects as they relate to the area:  \n\n- terrain and bodies of water  \n- prevalent plants, minerals, animals, or peoples  \n- powerful celestials, fey, fiends, elementals, or undead  \n- influence from other planes of existence  \n- buildings  \n\nFor example, you could determine the location of powerful undead in the area, the location of major sources of safe drinking water, and the location of any nearby towns.  \n\n**Nature check:** With a DC 18 Nature check, you gain knowledge of three facts of your choice, or one fact from outside the subject areas specified. "
     },
-    "56": {
+    "65": {
+        "Name": "Chapter",
+        "Level": "0",
+        "Type": "",
+        "Category": "",
+        "Skill": "None",
+        "Completion Time": "",
+        "Components": "",
+        "Cost to Learn": "",
+        "Duration": "",
+        "Description": ""
+    },
+    "66": {
         "Name": "Alchemy",
         "Level": "1",
         "Type": "Schema",
@@ -683,7 +803,7 @@
         "Duration": "Instantaneous",
         "Description": "Each potion and alchemical item has its own schema, which a character can learn after studying another of the same variety for 1 hour, or from scratch with 8 hours. The cost to learn equals the cost of a consumable item of the level of the potion or alchemical item. The component cost to make one of those items equals the cost to buy the item.\n\nYou cannot learn the schema of an item of a level higher than your own."
     },
-    "57": {
+    "67": {
         "Name": "Poisoncraft",
         "Level": "1",
         "Type": "Schema",
@@ -695,7 +815,7 @@
         "Duration": "Instantaneous",
         "Description": "Each poison has its own schema, which a character can learn after studying another of the same variety for 1 hour, or from scratch with 8 hours. The cost to learn equals the cost of a masterwork consumable item of the level of the poison. The component cost to make one of those items equals the cost to buy the item.\n\nYou cannot learn the schema of an item of a level higher than your own."
     },
-    "58": {
+    "68": {
         "Name": "Cobble Together",
         "Level": "2",
         "Type": "Schema",
@@ -707,7 +827,7 @@
         "Duration": "1 day",
         "Description": "You improvise any item that costs 50 gp or less. After one day, the item falls apart."
     },
-    "59": {
+    "69": {
         "Name": "Craft Enchanted Items",
         "Level": "2",
         "Type": "Schema",
@@ -719,7 +839,7 @@
         "Duration": "Instantaneous",
         "Description": "Each enchanted item boost (*dragonbane* weapon, *dismissal* focus, *amulet of shielding*, etc.) has its own schema, which a character can learn after studying another of the same variety for 1 hour, or from scratch with 8 hours. The cost to learn equals the cost of a consumable item of the level of a +1 item with that boost. The component cost to make one of those magic items equal the cost to buy the item. If an existing enchanted item is consumed during the crafting process, deduct its cost from the component cost. \n\nYou cannot learn the schema of an item of a level higher than your own."
     },
-    "60": {
+    "70": {
         "Name": "Craft Wondrous Items",
         "Level": "2",
         "Type": "Schema",
@@ -731,7 +851,7 @@
         "Duration": "Instantaneous",
         "Description": "Each wondrous item has its own schema, which a character can learn after studying another of the same variety for 1 hour, or from scratch with 8 hours. The cost to learn equals the cost of a consumable item of the level of the wondrous item. The component cost to make one of those wondrous items equal the cost to buy the item. If an existing wondrous item is consumed during the crafting process, deduct its cost from the component cost. \n\nYou cannot learn the schema of an item of a level higher than your own."
     },
-    "61": {
+    "71": {
         "Name": "Brilliant Planner",
         "Level": "5",
         "Type": "Schema",
@@ -743,7 +863,19 @@
         "Duration": "Permanent",
         "Description": "You can prepare for future contingencies without defining what those preparations are until they are relevant. This practice requires you to be in a settlement. Spend up to 50 gp per character level, which becomes your brilliant plan fund. While you have a brilliant plan pending, you are always treated as carrying 20 additional pounds of weight, even before you define your brilliant plan.\n\nOnce per day, you can take 10 minutes to enact a brilliant plan, withdrawing an item that would have been available in a settlement you visited or procuring a mundane service that your character planned ahead of time. Once you enact the plan, subtract the price of the item or service from the fund. Any item procured must weigh 10 pounds or less. Likewise, the GM must approve any non-magical service you gain by using your fund as being appropriate for the location selected.\n\nOnce you have spent all the money in your brilliant plan fund or procured 20 pounds of objects, you must use the practice again to replenish your brilliant plan fund."
     },
-    "62": {
+    "72": {
+        "Name": "Chapter",
+        "Level": "0",
+        "Type": "",
+        "Category": "",
+        "Skill": "Religion",
+        "Completion Time": "",
+        "Components": "",
+        "Cost to Learn": "",
+        "Duration": "",
+        "Description": ""
+    },
+    "73": {
         "Name": "Detect Otherworldly",
         "Level": "1",
         "Type": "Divination",
@@ -755,7 +887,7 @@
         "Duration": "10 minutes",
         "Description": "For the duration, you know if there is a creature of the cosmic, elemental, fey, outsider or shadow source or with the celestial, demon, devil or undead tags within 6 squares of you, as well as where the creature is located. Similarly, you know if there is a place or object within 6 squares of you that has been magically consecrated or desecrated.\n\nThe incantation can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt."
     },
-    "63": {
+    "74": {
         "Name": "Witness an Oath",
         "Level": "1",
         "Type": "Practical",
@@ -767,7 +899,7 @@
         "Duration": "Instantaneous",
         "Description": "You swear an oath or bear witness to one sworn by another. \n\nTo swear an oath, the subject names\u2014very specifically\u2014a task they will accomplish in no more than one year\u2019s time. If the task is not completed in that time, or if conditions arise that indicate the failure of the oath, they lose all recoveries, and cannot regain them for a month. \n\nThe oath-swearer cannot be tricked into thinking an oath is fulfilled when it is not, and no magical compulsion can force them to stop attempting to fulfill it. \n\nOaths can be singular tasks (destroy the Dark Tower) or ongoing (keep King Dari alive). Ongoing oaths can be renewed at the end of each year. An oath must be something measurable, so the character knows whether it has been fulfilled. \n\nThe oath-swearer receive a +2 power bonus on skill checks while working towards their oath, and a +2 power bonus to defenses against attacks that would directly stop them from working towards their oath."
     },
-    "64": {
+    "75": {
         "Name": "Augury",
         "Level": "3",
         "Type": "Divination",
@@ -779,7 +911,7 @@
         "Duration": "Instantaneous",
         "Description": "By casting gem-inlaid sticks, rolling dragon bones, laying out ornate cards, or employing some other divining tool, you receive an omen from an otherworldly entity about the results of a specific course of action that you plan to take within the next 30 minutes. The GM chooses from the following possible omens:  \n\n- *Weal*, for good results  \n- *Woe*, for bad results  \n- *Weal and woe*, for both good and bad results  \n- *Nothing*, for results that aren\u2019t especially good or bad  \n\nThe incantation doesn\u2019t take into account any possible circumstances that might change the outcome.  \n\nIf you cast the incantation two or more times before completing your next long rest, there is a cumulative 25 percent chance for each casting after the first that you get a random reading. The GM makes this roll in secret.  "
     },
-    "65": {
+    "76": {
         "Name": "Remove Curse",
         "Level": "5",
         "Type": "Curative",
@@ -791,7 +923,7 @@
         "Duration": "Instantaneous",
         "Description": "At your touch, all curses of your level or lower (or no level) affecting one creature or object end. If the object is a cursed magic item, its curse remains, but the incantation breaks its owner\u2019s attunement to the object so it can be removed or discarded.  \n\n**Religion check:** With a successful Religion check (moderate DC based on the curse\u2019s level), you can remove curses of a level higher than your own. "
     },
-    "66": {
+    "77": {
         "Name": "Speak with the Departed",
         "Level": "5",
         "Type": "Divination",
@@ -803,7 +935,7 @@
         "Duration": "10 minutes",
         "Description": "You grant the semblance of life and intelligence to a corpse of your choice within range, allowing it to answer the questions you pose. The corpse must still have a mouth and can\u2019t be undead. The incantation fails if the corpse was the target of this incantation within the last 10 days.  \n\nUntil the incantation ends, you can ask the corpse a question. The corpse knows only what it knew in life, including the languages it knew. Answers are usually brief, cryptic, or repetitive, and the corpse is under no compulsion to offer a truthful answer if you are hostile to it or it recognizes you as an enemy. This incantation doesn\u2019t return the creature\u2019s soul to its body, only its animating spirit. Thus, the corpse can\u2019t learn new information, doesn\u2019t comprehend anything that has happened since it died, and can\u2019t speculate about future events.  \n\n**Religion check:** With a DC 15 Religion check, you can ask up to five questions. "
     },
-    "67": {
+    "78": {
         "Name": "Commune",
         "Level": "9",
         "Type": "Divination",
@@ -815,7 +947,7 @@
         "Duration": "1 hour",
         "Description": "You contact a divine proxy and ask up to three questions that can be answered with a yes or no. You must ask your questions before the incantation ends. You receive a correct answer for each question.  \n\nDivine beings aren\u2019t necessarily omniscient, so you might receive \u201cunclear\u201d as an answer if a question pertains to information that lies beyond the deity\u2019s knowledge.\n\n**Religion check:** With a DC 18 Religion check, you contact a more powerful entity aligned strongly with your interests, possibly even your deity. The entity won\u2019t attempt to deceive you, though it still might not know the answers. When it\u2019s important to provide clarity, the entity will answer your questions with up to five words, such as \u201cIf you leave immediately\u201d or \u201cThat was true once.\u201d"
     },
-    "68": {
+    "79": {
         "Name": "Prescient Divination",
         "Level": "9",
         "Type": "Divination",
@@ -827,7 +959,7 @@
         "Duration": "Instantaneous",
         "Description": "Your magic and an offering put you in contact with a god or a god\u2019s servants. You ask a single question concerning a specific goal, event, or activity to occur within 7 days. The GM offers a truthful reply. The reply might be a short phrase, a cryptic rhyme, or an omen.  \n\nThe incantation doesn\u2019t take into account any possible circumstances that might change the outcome.  \n\n**Religion check:** With a DC 18 Religion check, the answer is less cryptic than it otherwise would have been. "
     },
-    "69": {
+    "80": {
         "Name": "Forbid Intrusion  ",
         "Level": "11",
         "Type": "Abjuration",
@@ -839,7 +971,7 @@
         "Duration": "1 day",
         "Description": "You create a ward against magical travel that protects up to 1,600 squares of floor space to a height of 6 squares above the floor. For the duration, creatures can\u2019t teleport into the area or use portals to enter the area. The incantation proofs the area against planar travel, and therefore prevents creatures from accessing the area by way of the Astral Plane, Ethereal Plane, Plane of Faerie, Plane of Shadow, or the *plane walk* incantation.  \n\nIn addition, the incantation damages types of creatures that you choose when you cast it. Choose one or more of the following tags: air, celestial, cold, demon, devil, earth, fire, water or undead. When a creature with that tag enters the incantation\u2019s area for the first time on a turn or starts its turn there, the creature takes 5d10 radiant or necrotic damage (your choice when you cast this incantation).  \n\nWhen you cast this incantation, you can designate a password. A creature that speaks the password as it enters the area takes no damage from the incantation.  \n\nThe incantation\u2019s area can\u2019t overlap with the area of another *forbid intrusion* incantation. If you cast *forbid intrusion* every day for 7 days in the same location, the incantation lasts until it is dispelled.  "
     },
-    "70": {
+    "81": {
         "Name": "Geas",
         "Level": "11",
         "Type": "Practical",
@@ -851,7 +983,7 @@
         "Duration": "One day / level or until discharged",
         "Description": "A *geas* places a command on a creature to carry out some service or to refrain from some action or course of activity, as desired by you. The creature must be of your level or lower and be able to understand you. While a geas cannot compel a creature to kill itself or perform acts that would result in certain death, it can cause almost any other course of activity.\n\nThe geased creature must follow the given instructions until the geas is completed, no matter how long it takes.\n\nIf the instructions involve some open-ended task that the recipient cannot complete through his own actions the craft remains in effect for a maximum of one day per level you have. A clever recipient can subvert some instructions.\n\nIf the subject is prevented from obeying the *geas* for 24 hours, it loses one recovery. It cannot regain this recovery while the geas remains.\n\n**Religion check:** With a moderate DC Religion check (based on the level of the target), you can target a creature of level higher than your own. "
     },
-    "71": {
+    "82": {
         "Name": "Restore Revenant",
         "Level": "11",
         "Type": "Curative",
@@ -863,7 +995,7 @@
         "Duration": "Instantaneous",
         "Description": "The target of the incantation is brought back to life, with the Revenant bond. Make a Religion check. The result determines what starting Favor the target begins with. *Religion result 10 or less:* -3 Favor. *Religion result 11-15:* 0 Favor. *Religion result 16-20:* 5 Favor. *Religion result 21-25:* 10 Favor. *Religion result 26 or more:* 15 Favor. "
     },
-    "72": {
+    "83": {
         "Name": "Fires of the Abyss",
         "Level": "21",
         "Type": "Conjuration",
@@ -875,7 +1007,19 @@
         "Duration": "8 hours",
         "Description": "This incantation, dreamed up by cultists, opens a fell rift between the current location and a fiery layer of the Abyss. This rift brings about a massive conflagration that destroys almost everything in the immediate area, then releases a powerful demon who capers over the smoldering ruins and begins to rampage across the countryside. The *fires of the Abyss* ignite everything they touch\u2014except for the caster, who is knocked unconscious and transported to a layer of the Abyss.  \n\nWhen the incantation is complete, the *fires of the Abyss* erupt from the caster\u2019s former location.\n\n*Attack:* Near burst 16; +26 vs Reflex; on a hit, the target takes 18d6 fire damage. On a miss, the target takes half damage. Either way, everything flammable in the burst is lit on fire.  \n\n*Secondary Effect:* At initiative count 20 on the following round, a balor comes through the rift, which then closes. The balor begins to destroy everything in sight."
     },
-    "73": {
+    "84": {
+        "Name": "Chapter",
+        "Level": "0",
+        "Type": "",
+        "Category": "",
+        "Skill": "Sleight of Hand",
+        "Completion Time": "",
+        "Components": "",
+        "Cost to Learn": "",
+        "Duration": "",
+        "Description": ""
+    },
+    "85": {
         "Name": "Craft Trap",
         "Level": "1",
         "Type": "Schema",
@@ -887,7 +1031,19 @@
         "Duration": "Instantaneous",
         "Description": "Each trap has its own schema, which a character can learn after studying a trap for 1 hour, or from scratch with 8 hours. The cost to learn equals the cost of a consumable item of the trap\u2019s level. The component cost to make one of those traps depends on the type of trap: start with the cost of a consumable item of the trap's level and halve it for a one-off trap and double it for a recurring trap. Hazards use the cost of a consumable item of the trap\u2019s level. "
     },
-    "74": {
+    "86": {
+        "Name": "Chapter",
+        "Level": "0",
+        "Type": "",
+        "Category": "",
+        "Skill": "Stealth",
+        "Completion Time": "",
+        "Components": "",
+        "Cost to Learn": "",
+        "Duration": "",
+        "Description": ""
+    },
+    "87": {
         "Name": "Foil Senses",
         "Level": "1",
         "Type": "Trick",
@@ -899,7 +1055,19 @@
         "Duration": "10 minutes",
         "Description": "You make it impossible for a creature that is tracking you or searching for you to use one of its special senses, like scent or tremorsense, for 8 hours. "
     },
-    "75": {
+    "88": {
+        "Name": "Chapter",
+        "Level": "0",
+        "Type": "",
+        "Category": "",
+        "Skill": "Streetsmarts",
+        "Completion Time": "",
+        "Components": "",
+        "Cost to Learn": "",
+        "Duration": "",
+        "Description": ""
+    },
+    "89": {
         "Name": "Carouse",
         "Level": "1",
         "Type": "Interaction",
@@ -911,7 +1079,7 @@
         "Duration": "Instantaneous",
         "Description": "You cope through drink and revelry, and have mastered both. You can gain the benefits of a long rest by spending 4 hours drinking, carousing, and taking the occasional blackout nap. You can carouse in this way so long as you consume at least 4 pints\u2019 worth of ale (or equivalent drink), and you are alert and aware of your surroundings while doing so. \n\nIf you carouse with another creature in this way, you can attempt to learn secrets from it by drinking it under the table. Each hour you spend carousing with a willing creature, make an Endure check vs the target\u2019s Fortitude. On a success, that creature answers a question truthfully (even questions it would not normally answer)."
     },
-    "76": {
+    "90": {
         "Name": "Shady Connections",
         "Level": "2",
         "Type": "Interaction",
@@ -923,7 +1091,7 @@
         "Duration": "Instantaneous",
         "Description": "You have dealings with a variety of unsavory characters, which you can leverage to trade favors or meet powerful people. When you\u2019re in an area where you have connections (typically a settlement where you\u2019ve spent downtime building connections or possibly another area in the same nation), you can arrange a meeting with an important criminal, such as a thieves\u2019 guild leader, or ask for a favor in exchange for a later favor of your contact\u2019s choice. "
     },
-    "77": {
+    "91": {
         "Name": "Sow Rumor",
         "Level": "2",
         "Type": "Interaction",
@@ -935,7 +1103,7 @@
         "Duration": "Instantaneous",
         "Description": "You spread rumors, which may or may not be true, about a specific subject. If the subject of your rumor is not currently the subject of any contradictory rumors, this typically takes 2 hours, at the end of which you make a Streetsmarts check to see how well you spread the rumor. If your rumor matches any current rumors about the subject, it takes less time to spread the rumor, and if you are attempting to overtake a particularly popular and contradictory rumor, it takes much longer or may be impossible. The DC similarly increases or decreases depending on how plausible your rumor is. If you succeed, you successfully spread the rumor. If you fail, your rumor dies off. If you fail by 10 or more, a rumor spreads about someone trying to spread false rumors about the subject."
     },
-    "78": {
+    "92": {
         "Name": "Party Crasher",
         "Level": "7",
         "Type": "Interaction",
@@ -947,7 +1115,7 @@
         "Duration": "Instantaneous",
         "Description": "Any time you encounter a social event you would ordinarily be denied access to, such as a coronation, royal gala, or other society function, you can secure entry without the need for a skill check. You find invitations, invitees looking for fashionable dates, temporary jobs with the caterers, event staff willing to look the other way, or some other mode of access for yourself and your allies. This ability doesn\u2019t apply to secret events or other small private gatherings with no staff, dates, or outsiders involved."
     },
-    "79": {
+    "93": {
         "Name": "Safe House",
         "Level": "11",
         "Type": "Trick",

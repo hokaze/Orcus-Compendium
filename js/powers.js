@@ -5,6 +5,7 @@ document.addEventListener( "DOMContentLoaded", get_power_json_data, false ); // 
 
 var power_table = document.getElementById('powerTable');
 var power_data = {};
+var discipline_data = {};
 
 var power_name_list = [];
 var power_source_list = [];
@@ -49,9 +50,21 @@ function append_power_json(power_data)
     Object.keys(power_data).forEach(key => {
         var power_name = power_data[key]["Name"];
         
-        // ignore the Chapter headers
+        // ignore most of the Chapter headers
         if ( power_data[key]["Name"] == "Chapter")
         {
+            // The Disciplines actually have useful info - Key Ability, Secondary Ability, Tradition, Source (e.g. which classes AND kits), so we should make an object with the List name as the key so we can lookup that data when displaying powers
+            if (power_data[key]["Source"] == "Discipline")
+            {
+                discipline_data[power_data[key]["List"]] = {
+                    "Key Ability": power_data[key]["Key Ability"],
+                    "Secondary Ability": power_data[key]["Secondary Ability"],
+                    "Tradition": power_data[key]["Tradition"],
+                    "Sources": power_data[key]["Sources"],
+                    "Details": power_data[key]["Details"]
+                };
+            }
+            // regardless of if it's a discipline or not we still want to skip actually adding this to the powers table
             return;
         }
         
@@ -235,11 +248,11 @@ function showPowerInfo (key, enable_navigation, close_showinfo)
     // Experimental display, makes powers look more like 4e power cards
     
     // use Orcus or 4e power card colours?
-    var power_style = document.querySelector('input[name="power_style"]:checked').value;
+    var power_style_colour = document.querySelector('input[name="power_style_colour"]:checked').value;
     var colour_header, colour_atwill, colour_encounter, colour_daily, colour_highlight;
     
     // mimic the Orcus Heroes' Handbook power cards by default
-    if (power_style == "Orcus")
+    if (power_style_colour == "Orcus")
     {
         colour_header = "#7030a0"; // fallback colour, currently just using the colour shown in the Orcus Game Master's Guide for Poisons, as the only example of item powers with the "Consumable" frequency, as permanent magic items do not have power cards
         colour_atwill = "#9bbb59";
@@ -257,57 +270,154 @@ function showPowerInfo (key, enable_navigation, close_showinfo)
         colour_highlight = "#dddccc"; // used for flavour text and on alternating lines after the attack line for increased readability
     }
     
-    if (power_data[key]["Frequency"] == "At-Will")
+    var frequency = power_data[key]["Frequency"];
+    if (frequency == "At-Will")
     {
         colour_header = colour_atwill;
     }
-    else if (power_data[key]["Frequency"] == "Encounter")
+    else if (frequency == "Encounter")
     {
         colour_header = colour_encounter;
     }
-    else if (power_data[key]["Frequency"] == "Daily")
+    else if (frequency == "Daily")
     {
         colour_header = colour_daily;
     }
     
-    // header (power name on left, class and level/tier on right)
-    content_div.innerHTML = '<div style="background-color:' + colour_header +';color:#FFFFFF;padding:1px 5px 0px 5px;min-height:40px;">' + '<div style="font-weight:bold;font-size:20px;float:left;">' + power_data[key]["Name"] + '</div>' + '<div style="font-size:20px;float:right;">' + power_data[key]["List"] + ' ' + power_data[key]["Tier"] + '</div></div>';
+    // use Compendium-style horizontal power cards of 4e-style vertical power cards?
+    var power_style_card = document.querySelector('input[name="power_style_card"]:checked').value;
+    var power_card_html = "";
     
-    // flavour line - show placeholder if no flavour text yet
-    var flavour_text = power_data[key]["Flavor"] || '(no flavour text for this power yet)';
-    content_div.innerHTML += '<div style="background-color:' + colour_highlight + ';font-style:italic;padding: 1px 0px 3px 5px;min-height:20px">' + flavour_text + '</div>';
+    if (power_style_card == "Compendium")
+    {
+        // header (power name on left, class and level/tier on right)
+        power_card_html = '<div style="background-color:' + colour_header +';color:#FFFFFF;padding:1px 5px 0px 5px;min-height:40px;">' + '<div style="font-weight:bold;font-size:20px;float:left;">' + power_data[key]["Name"] + '</div>' + '<div style="font-size:20px;float:right;">' + power_data[key]["List"] + ' ' + power_data[key]["Tier"] + '</div></div>';
+        
+        // flavour line - show placeholder if no flavour text yet
+        var flavour_text = power_data[key]["Flavor"] || '(no flavour text for this power yet)';
+        power_card_html += '<div style="background-color:' + colour_highlight + ';font-style:italic;padding: 1px 0px 3px 5px;min-height:20px">' + flavour_text + '</div>';
+        
+        // power type/frequency, keywords/tags, action and range lines
+        power_card_html += '<div style="padding-left:5px;"><span style="font-weight:bold;">'
+        + power_data[key]["Frequency"] + '</span> ♦ <span style="font-weight:bold;">' + power_data[key]["Tags"] +
+        '</span><br><span style="font-weight:bold;">' + power_data[key]["Action"] + '</span> ♦ <span style="font-weight:bold;">' + power_data[key]["Range"] + ' ' + '</span>' + power_data[key]["Range Details"] + '</div>';
+        
+        // conditional lines, only print if power has Trigger, Hit, Miss, Effect, Special lines, and alternate background colour for readability
+        var alt_bg = 1;
+        if (power_data[key]["Requirement"])
+        {
+            [alt_bg, power_card_html] = powerCardLines (power_card_html, alt_bg, colour_highlight, "Requirement", power_data[key]["Requirement"]);
+        }
+        if (power_data[key]["Trigger"])
+        {
+            [alt_bg, power_card_html] = powerCardLines (power_card_html, alt_bg, colour_highlight, "Trigger", power_data[key]["Trigger"]);
+        }
+        if (power_data[key]["Attack"])
+        {
+            [alt_bg, power_card_html] = powerCardLines (power_card_html, alt_bg, colour_highlight, "Attack", power_data[key]["Attack"] + " vs " + power_data[key]["Defense"]);
+        }
+        if (power_data[key]["Hit"])
+        {
+            [alt_bg, power_card_html] = powerCardLines (power_card_html, alt_bg, colour_highlight, "Hit", power_data[key]["Hit"]);
+        }
+        if (power_data[key]["Miss"])
+        {
+            [alt_bg, power_card_html] = powerCardLines (power_card_html, alt_bg, colour_highlight, "Miss", power_data[key]["Miss"]);
+        }
+        if (power_data[key]["Effect"])
+        {
+            [alt_bg, power_card_html] = powerCardLines (power_card_html, alt_bg, colour_highlight, "Effect", power_data[key]["Effect"]);
+        }
+        if (power_data[key]["Special"])
+        {
+            [alt_bg, power_card_html] = powerCardLines (power_card_html, alt_bg, colour_highlight, "Special", power_data[key]["Special"]);
+        }
+        if (power_data[key]["Boost"])
+        {
+            [alt_bg, power_card_html] = powerCardLines (power_card_html, alt_bg, colour_highlight, "Boost", power_data[key]["Boost"]);
+        }
+        if (power_data[key]["Maintain Action"] && power_data[key]["Maintain Text"])
+        {
+            [alt_bg, power_card_html] = powerCardLines (power_card_html, alt_bg, colour_highlight, "Maintain (" + power_data[key]["Maintain Action"] + ')', power_data[key]["Maintain Text"]);
+        }
+    }
     
-    // power type/frequency, keywords/tags, action and range lines
-    content_div.innerHTML += '<div style="padding-left:5px;"><span style="font-weight:bold;">'
-    + power_data[key]["Frequency"] + '</span> - <span style="font-weight:bold;">' + power_data[key]["Tags"] +
-    '</span><br><span style="font-weight:bold;">' + power_data[key]["Action"] + '</span> - <span style="font-weight:bold;">' + power_data[key]["Range"] + ' ' + '</span>' + power_data[key]["Range Details"] + '</div>';
+    // for vertical power cards, borrowing from how roll20 displays 4e power card macros
+    else
+    {
+        power_card_html = '<table class="dnd4epower" style="min-width: 400px;max-width:400px;width:400px;"><tbody>';
+        
+        // header
+        power_card_html += '<tr><th class="dnd4epower sheet-power-header" style="background-color:' + colour_header + ';style="min-width: 400px;max-width:400px;width:400px;"">' + power_data[key]["Name"] + '</th></tr>';
+        power_card_html += '<tr><th class="dnd4epower sheet-subheader-alignright"" style="background-color:' + colour_header + ';">' + power_data[key]["List"] + ' ' + power_data[key]["Tier"] + '</th></tr>';
+        
+        // frequency, keywords
+        power_card_html += '<tr><td><span class="sheet-template-bold">' + power_data[key]["Frequency"] + ' ♦ ' + power_data[key]["Tags"] + '</span></td></tr>';
+        
+        // action type, range
+        power_card_html += '<tr><td><span class="sheet-template-bold">' + power_data[key]["Action"] + ' ♦ ' + power_data[key]["Range"] + ' ' + power_data[key]["Range Details"] + '</span></td></tr>';
+        
+        // conditional lines
+        if (power_data[key]["Trigger"])
+        {
+            power_card_html += '<tr><td><strong>Trigger: </strong>' + power_data[key]["Trigger"] + '</td></tr>';
+        }
+        if (power_data[key]["Attack"])
+        {
+            power_card_html += '<tr><td><strong>Attack: </strong>' + power_data[key]["Attack"] + ' vs ' + power_data[key]["Defense"] + '</td></tr>';
+        }
+        if (power_data[key]["Hit"])
+        {
+            power_card_html += '<tr><td><strong>Hit: </strong>' + power_data[key]["Hit"] + '</td></tr>';
+        }
+        if (power_data[key]["Miss"])
+        {
+            power_card_html += '<tr><td><strong>Miss: </strong>' + power_data[key]["Miss"] + '</td></tr>';
+        }
+        if (power_data[key]["Effect"])
+        {
+            power_card_html += '<tr><td><strong>Effect: </strong>' + power_data[key]["Effect"] + '</td></tr>';
+        }
+        if (power_data[key]["Special"])
+        {
+            power_card_html += '<tr><td><strong>Special: </strong>' + power_data[key]["Special"] + '</td></tr>';
+        }
+        if (power_data[key]["Boost"])
+        {
+            power_card_html += '<tr><td><strong>Boost:</strong>' + power_data[key]["Boost"] + '</td></tr>';
+        }
+        if (power_data[key]["Maintain Action"] && power_data[key]["Maintain Text"])
+        {
+            power_card_html += '<tr><td><strong>Maintain (' + power_data[key]["Maintain Action"] + '):</strong>' + power_data[key]["Maintain Text"] + '</td></tr>';
+        }
+        if (power_data[key]["Flavor"])
+        {
+            power_card_html += '<tr><td><em>' + power_data[key]["Flavor"] + '</em></td></tr>'
+        }
+        power_card_html += '</tbody></table>';
+    }
     
-    // conditional lines, only print if power has Trigger, Hit, Miss, Effect, Special lines, and alternate background colour for readability
-    var alt_bg = 1;
-    if (power_data[key]["Trigger"])
+    // some extra info about the power's Discipline (but not powers from other sources) not normally shown on the card itself, such as the Tradition, what classes/kits provide it, etc
+    var source = power_data[key]["Source"];
+    if (source == "Discipline")
     {
-        alt_bg = powerCardLines (content_div, alt_bg, colour_highlight, "Trigger", power_data[key]["Trigger"]);
+        var discipline = power_data[key]["List"];
+        var key_ability = discipline_data[discipline]["Key Ability"];
+        var secondary_ability = discipline_data[discipline]["Secondary Ability"];
+        var tradition = discipline_data[discipline]["Tradition"];
+        var sources = discipline_data[discipline]["Sources"];
+        var details = discipline_data[discipline]["Details"];
+        
+        power_card_html += "<br/><p><b>Discipline: </b>" + discipline;
+        power_card_html += "<br/><b>Key Ability: </b>" + key_ability;
+        power_card_html += "<br/><b>Secondary Ability: </b>" + secondary_ability;
+        power_card_html += "<br/><b>Tradition: </b>" + tradition;
+        power_card_html += "<br/><b>Sources: </b>" + sources;
+        power_card_html += "</p><p>" + details + "</p>";
     }
-    if (power_data[key]["Attack"])
-    {
-        alt_bg = powerCardLines (content_div, alt_bg, colour_highlight, "Attack", power_data[key]["Attack"] + " vs " + power_data[key]["Defense"]);
-    }
-    if (power_data[key]["Hit"])
-    {
-        alt_bg = powerCardLines (content_div, alt_bg, colour_highlight, "Hit", power_data[key]["Hit"]);
-    }
-    if (power_data[key]["Miss"])
-    {
-        alt_bg = powerCardLines (content_div, alt_bg, colour_highlight, "Miss", power_data[key]["Miss"]);
-    }
-    if (power_data[key]["Effect"])
-    {
-        alt_bg = powerCardLines (content_div, alt_bg, colour_highlight, "Effect", power_data[key]["Effect"]);
-    }
-    if (power_data[key]["Special"])
-    {
-        alt_bg = powerCardLines (content_div, alt_bg, colour_highlight, "Special", power_data[key]["Special"]);
-    }
+    
+    // actually write to the the div
+    content_div.innerHTML = power_card_html;
 
     if (enable_navigation)
     {
@@ -324,20 +434,20 @@ function showPowerInfo (key, enable_navigation, close_showinfo)
 }
 
 // helper function to print power card lines + alternate background colours for readability
-function powerCardLines (content_div, alt_bg, colour_highlight, label, details)
+function powerCardLines (power_card_html, alt_bg, colour_highlight, label, details)
 {
     if (alt_bg)
     {
-        content_div.innerHTML += '<div style="background-color:' + colour_highlight + ';padding:0px 0px 0px 5px;"><span style="font-weight:bold;">'  + label + ': ' + '</span>' + details + '</div>';
+        power_card_html += '<div style="background-color:' + colour_highlight + ';padding:0px 0px 0px 5px;"><span style="font-weight:bold;">'  + label + ': ' + '</span>' + details + '</div>';
         
         alt_bg = 0;
     }
     else
     {
-        content_div.innerHTML += '<div style="padding:0px 0px 0px 5px;"><span style="font-weight:bold;">' + label + ': ' + '</span>' + details + '</div>';
+        power_card_html += '<div style="padding:0px 0px 0px 5px;"><span style="font-weight:bold;">' + label + ': ' + '</span>' + details + '</div>';
         
         alt_bg = 1;
     }
     
-    return alt_bg;
+    return [alt_bg, power_card_html];
 }

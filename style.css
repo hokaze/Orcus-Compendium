@@ -129,3 +129,53 @@ tr.header
     text-decoration: none;
     cursor: pointer;
 }
+
+/* 4e-style vertical power cards, adapted from roll20 4e power card macro css */
+.dnd4epower td:before {
+  content: '' !important;
+  display: block !important; 
+  width: 380px !important; /* otherwise smaller powers with minimal text like Hasty Retreat shrink down to smaller sizes despite having min-width:400px set on the table - note we don't use 400px on this pseudo element as that actually causes a scrollbar to appear that we don't want */
+}
+
+.dnd4epower .sheet-power-header {
+	color: #ffffff !important;
+    padding-left: 5px !important;
+	line-height: 1.6em !important;
+	font-size: 1.2em !important;
+    text-align: left !important;
+}
+
+.dnd4epower .sheet-power-header {
+	color: #ffffff !important;
+    padding-left: 5px !important;
+	line-height: 1.6em !important;
+	font-size: 1.2em !important;
+    text-align: left !important;
+}
+
+.dnd4epower .sheet-subheader-alignright {
+    color: #ffffff !important;
+    padding-left: 5px !important;
+	line-height: 1em !important;
+	font-size: 1em !important;
+    text-align: right !important;
+}
+
+.dnd4epower tr:nth-of-type(odd) {
+    background: -webkit-linear-gradient(left,rgba(217, 209, 199,1),rgba(217, 209, 199,0.25)) !important; 
+    background: -o-linear-gradient(right,rgba(217, 209, 199,1),rgba(217, 209, 199,0.25)) !important; 
+    background: -moz-linear-gradient(right,rgba(217, 209, 199,1),rgba(217, 209, 199,0.25)) !important; 
+    background: linear-gradient(to right, rgba(217, 209, 199,1), rgba(217, 209, 199,0.25)) !important; 
+}
+
+.dnd4epower td {
+    color: #000000 !important;
+    padding-left: 5px !important;
+	line-height: 1em !important;
+	font-size: 1em !important;
+    text-align: left !important;
+}
+
+.dnd4epower .sheet-template-bold {
+    font-weight: bold !important;
+}
