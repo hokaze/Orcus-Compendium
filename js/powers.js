@@ -397,6 +397,16 @@ function showPowerInfo (key, enable_navigation, close_showinfo)
         power_card_html += '</tbody></table>';
     }
     
+    // if power can summon Companions, link to the Companion showInfo here
+    var summons = power_data[key]["Summons"].split(", ");
+    if (summons[0])
+    {
+        power_card_html += "<br/><p><b>Summons: </b>";
+        summons.forEach(element => {
+            power_card_html += '<br/><a href="#" onclick="showCompanionInfo(\'' + companion_name_to_key.get(element) + '\', 0, \'showPowerInfo(' + key + ', 1' + ')\')\">' + element + '</a>';
+        });
+    }
+    
     // some extra info about the power's Discipline (but not powers from other sources) not normally shown on the card itself, such as the Tradition, what classes/kits provide it, etc
     var source = power_data[key]["Source"];
     if (source == "Discipline")
@@ -405,14 +415,48 @@ function showPowerInfo (key, enable_navigation, close_showinfo)
         var key_ability = discipline_data[discipline]["Key Ability"];
         var secondary_ability = discipline_data[discipline]["Secondary Ability"];
         var tradition = discipline_data[discipline]["Tradition"];
-        var sources = discipline_data[discipline]["Sources"];
+        var sources = discipline_data[discipline]["Sources"].split(", ");
         var details = discipline_data[discipline]["Details"];
         
         power_card_html += "<br/><p><b>Discipline: </b>" + discipline;
         power_card_html += "<br/><b>Key Ability: </b>" + key_ability;
         power_card_html += "<br/><b>Secondary Ability: </b>" + secondary_ability;
         power_card_html += "<br/><b>Tradition: </b>" + tradition;
-        power_card_html += "<br/><b>Sources: </b>" + sources;
+        power_card_html += "<br/><b>Sources: </b>";
+        
+        // need a guard to make sure we actually have sources, as weirdly the "Invisible Cities" and "Perchance to Dream" disciplines have no sources - presumably they is non-core and haven't been assigned a class/kit yet? (looks like it would have the Phrenic Tradition, despite Tradition also being empty, so presumably the Psion-equivalent is being worked on?)
+        if (sources[0] != "")
+        {
+            // for sources, let's actually link to the appropriate source showInfo
+            sources.forEach(element => {
+                
+                // need to parse the source to see if it's a class / kit / feat
+                var source_type = element.split(" (")[1].split(")")[0];
+                var source_name = element.split(" (")[0];
+                
+                // file mostly uses "class" but there's at least one instance of "classes"
+                if (source_type == "class" || source_type == "classes")
+                {
+                    power_card_html += '<br/><a href="#" onclick="showClassInfo(\'' + class_name_to_key.get(source_name) + '\', 0, \'showPowerInfo(' + key + ', 1' + ')\')\">' + source_name + '</a>';
+                }
+                // xslx/csv uses kit most of the time, but has "kits" for Worships the God of Peace
+                else if (source_type == "kit" || source_type == "kits")
+                {
+                    power_card_html += '<br/><a href="#" onclick="showKitInfo(\'' + kit_name_to_key.get(source_name) + '\', 0, \'showPowerInfo(' + key + ', 1' + ')\')\">' + source_name + '</a>';
+                }
+                // currently only Cantrip Master grants a discipline from a feat, but other feat powers exist, just need to fill-in the Sources field on the csv...
+                else if (source_type == "feat")
+                {
+                    power_card_html += '<br/><a href="#" onclick="showFeatInfo(\'' + feat_name_to_key.get(source_name) + '\', 0, \'showPowerInfo(' + key + ', 1' + ')\')\">' + source_name + '</a>';
+                }
+                // nearly missed this, but cruxes can also grant access, as the Heir gains a single Cantrip
+                else if (source_type == "crux")
+                {
+                    power_card_html += '<br/><a href="#" onclick="showCruxInfo(\'' + crux_name_to_key.get(source_name) + '\', 0, \'showPowerInfo(' + key + ', 1' + ')\')\">' + source_name + '</a>';
+                }
+            });
+        }
+        
         power_card_html += "</p><p>" + details + "</p>";
     }
     

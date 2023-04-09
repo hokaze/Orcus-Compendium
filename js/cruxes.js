@@ -12,6 +12,8 @@ var crux_feat1_list = [];
 var crux_feat2_list = [];
 var crux_power_list = [];
 
+const crux_name_to_key = new Map();
+
 // this function is in the event listener and will execute on page load
 function get_crux_json_data()
 {
@@ -50,6 +52,9 @@ function append_crux_json(crux_data)
         crux_feat2_list.push(crux_data[key]["Feature 2 Name"]);
         crux_power_list.push(crux_data[key]["Power"]);
         
+        // hashmap for looking up key from class name, useful for running showCruxInfo from other tabs/tables
+        crux_name_to_key.set(crux_data[key]["Name"], key);
+
         // update table with new row
         var tr = document.createElement('tr');
         tr.id = "crux_" + key;
@@ -114,7 +119,7 @@ function searchCruxTable()
 }
 
 // like classes, show some html converted from markdown for the crux (this was the easiest way to show crux ancestry powers, as they're not included in the powers spreadsheet/table)
-async function showCruxInfo (key, enable_navigation)
+async function showCruxInfo (key, enable_navigation, close_showinfo)
 {
     var crux_name = crux_data[key]["Name"];
     let url = "data/markdown-to-html/crux/" + crux_name + ".html";
@@ -124,6 +129,9 @@ async function showCruxInfo (key, enable_navigation)
     {
         showModalNavigation ("crux", key, crux_name_list, "showCruxInfo", crux_table, crux_data);
     }
+    
+    // return to the previous showInfo if viewing from another context
+    this.modal_div_showinfo_on_close = close_showinfo;
     
     modal_div.style.display = "block";
 }

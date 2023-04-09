@@ -12,6 +12,8 @@ var class_role_list = [];
 var class_key_ability_list = [];
 var class_disciplines_list = [];
 
+const class_name_to_key = new Map();
+
 // this function is in the event listener and will execute on page load
 function get_class_json_data()
 {
@@ -72,6 +74,9 @@ function append_class_json(class_data)
         {
             class_data[key]["Class Disciplines - List"] += ', <i>plus one other discipline from your free "Worships the [X]" Kit from this class</i>';
         }
+        
+        // hashmap for looking up key from class name, useful for running showClassInfo from other tabs/tables
+        class_name_to_key.set(class_data[key]["Name"], key);
 
         // update table with new row
         var tr = document.createElement('tr');
@@ -146,7 +151,7 @@ function searchClassTable()
 }
 
 // modal popup that loads markdown-to-html class summaries with the github markdown css, appears on top of the page and can be dismissed
-async function showClassInfo (key, enable_navigation)
+async function showClassInfo (key, enable_navigation, close_showinfo)
 {   
     // fetch class html file
     var class_name = class_data[key]["Name"];
@@ -158,6 +163,9 @@ async function showClassInfo (key, enable_navigation)
     {
         showModalNavigation ("class", key, class_name_list, "showClassInfo", class_table, class_data);
     }
+    
+    // return to the previous showInfo if viewing from another context
+    this.modal_div_showinfo_on_close = close_showinfo;
     
     modal_div.style.display = "block";
 }

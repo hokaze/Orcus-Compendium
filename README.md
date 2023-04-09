@@ -3,8 +3,8 @@
 
 Started as an early proof-of-concept and a side project to learn a little html, css and js along the way.
 
-Currently supports (as of v0.09):
-- Searchable tables for: Classes, Powers, Feats, Cruxes, Heritages, Kits and Prestige Paths from the Orcus Heroes' Handbook...
+Currently supports (as of v0.10):
+- Searchable tables for: Classes, Powers, Feats, Cruxes, Heritages, Kits, Prestige Paths and Companions from the Orcus Heroes' Handbook...
 - ...plus Arts and Species as Advanced Options from the Orcus Game Master's Guide
 - Multicolumn searching, sorting, search dropdowns
 - Display Powers as Power Cards (can toggle between Orcus and 4e styling)
@@ -13,9 +13,10 @@ Currently supports (as of v0.09):
 Done Recently:
 - Prestige Paths
 - Performance optimisation
+- Companions
+- bugfixes and more cross-reference linking (e.g. powers can link to summoned companion statblocks, the sources that grant their discipline, etc)
 
 Planned Soon(™):
-- Companions
 - Epic Paths
 - misc quality of life improvements (e.g. more cross-linking between sections - currently certain Feats can take you to the specific Power they reference without you having to go to the Powers tab to search for it, hoping this can be expanded to other areas)
 

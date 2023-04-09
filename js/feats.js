@@ -13,6 +13,8 @@ var feat_benefit_list = [];
 var feat_special_list = [];
 var feat_power_list = [];
 
+const feat_name_to_key = new Map();
+
 // this function is in the event listener and will execute on page load
 function get_feat_json_data()
 {
@@ -51,6 +53,9 @@ function append_feat_json(feat_data)
         feat_benefit_list.push(feat_data[key]["Benefit"]);
         feat_special_list.push(feat_data[key]["Special"]);
         feat_power_list.push(feat_data[key]["Power"]);
+        
+        // hashmap for looking up key from class name, useful for running showFeatInfo from other tabs/tables
+        feat_name_to_key.set(feat_data[key]["Name"], key);
         
         // update table with new row
         var tr = document.createElement('tr');
@@ -142,7 +147,7 @@ function searchFeatTable()
 }
 
 // like heritages, just print json info in the modal popup - we have all the data we need in the csv/json, so no need to display markdown-to-html
-function showFeatInfo (key, enable_navigation)
+function showFeatInfo (key, enable_navigation, close_showinfo)
 {
     var html = "<h3>" + feat_data[key]["Name"] + "</h3>" +
     "<p><i>" + feat_data[key]["Feat Type"] + " Feat" + "</i>" + "</p>" +
@@ -208,6 +213,9 @@ function showFeatInfo (key, enable_navigation)
         
         showModalNavigation ("feat", key, feat_name_list, "showFeatInfo", feat_table, feat_data);
     }
+    
+    // return to the previous showInfo if viewing from another context
+    this.modal_div_showinfo_on_close = close_showinfo;
     
     modal_div.style.display = "block";
 }

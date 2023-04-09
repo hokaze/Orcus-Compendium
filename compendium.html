@@ -40,6 +40,8 @@
       <button id ="heritageTab" class="tablinks" onclick="selectTab(event, 'Heritages')">Ancestries (Heritages)</button>
       <button class="tablinks" onclick="selectTab(event, 'Kits')">Kits</button>
       <button class="tablinks" onclick="selectTab(event, 'Prestige')">Prestige Paths</button>
+      <button class="tablinks" onclick="selectTab(event, 'Epic')"><s>Epic Paths</s></button>
+      <button class="tablinks" onclick="selectTab(event, 'Companions')">Companions</button>
       <button class="tablinks" onclick="selectTab(event, 'Arts')">Arts *</button>
       <button id ="speciesTab" class="tablinks" onclick="selectTab(event, 'Species')">Ancestries (Species) *</button>
     </div>
@@ -309,19 +311,19 @@
             <button class="sortbutton" onclick="sortTable(event,'kitTable','1')">Sort ⇅</button>
           </th>
           <th>
-            <input type="search" id="searchKitRequirements" oninput="searchKitTable('searchKitFeat1',2)" placeholder="Requirements" title="Search by Requirements" list="dlKitRequirements">
+            <input type="search" id="searchKitRequirements" oninput="searchKitTable()" placeholder="Requirements" title="Search by Requirements" list="dlKitRequirements">
             <button class="sortbutton" onclick="sortTable(event,'kitTable','2')">Sort ⇅</button>
           </th>
           <th>
-            <input type="search" id="searchKitFeat1" oninput="searchKitTable('searchKitFeat1',3)" placeholder="Lv 1 Feature" title="Search by Lv 1 Feature" list="dlKitFeat1">
+            <input type="search" id="searchKitFeat1" oninput="searchKitTable()" placeholder="Lv 1 Feature" title="Search by Lv 1 Feature" list="dlKitFeat1">
             <button class="sortbutton" onclick="sortTable(event,'kitTable','3')">Sort ⇅</button>
           </th>
           <th>
-            <input type="search" id="searchKitFeat5" oninput="searchKitTable('searchKitFeat5',4)" placeholder="Lv 5 Feature" title="Search by Lv 5 Feature" list="dlKitFeat5">
+            <input type="search" id="searchKitFeat5" oninput="searchKitTable()" placeholder="Lv 5 Feature" title="Search by Lv 5 Feature" list="dlKitFeat5">
             <button class="sortbutton" onclick="sortTable(event,'kitTable','4')">Sort ⇅</button>
           </th>
           <th>
-            <input type="search" id="searchKitFeat10" oninput="searchKitTable('searchKitFeat10',5)" placeholder="Lv 10 Feature" title="Search by Lv 10 Feature" list="dlKitFeat10">
+            <input type="search" id="searchKitFeat10" oninput="searchKitTable()" placeholder="Lv 10 Feature" title="Search by Lv 10 Feature" list="dlKitFeat10">
             <button class="sortbutton" onclick="sortTable(event,'kitTable','5')">Sort ⇅</button>
           </th>
           <th>
@@ -359,32 +361,95 @@
             <button class="sortbutton" onclick="sortTable(event,'prestigeTable','0')">Sort ⇅</button>
           </th>
           <th>
-            <input type="search" id="searchPrestigeRequirements" oninput="searchPrestigeTable('searchPrestigeFeat1',1)" placeholder="Requirements" title="Search by Requirements" list="dlPrestigeRequirements">
+            <input type="search" id="searchPrestigeRequirements" oninput="searchPrestigeTable()" placeholder="Requirements" title="Search by Requirements" list="dlPrestigeRequirements">
             <button class="sortbutton" onclick="sortTable(event,'prestigeTable','1')">Sort ⇅</button>
           </th>
           <th>
-            <input type="search" id="searchPrestigeFeat11-1" oninput="searchPrestigeTable('searchPrestigeFeat11-1',2)" placeholder="Lv 11 Feature 1" title="Search by Lv 11 Feature 1" list="dlPrestigeFeat11-1">
+            <input type="search" id="searchPrestigeFeat11-1" oninput="searchPrestigeTable()" placeholder="Lv 11 Feature 1" title="Search by Lv 11 Feature 1" list="dlPrestigeFeat11-1">
             <button class="sortbutton" onclick="sortTable(event,'prestigeTable','2')">Sort ⇅</button>
           </th>
           <th>
-            <input type="search" id="searchPrestigeFeat11-2" oninput="searchPrestigeTable('searchPrestigeFeat11-2',3)" placeholder="Lv 11 Feature 2" title="Search by Lv 11 Feature 2" list="dlPrestigeFeat11-2">
+            <input type="search" id="searchPrestigeFeat11-2" oninput="searchPrestigeTable()" placeholder="Lv 11 Feature 2" title="Search by Lv 11 Feature 2" list="dlPrestigeFeat11-2">
             <button class="sortbutton" onclick="sortTable(event,'prestigeTable','3')">Sort ⇅</button>
           </th>
           <th>
-            <input type="search" id="searchPrestigeFeat16" oninput="searchPrestigeTable('searchPrestigeFeat16',4)" placeholder="Lv 16 Feature" title="Search by Lv 16 Feature" list="dlPrestigeFeat16">
+            <input type="search" id="searchPrestigeFeat16" oninput="searchPrestigeTable()" placeholder="Lv 16 Feature" title="Search by Lv 16 Feature" list="dlPrestigeFeat16">
             <button class="sortbutton" onclick="sortTable(event,'prestigeTable','4')">Sort ⇅</button>
           </th>
           <th>
-            <input type="search" id="searchPrestigePower11" oninput="searchPrestigeTable('searchPrestigePower11',5)" placeholder="Lv 11 Power" title="Search by Lv 11 Power" list="dlPrestigePower11">
+            <input type="search" id="searchPrestigePower11" oninput="searchPrestigeTable()" placeholder="Lv 11 Power" title="Search by Lv 11 Power" list="dlPrestigePower11">
             <button class="sortbutton" onclick="sortTable(event,'prestigeTable','5')">Sort ⇅</button>
           </th>
           <th>
-            <input type="search" id="searchPrestigePower12" oninput="searchPrestigeTable('searchPrestigePower12',6)" placeholder="Lv 12 Power" title="Search by Lv 12 Power" list="dlPrestigePower12">
+            <input type="search" id="searchPrestigePower12" oninput="searchPrestigeTable()" placeholder="Lv 12 Power" title="Search by Lv 12 Power" list="dlPrestigePower12">
             <button class="sortbutton" onclick="sortTable(event,'prestigeTable','6')">Sort ⇅</button>
           </th>
           <th>
-            <input type="search" id="searchPrestigePower20" oninput="searchPrestigeTable('searchPrestigePower20',7)" placeholder="Lv 20 Power" title="Search by Lv 20 Power" list="dlPrestigePower20">
+            <input type="search" id="searchPrestigePower20" oninput="searchPrestigeTable()" placeholder="Lv 20 Power" title="Search by Lv 20 Power" list="dlPrestigePower20">
             <button class="sortbutton" onclick="sortTable(event,'prestigeTable','7')">Sort ⇅</button>
+          </th>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- TODO: Epic paths -->
+    <div id="Epic" class="tabcontent">
+      <p>
+        Work In Progress - Coming Soon!
+      </p>
+      
+      <!-- TODO: table, js, csv, etc -->
+    </div>
+    
+    <!-- Companions -->
+    <div id="Companions" class="tabcontent">
+      <p>
+        Some classes and powers grant access to Companions - such as more permanent Animal Companions or temporary Summons from the Cup of Brimstone disciplines' Daily powers.
+      </p>
+      
+      <!-- datalists to allow dropdown options in search, populated at same time table is -->
+      <datalist id="dlCompanionName"></datalist>
+      <datalist id="dlCompanionLevel"></datalist>
+      <datalist id="dlCompanionSource"></datalist>
+      <datalist id="dlCompanionSize"></datalist>
+      <datalist id="dlCompanionRole"></datalist>
+      <datalist id="dlCompanionLanguage"></datalist>
+      <datalist id="dlCompanionSenses"></datalist>
+      <datalist id="dlCompanionSpeed"></datalist>
+      
+      <table id="companionTable" class="filterTable">
+        <tr class="header">
+          <th>
+            <input type="search" id="searchCompanionName" oninput="searchCompanionTable()" placeholder="Name" title="Search by Companion Name" list="dlCompanionName">
+            <button class="sortbutton" onclick="sortTable(event,'companionTable','0')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchCompanionLevel" oninput="searchCompanionTable()" placeholder="Level" title="Search by Level" list="dlCompanionLevel">
+            <button class="sortbutton" onclick="sortTable(event,'companionTable','1')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchCompanionSource" oninput="searchCompanionTable()" placeholder="Source" title="Search by Source" list="dlCompanionSource">
+            <button class="sortbutton" onclick="sortTable(event,'companionTable','2')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchCompanionSize" oninput="searchCompanionTable()" placeholder="Size" title="Search by Size" list="dlCompanionSize">
+            <button class="sortbutton" onclick="sortTable(event,'companionTable','3')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchCompanionRole" oninput="searchCompanionTable()" placeholder="Role" title="Search by Role" list="dlCompanionRole">
+            <button class="sortbutton" onclick="sortTable(event,'companionTable','4')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchCompanionLanguage" oninput="searchCompanionTable()" placeholder="Language" title="Search by Lv Language" list="dlCompanionLanguage">
+            <button class="sortbutton" onclick="sortTable(event,'companionTable','5')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchCompanionSenses" oninput="searchCompanionTable()" placeholder="Senses" title="Search by Senses" list="dlCompanionSenses" >
+            <button class="sortbutton" onclick="sortTable(event,'companionTable','6')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchCompanionSpeed" oninput="searchCompanionTable()" placeholder="Speed" title="Search by Speed" list="dlCompanionSpeed" >
+            <button class="sortbutton" onclick="sortTable(event,'companionTable','7')">Sort ⇅</button>
           </th>
         </tr>
       </table>
@@ -510,15 +575,27 @@
     <script src="js/heritages.js"></script>
     <script src="js/kits.js"></script>
     <script src="js/prestige.js"></script>
+    <script src="js/companions.js"></script>
     <script src="js/arts.js"></script>
     <script src="js/species.js"></script>
 
     <br/><br/>
     <footer>
-      <p><i>Version 0.09 (2023-03-31) - <s>early alpha?</s>, aiming for compatibility with Orcus Heroes' Handbook v1.0 (as it appeared on 2023-02-27)</i></p>
+      <p><i>Version 0.10 (2023-04-09) - <s>early alpha?</s>, aiming for compatibility with Orcus Heroes' Handbook v1.0 (as it appeared on 2023-02-27)</i></p>
       <br/><br/>
       <p>
-        <strong>Recent Changes (v0.09 - THE GOTTA GO FAST UPDATE)</strong>
+        <strong>Recent Changes</strong>
+        <br/>
+        <u>(v0.10 - Companions and Powers)</u>
+        <br/>
+        - COMPANIONS: searchable table of animal companions and creatures from summons-keyword powers alike (and summon powers from Cup of Brimstone now link you to the companion statblock)
+        <br/>
+        - POWER CARDS: 4e and Orcus colour schemes not enough? Can now toggle between Compendium-style horizontal cards and their slimmer, taller 4e-style vertical power card look. Oh and powers now show a little info about the Discipline they're from - including what Classes, Kits, Feats and Cruxes grant access (and a quick-link to the source for reference)
+        <br/>
+        - CORRUPT POWERS FIX: "Squeeeeze", "Back-To-Back", "Frenzy" and "Onslaught" no longer have mangled data in the category field and beyond. Also, power cards (in any style) now render the ♦ character properly
+        <br/>
+        <br/>
+        <u>(v0.09 - THE GOTTA GO FAST UPDATE)</u>
         <br/>
         - FAST: major improvements to speed of sorting and searching on tables
         <br/>

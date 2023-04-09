@@ -1,0 +1,8 @@
+- version bump to v0.10 - Companions and Cards
+- Compendium now enables viewing and searching of Companions (both Animal Companions and creatures summoned by Cup of Brimstone powers)
+- relevent Cup of Brimstone powers now include a link to the creatures they summon in the power display below the power card (this required some csv changes so it now has an extra field compared to the xslx just to avoid having to parse creature names from the power effect line)
+- fixed the following powers showing the info in the wrong columns due to csv not escaping commas in the flavor text properly: Squeeeeze, Back-To-Back, Frenzy, Onslaught
+- various powercard improvements (see previous commit) such as a new style option and including information from a power's discipline (key abilities, tradition, etc)
+- similar to the powers -> companions link for summons, the Sources list for a Discipline power now link to the appropriate Classes, Kits, Feats and Cruxes!
+(TODO: Powers granted by feats that are NOT Discipline powers need a little extra work as they don't use the Sources field yet - we already have Feat -> Power but not Power -> Feat. Could just add them in manually, as the CSVs are already deviating from the xlsx files somewhat?)
+(EDIT: ended up having to fix a bunch of the Discipline sources anyway, as some missed the (kit/feat/class/crux) brackets and a few had typos that broke the lookup, like "Brews Poison" instead of "Brews Poisons". Haven't added the other feat powers yet though, will do that in future)

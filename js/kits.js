@@ -14,6 +14,8 @@ kit_feat5_list = [];
 kit_feat10_list = [];
 kit_disciplines_list = [];
 
+const kit_name_to_key = new Map();
+
 // this function is in the event listener and will execute on page load
 function get_kit_json_data()
 {
@@ -56,6 +58,9 @@ function append_kit_json(kit_data)
         
         // special handling for disciplines so we can search on individual ones as some kits have multiple and split them on "x OR y", unlike classes, which us "x, y" format
         kit_disciplines_list.push(... kit_data[key]["Associated Discipline"].split(" OR "));
+        
+        // hashmap for looking up key from class name, useful for running showKitInfo from other tabs/tables
+        kit_name_to_key.set(kit_data[key]["Name"], key);
         
         // update table with new row
         var tr = document.createElement('tr');
@@ -132,7 +137,7 @@ function searchKitTable()
 
 
 // like classes, show some html converted from markdown for the kit (this was the easiest way to show kit details, as they're not included in any of the original spreadsheets)
-async function showKitInfo (key, enable_navigation)
+async function showKitInfo (key, enable_navigation, close_showinfo)
 {
     var kit_name = kit_data[key]["Name"];
     let url = "data/markdown-to-html/kit/" + kit_name + ".html";
@@ -142,6 +147,9 @@ async function showKitInfo (key, enable_navigation)
     {
         showModalNavigation ("kit", key, kit_name_list, "showKitInfo", kit_table, kit_data);
     }
+    
+    // return to the previous showInfo if viewing from another context
+    this.modal_div_showinfo_on_close = close_showinfo;
 
     modal_div.style.display = "block";
 }
