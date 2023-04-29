@@ -66,14 +66,30 @@ function append_kit_json(kit_data)
         var tr = document.createElement('tr');
         tr.id = "kit_" + key;
         var kit_name = kit_data[key]["Name"];
+        var kit_disciplines = kit_data[key]["Associated Discipline"].split(" OR ");
+        
         // open modal dialogue for kit info - opens html
         tr.innerHTML = '<td>' + '<a href="#" onclick="showKitInfo(' + key + ', 1' + ')">' + kit_name + '</a>' + '</td>' +
         '<td>' + kit_data[key]["Description"] + '</td>' +
         '<td>' + kit_data[key]["Requirements"] + '</td>' +
         '<td>' + kit_data[key]["Lv 1 Feature"] + '</td>' +
         '<td>' + kit_data[key]["Lv 5 Feature"] + '</td>' +
-        '<td>' + kit_data[key]["Lv 10 Feature"] + '</td>' +
-        '<td>' + kit_data[key]["Associated Discipline"] + '</td>';
+        '<td>' + kit_data[key]["Lv 10 Feature"] + '</td>';
+        
+        // add links to discipline summaries for each individual summary, needs some extra wrangling due to showing a list rather than one at a time
+        var kit_disciplines_html = '<td>';
+        for (let i = 0; i < kit_disciplines.length; i++)
+        {
+            kit_disciplines_html += '<a href="#" onclick="showDisciplineInfo(\'' + kit_disciplines[i] + '\')">' + kit_disciplines[i] + '</a>';
+            // only add comma between the disciplines if this isn't the last one
+            if (i < kit_disciplines.length - 1)
+            {
+                kit_disciplines_html += " OR ";
+            }
+        }
+        kit_disciplines_html += '</td>';
+        tr.innerHTML += kit_disciplines_html;
+        
         kit_table.appendChild(tr);
     });
     

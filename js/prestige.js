@@ -61,15 +61,22 @@ function append_prestige_json(prestige_data)
         var tr = document.createElement('tr');
         tr.id = "prestige_" + key;
         var prestige_name = prestige_data[key]["Name"];
+        var prestige_power11 = prestige_data[key]["Lv 11 Power"];
+        var prestige_power12 = prestige_data[key]["Lv 12 Power"];
+        var prestige_power20 = prestige_data[key]["Lv 20 Power"];
+        
         // open modal dialogue for kit info - opens html
         tr.innerHTML = '<td>' + '<a href="#" onclick="showPrestigeInfo(' + key + ', 1' + ')">' + prestige_name + '</a>' + '</td>' +
         '<td>' + prestige_data[key]["Requirements"] + '</td>' +
         '<td>' + prestige_data[key]["Lv 11 Feature 1"] + '</td>' +
         '<td>' + prestige_data[key]["Lv 11 Feature 2"] + '</td>' +
-        '<td>' + prestige_data[key]["Lv 16 Feature"] + '</td>' +
-        '<td>' + prestige_data[key]["Lv 11 Power"] + '</td>' +
-        '<td>' + prestige_data[key]["Lv 12 Power"] + '</td>' +
-        '<td>' + prestige_data[key]["Lv 20 Power"] + '</td>';
+        '<td>' + prestige_data[key]["Lv 16 Feature"] + '</td>';
+        
+        // make powers in table showPowerInfo
+        tr.innerHTML += '<td><a href="#" onclick="showPowerInfo(' + power_name_to_key.get(prestige_power11) + ', 0)\">' + prestige_power11 + '</a>' + '</td>' +
+        '<td><a href="#" onclick="showPowerInfo(' + power_name_to_key.get(prestige_power12) + ', 0)\">' + prestige_power12 + '</a>' + '</td>' +
+        '<td><a href="#" onclick="showPowerInfo(' + power_name_to_key.get(prestige_power20) + ', 0)\">' + prestige_power20 + '</a>' + '</td>';
+        
         prestige_table.appendChild(tr);
     });
     

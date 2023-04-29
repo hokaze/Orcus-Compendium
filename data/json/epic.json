@@ -1,0 +1,56 @@
+{
+    "0": {
+        "Name": "Agent Retriever",
+        "Description": "You travel across the planes, locating and acquiring whatever your patrons need.",
+        "Requirements": "You must have retrieved something of value from another plane of existence, and traded it for a fair price.",
+        "Lv 21 Feature": "Appropriation",
+        "Lv 24 Feature": "Interplanar Contingencies",
+        "Lv 30 Feature": "The Economic Flow",
+        "Lv 26 Power": "Force Sphere"
+    },
+    "1": {
+        "Name": "Master",
+        "Description": "You are the single greatest expert on the plant on a specific subject.",
+        "Requirements": "None",
+        "Lv 21 Feature": "Out of Anyone\u2019s League",
+        "Lv 24 Feature": "Against the Laws of Physics",
+        "Lv 30 Feature": "Beyond Impossible",
+        "Lv 26 Power": "Pioneer"
+    },
+    "2": {
+        "Name": "Most Dangerous",
+        "Description": "No one who hunts you knows your real name. You\u2019re a ghost.",
+        "Requirements": "None",
+        "Lv 21 Feature": "Second Nature",
+        "Lv 24 Feature": "Implausible Speed",
+        "Lv 30 Feature": "Vorpal Ways",
+        "Lv 26 Power": "Reputation Earned"
+    },
+    "3": {
+        "Name": "Respected",
+        "Description": "Every soldier that passes you knows your face and gives you the courtesy you have earned.",
+        "Requirements": "None",
+        "Lv 21 Feature": "\u201cTry Again and Aim This Time\u201d",
+        "Lv 24 Feature": "Sacrifice Play",
+        "Lv 30 Feature": "Master Tactician",
+        "Lv 26 Power": "Not Tolerate Losing"
+    },
+    "4": {
+        "Name": "Team",
+        "Description": "It was always, and will always be, about the team.",
+        "Requirements": "None",
+        "Lv 21 Feature": "Team Support",
+        "Lv 24 Feature": "Where the Need is Greatest",
+        "Lv 30 Feature": "Brothers and Sisters of Blood",
+        "Lv 26 Power": "For the Sake of the Team"
+    },
+    "5": {
+        "Name": "Ultimate",
+        "Description": "As the legendary fighter, you have too many laurels to count.",
+        "Requirements": "None",
+        "Lv 21 Feature": "Why Won\u2019t You Die?",
+        "Lv 24 Feature": "Glory of the Fight",
+        "Lv 30 Feature": "Risky Maneuver",
+        "Lv 26 Power": "Lasting Image"
+    }
+}

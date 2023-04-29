@@ -48,7 +48,10 @@ function get_power_json_data()
 function append_power_json(power_data)
 {
     Object.keys(power_data).forEach(key => {
+        
         var power_name = power_data[key]["Name"];
+        var power_source = power_data[key]["Source"];
+        var power_list = power_data[key]["List"];
         
         // ignore most of the Chapter headers
         if ( power_data[key]["Name"] == "Chapter")
@@ -95,8 +98,8 @@ function append_power_json(power_data)
         
         // arrays used to enable search boxes to have dropdown lists
         power_name_list.push(power_name);
-        power_source_list.push(power_data[key]["Source"]);
-        power_list_list.push(power_data[key]["List"]);
+        power_source_list.push(power_source);
+        power_list_list.push(power_list);
         power_category_list.push(power_data[key]["Category"]);
         power_frequency_list.push(power_data[key]["Frequency"]);
         power_tier_list.push(power_data[key]["Tier"]);
@@ -110,11 +113,23 @@ function append_power_json(power_data)
         // update table with new row
         var tr = document.createElement('tr');
         tr.id = "power_" + key;
+        
         // for the class, we add a modal dialogue to show more details on the class that opens the markdown-to-html file with appropriate css
         tr.innerHTML =  '<td>' + '<a href="#" onclick="showPowerInfo(' + key + ', 1' + ')">' + power_name + '</a>' + '</td>' +
-        '<td>' + power_data[key]["Source"] + '</td>' +
-        '<td>' + power_data[key]["List"] + '</td>' +
-        '<td>' + power_data[key]["Category"] + '</td>' +
+        '<td>' + power_source + '</td>';
+        
+        // if List is a Discipline, link to discipline summary
+        if (power_source == "Discipline")
+        {
+            tr.innerHTML += '<td><a href="#" onclick="showDisciplineInfo(\'' + power_list + '\')">' + power_list + '</a></td>'
+        }
+        else
+        {
+            tr.innerHTML += '<td>' + power_list + '</td>';
+        }
+        
+        // remaining fields
+        tr.innerHTML += '<td>' + power_data[key]["Category"] + '</td>' +
         '<td>' + power_data[key]["Frequency"] + '</td>' +
         '<td>' + power_data[key]["Tier"] + '</td>' +
         '<td>' + power_data[key]["Tags"] + '</td>';
@@ -244,7 +259,16 @@ function updatePowerDatalist ()
 // enable_navigation (optional): whether to show prev/next buttons
 // close_showinfo (optional): on closing the showInfo modal, run this showInfo function instead - used when displaying a Power from another table to return to whatever dialogue prompted it (e.g. clicking a Domain Power on the Blessing of the God feat will showPowerInfo, then return to that feat)
 function showPowerInfo (key, enable_navigation, close_showinfo)
-{   
+{
+    // quick error checking - return early with 404 modal if key is undefined or out of range of power_data
+    if (key == undefined || power_data[key] == undefined)
+    {
+        content_div.innerHTML = "Error - could not locate that power";
+        this.modal_div_showinfo_on_close = close_showinfo;
+        modal_div.style.display = "block";
+        return;
+    }
+    
     // Experimental display, makes powers look more like 4e power cards
     
     // use Orcus or 4e power card colours?

@@ -34,6 +34,11 @@ def csv_to_json(inputCSV, outputJSON):
             if "Details" in rows:
                 rows ["Details"] = rows ["Details"].split("\n<figure>")[0]
             
+            # strip trailing whitespace from values in dict rows
+            # this was causing issues as some powers had trailing whitespace in their power names, which made lookups from other tables fail, as powers.csv/json listed it as "Pioneer " while epic.csv/json that referenced it on the epic paths listed it as "Pioneer" and thus failed the lookup
+            for row_key in rows:
+                rows[row_key] = rows[row_key].rstrip()
+            
             # no primary key in csv, so just use the number of non-junk lines as the key
             # (previously we used index, but this led to some json files starting at index 0 and others at 1 or higher, and while I've fixed the known issues which assumed one way or the other, want to play it safe and ensure everything is always 0-indexed for now)
             data[key] = rows

@@ -48,6 +48,11 @@ def markdown_to_html(header, input_path, output_path):
                 
     input_file.close()
     
+    # if markdown is empty we found no matches - chances are this is advanced/optional content that doesn't have a writeup yet, so display a placeholder instead of just generating an empty html file
+    
+    if input_markdown == '':
+        input_markdown = header + "\n" + "**Placeholder** - there isn't a proper summary of this yet (usually means content is unfinished in Orcus itself, such as non-core, WIP or advanced options)"
+    
     # need to use the tables extension, otherwise the table on roles showing all the classes against roles and traditions doesn't get converted to a html table
     html = markdown.markdown(input_markdown, extensions=['markdown.extensions.tables'])
     

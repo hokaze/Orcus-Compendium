@@ -40,7 +40,7 @@
       <button id ="heritageTab" class="tablinks" onclick="selectTab(event, 'Heritages')">Ancestries (Heritages)</button>
       <button class="tablinks" onclick="selectTab(event, 'Kits')">Kits</button>
       <button class="tablinks" onclick="selectTab(event, 'Prestige')">Prestige Paths</button>
-      <button class="tablinks" onclick="selectTab(event, 'Epic')"><s>Epic Paths</s></button>
+      <button class="tablinks" onclick="selectTab(event, 'Epic')">Epic Paths</button>
       <button class="tablinks" onclick="selectTab(event, 'Companions')">Companions</button>
       <button class="tablinks" onclick="selectTab(event, 'Arts')">Arts *</button>
       <button id ="speciesTab" class="tablinks" onclick="selectTab(event, 'Species')">Ancestries (Species) *</button>
@@ -334,7 +334,7 @@
       </table>
     </div>
     
-    <!-- Prestige paths -->
+    <!-- Prestige Paths -->
     <div id="Prestige" class="tabcontent">
       <p>
         At level 11, each player character gets a prestige path.
@@ -392,13 +392,57 @@
       </table>
     </div>
     
-    <!-- TODO: Epic paths -->
+    <!-- Epic Paths -->
     <div id="Epic" class="tabcontent">
       <p>
-        Work In Progress - Coming Soon!
+        At level 21, each player character gets an epic path.
+        <br/>
+        This path is on top of their main class, which still gives them some powers, and their prestige path (which stops giving them powers after level 20).
+        <br/>
+        Like prestige path powers, powers granted by epic paths are in addition to those granted you a character’s class and do not count towards total class powers available.
       </p>
       
-      <!-- TODO: table, js, csv, etc -->
+      <!-- datalists to allow dropdown options in search, populated at same time table is -->
+      <datalist id="dlEpicName"></datalist>
+      <datalist id="dlEpicDescription"></datalist>
+      <datalist id="dlEpicRequirements"></datalist>
+      <datalist id="dlEpicFeat21"></datalist>
+      <datalist id="dlEpicFeat24"></datalist>
+      <datalist id="dlEpicFeat30"></datalist>
+      <datalist id="dlEpicPower26"></datalist>
+      
+      <table id="epicTable" class="filterTable">
+        <tr class="header">
+          <th>
+            <input type="search" id="searchEpicName" oninput="searchEpicTable()" placeholder="Name" title="Search by Epic Path Name" list="dlEpicName">
+            <button class="sortbutton" onclick="sortTable(event,'epicTable','0')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchEpicDescription" oninput="searchEpicTable()" placeholder="Description" title="Search by Description" list="dlEpicDescription">
+            <button class="sortbutton" onclick="sortTable(event,'epicTable','1')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchEpicRequirements" oninput="searchEpicTable()" placeholder="Requirements" title="Search by Requirements" list="dlEpicRequirements">
+            <button class="sortbutton" onclick="sortTable(event,'epicTable','2')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchEpicFeat21" oninput="searchEpicTable()" placeholder="Lv 21 Feature" title="Search by Lv 21 Feature" list="dlEpicFeat21">
+            <button class="sortbutton" onclick="sortTable(event,'epicTable','3')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchEpicFeat24" oninput="searchEpicTable()" placeholder="Lv 24 Feature" title="Search by Lv 24 Feature" list="dlEpicFeat24">
+            <button class="sortbutton" onclick="sortTable(event,'epicTable','4')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchEpicFeat30" oninput="searchEpicTable()" placeholder="Lv 30 Feature" title="Search by Lv 30 Feature" list="dlEpicFeat30">
+            <button class="sortbutton" onclick="sortTable(event,'epicTable','5')">Sort ⇅</button>
+          </th>
+          <th>
+            <input type="search" id="searchEpicPower26" oninput="searchEpicTable()" placeholder="Lv 26 Power" title="Search by Lv 26 Power" list="dlEpicPower26">
+            <button class="sortbutton" onclick="sortTable(event,'epicTable','6')">Sort ⇅</button>
+          </th>
+        </tr>
+      </table>
     </div>
     
     <!-- Companions -->
@@ -575,16 +619,30 @@
     <script src="js/heritages.js"></script>
     <script src="js/kits.js"></script>
     <script src="js/prestige.js"></script>
+    <script src="js/epic.js"></script>
     <script src="js/companions.js"></script>
     <script src="js/arts.js"></script>
     <script src="js/species.js"></script>
 
     <br/><br/>
     <footer>
-      <p><i>Version 0.10 (2023-04-09) - <s>early alpha?</s>, aiming for compatibility with Orcus Heroes' Handbook v1.0 (as it appeared on 2023-02-27)</i></p>
-      <br/><br/>
+      <p><i>Version 0.11 (2023-04-29) - <s>early alpha?</s>, aiming for compatibility with Orcus Heroes' Handbook v1.0 (as it appeared on 2023-02-27; with additional Orcus updates up to 2023-04-16)</i></p>
+      <br/>
       <p>
         <strong>Recent Changes</strong>
+        <br/>
+        <u>(v0.11 - April Mega Merge)</u>
+        <br/>
+        - EPIC PATHS: basic support for Epic Paths
+        <br/>
+        - APRIL ORCUS UPDATES: includes changes from the past few months, most notably recent changes to descriptions, components and completion times for a lot of Arts
+        <br/>
+        - DISCIPLINE SUMMARIES: Listings of Disciplines (such as on Class, Powers and Kits) now link to summaries for the whole Discipline, including flavour text, ability scores, sources to gain that discipline and an overview of powers.
+        <br/>
+        - MORE LINKS TO POWER CARDS: Feats, Prestige Paths and Epic Paths that grant Powers now include direct links to the power cards from the appropriate table columns.
+        <br/>
+        - UNDER THE HOOD: behind the scenes bug fixes, some slightly better error handling in a few places (e.g. a few cases where unfinished content lacks proper summaries will now show placeholders in the showInfo popup instead of being blank or failing to popup), slight improvements to tools for automatically generating/updating json and html from sources
+        <br/>
         <br/>
         <u>(v0.10 - Companions and Powers)</u>
         <br/>
@@ -609,11 +667,11 @@
       <p>
         <strong>Known Issues </strong>
         <br/>
-        - doesn't work well on mobile (not sure I'll ever fix this tbh)
+        - doesn't work well on mobile <i>(not sure I'll ever fix this tbh)</i>
         <br/>
         - no option to filter by non-core options (with exception of Species and Arts we ignore non-core material like the Warrior for the moment)
         <br/>
-        - minimal error handling
+        - minimal error handling <i>(but it's getting better)</i>
         <br/>
         - code is constantly being refactored to be slightly less horrible (I'm pretty much learning html, js and css as I go here)
         <br/>
@@ -621,13 +679,9 @@
         <br/>
         - some elements of Orcus still need manual intervention to update (e.g. no automation of xslx to csv, some data like cruxes and kits had to be hand-entered due to lack of xslx, need to check diffs on Orcus markdown to see when they've changed)
         <br/>
-        - no way to easily jump from disciplines listed on class tab to searching for just that discipline on power (the Class Disciplines should act as a link that autofills a search)
-        <br/>
         - the "Eats Monster Hearts" kit has no name for the Lv 5 and Lv 10 features (this is a problem with the Orcus core book, I can't provide a name that doesn't exist)
         <br/>
         - many powers and species are missing flavour text (everything I've checked so far has missing flavour and description in the Orcus markdown files, so AFAIK this isn't a Compendium issue)
-        <br/>
-        - on Powers and Feats table, if you type into the search boxes instead of copy-pasting or selecting a dropdown value, it loses focus on entering the first letter and auto-scrolls down so the searchbox is at the top of the page - seems to be a side-effect of the clone trick used to improve search performance on those tables
       </p>
     </footer>
   </body>

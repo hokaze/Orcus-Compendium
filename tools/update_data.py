@@ -1,9 +1,12 @@
 #!/usr/bin/python3
 # update_data.py [--all OR --json OR --html, defaults to all]
 
-# DEPENDENCY: python3-markdown
 # PLEASE ONLY RUN THIS FROM THE tools FOLDER
 
+# DEPENDENCIES
+# 1) python3-markdown - REQUIRED - needed to convert markdown to html
+
+# USAGE
 # automates usage of csv_to_json and markdown_to_html to generate all the required json and html files for the compendium automatically from the converted Orcus source files
 
 # currently the xlsx -> csv conversion is still done by hand, need to look into seeing if there's a module to 
@@ -21,7 +24,7 @@
 
 import csv_to_json
 import markdown_to_html
-import sys, getopt
+import sys, getopt, csv
 
 # set relative paths here so if file structure changes, only have to change them here rather than on dozens of lines
 csv_path = "../data/csv/"
@@ -44,6 +47,7 @@ def update_json():
     csv_to_json.csv_to_json(csv_path + "kits.csv", json_path + "kits.json")
     csv_to_json.csv_to_json(csv_path + "powers.csv", json_path + "powers.json")
     csv_to_json.csv_to_json(csv_path + "prestige.csv", json_path + "prestige.json")
+    csv_to_json.csv_to_json(csv_path + "epic.csv", json_path + "epic.json")
     csv_to_json.csv_to_json(csv_path + "companions.csv", json_path + "companions.json")
     
     # species.csv comes from "Orcus - Ancestries.xlsx, but swapped to calling it species to avoid confusion with standard ancestry option of Crux + Heritage
@@ -75,6 +79,21 @@ def update_html():
     # need to use the tables extension, otherwise the table on roles showing all the classes against roles and traditions doesn't get converted to a html table
     markdown_to_html.markdown_to_html("### Tradition", md_class_and_powers_path, md_path + "class/misc/Tradition.html")
     markdown_to_html.markdown_to_html("### Role", md_class_and_powers_path, md_path + "class/misc/Role.html")
+    
+    # Likewise the summaries on all the Disciplines are stored here, even those granted only by Kits and not by Classes, or those like Invisible Cities, Perchance to Dream and Weapon Drill that are associated with unfinished core classes
+    # automatically generated from ALL disciplines in powers.csv, need to use csv reader rather than regular file opening, as otherwise we get into issues with disciplines like "Deep, Dark, Truthful Mirror" as we can't just split on commas
+    disciplines_dict = {}
+    with open(csv_path + "powers.csv", encoding='utf-8') as csvf:
+        csvReader = csv.DictReader(csvf)
+        for index, rows in enumerate(csvReader):
+            # check line is actually a discipline power and avoid repeating the same discipline multiple times by using a dict
+            if rows["Source"] == "Discipline":
+                disciplines_dict[rows["List"]] = 1
+    for discipline_name in disciplines_dict:
+        discipline_header = "## " + discipline_name
+        discipline_html_path = md_path + "class/discipline/" + discipline_name + ".html"
+        markdown_to_html.markdown_to_html(discipline_header, md_class_and_powers_path, discipline_html_path)
+        
     
     # Cruxes
     markdown_to_html.markdown_to_html("### Betrayer", md_player_options_path, md_path + "crux/Betrayer.html")
@@ -131,6 +150,19 @@ def update_html():
         prestige_header = "## " + prestige_name
         prestige_html_path = md_path + "prestige/" + prestige_name + ".html"
         markdown_to_html.markdown_to_html(prestige_header, md_class_and_powers_path, prestige_html_path)
+
+    # Epic paths
+    # grabbing from epic.csv
+    epic_list = []
+    epic_file = open(csv_path + "epic.csv", "r")
+    for line in epic_file:
+        epic_list.append(line.split(",")[0])
+    epic_file.close()
+    
+    for epic_name in epic_list:
+        epic_header = "## " + epic_name
+        epic_html_path = md_path + "epic/" + epic_name + ".html"
+        markdown_to_html.markdown_to_html(epic_header, md_class_and_powers_path, epic_html_path)
     
     # Companions
     companion_list = []

@@ -627,7 +627,7 @@
         "Name": "Blessing of the God",
         "Feat Type": "Channel Divinity",
         "Prerequisite": "You have the Channel Divinity feature",
-        "Benefit": "Choose one Channel Divinity power from the list below, based on a theme associated with the god(s) you worship. When you Channel Divinity, you can choose that power. ",
+        "Benefit": "Choose one Channel Divinity power from the list below, based on a theme associated with the god(s) you worship. When you Channel Divinity, you can choose that power.",
         "Special": "You can take this feat multiple times, choosing a different power each time.",
         "Power": "None"
     },

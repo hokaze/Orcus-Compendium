@@ -88,7 +88,7 @@
         "Wis": "",
         "Cha": "",
         "Equipment": "",
-        "Description": "Summons are described according to the monster rules. See the Game Master\u2019s Guide for rules on reading monster stat blocks. "
+        "Description": "Summons are described according to the monster rules. See the Game Master\u2019s Guide for rules on reading monster stat blocks."
     },
     "1": {
         "Chapter": "Cup of Brimstone",
@@ -116,7 +116,7 @@
         "Spd": "4, see also *leap*",
         "Action Points": "",
         "Power 1 - Type": "Basic Melee",
-        "Power 1 - Name": "Bite ",
+        "Power 1 - Name": "Bite",
         "Power 1 - Action": "standard",
         "Power 1 - Frequency": "at-will",
         "Power 1 - Tags": "Poison",
@@ -146,7 +146,7 @@
         "Power 3 - Attack Bonus": "",
         "Power 3 - Defense": "",
         "Power 3 - Rider": "",
-        "Power 3 - Effect": "The demon toad jumps 4 squares, without provoking opportunity attacks. ",
+        "Power 3 - Effect": "The demon toad jumps 4 squares, without provoking opportunity attacks.",
         "Power 3 - Secondary Attack": "",
         "Power 4 - Type": "",
         "Power 4 - Name": "Instinct",
@@ -215,7 +215,7 @@
         "Power 1 - Attack Bonus": "Your level +6",
         "Power 1 - Defense": "AC",
         "Power 1 - Rider": "",
-        "Power 1 - Effect": "the target takes 5 persistent poison damage (save ends). ",
+        "Power 1 - Effect": "the target takes 5 persistent poison damage (save ends).",
         "Power 1 - Secondary Attack": "",
         "Power 2 - Type": "Near",
         "Power 2 - Name": "Blight Jet",
@@ -419,7 +419,7 @@
         "Power 3 - Attack Bonus": "",
         "Power 3 - Defense": "",
         "Power 3 - Rider": "",
-        "Power 3 - Effect": "At the end of your turn, if the hellhound has not received a command that turn, it charges its quarry if within charging distance, otherwise it runs towards the quarry. If its quarry is not in line of sight, the hellhound attacks or charges the nearest creature. ",
+        "Power 3 - Effect": "At the end of your turn, if the hellhound has not received a command that turn, it charges its quarry if within charging distance, otherwise it runs towards the quarry. If its quarry is not in line of sight, the hellhound attacks or charges the nearest creature.",
         "Power 3 - Secondary Attack": "",
         "Power 4 - Type": "",
         "Power 4 - Name": "",
@@ -510,7 +510,7 @@
         "Power 3 - Attack Bonus": "",
         "Power 3 - Defense": "",
         "Power 3 - Rider": "",
-        "Power 3 - Effect": "The hezrou jumps 4 squares, without provoking opportunity attacks. ",
+        "Power 3 - Effect": "The hezrou jumps 4 squares, without provoking opportunity attacks.",
         "Power 3 - Secondary Attack": "",
         "Power 4 - Type": "",
         "Power 4 - Name": "Instinct",
@@ -521,7 +521,7 @@
         "Power 4 - Attack Bonus": "",
         "Power 4 - Defense": "",
         "Power 4 - Rider": "",
-        "Power 4 - Effect": "At the end of your turn, if the hezrou has not received a command that turn, it constricts if it is grappling a creature. Otherwise it attacks or charges the nearest creature. ",
+        "Power 4 - Effect": "At the end of your turn, if the hezrou has not received a command that turn, it constricts if it is grappling a creature. Otherwise it attacks or charges the nearest creature.",
         "Power 4 - Secondary Attack": "",
         "Power 5 - Type": "",
         "Power 5 - Name": "",
@@ -692,7 +692,7 @@
         "Power 3 - Attack Bonus": "",
         "Power 3 - Defense": "",
         "Power 3 - Rider": "",
-        "Power 3 - Effect": "At the end of your turn, if the vulture demon has not received a command that turn, it uses *demonic screech* even if it has already used it this encounter, positioned to include as many targets as possible. ",
+        "Power 3 - Effect": "At the end of your turn, if the vulture demon has not received a command that turn, it uses *demonic screech* even if it has already used it this encounter, positioned to include as many targets as possible.",
         "Power 3 - Secondary Attack": "",
         "Power 4 - Type": "",
         "Power 4 - Name": "",
@@ -920,7 +920,7 @@
         "Level": "19",
         "Role": "Summoned Creature",
         "Senses": "darkvision",
-        "Aura": "*Aura of Frustration aura 3:* Each time a creature within the aura misses on an attack roll, the frenzy demon gets a +2 power bonus to its next attack roll. ",
+        "Aura": "*Aura of Frustration aura 3:* Each time a creature within the aura misses on an attack roll, the frenzy demon gets a +2 power bonus to its next attack roll.",
         "HP": "your staggered value",
         "Staggered": "",
         "HP Extras": "can use your recoveries",
@@ -1147,7 +1147,7 @@
         "Power 3 - Attack Bonus": "",
         "Power 3 - Defense": "",
         "Power 3 - Rider": "",
-        "Power 3 - Effect": "At the end of your turn, if the laughing demon has not received a command that turn, it teleports to an unoccupied square adjacent to a random creature within 20, and uses *tooth and claw and stomp*. ",
+        "Power 3 - Effect": "At the end of your turn, if the laughing demon has not received a command that turn, it teleports to an unoccupied square adjacent to a random creature within 20, and uses *tooth and claw and stomp*.",
         "Power 3 - Secondary Attack": "",
         "Power 4 - Type": "",
         "Power 4 - Name": "",
@@ -1249,7 +1249,7 @@
         "Power 4 - Attack Bonus": "",
         "Power 4 - Defense": "",
         "Power 4 - Rider": "",
-        "Power 4 - Effect": "2d12 + your Charisma modifier radiant damage, and the balor is destroyed. ",
+        "Power 4 - Effect": "2d12 + your Charisma modifier radiant damage, and the balor is destroyed.",
         "Power 4 - Secondary Attack": "",
         "Power 5 - Type": "",
         "Power 5 - Name": "Instinct",
@@ -1453,7 +1453,7 @@
         "Wis": "",
         "Cha": "",
         "Equipment": "",
-        "Description": "Animal companions are described according to the monster rules. See the Game Master\u2019s Guide for rules on reading monster stat blocks. "
+        "Description": "Animal companions are described according to the monster rules. See the Game Master\u2019s Guide for rules on reading monster stat blocks."
     },
     "16": {
         "Chapter": "Animal Companions",
@@ -1726,7 +1726,7 @@
         "Wis": "12",
         "Cha": "10",
         "Equipment": "",
-        "Description": "Could also be used for a giant badger, wolverine or owlbear. "
+        "Description": "Could also be used for a giant badger, wolverine or owlbear."
     },
     "19": {
         "Chapter": "Animal Companions",
@@ -1999,7 +1999,7 @@
         "Wis": "14",
         "Cha": "10",
         "Equipment": "",
-        "Description": "A bull, buffalo, cow or yak. Could also be used for a boar. "
+        "Description": "A bull, buffalo, cow or yak. Could also be used for a boar."
     },
     "22": {
         "Chapter": "Animal Companions",
@@ -2272,7 +2272,7 @@
         "Wis": "14",
         "Cha": "10",
         "Equipment": "",
-        "Description": "A hawk, eagle, owl, vulture, falcon, or other bird of prey. "
+        "Description": "A hawk, eagle, owl, vulture, falcon, or other bird of prey."
     },
     "25": {
         "Chapter": "Animal Companions",
@@ -2319,7 +2319,7 @@
         "Power 2 - Attack Bonus": "",
         "Power 2 - Defense": "",
         "Power 2 - Rider": "",
-        "Power 2 - Effect": "The animal companion\u2019s opportunity attacks also do 2 persistent poison damage (save ends). *Level 11:* 4 persistent poison damage. *Level 21:* 6 persistent poison damage. ",
+        "Power 2 - Effect": "The animal companion\u2019s opportunity attacks also do 2 persistent poison damage (save ends). *Level 11:* 4 persistent poison damage. *Level 21:* 6 persistent poison damage.",
         "Power 2 - Secondary Attack": "",
         "Power 3 - Type": "",
         "Power 3 - Name": "",
@@ -2454,7 +2454,7 @@
         "Wis": "14",
         "Cha": "10",
         "Equipment": "",
-        "Description": "A horse, camel or llama. "
+        "Description": "A horse, camel or llama."
     },
     "27": {
         "Chapter": "Animal Companions",
@@ -2636,7 +2636,7 @@
         "Wis": "14",
         "Cha": "10",
         "Equipment": "",
-        "Description": "A web-throwing spider. Could also be used for a chameleon or a giant frog. "
+        "Description": "A web-throwing spider. Could also be used for a chameleon or a giant frog."
     },
     "29": {
         "Chapter": "Other",

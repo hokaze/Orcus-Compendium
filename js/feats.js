@@ -61,13 +61,25 @@ function append_feat_json(feat_data)
         var tr = document.createElement('tr');
         tr.id = "feat_" + key;
         var feat_name = feat_data[key]["Name"];
+        var feat_power = feat_data[key]["Power"];
+        
         // open modal dialogue for Feat info - similar to power display
         tr.innerHTML =  '<td>' + '<a href="#" onclick="showFeatInfo(' + key + ', 1' + ')">' + feat_data[key]["Name"] + '</a>' + '</td>' +
         '<td>' + feat_data[key]["Feat Type"] + '</td>' +
         '<td>' + feat_data[key]["Prerequisite"] + '</td>' +
         '<td>' + feat_data[key]["Benefit"] + '</td>' +
-        '<td>' + feat_data[key]["Special"] + '</td>' +
-        '<td>' + feat_data[key]["Power"] + '</td>';
+        '<td>' + feat_data[key]["Special"] + '</td>';
+        
+        // make power in table showPowerInfo, but only if a power is actually set against the feat!
+        if (feat_power == "None" || feat_power == "")
+        {
+            tr.innerHTML += '<td>' + feat_power + '</td>';
+        }
+        else
+        {
+            tr.innerHTML += '<td><a href="#" onclick="showPowerInfo(' + power_name_to_key.get(feat_power) + ', 0)\">' + feat_power + '</a>' + '</td>';
+        }
+        
         feat_table.appendChild(tr)
     });
     

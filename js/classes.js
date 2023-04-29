@@ -82,12 +82,34 @@ function append_class_json(class_data)
         var tr = document.createElement('tr');
         tr.id = "class_" + key;
         var class_name = class_data[key]["Name"];
+        var class_disciplines = class_data[key]["Class Disciplines - List"].split(", ");
+        
         // for the class, we add a modal dialogue to show more details on the class that opens the markdown-to-html file with appropriate css
         tr.innerHTML = '<td>' + '<a href="#" onclick="showClassInfo(' + key + ', 1' + ')">' + class_name + '</a>' + '</td>' +
         '<td>' + '<a href="#" onclick="showClassMiscInfo(\'Tradition\')">' + class_data[key]["Tradition"] + '</a>' + '</td>' +
         '<td>' + '<a href="#" onclick="showClassMiscInfo(\'Role\')">' + class_data[key]["Role"] + '</a>' + '</td>' +
-        '<td>' + class_data[key]["Key Ability"] + '</td>' +
-        '<td>' + class_data[key]["Class Disciplines - List"] + '</td>';
+        '<td>' + class_data[key]["Key Ability"] + '</td>';
+        
+        // add links to discipline summaries for each individual summary, needs some extra wrangling due to showing a list rather than one at a time
+        var class_disciplines_html = '<td>';
+        for (let i = 0; i < class_disciplines.length; i++)
+        {
+            // do NOT add a link to the reminder about extra Priest disciplines
+            if (class_disciplines[i] == '<i>plus one other discipline from your free "Worships the [X]" Kit from this class</i>')
+            {
+                class_disciplines_html += class_disciplines[i];
+                continue;
+            }
+            class_disciplines_html += '<a href="#" onclick="showDisciplineInfo(\'' + class_disciplines[i] + '\')">' + class_disciplines[i] + '</a>';
+            // only add comma between the disciplines if this isn't the last one
+            if (i < class_disciplines.length - 1)
+            {
+                class_disciplines_html += ", ";
+            }
+        }
+        class_disciplines_html += '</td>';
+        tr.innerHTML += class_disciplines_html;
+        
         class_table.appendChild(tr);
     });
     
@@ -180,6 +202,15 @@ async function showClassMiscInfo (misc_name)
     modal_div.style.display = "block";
 }
 
+// quick way of showing discipline summaries with flavour text, sources, ability scores, powers, etc
+async function showDisciplineInfo (discipline_name)
+{   
+    // fetch class html file
+    let url = "data/markdown-to-html/class/discipline/" + discipline_name + ".html";
+    content_div.innerHTML = await (await fetch(url)).text();
+    
+    modal_div.style.display = "block";
+}
 
 function updateClassDatalist ()
 {   

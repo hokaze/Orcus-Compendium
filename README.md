@@ -3,8 +3,8 @@
 
 Started as an early proof-of-concept and a side project to learn a little html, css and js along the way.
 
-Currently supports (as of v0.10):
-- Searchable tables for: Classes, Powers, Feats, Cruxes, Heritages, Kits, Prestige Paths and Companions from the Orcus Heroes' Handbook...
+Currently supports (as of v0.11):
+- Searchable tables for: Classes, Powers, Feats, Cruxes, Heritages, Kits, Prestige Paths, Epic Paths and Companions from the Orcus Heroes' Handbook...
 - ...plus Arts and Species as Advanced Options from the Orcus Game Master's Guide
 - Multicolumn searching, sorting, search dropdowns
 - Display Powers as Power Cards (can toggle between Orcus and 4e styling)
@@ -14,16 +14,19 @@ Done Recently:
 - Prestige Paths
 - Performance optimisation
 - Companions
-- bugfixes and more cross-reference linking (e.g. powers can link to summoned companion statblocks, the sources that grant their discipline, etc)
+- Epic Paths
+- bugfixes and more cross-reference linking (e.g. powers can link to summoned companion statblocks, the sources that grant their discipline, any listing of a discipline includes a link to a summary, most listings of powers link to power cards, etc)
+- updated to be in line with upstream changes to Orcus made between 2023-02-27 and 2023-04-16
 
 Planned Soon(™):
-- Epic Paths
-- misc quality of life improvements (e.g. more cross-linking between sections - currently certain Feats can take you to the specific Power they reference without you having to go to the Powers tab to search for it, hoping this can be expanded to other areas)
+- Powers table, more links on list - e.g. Class, Prestige Path and Epic Path should link to relevant displays
+- more links, even more quality of life improvements
 
 Will maybe do eventually:
+- Missing powers for Cruxes and Species - not included in the core powers spreadsheet, but they deserve power cards too
 - Option to toggle now-core / advanced options on (such as the Warrior class)
 - Equipment: split into Adventuring Gear, Weapons, Armour, Focuses, Magic Items, etc
 - Rules glossary? (skills, conditions, etc)
 
 
-The Orcus Compendium is licensed under the MIT, but resources taken from the [Orcus SRD](https://github.com/Sanglorian/orcus) fall under the OGL v1.0a
+The Orcus Compendium is licensed under the MIT License, but resources taken from the [Orcus SRD](https://github.com/Sanglorian/orcus) fall under the OGL v1.0a
