@@ -1,7 +1,7 @@
 // load epic table
 
-// first add an event listener for page load
-document.addEventListener( "DOMContentLoaded", get_epic_json_data, false ); // fires the get method on page load
+// do NOT run on page load - append_epic_json depends on power_data and power_name_to_key already existing, so we have to ensure get_epic_json_data is called AFTER append_power_json_data
+//document.addEventListener( "DOMContentLoaded", get_epic_json_data, false );
 
 var epic_table = document.getElementById('epicTable');
 var epic_data = {};

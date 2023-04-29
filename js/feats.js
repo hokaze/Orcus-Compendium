@@ -1,7 +1,7 @@
 // load feats table
 
-// first add an event listener for page load
-document.addEventListener( "DOMContentLoaded", get_feat_json_data, false ); // fires the get method on page load
+// do NOT run on page load - append_feat_json depends on power_data and power_name_to_key already existing, so we have to ensure get_feat_json_data is called AFTER append_power_json_data
+//document.addEventListener( "DOMContentLoaded", get_feat_json_data, false ); 
 
 var feat_table = document.getElementById('featTable');
 var feat_data = {};

@@ -163,6 +163,11 @@ function append_power_json(power_data)
     
     // create + attach datalist to enable dropdown on search boxes
     updatePowerDatalist();
+    
+    // feats, prestige and epic paths depend on the power_data and power_name_to_key being fully populated first for their links with showPowerInfo to work, so they are NOT loaded on page load, but only after power data is finished being assembled
+    get_feat_json_data();
+    get_prestige_json_data();
+    get_epic_json_data();
 }
 
 // search on Power table
