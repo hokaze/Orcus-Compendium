@@ -17,10 +17,13 @@ Done Recently:
 - Epic Paths
 - bugfixes and more cross-reference linking (e.g. powers can link to summoned companion statblocks, the sources that grant their discipline, any listing of a discipline includes a link to a summary, most listings of powers link to power cards, etc)
 - includes upstream changes to Orcus made between 2023-02-27 and 2023-12-18, information should be accurate to Orcus v1.1
+- URL now updates with links to individual rules elements (e.g. specific powers, feats) instead of remaining static - means you can paste a link to a specific power instead of having to search every time
+- URL now includes params for the power card styles - if you prefer the 4e style you can just copy the URL after setting them and they'll be set by default to your preferences
+- you can now hide the search tables e.g with Classes open, clicking Classes again hides it - makes it easier to scroll down to changelog + known issues
 
 Planned Soon(™):
 - Powers table, more links on list - e.g. Class, Prestige Path and Epic Path should link to relevant displays
-- more links, even more quality of life improvements
+- even more quality of life improvements
 
 Will maybe do eventually:
 - Missing powers for Cruxes and Species - not included in the core powers spreadsheet, but they deserve power cards too

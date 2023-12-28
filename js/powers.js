@@ -164,6 +164,9 @@ function append_power_json(power_data)
     // create + attach datalist to enable dropdown on search boxes
     updatePowerDatalist();
     
+    // record that we've finished loading data; once all *_data arrays are populated we can safely run showInfoFromParams if URL contains params
+    data_ready.set(data_ready.get()+1);
+    
     // feats, prestige and epic paths depend on the power_data and power_name_to_key being fully populated first for their links with showPowerInfo to work, so they are NOT loaded on page load, but only after power data is finished being assembled
     get_feat_json_data();
     get_prestige_json_data();
@@ -459,9 +462,26 @@ function showPowerInfo (key, enable_navigation, close_showinfo)
             // for sources, let's actually link to the appropriate source showInfo
             sources.forEach(element => {
                 
-                // need to parse the source to see if it's a class / kit / feat
-                var source_type = element.split(" (")[1].split(")")[0];
-                var source_name = element.split(" (")[0];
+                var source_name = element;
+                var source_type = "";
+                
+                // MOST of the time the sources take the format of "Sylvan (class)", "Eats Monster Hearts (kits)", etc, but sometimes a class/kit/discipline/feat will be listed without brackets
+                if ( element.includes(" (") )
+                {
+                    // need to parse the source to see if it's a class / kit / feat, grab the type from the second half with the brackets
+                    var source_type = element.split(" (")[1].split(")")[0];
+                    var source_name = element.split(" (")[0];
+                }
+                
+                // if we've not find the type, we need to see if the name matches a class, kit, feat or crux, in that priority - there's a chance there could be a name conflict, but if that happens AND the spreadsheet didn't label the source properly, that's beyond me
+                if ( source_type == "" )
+                {
+                    // see if source_name is present in any of the lookups
+                    if ( class_name_to_key.get(source_name) ) { source_type = "class"; }
+                    else if ( kit_name_to_key.get(source_name) ) { source_type = "kit"; }
+                    else if ( feat_name_to_key.get(source_name) ) { source_type = "feat"; }
+                    else if ( crux_name_to_key.get(source_name) ) { source_type = "crux"; }
+                }
                 
                 // file mostly uses "class" but there's at least one instance of "classes"
                 if (source_type == "class" || source_type == "classes")
@@ -504,6 +524,10 @@ function showPowerInfo (key, enable_navigation, close_showinfo)
     this.modal_div_showinfo_on_close = close_showinfo;
 
     modal_div.style.display = "block";
+    
+    // set URL to reflect power we're showing via params, can then copy this URL to go straight to the show info modal for this power
+    removeUrlSearchParamsExcept("power");
+    updateUrlSearchParams("power", key);
 }
 
 // helper function to print power card lines + alternate background colours for readability

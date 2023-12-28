@@ -93,6 +93,9 @@ function append_prestige_json(prestige_data)
     
     // create + attach datalist to enable dropdown on search boxes
     updatePrestigeDatalist();
+    
+    // record that we've finished loading data; once all *_data arrays are populated we can safely run showInfoFromParams if URL contains params
+    data_ready.set(data_ready.get()+1);
 }
 
 // search on kit table
@@ -157,6 +160,10 @@ async function showPrestigeInfo (key, enable_navigation)
     }
 
     modal_div.style.display = "block";
+    
+    // set URL to reflect power we're showing via params, can then copy this URL to go straight to the show info modal for this power
+    removeUrlSearchParamsExcept("prestige");
+    updateUrlSearchParams("prestige", key);
 }
 
 

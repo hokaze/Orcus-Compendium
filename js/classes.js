@@ -123,6 +123,9 @@ function append_class_json(class_data)
     
     // create + attach datalist to enable dropdown on search boxes
     updateClassDatalist();
+    
+    // record that we've finished loading data; once all *_data arrays are populated we can safely run showInfoFromParams if URL contains params
+    data_ready.set(data_ready.get()+1);
 }
 
 // search on class table by name, role, tradition, etc
@@ -190,6 +193,10 @@ async function showClassInfo (key, enable_navigation, close_showinfo)
     this.modal_div_showinfo_on_close = close_showinfo;
     
     modal_div.style.display = "block";
+    
+    // set URL to reflect power we're showing via params, can then copy this URL to go straight to the show info modal for this power
+    removeUrlSearchParamsExcept("class");
+    updateUrlSearchParams("class", key);
 }
 
 // handling misc html files in class folder, like Tradition and Role that do NOT use keys or navigation buttons
@@ -200,6 +207,10 @@ async function showClassMiscInfo (misc_name)
     content_div.innerHTML = await (await fetch(url)).text();
     
     modal_div.style.display = "block";
+    
+    // set URL to reflect power we're showing via params, can then copy this URL to go straight to the show info modal for this power
+    removeUrlSearchParamsExcept("class_misc");
+    updateUrlSearchParams("class_misc", misc_name);
 }
 
 // quick way of showing discipline summaries with flavour text, sources, ability scores, powers, etc
@@ -210,6 +221,10 @@ async function showDisciplineInfo (discipline_name)
     content_div.innerHTML = await (await fetch(url)).text();
     
     modal_div.style.display = "block";
+    
+    // set URL to reflect power we're showing via params, can then copy this URL to go straight to the show info modal for this power
+    removeUrlSearchParamsExcept("discipline_name");
+    updateUrlSearchParams("discipline_name", discipline_name);
 }
 
 function updateClassDatalist ()

@@ -33,17 +33,17 @@
     <p>Options marked with a "*" are Advanced Options that do not appear in the Core Orcus Heroes' Handbook yet</p>
 
     <div class="tab">
-      <button id ="classTab" class="tablinks" onclick="selectTab(event, 'Classes')">Classes</button>
-      <button id ="powerTab" class="tablinks" onclick="selectTab(event, 'Powers')">Powers</button>
-      <button id ="featTab" class="tablinks" onclick="selectTab(event, 'Feats')">Feats</button>
-      <button id ="cruxTab" class="tablinks" onclick="selectTab(event, 'Cruxes')">Ancestries (Cruxes)</button>
-      <button id ="heritageTab" class="tablinks" onclick="selectTab(event, 'Heritages')">Ancestries (Heritages)</button>
-      <button class="tablinks" onclick="selectTab(event, 'Kits')">Kits</button>
-      <button class="tablinks" onclick="selectTab(event, 'Prestige')">Prestige Paths</button>
-      <button class="tablinks" onclick="selectTab(event, 'Epic')">Epic Paths</button>
+      <button id ="class" class="tablinks" onclick="selectTab(event, 'Classes')">Classes</button>
+      <button id ="power" class="tablinks" onclick="selectTab(event, 'Powers')">Powers</button>
+      <button id ="feat" class="tablinks" onclick="selectTab(event, 'Feats')">Feats</button>
+      <button id ="crux" class="tablinks" onclick="selectTab(event, 'Cruxes')">Ancestries (Cruxes)</button>
+      <button id ="heritage" class="tablinks" onclick="selectTab(event, 'Heritages')">Ancestries (Heritages)</button>
+      <button id="kit" class="tablinks" onclick="selectTab(event, 'Kits')">Kits</button>
+      <button id="prestige" class="tablinks" onclick="selectTab(event, 'Prestige')">Prestige Paths</button>
+      <button id="epic" class="tablinks" onclick="selectTab(event, 'Epic')">Epic Paths</button>
       <button class="tablinks" onclick="selectTab(event, 'Companions')">Companions</button>
-      <button class="tablinks" onclick="selectTab(event, 'Arts')">Arts *</button>
-      <button id ="speciesTab" class="tablinks" onclick="selectTab(event, 'Species')">Ancestries (Species) *</button>
+      <button id="art" class="tablinks" onclick="selectTab(event, 'Arts')">Arts *</button>
+      <button id ="species" class="tablinks" onclick="selectTab(event, 'Species')">Ancestries (Species) *</button>
     </div>
 
     <!-- Class table search -->
@@ -88,15 +88,15 @@
       <p>
         Power Card style:
         <!-- colours -->
-        <input type="radio" id="power_style_colour_orcus" name="power_style_colour" value="Orcus" checked="checked">
-        <label for="power_style_orcus">Orcus Colours</label>
-        <input type="radio" id="power_style_colour_4e" name="power_style_colour" value="4e">
-        <label for="power_style_colour_4e">4e Colours</label>
+        <input type="radio" id="power_style_colour_orcus" name="power_style_colour" value="Orcus" checked="checked" onclick="deleteUrlSearchParams('power_colour')">
+        <label for="power_style_orcus">Orcus Colours</label>
+        <input type="radio" id="power_style_colour_4e" name="power_style_colour" value="4e" onclick="updateUrlSearchParams('power_colour','4e')">
+        <label for="power_style_colour_4e">4e Colours</label>
         <!-- horizontal or vertical power cards -->
-        <input type="radio" id="power_style_card_compendium" name="power_style_card" value="Compendium" checked="checked">
-        <label for="power_style_card_compendium">Compendium Cards (horizontal)</label>
-        <input type="radio" id="power_style_card_4e" name="power_style_card" value="4e">
-        <label for="power_style_card_4e">4e Cards (vertical)</label>
+        <input type="radio" id="power_style_card_compendium" name="power_style_card" value="Compendium" checked="checked" onclick="deleteUrlSearchParams('power_style')">
+        <label for="power_style_card_compendium">Compendium Cards (horizontal)</label>
+        <input type="radio" id="power_style_card_4e" name="power_style_card" value="4e" onclick="updateUrlSearchParams('power_style','4e')">
+        <label for="power_style_card_4e">4e Cards (vertical)</label>
       </p>
       
       <!-- datalists to allow dropdown options in search, populated at same time table is -->
@@ -623,7 +623,7 @@
     <script src="js/companions.js"></script>
     <script src="js/arts.js"></script>
     <script src="js/species.js"></script>
-
+    
     <br/><br/>
     <footer>
       <p><i>Version 0.12 (2023-12-28) - <s>early alpha?</s>, aiming for compatibility with Orcus Heroes' Handbook v1.1 (including updates between 2023-02-27 and 2023-12-18)</i></p>
@@ -631,9 +631,15 @@
       <p>
         <strong>Recent Changes</strong>
         <br/>
-        <u>(v0.12 - Merry Orcus 2023! 1.0 and 1.1 are here!)</u>
+        <u>(v0.12 - Merry Orcus 2023!)</u>
         <br/>
         - 2023 ORCUS UPDATES: Includes all the updates to Orcus between April and the big official 1.0 Orcus release, plus the December 1.1 update
+        <br/>
+        - URL now updates with links to individual rules elements (e.g. specific powers, feats) instead of remaining static - means you can paste a link to a specific power instead of having to search every time
+        <br/>
+        - URL now includes params for the power card styles - if you prefer the 4e style you can just copy the URL after setting them and they'll be set by default to your preferences
+        <br/>
+        - you can now hide the search tables e.g with Classes open, clicking Classes again hides it - makes it easier to scroll down to changelog + known issues
         <br/>
         <br/>
         <u>(v0.11 - April Mega Merge)</u>

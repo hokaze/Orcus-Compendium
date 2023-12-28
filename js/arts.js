@@ -83,6 +83,9 @@ function append_art_json(art_data)
     
     // create + attach datalist to enable dropdown on search boxes
     updateArtDatalist();
+    
+    // record that we've finished loading data; once all *_data arrays are populated we can safely run showInfoFromParams if URL contains params
+    data_ready.set(data_ready.get()+1);
 }
 
 // search on art table by name, role, tradition, etc
@@ -147,6 +150,10 @@ function showArtInfo (key, enable_navigation)
     }
 
     modal_div.style.display = "block";
+    
+    // set URL to reflect power we're showing via params, can then copy this URL to go straight to the show info modal for this power
+    removeUrlSearchParamsExcept("art");
+    updateUrlSearchParams("art", key);
 }
 
 function updateArtDatalist ()

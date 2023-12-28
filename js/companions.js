@@ -110,6 +110,9 @@ function append_companion_json(companion_data)
     
     // create + attach datalist to enable dropdown on search boxes
     updateCompanionDatalist();
+    
+    // record that we've finished loading data; once all *_data arrays are populated we can safely run showInfoFromParams if URL contains params
+    data_ready.set(data_ready.get()+1);
 }
 
 // search on companion table
@@ -177,6 +180,10 @@ async function showCompanionInfo (key, enable_navigation, close_showinfo)
     this.modal_div_showinfo_on_close = close_showinfo;
 
     modal_div.style.display = "block";
+    
+    // set URL to reflect power we're showing via params, can then copy this URL to go straight to the show info modal for this power
+    removeUrlSearchParamsExcept("companion");
+    updateUrlSearchParams("companion", key);
 }
 
 

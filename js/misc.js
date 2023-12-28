@@ -22,8 +22,10 @@ for (i = 0; i < all_inputs.length; i++)
     all_inputs[i].setAttribute('size', input_length);
 }
 
-// open the class tab by default
-document.getElementById("classTab").click();
+// needed for url searchParam stuff
+const url = new URL(window.location.href);
+
+data_ready = new data_ready();
 
 
 // ---- UTILITY FUNCTIONS ---- //
@@ -31,6 +33,12 @@ document.getElementById("classTab").click();
 // Tab Switcher for classes, ancestries, powers, etc
 function selectTab(evt, tab_name)
 {
+    // is tab already active?
+    var active = 0;
+    if ( document.getElementById(tab_name).style.display == "block" )
+    { active = 1; }
+    
+    // make all tables/buttons inactive
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++)
@@ -42,8 +50,21 @@ function selectTab(evt, tab_name)
     {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(tab_name).style.display = "block";
-    evt.currentTarget.className += " active";
+    
+    // if tab is already selected, clicking hides it and removes param
+    if ( active )
+    {
+        deleteUrlSearchParams("tab");
+    }
+    
+    // otherwise switch to that tab and highlight the button
+    else
+    {
+        document.getElementById(tab_name).style.display = "block";
+        evt.currentTarget.className += " active";
+        
+        updateUrlSearchParams("tab", evt.currentTarget.id);
+    }
 }
 
 
@@ -100,7 +121,10 @@ function sortTable(evt, table_name, column)
 
 // for closing the modal dialogue, or returning to previous, if nested
 function closeModal()
-{
+{   
+    // remove param from URL if closing modal, e.g. only want "?power=13" showing in the URL when the power is showing, should go back to regular URL when not showing modal anymore
+    removeUrlSearchParamsExcept('');
+    
     // return to previous showInfo modal if nested (e.g. viewing powers from a different showInfo)
     if (modal_div_showinfo_on_close)
     {
@@ -137,73 +161,192 @@ function updateDataList(datalist_element, array_list)
 // helper function to display prev and next buttons on show info, and link to prev / next VISIBLE record
 function showModalNavigation (tr_id_prefix, key, name_list, show_info_method_name, item_table, item_data)
 {
-        // use key passed in to determine what row we're on so we can grab the next VISIBLE table rows for LEFT and RIGHT navigation arrows, letting us "flip pages" rather than having to close the modal to view the next
-        
-        // grab the current row index - this is not always the same as the key, as some data is 0-index, rows at 1-index due to headers being on 0, etc - best to be absolutely certain of actual row index
-        var row_id = tr_id_prefix + "_" + key;
-        var current_row = document.getElementById(row_id).rowIndex;
-        var prev_row = '';
-        var next_row = '';
-        var looking_for_prev = 1;
-        var button_html = "";
-        
-        // loop over table rows (starting from index 1 NOT 0, so we skip the header row) to try and find the previous and next VISIBLE rows (and if first/last, do NOT generate the prev/next buttons)
-        // TODO - refactor this to be faster, maybe two loops, both starting from the actual row index in the table, backwards and forwards. Slight performance loss if near the start of the table, but should be faster on large tables if near the middle or end?
-        for (var i = 1, row; row = item_table.rows[i]; i++)
+    // use key passed in to determine what row we're on so we can grab the next VISIBLE table rows for LEFT and RIGHT navigation arrows, letting us "flip pages" rather than having to close the modal to view the next
+    
+    // grab the current row index - this is not always the same as the key, as some data is 0-index, rows at 1-index due to headers being on 0, etc - best to be absolutely certain of actual row index
+    var row_id = tr_id_prefix + "_" + key;
+    var current_row = document.getElementById(row_id).rowIndex;
+    var prev_row = '';
+    var next_row = '';
+    var looking_for_prev = 1;
+    var button_html = "";
+    
+    // loop over table rows (starting from index 1 NOT 0, so we skip the header row) to try and find the previous and next VISIBLE rows (and if first/last, do NOT generate the prev/next buttons)
+    // TODO - refactor this to be faster, maybe two loops, both starting from the actual row index in the table, backwards and forwards. Slight performance loss if near the start of the table, but should be faster on large tables if near the middle or end?
+    for (var i = 1, row; row = item_table.rows[i]; i++)
+    {
+        if (row.style.display == 'none')
         {
-            if (row.style.display == 'none')
+            continue;
+        }
+        if (looking_for_prev)
+        {
+            if (row.rowIndex == current_row)
             {
-                continue;
-            }
-            if (looking_for_prev)
-            {
-                if (row.rowIndex == current_row)
-                {
-                    looking_for_prev = 0;
-                }
-                else
-                {
-                    prev_row = row.id;
-                }
+                looking_for_prev = 0;
             }
             else
             {
-                next_row = row.id;
-                break;
+                prev_row = row.id;
             }
         }
-        
-        // row id takes format of class_key, so anything after the _ is the key and from there we can lookup the class name and setup a new call to showClassInfo to replace this page with the prev/next page
-        var prev_key = prev_row.split("_")[1];
-        var next_key = next_row.split("_")[1];
-        var prev_item = '';
-        var next_item = '';
-        if (prev_key)
+        else
         {
-            prev_item = ' onclick="' + show_info_method_name + '(' + prev_key + ', 1' + ')"';
+            next_row = row.id;
+            break;
         }
-        if (next_key)
-        {
-            next_item = ' onclick="' + show_info_method_name + '(' + next_key + ', 1' + ')"';
-        }
+    }
+    
+    // row id takes format of class_key, so anything after the _ is the key and from there we can lookup the class name and setup a new call to showClassInfo to replace this page with the prev/next page
+    var prev_key = prev_row.split("_")[1];
+    var next_key = next_row.split("_")[1];
+    var prev_item = '';
+    var next_item = '';
+    if (prev_key)
+    {
+        prev_item = ' onclick="' + show_info_method_name + '(' + prev_key + ', 1' + ')"';
+    }
+    if (next_key)
+    {
+        next_item = ' onclick="' + show_info_method_name + '(' + next_key + ', 1' + ')"';
+    }
+    
+    // prev button
+    button_html += '<button id="modal_nav_left"' + prev_item + ' style="position:fixed; top: 25%; left:0%;font-size:50px; float:left; background-color:white; border-radius:100px; margin:5%; padding:20px; border-width:0px;'
+    // if we don't create the prev button the next button gets offset, so if there is no prev_row we still make the button, but hide it
+    if (prev_row == '')
+    {
+        button_html += 'display: none;';
+    }
+    button_html += '">&lt;--</button>';
+    
+    // next button
+    button_html += '<button id="modal_nav_right"' + next_item + ' style="position:fixed; top: 25%; right:0%;font-size:50px; float:left; background-color:white; border-radius:100px; margin:5%; padding:20px; border-width:0px;'
+    // next button is also hidden if there's no next_row
+    if (next_row == '')
+    {
+        button_html += 'display: none;';
+    }
+    button_html += '">--&gt;</button></div>';
+    
+    content_div.innerHTML += button_html;
+}
+
+// need to handle url search params AFTER we've loaded everything, otherwise if we do it in compendium.html or misc.js we get a race condition and potentially lookup a power or feat before power_data and feat_data are fully populated
+function data_ready(callback)
+{
+    var data_ready = 0;
+    
+    this.set = function(v)
+    {
+        data_ready = v;
         
-        // prev button
-        button_html += '<button id="modal_nav_left"' + prev_item + ' style="position:fixed; top: 25%; left:0%;font-size:50px; float:left; background-color:white; border-radius:100px; margin:5%; padding:20px; border-width:0px;'
-        // if we don't create the prev button the next button gets offset, so if there is no prev_row we still make the button, but hide it
-        if (prev_row == '')
+        // can't just load at the end of species.js loading json, or even when document is fully finished loading, as we need to know all the *_data arrays are populated, so we use a callback function on a var that tracks how many of the *_data arrays are loaded and when ready, will run showInfoFromParams
+        if (data_ready == 11)
         {
-            button_html += 'display: none;';
+            showInfoFromParams();
         }
-        button_html += '">&lt;--</button>';
+    }
+    
+    this.get =  function()
+    {
+        return data_ready;
+    }
+}
+
+// helper method for handling url params to make sure we show the correct modal - make sure this is called only AFTER all the JSON is loaded, using the data_ready callback wrapper to ensure everything is loaded first (each append_x_data increments it by 1, when it hits 11, then everything is loaded and we can safely produce the modal show info)
+function showInfoFromParams()
+{   
+    // TODO - add in a state param so it knows to open on Classes, Powers, Feats, etc tabs; maybe even add in ability to add params for searches, as even the 4e offline compendium doesn't do that
+    
+    // easiest way to handle tab selection is to just mimic the button being clicked
+    var tab_button = url.searchParams.get("tab");
+    if ( tab_button ) { document.getElementById(tab_button).click(); }
+    
+    // handle all the showXInfo modals here
+    
+    var power_key = url.searchParams.get("power");
+    if ( power_key )
+    {
+        // there's also params for whether to use Orcus or 4e style on power cards (colour and horizontal vs vertical design) so set those first if present BEFORE showing the power
+        var power_colour = url.searchParams.get("power_colour");
+        var power_style = url.searchParams.get("power_style");
         
-        // next button
-        button_html += '<button id="modal_nav_right"' + next_item + ' style="position:fixed; top: 25%; right:0%;font-size:50px; float:left; background-color:white; border-radius:100px; margin:5%; padding:20px; border-width:0px;'
-        // next button is also hidden if there's no next_row
-        if (next_row == '')
-        {
-            button_html += 'display: none;';
-        }
-        button_html += '">--&gt;</button></div>';
+        // only need to check for 4e style, as default without params is Orcus/Compendium style, and selecting those styles resets the params
+        if ( power_colour == "4e" ) { document.getElementById("power_style_colour_4e").checked = true; }
+        if ( power_style == "4e" ) { document.getElementById("power_style_card_4e").checked = true; }
         
-        content_div.innerHTML += button_html;
+        showPowerInfo(power_key, 1);
+    }
+    
+    var class_key = url.searchParams.get("class");
+    if ( class_key ) { showClassInfo(class_key, 1); }
+    
+    // used for role and tradition, uses a name rather than a number key
+    var class_misc = url.searchParams.get("class_misc");
+    if ( class_misc ) { showClassMiscInfo(class_misc); }
+    
+    var discipline_name = url.searchParams.get("discipline_name");
+    if ( discipline_name ) { showDisciplineInfo(discipline_name); }
+    
+    var feat_key = url.searchParams.get("feat");
+    if ( feat_key ) { showFeatInfo(feat_key, 1); }
+    
+    var crux_key = url.searchParams.get("crux");
+    if ( crux_key ) { showCruxInfo(crux_key, 1); }
+    
+    var heritage_key = url.searchParams.get("heritage");
+    if ( heritage_key ) { showHeritageInfo(heritage_key, 1); }
+    
+    var kit_key = url.searchParams.get("kit");
+    if ( kit_key ) { showKitInfo(kit_key, 1); }
+    
+    var prestige_key = url.searchParams.get("prestige");
+    if ( prestige_key ) { showPrestigeInfo(prestige_key, 1); }
+    
+    var epic_key = url.searchParams.get("epic");
+    if ( epic_key ) { showEpicInfo(epic_key, 1); }
+    
+    var companion_key = url.searchParams.get("companion");
+    if ( companion_key ) { showCompanionInfo(companion_key, 1); }
+    
+    var art_key = url.searchParams.get("art");
+    if ( art_key ) { showArtInfo(art_key, 1); }
+    
+    var species_key = url.searchParams.get("species");
+    if ( species_key ) { showSpeciesInfo(species_key, 1); }
+}
+
+// update individual param
+function updateUrlSearchParams(param, value)
+{
+    url.searchParams.set(param, value);
+    window.history.replaceState(null, null, url);
+}
+
+// delete individual param
+function deleteUrlSearchParams(param)
+{
+    url.searchParams.delete(param);
+    window.history.replaceState(null, null, url);
+}
+
+// helper function, removes all the modal-specific params except the except_param (useful for cleaning up everything if nesting modals), and also doesn't delete non-modal params like the tab and power card style
+function removeUrlSearchParamsExcept(except_param)
+{
+    // remove power, class, class_misc, etc - but retain non-modal params like tab/state, if those are ever implemented
+    if (except_param != "power") { url.searchParams.delete("power"); }
+    if (except_param != "class") { url.searchParams.delete("class"); }
+    if (except_param != "class_misc") { url.searchParams.delete("class_misc"); }
+    if (except_param != "discipline_name") { url.searchParams.delete("discipline_name"); }
+    if (except_param != "feat") { url.searchParams.delete("feat"); }
+    if (except_param != "crux") { url.searchParams.delete("crux"); }
+    if (except_param != "crux") { url.searchParams.delete("heritage"); }
+    if (except_param != "kit") { url.searchParams.delete("kit"); }
+    if (except_param != "prestige") { url.searchParams.delete("prestige"); }
+    if (except_param != "epic") { url.searchParams.delete("epic"); }
+    if (except_param != "companion") { url.searchParams.delete("companion"); }
+    if (except_param != "art") { url.searchParams.delete("art"); }
+    if (except_param != "species") { url.searchParams.delete("species"); }
+    window.history.replaceState(null, null, url);
 }
