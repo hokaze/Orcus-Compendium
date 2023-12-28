@@ -1,7 +1,7 @@
-Name,Flavor,Skill Bonus,Feature Name,Feature Description
-Aristocrat,"You are a patrician, and believe yourself to be one of a finer class of people.",+2 Intimidate,Will Defense,+1 ancestry bonus to Will defense
-Heretic,"Your family belonged to a forbidden religion, which exposed you to the constant threat of persecution.",+2 Religion,Focus Proficiency,"You have proficiency with orbs, staffs and wands."
-Mountainfolk,You come from an isolated town in the mountains.,+2 Dungeoneering,Relentless Endurance (1/encounter),"When you are staggered, gain temporary HP equal to your level."
-Seafarer,You grew up on boats or ships.,+2 Athletics,Reflex Defense,+1 ancestry bonus to Reflex defense.
-Traveler,"Your family moved about a lot, whether out of wanderlust or necessity.",+2 Diplomacy,Speedy,+1 to your base walking speed.
-Urchin,"You grew up on the streets, without parents – or without parents worth speaking of.",+2 Streetsmarts,Light Blade Weapon Proficiency,You have proficiency with martial weapons in the light blade weapon group.
+Name,Flavor,Skill Bonus,Feature Name,Feature Description,Power
+Aristocrat,"You are a patrician, and believe yourself to be one of a finer class of people.",+2 Intimidate,Will Defense,+1 ancestry bonus to Will defense.,
+Heretic,"Your family belonged to a forbidden religion, which exposed you to the constant threat of persecution.",+2 Religion,Focus Proficiency,"You have proficiency with the following focuses: orbs, staffs and wands.",
+Mountainfolk,You come from an isolated town in the mountains.,+2 Dungeoneering,Relentless Endurance,You have the relentless endurance power.,Relentless Endurance
+Seafarer,You grew up on boats or ships.,+2 Athletics,Reflex Defense,+1 ancestry bonus to Reflex defense.,
+Traveler,"Your family moved about a lot, whether out of wanderlust or necessity.",+2 Diplomacy,Speedy,+1 to your base walking speed.,
+Urchin,"You grew up on the streets, without parents – or without parents worth speaking of.",+2 Streetsmarts,Light Blade Weapon Proficiency,You have proficiency with martial weapons in the light blade weapon group.,

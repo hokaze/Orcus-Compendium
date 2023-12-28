@@ -119,9 +119,9 @@ Grounding Shard,Shield Shard,Shield Shard,"Any time you would be pushed, pulled 
 Immovable Shield,Shield Shard,"Grounding Shield, Shield Shard","If you do not move at all during your round, you gain resistance 5 until the beginning of your next turn. This stacks with any other forms of resistance you might have. Level 11: Resistance 10. Level 21: Resistance 15.",None,None
 Offensive Shield,Shield Shard,Shield Shard,Your shield of force has all the properties of a weapon shard (as described in the Weapon Shard feat). You count as having the Weapon Shard feat for the purpose of meeting feat prerequisites.,None,None
 Refreshing Shard,Shield Shard,Shield Shard,"Once per encounter, when you are damaged, as an immediate (counter) action, you may spend a recovery.",None,None
-As One,Weapon Shard,"Weapon Shard, at least one power from the martial power source","When using a power with the martial tag with your weapon shard, you gain a +2 feat bonus to damage rolls. This increases to +3 at 11th level and to +4 at 21st level.",None,None
+As One,Weapon Shard,"Weapon Shard, at least one power from the martial power source","When using a power with the Martial tag with your weapon shard, you gain a +2 feat bonus to damage rolls. This increases to +3 at 11th level and to +4 at 21st level.",None,None
 Assassin’s Weapon,Weapon Shard,"Slayer’s Weapon, Weapon Shard","If you have combat advantage against an opponent and score a critical hit, you deal +2d8 damage. This increases to +3d8 at 11th level and to +4d8 at 21st level.",None,None
-Extended Weapon,Weapon Shard,Weapon Shard,Your weapon shard becomes a reach weapon.,None,None
+Extended Weapon,Weapon Shard,Weapon Shard,Your weapon shard is a reach weapon.,None,None
 Greater Weapon Shard,Weapon Shard,"Improved Weapon Shard, Weapon Shard, 11th level",Your weapon shard damage increases to 2d6.,None,None
 Improved Weapon Shard,Weapon Shard,Weapon Shard,Your weapon shard damage increases to 1d10.,None,None
 Malleable Weapon,Weapon Shard,Weapon Shard,"By taking a standard action instead of a move action when you manifest your weapon shard, you can choose to have it belong to any weapon group of your choice until the end of the encounter. You also increase the proficiency bonus to +3.",None,None

@@ -7,7 +7,7 @@ footer: ${pageNo}
 
 # Classes and Powers
 
-0.6.2
+1.1
 
 * TOC  
 {:toc}  
@@ -126,14 +126,12 @@ Often, defenders control enemies by “marking” them. See the marked condition
 
 ##### Table – Roles and Traditions
 
-|             | Controller | Defender           | Leader    | Striker            |
-| ----------- | ---------- | ------------------ | --------- | ------------------ |
-| **Arcane**  | Magician   | Mageblade          |           |                    |
-| **Divine**  |            |                    | Priest    |                    |
-| **Martial** | Harlequin  | Guardian, Warrior* | Commander | Exemplar, Warrior* |
-| **Spirit**  | Reaper     |                    |           | Sylvan             |
-
-\* The warrior can shift between defender and striker roles.
+|             | Controller | Defender  | Leader    | Striker  |
+| ----------- | ---------- | --------- | --------- | -------- |
+| **Arcane**  | Magician   | Mageblade |           |          |
+| **Divine**  |            |           | Priest    |          |
+| **Martial** | Harlequin  | Guardian  | Commander | Exemplar |
+| **Spirit**  | Reaper     |           |           | Sylvan   |
 
 ### Stats
 
@@ -167,7 +165,7 @@ Powers are unique things that characters can do, as an action. Some are limited 
 
 **Abilities:** Each class has a primary ability associated with it. That ability is used for most attacks with that class's powers. Each talent (see below) has a secondary ability associated with it. That ability is used whenever a class power uses an ability that is not the primary ability.  
 
-**Power progression:** Classes follow the default power progression, shown below, unless otherwise mentioned. In this book, only the Warrior deviates from the default progression.  
+**Power progression:** Classes follow the default power progression, shown below, unless otherwise mentioned. In this book, all classes follow the default progression.  
 
 The numbers of powers listed below apply only to your “class powers”: those granted through the Powers entry within your chosen class, or powers from other sources that required you to swap a power from your class for that power. Extra powers from other sources such as cruxes, kits, feats are not counted toward these limits. Powers granted by class features other than the Powers entry are also not counted toward these limits.
 
@@ -639,7 +637,7 @@ You can choose powers from your class disciplines. When you do so, you can repla
 
 You belong to a particular school of magic. Choose one at character creation. 
 
-* **Conjurer:** When an encounter ends and you have one or more daily powers with the Summon keyword still active, those daily powers are not expended. However, if you use them again, the summoned creatures appear in the exact state they were when their last summoning ended (current HP, conditions, etc.) except that they can use their encounter powers again even if already used before. If you complete a long rest, all your daily powers reset and if you use them from then on a “fresh” creature will be summoned. Your secondary ability is Constitution.
+* **Conjurer:** When an encounter ends and you have one or more daily powers with the Summon tag still active, those daily powers are not expended. However, if you use them again, the summoned creatures appear in the exact state they were when their last summoning ended (current HP, conditions, etc.) except that they can use their encounter powers again even if already used before. If you complete a long rest, all your daily powers reset and if you use them from then on a “fresh” creature will be summoned. Your secondary ability is Constitution.
 * **Enchanter:** When you use a power with the Psychic tag that does damage on a hit, you can choose for the power to do no damage to any enemies you target. If so, you gain a +2 bonus on the attack roll. Your secondary ability is Charisma. 
 * **Evoker:** If you wish, a near or far power you use with the Acid, Cold, Fire, Flux, Lightning or Thunder tags has its area increased by 1 (from Near arc 2 to Near arc 3, for example). Also, you can change your flux energy as a swift action (see the Elemental Flux discipline for a description of flux energy). Your secondary ability is Dexterity.  
 
@@ -1713,7 +1711,7 @@ You can manipulate your own form – stretching, shaping and warping it as you n
 
 You also get a +2 feat bonus to Bluff.   
 
-**Adaptable Body (Level 5):** While the target of a power with the Transmutation keyword, you get a +1 bonus to all defenses and a +1 bonus to speed.   
+**Adaptable Body (Level 5):** While the target of a power with the Transmutation tag, you get a +1 bonus to all defenses and a +1 bonus to speed.   
 
 **Reflexive Shaper (Level 10):** You gain the *instinctive shift* daily utility power from the Deep, Dark Truthful Mirror discipline.   
 
@@ -1812,7 +1810,11 @@ A discipline is a set of powers that are thematically related. Characters get ac
 
 ### Key and Secondary Abilities  
 
-Some classes specify that powers selected from class disciplines may use different abilities to those specified. If you gain access to the powers of a discipline from another source, this rule does not apply.   
+Some classes specify that powers selected from class disciplines may use different abilities to those specified. If you swap the key ability, you must also swap the secondary ability.
+
+*For example, Cuthberta is a Priest (Worships the God of Life). When using Angel's Trumpet techniques, she can swap Charisma (that discipline's key ability) for Wisdom (her class's key ability. However, if she does so, she must swap Wisdom (that discipline's secondary ability) for Charisma (her talent's secondary ability). She cannot use Wisdom as the key ability adn secondary ability.*
+
+If you gain access to the powers of a discipline through another source than your class, you cannot use the different abilities.   
 
 *For example, Arty is an Exemplar (Swashbuckler), which lets him replace a power’s secondary ability with Charisma. He selects the power* deadly thrust *from Blades in the Dark, which identifies Strength as its secondary ability. He may use Strength or Charisma when using that ability.*  
 
@@ -3180,7 +3182,7 @@ You’re able to modify your body in ways not reflective of any animal. This inc
 > *It’s like you’re made out of plastic, rubber, or some other kind of other flexible material.*  
 > **At-Will** **Utility** **2** (**Move Action**) ● **Arcane, Transmutation**  
 > **Self**   
-> **Effect** You gain reach 1 until the start of your next turn.  
+> **Effect** Your reach increases by 1 until the start of your next turn.  
 
 > #### Squeeeeze  
 > *Your muscles can extend; your bones can slip from their sockets. You find yourself moving through places even a rodent would find difficult.*  
@@ -7923,7 +7925,7 @@ You have dedicated yourself to mastering the arcane arts through dedicated study
 
 **Practiced Casting (11th level):** When you use an arcane encounter attack power with the action you gain from spending an action point, roll 1d6. On a 6, the power is not expended.
 
-**Instinctive Counterspell (16th level):** Choose one keyword from Acid, Charm, Cold, Fear, Fire, Illusion, Lightning, Psychic and Thunder. You gain a permanent +2 bonus to defenses against powers with that keyword. Your allies also benefit from this bonus whenever they are within 10 squares of you.
+**Instinctive Counterspell (16th level):** Choose one tag from Acid, Charm, Cold, Fear, Fire, Illusion, Lightning, Psychic and Thunder. You gain a permanent +2 bonus to defenses against powers with that tag. Your allies also benefit from this bonus whenever they are within 10 squares of you.
 
 ### Powers 
 

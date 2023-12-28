@@ -7,7 +7,7 @@ footer: ${pageNo}
 
 # Rulebook
 
-0.6.2
+1.1
 
 * TOC  
 {:toc}
@@ -502,7 +502,7 @@ To test what you know about a monster, make a skill check against a Moderate DC 
 
 If you also beat the Hard DC, you also learn its powers, its resistances and immunities and its vulnerabilities.
 
-Use Arcana for elemental, fey and shadow creatures, and creatures with the construct tag. Use Dungeoneering for aberration creatures. Use Religion for outsider creatures, and creatures with the undead tag. Use Nature for natural creatures.  
+Use Arcana for elemental, fey and shadow creatures, and creatures with the Construct tag. Use Dungeoneering for aberration creatures. Use Religion for outsider creatures, and creatures with the Undead tag. Use Nature for natural creatures.  
 
 ### Variant: Skills with Different Abilities  
 
@@ -786,7 +786,7 @@ The DC is higher in unfamiliar settlements and where the information sought is s
 
 # Extended Challenges  
 
-With most skill checks, a single die roll immediately determines whether or not a character succeeds. If a character wants to jump across a chasm or recall a specific piece of information, his success or failure is apparent after a single check.  
+With most skill checks, a single die roll immediately determines whether or not a character succeeds. If a character wants to jump across a chasm or recall a specific piece of information, their success or failure is apparent after a single check.  
 
 For complicated and time-consuming tasks (such as disabling a very complex trap, crafting a powerful artifact or researching an obscure bit of knowledge), or at times when the Game Master wants to build tension and suspense, an extended challenge might be called for. 
 
@@ -794,7 +794,7 @@ For complicated and time-consuming tasks (such as disabling a very complex trap,
 
 At their simplest, you can design an extended challenge using the following rules: 
 
-An extended challenge is a series of interconnected skill checks, in which the player characters try to succeed on some number of checks before failing three checks, in order to achieve an objective.   
+An extended challenge is a series of interconnected skill checks, in which the player characters try to succeed on some number of checks before failing a certain number of checks, in order to achieve an objective.    
 
 In such a case, a specific number of successful skill checks must be achieved to complete the task. The complexity of the task is reflected in the number of successful rolls required to complete the task, and the maximum number of failed rolls that can occur before the attempt fails. In most cases, one or two failed rolls does not mean that an extended challenge has failed, but if three failed rolls occur before the character makes the required number of successful rolls, the attempt fails. Although three failures is a common baseline, Game Masters are encouraged to change the number if the situation warrants it.  
 
@@ -1148,7 +1148,7 @@ Many weapons have special properties related to their use, as shown in the Weapo
 
 **Range:** A weapon that can be used to make a ranged attack has a range. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have a -2 penalty on the attack roll. You can't attack a target beyond the weapon's long range.  
 
-**Reach:** This weapon adds 1 square to your reach when you attack with it. You can only flank or opportunity attack adjacent enemies, however.  
+**Reach:** This weapon adds 1 square to your reach when you attack with it (for a total reach of 2 for most characters, since the default reach is 1). You can only flank or opportunity attack adjacent enemies, however.  
 
 **Thrown:** You can throw the weapon to make a ranged attack.  
 
@@ -1168,7 +1168,7 @@ Some monsters that have immunity or resistance to nonmagical weapons are suscept
 
 ### Improvised Weapons  
 
-An improvised weapon, including an unarmed strike, does 1d4 damage (one-handed) or 1d8 damage (two-handed), with no proficiency bonus on the attack.   
+An improvised weapon, including an unarmed strike, does 1d4 damage (one-handed) or 1d8 damage (two-handed), with no proficiency bonus on the attack. A character makes two-handed unarmed strikes if they have two hands free; otherwise they make one-handed unarmed strikes (a character can make one-handed unarmed strikes with both hands full by kicking or headbutting).   
 
 ### Designing Your Own Weapons  
 
@@ -1181,7 +1181,7 @@ Certain weapons get an additional property or benefit based on their Group (if [
 * **Axes; Maces and Clubs; Spears and Lances; Staffs:** Weapon die increases by one (see Increased Weapon Die table below).   
 * **Light Blades; Heavy Blades:** Proficiency bonus increases by +1.  
 * **Picks and Hammers; Flails and Chains:** Improved Critical.   
-* **Polearm:** Reach 1.
+* **Polearm:** Reach.
 
 You can design an exotic melee weapon by taking a martial weapon and adding another Group to it, along with the Group-based benefit or property listed above. 
 
@@ -1242,7 +1242,7 @@ The exotic weapon category is a good place for weapons that do not follow the no
 | Martial side weapon       | Melee | Martial | 1    | +2                | 1d6         | 5         | 1           | 5/10  | Side Weapon, Thrown (Heavy), [group] |
 | Martial one-handed weapon | Melee | Martial | 1    | +2                | 1d8         | 10        | 4           |       | [group]                              |
 | Martial two-handed weapon | Melee | Martial | 2    | +2                | 1d10        | 25        | 8           |       | [group]                              |
-| Martial reach weapon      | Melee | Martial | 2    | +2                | 1d8         | 25        | 8           |       | Polearm (Reach 1), [group]           |
+| Martial reach weapon      | Melee | Martial | 2    | +2                | 1d8         | 25        | 8           |       | Polearm (Reach), [group]             |
 
 ##### Table – Simple Ranged Weapons
 
@@ -1266,7 +1266,7 @@ The exotic weapon category is a good place for weapons that do not follow the no
 | Exotic side weapon       | Melee | Exotic | 1    | +2                | 1d6         | 25         | 1           | 5/10  | Side Weapon, Thrown (Heavy), [two groups] |
 | Exotic one-handed weapon | Melee | Exotic | 1    | +2                | 1d8         | 50        | 4           |       | [two groups]                     |
 | Exotic two-handed weapon | Melee | Exotic | 2    | +2                | 1d10        | 125        | 8           |       | [two groups]                         |
-| Exotic reach weapon | Melee | Exotic | 2    | +2                | 1d8         | 125        | 8           |       | Polearm (Reach 1), [two groups] |
+| Exotic reach weapon | Melee | Exotic | 2    | +2                | 1d8         | 125        | 8           |       | Polearm (Reach), [two groups] |
 | Garrote | Melee | Exotic | 2    | +3                | 1d4           | 1         | 0           | Special (Garrote) | Special |
 
 ## Focuses  
@@ -1569,7 +1569,7 @@ Unless otherwise specified, a creature knows the effect of a power that has affe
 
 If a power has a “Secondary Attack” listed, the user of the power can make an attack, contingent on that effect occurring. For example, if Secondary Attack is listed under the Hit entry, it only takes place on a hit. 
 
-Secondary attacks use the same keywords, attack, defense and range as the original attack, unless otherwise specified. 
+Secondary attacks use the same tags, attack, defense and range as the original attack, unless otherwise specified. 
 
 ## Weapon Dice (“dW”)  
 The term “dW” refers to weapon dice. Every weapon has a given damage die. Roll that die as many times as specified, and add up the results. For example, if you use a power with a longsword (weapon die: 1d10), and the Hit effect is “3dW damage” that means you do 3d10 damage. If it is “3dW + Strength modifier damage” and your Strength modifier is +2, you roll three d10s, add them up and then add 2.   
@@ -1601,7 +1601,7 @@ You can maintain any number of powers, provided you have the actions to do so.
 
 You cannot maintain a power that has ended. The one exception is a power that naturally ended at the start of your turn. If a power like this has a Maintain option, it represents restarting the power. 
 
-## Keywords  
+## Tags  
 
 ### Augmentable
 
@@ -2108,7 +2108,7 @@ You can Drop Prone as a free action. Stand Up from Prone is a move action.
 
 ## Moving Around Other Creatures  
 
-You can move through an allied creature’s space. In contrast, you can move through a hostile creature’s space only if the creature is at least two sizes larger or smaller than you.   
+You can move through an allied creature’s space. In contrast, you can move through a hostile creature’s space only if the creature is at least two sizes larger or smaller than you, or if the creature is helpless.   
 
 Whether a creature is a friend or an enemy, you can’t willingly end your move in its space.  
 
@@ -2494,7 +2494,7 @@ The helpless condition usually comes about as a result of being unconscious.
 * -2 penalty to attack rolls on attacks that do not include the creature that marked you as a target.  
 * If the creature that marked you dies or falls unconscious, you lose the marked condition.   
 * If you are marked by another creature while already marked, the new mark supersedes the old one (in other words, you cannot be marked by two different creatures at the same time).  
-  
+* Unless otherwise specified, the marked condition lasts until the end of the encounter.
 ### Petrified  
 
 - You are transformed into a solid inanimate substance (usually stone).   
@@ -2603,7 +2603,7 @@ Creatures with the Aquatic tag get a +2 bonus on attack rolls against creatures 
 
 # Monster Statistics  
 
-A monster has a rank, a role, a source, a type, tags and a level. For example, a giant frog might be a Standard Lurker (rank and role), Natural Beast (source and type), with the Aquatic tag, and be level 4.  
+A monster has a rank, a role, a size, a source, a type, tags and a level. For example, a giant frog might be a Standard Lurker (rank and role), Medium Natural Beast (size, source and type), with the Aquatic tag, and be level 4.  
 
 ## Rank  
 
@@ -2676,6 +2676,10 @@ A monster’s source describes where its species or type has come from. Certain 
 
 **Outsider** creatures are at least partially composed of the essence (but not necessarily the material) of some Outer Plane. Some creatures start out as some other source and become outsiders when they attain a higher (or lower) state of spiritual existence.  
 
+## Size
+
+Creature size is discussed in the Movement and Position chapter. Monsters belong to the same size categories as player characters.
+
 ## Type  
 
 A monster’s type describes its shape and form. Certain spells, magic items, class features, and other effects in the game interact in special ways with creatures of a particular type.   
@@ -2684,7 +2688,7 @@ The game includes the following monster types, which have no rules of their own.
 
 **Beasts** are nonhumanoid creatures that are a natural part of the fantasy ecology. Some of them have magical powers, but most are unintelligent and lack any society or language. Beasts include all varieties of ordinary animals, dinosaurs, and giant versions of animals, as well as fantastical animals like winged cats or elf hounds.  
 
-**Automatons** do not have organs or coherent bodily systems. They may be very simple creatures, like a gelatinous cube, or masses of a material that is magically animated, like a fire elemental or bronze golem. Undead that have been reanimated from a body or body parts, like skeletons and zombies, are automatons, whereas undead that have been transformed from their living form, like vampires, or undead that are a separate soul, like specters, are humanoids.   
+**Automatons** do not have organs or coherent bodily systems. They may be very simple creatures, like a gelatinous cube, or masses of a material that is magically animated, like a fire elemental or a golem. Undead that have been reanimated from a body or body parts, like skeletons and zombies, are automatons, whereas undead that have been transformed from their living form, like vampires, or undead that are a separate soul, like specters, are humanoids.   
 
 **Humanoids** have bipedal forms, and typically are sapient and sentient, and capable of language and culture. Humanoid races include those commonly found as player characters - humans, dwarves, elves, halflings, goblinoids (goblins, hobgoblins, and bugbears), orcs, gnolls, lizardfolk, and kobolds - as well as fey like nymphs and dryads and outsiders with with humanoid forms like many devils.  
 
@@ -2692,7 +2696,7 @@ The game includes the following monster types, which have no rules of their own.
 
 ## Tags  
 
-A monster might have one or more tags appended to its type. For example, a couatl is listed as Monstrosity ● Dragon, Celestial. The tags provide additional categorization for certain creatures. The tags have no rules of their own, but something in the game, such as a magic item, might refer to them. For instance, a spear that is especially effective at fighting demons would work against any monster that has the demon tag.  
+A monster might have one or more tags appended to its type. For example, a couatl is listed as Monstrosity ● Dragon, Celestial. The tags provide additional categorization for certain creatures. The tags have no rules of their own, but something in the game, such as a magic item, might refer to them. For instance, a spear that is especially effective at fighting demons would work against any monster that has the Demon tag.  
 
 The most common tags are:
 
@@ -2704,13 +2708,13 @@ The most common tags are:
 
 **Cold** creatures are particularly linked to cold energy. 
 
-**Constructs** are made, not born. Some are programmed by their creators to follow a simple set of instructions, while others are imbued with sentience and capable of independent thought. Golems are the iconic constructs. 
+**Constructs** are made, not born. Some are programmed by their creators to follow a simple set of instructions, while others are imbued with sentience and capable of independent thought. 
 
 **Demons** are chaotic evil creatures of wickedness that are native to the Lower Planes. Along with devils, they are classified as fiends. A few are the servants of deities, but many more labor under the leadership of demon princes. Evil priests and mages sometimes summon demons to the material world to do their bidding. 
 
 **Devils** are evil creatures of wickedness that are native to the Lower Planes. Along with demons, they are classified as fiends. A few are the servants of deities, but many more labor under the leadership of archdevils. Evil priests and mages sometimes summon devils to the material world to do their bidding. 
 
-**Dragons** are reptilian creatures of ancient origin and tremendous power. True dragons, including the good metallic dragons and the evil chromatic dragons, are highly intelligent and have innate magic. Also in this category are creatures distantly related to true dragons, but less powerful, less intelligent, and less magical, such as wyverns and pseudodragons. 
+**Dragons** are reptilian creatures of ancient origin and tremendous power. True dragons, including metallic dragons and chromatic dragons, are highly intelligent and have innate magic. Also in this category are creatures distantly related to true dragons, but less powerful, less intelligent, and less magical, such as wyverns and pseudodragons. 
 
 **Earth** creatures are particularly linked to the element of earth. 
 
@@ -2750,9 +2754,9 @@ A monster usually dies or is destroyed when it drops to 0 hit points, or is rend
 
 **Regeneration #:** The creature heals # hit points at the start of its turn, unless it is dead. 
 
-**Blooded Regeneration #:** The creature has regeneration while it is staggered only.
+**Staggered Regeneration #:** The creature has regeneration while it is staggered only.
 
-**Unblooded Regeneration #:** The creature has regeneration while it is not staggered. 
+**Unstaggered Regeneration #:** The creature has regeneration while it is not staggered. 
 
 ## Speed  
 
@@ -2762,13 +2766,13 @@ Other movement types, like fly or swim, may also be listed.
 
 ## Ability Scores  
 
-Every monster has six ability scores (Strength, Constitution, Dexterity, Intelligence, Wisdom, and Charisma) and corresponding modifiers.   
+Every monster has six ability scores (Strength, Constitution, Dexterity, Intelligence, Wisdom, and Charisma) and corresponding modifiers. These modifiers include the monster’s half-level bonus.  
 
 ## Skills  
 
 The Skills entry is reserved for monsters that are trained in one or more skills. For example, a monster that is very perceptive and stealthy might have bonuses to Perception and Stealth checks.  
 
-Monsters can make skill checks with skills that are not listed. In those cases, calculate the skill bonus as: the sum of a monster’s relevant ability modifier and half its level (round down). 
+Monsters can make skill checks with skills that are not listed. In those cases, use the monster's relevant ability modifier, as provided in the ability scores section.  
 
 ## Vulnerabilities, Resistances, and Immunities  
 
@@ -2847,7 +2851,7 @@ XP is calculated based on a monster’s rank and level, as shown below.
 
 ## Auras  
 
-A creature’s aura affects creatures within a burst X equal to the aura X listed in the monster description.   
+A creature’s aura affects creatures within a burst X equal to the aura X listed in the monster description. Unless otherwise mentioned, it does not affect the user. If an aura has any tags, they are listed in brackets.  
 
 ## Actions and powers
 
@@ -2859,8 +2863,8 @@ Special symbols are used to indicate whether an attack is a basic attack, and wh
 
 * ‡ Basic Melee Attack  
 * † Melee Attack  
-* ⇻ Basic Ranged Attack  
-* ⇸ Ranged Attack  
+* ⤢ Basic Ranged Attack  
+* ↗ Ranged Attack  
 * ∢ Near Attack  
 * ⋇ Far Attack  
 
@@ -2878,9 +2882,13 @@ For example, “refresh 5, 6” means a monster can use the special ability once
 
 ## Equipment  
 
-A stat block rarely refers to equipment, other than armor or weapons used by a monster. A creature that customarily wears clothes, such as a humanoid, is assumed to be dressed appropriately.  
+A monster’s stat block lists any key equipment they might be carrying, other than clothes and armor (for creatures that customarily wear clothes or armor) and the weapons already identified by their powers. 
 
-You can equip monsters with additional gear and trinkets however you like, and you decide how much of a monster’s equipment is recoverable after the creature is slain and whether any of that equipment is still usable. A battered suit of armor made for a monster is rarely usable by someone else, for instance.  
+You can equip monsters with additional gear and trinkets however you like, and you decide how much of a monster’s equipment is recoverable after the creature is slain and whether any of that equipment is still usable. A battered suit of armor made for a monster is rarely usable by someone else, for instance. 
+
+## Variants
+
+Variants are alternative forms or varieties of the monster. They might have different types, movement speeds, powers or other statistics. Unless otherwise mentioned, the features listed under the Variants section are in addition to those of the standard form. 
 
 # Creating New Monsters  
 
@@ -3037,11 +3045,13 @@ There are a number of special movement properties:
 
 Assign the monster ability scores based on what seems appropriate. In general, a monster’s highest ability score should equal about 16 + half its level.  
 
+A monster’s modifier for each ability is equal to the base ability modifier, plus half its level (rounded down).”
+
 ## Skills
 
 Choose any number of skills for the monster to be trained in. These skills have a bonus of 5 + half level + the relevant ability modifier. 
 
-Always list the monster’s Perception modifier. If they are not trained in Perception, the modifier is half the monster’s level + its Wisdom modifier. 
+List the monster’s Perception modifier under “Senses”, whether or not they are trained in that skill. If they are not trained in Perception, the modifier is half the monster's level + its Wisdom modifier. 
 
 ## Initiative
 
@@ -3216,22 +3226,7 @@ For the purpose of these rules, an object is a discrete, inanimate item like a w
 
 ## Statistics for Objects  
 
-When time is a factor, you can assign an Armor Class and hit points to a destructible object. You can also give it immunities, resistances, and vulnerabilities to specific types of damage.  
-
-**Armor Class:** An object's Armor Class is a measure of how difficult it is to deal damage to the object when striking it (because the object has no chance of dodging out of the way). The Object Armor Class table provides suggested AC values for various substances.  
-
-##### Table – Substance's HP Multipliers
-
-| Substance                           | HP Multiplier |
-| ----------------------------------- | ------------- |
-| Cloth, paper, rope                  | x 0.1         |
-| Crystal, glass, ice / Very delicate | x 0.25        |
-| Leather / Delicate                  | x 0.5         |
-| Wood, bone                          | 1             |
-| Sturdy                              | x 1.5         |
-| Stone                               | x 2           |
-| Iron, steel                         | x 3           |
-| Adamantine                          | x 5           |
+When time is a factor, you can assign a defenses and hit points to a destructible object. You can also give it immunities, resistances, and vulnerabilities to specific types of damage.   
 
 **Hit Points:** An object's hit points measure how much damage it can take before losing its structural integrity. Large objects also tend to have more hit points than small ones, unless breaking a small part of the object is just as effective as breaking the whole thing.  
 
@@ -3247,6 +3242,19 @@ Objects are immune to poison, psychic and necrotic damage. Will attacks against 
 | Large (cart, 10-ft-by-10-ft window)           | 4           | 12        | 40   |
 | Huge (tapestry)                               | 3           | 15        | 100  |
 | Gargantuan (colossal statue, column of stone) | 2           | 20        | 200  |
+
+##### Table – Substance's HP Multipliers
+
+| Substance                           | HP Multiplier |
+| ----------------------------------- | ------------- |
+| Cloth, paper, rope                  | x 0.1         |
+| Crystal, glass, ice / Very delicate | x 0.25        |
+| Leather / Delicate                  | x 0.5         |
+| Wood, bone                          | 1             |
+| Sturdy                              | x 1.5         |
+| Stone                               | x 2           |
+| Iron, steel                         | x 3           |
+| Adamantine                          | x 5           |
 
 # Magic Item Rules
 
@@ -3312,6 +3320,8 @@ Wondrous items can be worn or carried without taking up space on a character’s
 
 GMs can decide for themselves how to distribute magic items in their games, but here are four options to consider.  
 
+<figure><img src="pics\DavidLewisJohnson_TINTRO.png" alt="Treasure by David Lewis Johnson" style="zoom: 50%;" /><figcaption>Treasure by David Lewis Johnson</figcaption></figure>
+
 ### 1. Steady Progression  
 
 A player character should get a new permanent magic item every 12 encounters or so, and that item should be of a level equal to their own level +1 to +4 (roughly 25% chance of each). Since there are roughly 10 encounters to a level, other ways of thinking about this are that:  
@@ -3326,7 +3336,7 @@ Keep in mind that a consumable magic item costs 1/25th as much as a permanent ma
 
 Assuming a rate of 10 encounters per level, that results in the following average treasure per player character per level (not including permanent magic items).   
 
-##### Table – Treasure per Encounter
+##### Table – Treasure per Player per 10 Encounters
 
 |      | Treasure per Player per 10 Encounters (gp) |
 | ---- | ------------------------------------------ |
@@ -3550,19 +3560,19 @@ At least a +X enhancement bonus to Armor Class while wearing that armor.
 
 Airships, wagons and ships are all vehicles. 
 
-Once a vehicle is in motion, it needs attention. If the driver fails to use a Drive, Turn or Brake action on their turn, the vehicle careens (with special rules for each vehicle). 
+Once a vehicle is in motion, it needs attention until it comes to a stop. If the driver fails to use a Drive or Turn action on their turn, the vehicle careens (with special rules for each vehicle). 
 
 **Driver:** Regardless of the number of occupants, or the number of characters required to fully operate a vehicle, one and only one character can be designated as the driver at any one time. The vehicle operates only on that character's turn. Even if careening, the vehicle only slides or stops on the driver's turn. 
 
 **Speed:** The speed given for a vehicle is the number of squares it can move if its driver takes the Drive action. A vehicle can move up to double its speed in one round, for example if its driver takes the Drive action twice.  
 
-**Careening:** If a vehicle moved in the last round, then its driver must either use the Accelerate, Turn or Brake action on it this round, or at the end of its driver's turn the vehicle is careening. See each vehicle's description for what happens. Characters in a careening vehicle are dazed. Once a vehicle stops moving, it is no longer careening. 
+**Careening:** If a vehicle moved in the last round and has not yet come to a stop, then its driver must either use the Drive or Turn action on it this round, or at the end of its driver's turn the vehicle is careening. See each vehicle's description for what happens. Characters in a careening vehicle are dazed. Once a vehicle stops moving, it is no longer careening. 
 
 References to the vehicle's driver's place in the initiative count refer to the vehicle's most recent driver. Even if the driver is incapacitated, dead or has abandoned the vehicle, use what the (former) driver's initiative count was.
 
 **Escape:** As an immediate (counter) action when a vehicle begins to careen, or a move action at any time, a character can attempt to escape a vehicle. The character must make a DC 15 Acrobatics check (+5 if the creature is strapped in; DC 20 for the driver). A driver who attempts to escape no longer has any control over the vehicle. Any target failing the escape roll by 5 or less still escapes but takes damage as if it were a crash at the vehicle's current speed (see below).
 
-**Total Move Entitlement:** A vehicle's total move entitlement is the maximum distance it could have moved this turn, even if its driver moved it less than that or it crashed before it made it that far. For example, if a speed 6 vehicle has had the Drive action taken twice, its movement for the round is 12. 
+**Total Movement Entitlement:** A vehicle's total movement entitlement is the distance it moved this turn plus any remaining distance it could have moved. For example, if a hero took the Drive action twice for a speed 6 vehicle, moving it 4 squares for the first action then 3 squares for the second action before crashing, its movement for the round is 10 (it moved 7 and could have moved a further 3 squares). 
 
 **Crash:** If a vehicle moves (either deliberately or because it is careening) into an obstruction or difficult terrain it cannot cross, it stops immediately. The vehicle and all occupants inside take damage according to the vehicle's total movement entitlement for the round. 
 
@@ -3610,15 +3620,11 @@ Movement made as part of a power can be used to disembark a vehicle.
 
 ### Drive (move action)
 
-The vehicle you are driving moves a number of squares in the direction it is facing, up to its speed. 
+The vehicle you are driving moves a number of squares in the direction it is facing, up to its speed. You can choose to move it 0 squares, in which case it comes to a stop (unless acted upon by outside forces).
 
 ### Turn (move action)
 
 The vehicle you are driving moves a number of squares in the direction it is facing, up to half its speed. At some point during its move, rotate it 45 or 90 degrees. It can then move straight ahead in the new direction it is facing if it has movement remaining. 
-
-### Brake (move action)
-
-The vehicle you are driving moves a number of squares in the direction it is facing, up to its speed. 
 
 ### Take Control (move action)
 

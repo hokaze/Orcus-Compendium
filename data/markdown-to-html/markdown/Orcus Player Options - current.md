@@ -7,7 +7,7 @@ footer: ${pageNo}
 
 # Player Options
 
-0.6.2
+1.1
 
 * TOC  
 {:toc}  
@@ -143,7 +143,7 @@ Through sheer chutzpah and unbelievable luck, you have survived ordeals that wou
 > **Encounter** **Utility** **Feature** (**Counter Action**)   
 > **Self**   
 > **Trigger** An attack hits you.  
-> **Effect** Reroll the attack roll and take the second result.  
+> **Effect** The opponent must reroll that attack and take the second result. 
 
 ### Otherworldly  
 
@@ -236,14 +236,21 @@ You are a patrician, and believe yourself to be one of a finer class of people.
 Your family belonged to a forbidden religion, which exposed you to the constant threat of persecution.   
 
 * +2 Religion  
-* **Focus Proficiency:** You have proficiency with orbs, staffs and wands.   
+* **Focus Proficiency:** ·    You have proficiency with the following focuses: orbs, staffs and wands. 
 
 ### Mountainfolk  
 
 You come from an isolated town in the mountains.   
 
 * +2 Dungeoneering  
-* **Relentless Endurance (1/encounter):** When you are staggered, gain temporary HP equal to your level.   
+* **Relentless Endurance:** You have the *relentless endurance* power. 
+
+> #### Relentless Endurance
+>
+> **Encounter** **Utility** **Feature** (**Counter Action**)   
+> **Self**   
+> **Trigger** You become staggered.  
+> **Effect** Gain temporary hit points equal to your level.   
 
 ### Seafarer  
 
@@ -1237,7 +1244,7 @@ Your intense physical training regimes have combined with your powerful phrenic 
 
 **Prerequisite:**  Weapon Shard, at least one power from the martial power source
 
-**Benefit:** When using a power with the martial tag with your weapon shard, you gain a +2 feat bonus to damage rolls. This increases to +3 at 11th level and to +4 at 21st level. 
+**Benefit:** When using a power with the Martial tag with your weapon shard, you gain a +2 feat bonus to damage rolls. This increases to +3 at 11th level and to +4 at 21st level. 
 
 ### Assassin’s Weapon
 You have now used your weapon shard to slay so many in such an underhanded way that your internalized feelings and behaviors have stained your shard. It too excels in underhanded combat.
@@ -1253,7 +1260,7 @@ Your willpower and intense emotions allow you to extend your weapon, allowing it
 
 **Prerequisite:**  Weapon Shard
 
-**Benefit:** Your weapon shard becomes a reach weapon.
+**Benefit:** Your weapon shard is a reach weapon.
 
 ### Greater Weapon Shard
 You are a legend that walks amongst men, your myth has already begun to spread around the world. Now the wellspring of a thousand powers your weapon, giving you an equally legendary weapon shard.

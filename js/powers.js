@@ -91,7 +91,7 @@ function append_power_json(power_data)
         }
         
         // ignore Advanced Combat, Bond and Ancestry power options for now
-        if ( power_data[key]["List"] == "Advanced Combat" || power_data[key]["Source"] == "Bonds" || power_data[key]["List"] == "Ancestries")
+        if ( power_data[key]["List"] == "Advanced Combat" || power_data[key]["Source"] == "Bonds" )
         {
             return;
         }

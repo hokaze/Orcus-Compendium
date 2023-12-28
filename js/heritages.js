@@ -52,11 +52,14 @@ function append_heritage_json(heritage_data)
         var tr = document.createElement('tr');
         tr.id = "heritage_" + key;
         var heritage_name = heritage_data[key]["Name"];
+        var heritage_power = heritage_data[key]["Power"];
+        
         // open modal dialogue for Heritage info - similar to power display
         tr.innerHTML =  '<td>' + '<a href="#" onclick="showHeritageInfo(' + key + ', 1' + ')">' + heritage_data[key]["Name"] + '</a>' + '</td>' +
         '<td>' + heritage_data[key]["Skill Bonus"] + '</td>' +
         '<td>' + heritage_data[key]["Feature Name"] + '</td>' +
         '<td>' + heritage_data[key]["Feature Description"] + '</td>';
+        
         heritage_table.appendChild(tr)
     });
     
@@ -109,11 +112,20 @@ function searchHeritageTable()
 // like powers, quick and dirty, just print json info in the modal popup
 function showHeritageInfo (key, enable_navigation)
 {   
-    content_div.innerHTML = "<h3>" + heritage_data[key]["Name"] + "</h3>" +
+    var html = "<h3>" + heritage_data[key]["Name"] + "</h3>" +
     "<p><i>" + heritage_data[key]["Flavor"] + "</i>" + "<br/>" +
     "<br/><strong>Skill Bonus:</strong> " + heritage_data[key]["Skill Bonus"] +
     "<br/><strong>" + heritage_data[key]["Feature Name"] + ":</strong> " + heritage_data[key]["Feature Description"] +
     "</p>";
+    
+    // add link to showPowerInfo if heritage grants a power
+    var heritage_power = heritage_data[key]["Power"];
+    if (heritage_power != "None")
+    {
+        html += '<p><strong>Granted Power:</strong> <a href="#" onclick="showPowerInfo(' + power_name_to_key.get(heritage_power) +', 0, \'showHeritageInfo(' + key + ', 1' + ')\')\">' + heritage_power + '</a></p>';
+    }
+    
+    content_div.innerHTML = html;
     
     if (enable_navigation)
     {

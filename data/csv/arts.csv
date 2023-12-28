@@ -98,9 +98,7 @@ To cast the incantation, the caster must construct a small, windowless hut in th
 
 Because the bonfire is large and the hut is small, the atmosphere inside quickly gets stiflingly hot. Any creature inside the hut must make an Endure check (DC 20) every 10 minutes or suffer the effects of severe heat (lose a recovery).  
 
-Just as the tale of Hrothgar approaches its conclusion (near the end of the casting time), the bonfire’s flames light the hut on fire, which creates a great deal of smoke but no additional heat or damage. The flames consume the hut’s roof and walls, revealing Valhalla. If the caster succeeds on a DC 19 Arcana check, they can choose the exact location in Valhalla that the party appears.  
-
-<figure><img src=""pics\LuigiCastellani_LOKOSSAPALACE.png"" alt=""Palace by Luigi Castellani"" style=""zoom: 100%;"" /><figcaption>Palace by Luigi Castellani</figcaption></figure>"
+Just as the tale of Hrothgar approaches its conclusion (near the end of the casting time), the bonfire’s flames light the hut on fire, which creates a great deal of smoke but no additional heat or damage. The flames consume the hut’s roof and walls, revealing Valhalla. If the caster succeeds on a DC 19 Arcana check, they can choose the exact location in Valhalla that the party appears. "
 Summon Item,11,Conjuration,Incantation,Arcana,1 hour,A sapphire (720 gp),360 gp,Permanent,"You touch an object weighing 10 pounds or less whose longest dimension is 6 feet or less. The incantation leaves an invisible mark on its surface and invisibly inscribes the name of the item on the sapphire you use as the material component. Each time you cast this incantation, you must use a different sapphire.  
 
 At any time thereafter, you can use a standard action to speak the item’s name and crush the sapphire. The item instantly appears in your hand regardless of physical or planar distances, and the incantation ends.  
@@ -168,9 +166,7 @@ Forensic Examination,1,Treatment,Practice,Heal,1 hour,Special reagents and chemi
 Restoration,7,Treatment,Practice,Heal,24 hours,Healing herbs (208 gp),104 gp,Instantaneous,"The target of the restoration treatment is cured of poison, disease, fatigue, petrification or similar maladies of your level or lower (or no level). Scars begin to fade and stubborn wounds close. This craft cannot restore missing limbs. 
 
 *Heal check:* With a successful Heal check (moderate DC based on the malady’s level), you can treat maladies of a level higher than your own. "
-Experimental Resurrection,15,Treatment,Practice,Heal,1 hour,"Reagents and a generator (2,000 gp)","1,000 gp",Instantaneous,"The target of the experimental resurrection is brought back to life. The subject must have died within the last 24 hours, and their body must be intact. 
-
-<figure><img src=""pics\JoyceMaureira_MAGSPELL1.png"" alt=""Magic Spell 1 by Joyce Maureira"" style=""zoom: 33%;"" /><figcaption>Magic Spell 1 by Joyce Maureira</figcaption></figure>"
+Experimental Resurrection,15,Treatment,Practice,Heal,1 hour,"Reagents and a generator (2,000 gp)","1,000 gp",Instantaneous,"The target of the experimental resurrection is brought back to life. The subject must have died within the last 24 hours, and their body must be intact. "
 Chapter,0,,,History,,,,,
 Delve into Collective Memory,3,Divination,Incantation,History,10 minutes,Lapis lazuli (27 gp),27 gp,Instantaneous,"You can learn information from the memories of others, even those long dead. This practice allows you to find out information that you could not possibly know yourself. Make the relevant knowledge skill check, adjusted as follows:  
 *A substantial minority of people know this information:* +0 DC.  
@@ -264,9 +260,7 @@ Alchemy,1,Schema,Practice,None,1 hour,See below,See below,Instantaneous,"Rather 
 
 The component cost to make one of those items equals the cost to buy the item.  
 
-You cannot learn the practice of an item of a level higher than your own. 
-
-<figure><img src=""pics\JoyceMaureira_MAGSPELL3.png"" alt=""Magic Spell 3 by Joyce Maureira"" style=""zoom: 33%;"" /><figcaption>Magic Spell 3 by Joyce Maureira</figcaption></figure>"
+You cannot learn the practice of an item of a level higher than your own. "
 Poisoncraft,1,Schema,Practice,None,1 hour,See below,See below,Instantaneous,"Rather than a single practice, poisoncraft is a category of practices. Each poison has its own practice (*poisoncraft: pale tincture, poisoncraft: repulsion resin,* and so on), which a character can learn after studying another of the same variety for 1 hour, or from scratch with 8 hours. The cost to learn equals the cost of a consumable item of the level of the poison.  
 
 The component cost to make one of those items equals the cost to buy the item.  
@@ -278,7 +272,7 @@ Enchant Item,2,Schema,Practice,None,1 week,See below,See below,Instantaneous,"Ra
 The component cost to make one of those magic items equal the cost to buy the item. If an existing enchanted item is consumed during the crafting process, deduct its cost from the component cost.  
 
 You cannot learn the practice of an item of a level higher than your own.   "
-Craft Wondrous Items,2,Schema,Practice,None,1 week,See below,See below,Instantaneous,"Rather than a single practice, craft wondrous item is a category of practices. Each wondrous item has its own practice (*craft wondrous item: bag of ogres, craft wondrous item: decanter of endless water,* and so on), which a character can learn after studying another of the same variety for 1 hour, or from scratch with 8 hours. The cost to learn equals the cost of a consumable item of the level of a +1 item with that boost.   
+Craft Wondrous Items,2,Schema,Practice,None,1 week,See below,See below,Instantaneous,"Rather than a single practice, craft wondrous item is a category of practices. Each wondrous item has its own practice (*craft wondrous item: bag of tricks, craft wondrous item: decanter of endless water,* and so on), which a character can learn after studying another of the same variety for 1 hour, or from scratch with 8 hours. The cost to learn equals the cost of a consumable item of the level of a +1 item with that boost.   
 
 The component cost to make one of those magic items equal the cost to buy the item. If an existing wondrous item is consumed during the crafting process, deduct its cost from the component cost.   
 
@@ -333,7 +327,7 @@ The incantation doesn’t take into account any possible circumstances that migh
 *Religion check:* With a DC 18 Religion check, the answer is less cryptic than it otherwise would have been. "
 Forbid Intrusion  ,11,Abjuration,Incantation,Religion,1 hour,"A sprinkling of holy water, rare incense, and powdered ruby (360 gp)",360 gp,1 day,"You create a ward against magical travel that protects up to 1,600 squares of floor space to a height of 6 squares above the floor. For the duration, creatures can’t teleport into the area or use portals to enter the area. The incantation proofs the area against planar travel, and therefore prevents creatures from accessing the area by way of the Astral Plane, Ethereal Plane, Plane of Faerie, Plane of Shadow, or the *plane walk* incantation.  
 
-In addition, the incantation damages types of creatures that you choose when you cast it. Choose one or more of the following tags: air, celestial, cold, demon, devil, earth, fire, water or undead. When a creature with that tag enters the incantation’s area for the first time on a turn or starts its turn there, the creature takes 5d10 radiant or necrotic damage (your choice when you cast this incantation).  
+In addition, the incantation damages types of creatures that you choose when you cast it. Choose one or more of the following tags: Air, Celestial, Cold, Demon, Devil, Earth, Fire, Water or Undead. When a creature with that tag enters the incantation’s area for the first time on a turn or starts its turn there, the creature takes 5d10 radiant or necrotic damage (your choice when you cast this incantation).
 
 When you cast this incantation, you can designate a password. A creature that speaks the password as it enters the area takes no damage from the incantation.  
 
